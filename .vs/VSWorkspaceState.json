@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Ramjet_Core",
+    "\\Ramjet_Core\\Core",
+    "\\Ramjet_Core\\Core\\Rendering",
+    "\\Ramjet_Core\\Core\\Utils",
+    "\\Ramjet_Core\\Core\\Utils\\Ressources"
+  ],
+  "SelectedNode": "\\Ramjet_Core\\Core\\Utils",
+  "PreviewInSolutionExplorer": false
+}
