@@ -153,7 +153,8 @@
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
-    <ClCompile Include="Core\Rendering\Shader\Shader.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec2.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec3.cpp" />
@@ -175,7 +176,10 @@
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
-    <ClInclude Include="Core\Rendering\Shader\Shader.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
     <ClInclude Include="Core\Utils\Maths\mat4.h" />
     <ClInclude Include="Core\Utils\Maths\maths.h" />
     <ClInclude Include="Core\Utils\Maths\maths_func.h" />
