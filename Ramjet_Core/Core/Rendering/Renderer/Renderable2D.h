@@ -19,8 +19,8 @@ namespace Core {
 
 			Shader& m_Shader;
 
-			VertexArray* m_VertexArray;
-			IndexBuffer* m_IndexBuffer;
+			VertexArray* m_VertexArray; //VAO
+			IndexBuffer* m_IndexBuffer; //IBO
 
 		public:
 			Renderable2D(vec3 position, vec2 size, vec4 color, Shader& shader)
