@@ -18,8 +18,8 @@ namespace Core {
 
 			WindowInfo() {
 				name = "Game";
-				width = 1280;
-				height = 720;
+				width = 960;
+				height = 540;
 				position_x = 500;
 				position_y = 300;
 				bisReshapable = true;

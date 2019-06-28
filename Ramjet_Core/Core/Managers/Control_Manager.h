@@ -1,9 +1,8 @@
 #pragma once
 
-#include "..//Controls/IControl.h"
+#include "../Controls/IControl.h"
 #include <Utils/Static/CInOut.h>
-// #include "..//Controls/FPSCamera.h"
-// #include <glm/glm.hpp>
+#include <Utils/Maths/maths.h>
 
 using namespace Core::Controls;
 
@@ -27,6 +26,8 @@ namespace Core {
 			virtual void notifyGameStart();
 
 			static bool isKeyPressed(unsigned int keycode);
+
+			void getMousePosition(double& x, double& y) const;
 
 			//void update(glm::mat4& view_matrix, glm::mat4& projection_matrix, glm::vec3& cameraPosition, glm::vec3& cameraDirection);
 

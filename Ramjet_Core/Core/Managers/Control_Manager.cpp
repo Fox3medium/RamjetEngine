@@ -56,6 +56,8 @@ namespace Core {
 
 		void Control_Manager::notifyMouseInput(double xpos, double ypos, float deltaTime)
 		{
+			m_MouseX = xpos;
+			m_MouseY = ypos;
 			//playerCamera->mouseInput(xpos, ypos, deltaTime);
 			//std::cout << "x : " << xpos << " y : " << ypos << std::endl;
 		}
@@ -80,6 +82,12 @@ namespace Core {
 		bool Control_Manager::isKeyPressed(unsigned int keycode)
 		{
 			return true;
+		}
+
+		void Control_Manager::getMousePosition(double& x, double& y) const
+		{
+			x = m_MouseX;
+			y = m_MouseY;
 		}
 
 		/*void Control_Manager::update(glm::mat4& view_matrix, glm::mat4& projection_matrix, glm::vec3& cameraPosition, glm::vec3& cameraDirection)

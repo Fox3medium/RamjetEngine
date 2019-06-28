@@ -150,6 +150,9 @@
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
     <ClCompile Include="Core\Ramjet_Starter.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
     <ClCompile Include="Core\Rendering\Shader\Shader.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec2.cpp" />
@@ -168,6 +171,10 @@
     <ClInclude Include="Core\Init\Window.h" />
     <ClInclude Include="Core\Init\WindowInfo.h" />
     <ClInclude Include="Core\Managers\Control_Manager.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
     <ClInclude Include="Core\Rendering\Shader\Shader.h" />
     <ClInclude Include="Core\Utils\Maths\mat4.h" />
     <ClInclude Include="Core\Utils\Maths\maths.h" />
