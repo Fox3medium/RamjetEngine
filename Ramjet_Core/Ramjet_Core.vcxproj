@@ -150,9 +150,12 @@
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
     <ClCompile Include="Core\Ramjet_Starter.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Models\Static_Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
@@ -172,10 +175,13 @@
     <ClInclude Include="Core\Init\Window.h" />
     <ClInclude Include="Core\Init\WindowInfo.h" />
     <ClInclude Include="Core\Managers\Control_Manager.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Models\Static_Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
