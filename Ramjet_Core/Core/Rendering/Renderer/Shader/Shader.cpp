@@ -18,11 +18,16 @@ namespace Core {
 		Shader::~Shader()
 		{
 			glDeleteProgram(m_ShaderID);
+			m_UniformMap.clear();
 		}
 
-		GLint Shader::getUniformLocation(const GLchar* name)
+		GLuint Shader::getUniformLocation(const GLchar* name)
 		{
-			return glGetUniformLocation(m_ShaderID, name);
+			std::map<String, GLuint>::iterator i = m_UniformMap.find(name);
+			if (i == m_UniformMap.end()) {
+				m_UniformMap[name] = glGetUniformLocation(m_ShaderID, name);
+			}
+			return m_UniformMap.at(name);
 		}
 
 		void Shader::setUniform1i(const GLchar* uniVarName, int value)

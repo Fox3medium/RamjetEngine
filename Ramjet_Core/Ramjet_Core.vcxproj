@@ -103,6 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,6 +137,11 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <OmitFramePointers>false</OmitFramePointers>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -149,15 +155,19 @@
   <ItemGroup>
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
+    <ClCompile Include="Core\Managers\Layer_Manager.cpp" />
+    <ClCompile Include="Core\Managers\Scene_Manager.cpp" />
     <ClCompile Include="Core\Ramjet_Starter.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Static_Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
+    <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec2.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec3.cpp" />
@@ -165,6 +175,7 @@
     <ClCompile Include="Core\Utils\String.cpp" />
     <ClCompile Include="Core\Utils\Static\CInOut.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
+    <ClCompile Include="Core\Utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Controls\IControl.h" />
@@ -175,17 +186,21 @@
     <ClInclude Include="Core\Init\Window.h" />
     <ClInclude Include="Core\Init\WindowInfo.h" />
     <ClInclude Include="Core\Managers\Control_Manager.h" />
+    <ClInclude Include="Core\Managers\Layer_Manager.h" />
+    <ClInclude Include="Core\Managers\Scene_Manager.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Static_Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
+    <ClInclude Include="Core\Test\Layers\TopLayer.h" />
     <ClInclude Include="Core\Utils\Maths\mat4.h" />
     <ClInclude Include="Core\Utils\Maths\maths.h" />
     <ClInclude Include="Core\Utils\Maths\maths_func.h" />
@@ -195,6 +210,7 @@
     <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\Static\CInOut.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />
+    <ClInclude Include="Core\Utils\Timer.h" />
     <ClInclude Include="Dependencies\Includes\GLFW\glfw3.h" />
     <ClInclude Include="Dependencies\Includes\GLFW\glfw3native.h" />
   </ItemGroup>

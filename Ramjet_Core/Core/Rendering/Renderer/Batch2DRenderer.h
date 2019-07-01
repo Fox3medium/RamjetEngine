@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include "Renderer2D.h"
 #include "Buffers/IndexBuffer.h"
 
@@ -29,9 +30,9 @@ namespace Core {
 			Batch2DRenderer();
 			~Batch2DRenderer();
 
-			void begin();
+			void begin() override;
 			void submit(const Renderable2D* renderable) override;
-			void end();
+			void end() override;
 			void flush() override;
 
 		private:

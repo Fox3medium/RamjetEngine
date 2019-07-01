@@ -12,7 +12,8 @@ namespace Core {
 
 		struct VertexData {
 			Maths::vec3 vertex;
-			Maths::vec4 color;
+			//Maths::vec4 color;
+			unsigned int color;
 		};
 	
 		class Renderable2D {

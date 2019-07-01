@@ -15,9 +15,11 @@
 #include "Rendering/Renderer/Models/Static_Sprite.h"
 #include "Rendering/Renderer/Models/Sprite.h"
 
+#include "Test/Layers/TopLayer.h"
+
 #include <time.h>
 
-#define BATCH_RENDERER 1
+#include <Utils/Timer.h>
 
 using namespace Utils;
 using namespace Core::Init;
@@ -27,77 +29,78 @@ using namespace Core::Rendering;
 int main() {
 
 	Window window("Test", 800, 600);
-	//glClearColor(0.2f, 0.3f, 0.8f, 1.0f);
 
 	Control_Manager* C_Manager = new Control_Manager();
 	window.setControl(C_Manager);
 
-	Shader shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
-	shader.enable();
-
-	Maths::mat4 ortho = Maths::mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
-	shader.setUniformMat4("pr_matrix", ortho);
-
-	/*shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4,3,0)));
-	Static_Sprite sprite(5.0f, 5.0f, 4.0f, 4.0f, vec4(1, 0, 0, 1), shader);
-	Static_Sprite sprite1(7.0f, 1.0f, 2.0f, 5.0f, vec4(0, 1, 0, 1), shader);*/
+	Shader* s1 = new Shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
+	Shader* s2 = new Shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
+	Shader& shader1 = *s1;
+	Shader& shader2 = *s2;
+	shader1.enable();
+	shader2.enable();
 
 	std::vector<Renderable2D*> sprites;
 
 	srand(time(NULL));
+	   
+	// SETTING LAYER 1 (Top Layer)
+	Core::Tests::TopLayer TLayer1(&shader1);
+	TLayer1.add(new Sprite(-2, -2, 4, 4, Maths::vec4(1, 0, 1, 1)));
 
-	for (float y = 0; y < 9.0f; y += 0.05) {
+	// SETTING LAYER 2 (Bottom Layer)
 
-		for (float x = 0; x < 16.0f; x += 0.05) {
+	Core::Tests::TopLayer TLayer2(&shader2);
+	for (float y = -9.0f; y < 9.0f; y += 0.1) {		
+
+		for (float x = -16.0f; x < 16.0f; x += 0.1) {
 		
-			sprites.push_back(new
-#if BATCH_RENDERER
-				Sprite
-#else
-				Static_Sprite
-#endif
-				(x, y, 0.04f, 0.04f, Maths::vec4(rand() % 1000 / 1000.0f, 0.3f, 0.5f, 1)
-#if !BATCH_RENDERER
-					, shader
-#endif
-					));
+			TLayer2.add(new Sprite(x, y, 0.04f, 0.04f, Maths::vec4(rand() % 1000 / 1000.0f, 0.3f, 0.5f, 1)));
 
 		}
 
 	}
 
-#if BATCH_RENDERER
+
+
 	Sprite sprite(5, 5, 4, 4, Maths::vec4(1, 0, 1, 1));
 	Sprite sprite2(7, 1, 2, 3, Maths::vec4(0.2f, 0, 1, 1));
 	Batch2DRenderer renderer;
-#else
-	Static_Sprite sprite(5, 5, 4, 4, Maths::vec4(1, 0, 1, 1), shader);
-	Static_Sprite sprite2(7, 1, 2, 3, Maths::vec4(0.2f, 0, 1, 1), shader);
-	Simple2DRenderer renderer;
-#endif
 
-	shader.setUniform4f("color", Maths::vec4(0.2f, 0.3f, 0.8f, 1.0f));
-	shader.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
+	// SHADER 1
+	shader1.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
+	Maths::mat4 ortho = Maths::mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
+	shader1.setUniformMat4("pr_matrix", ortho);
+
+	// SHADER 2
+	shader2.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
+
+
+	Timer time;
+	float timer = 0.0f;
+	unsigned int fps = 0;
 
 	while (!window.closed()) {
 		window.clear();
 		double x, y;
 		C_Manager->getMousePosition(x, y);
-		shader.setUniform2f("light_pos", Maths::vec2((float) (x * 16.0f / 960.0f),(float) (9.0f - y * 9.0f / 540.0f )));
+		// WHEN MULTIPLE SHADER. SHADERS MUST BE ENABLED !!!
+		shader1.enable();
+		shader1.setUniform2f("light_pos", Maths::vec2((float)(x * 32.0f / 960.0f - 16.0f)*3.0f, (float)(9.0f - y * 18.0f / 540.0f)*3.0f));
 
-#if BATCH_RENDERER
-		renderer.begin();
-#endif
-		for (int i = 0; i < sprites.size(); i++)
-		{
-			renderer.submit(sprites[i]);
-		}
-#if BATCH_RENDERER
-		renderer.end();
-#endif
-		renderer.flush();
+		shader2.enable();
+		shader2.setUniform2f("light_pos", Maths::vec2((float) (x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.0f)));
+
+		TLayer2.render();
+		TLayer1.render();
 
 		window.update();
+		fps++;
+		if (time.elapsed() - timer > 1.0f) {
+			timer += 1.0f;
+			printf("%d fps\n", fps);
+			fps = 0;
+		}
 	}
 
 	return 0;

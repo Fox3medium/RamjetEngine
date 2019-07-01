@@ -3,6 +3,7 @@
 #include <Utils\Fileutils.h>
 #include <Utils\Maths\maths.h>
 #include <GLEW\glew.h>
+#include <map>
 
 using namespace Utils;
 
@@ -17,6 +18,8 @@ namespace Core {
 
 				const char* m_VertPath;
 				const char* m_FragPath;
+
+				std::map<String, GLuint> m_UniformMap;
 
 			public:
 				Shader(const char* vertPath, const char* fragPath);
@@ -33,7 +36,7 @@ namespace Core {
 				void disable() const;
 
 			private:
-				GLint getUniformLocation(const GLchar* name);
+				GLuint getUniformLocation(const GLchar* name);
 
 				GLuint load();
 		};

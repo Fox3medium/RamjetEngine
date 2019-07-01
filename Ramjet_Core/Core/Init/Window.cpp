@@ -81,6 +81,7 @@ namespace Core {
 			glfwSetScrollCallback(m_Window, processScrollInput);
 			glfwSetKeyCallback(m_Window, processKeyInput);
 			glfwSetMouseButtonCallback(m_Window, processMButtonInput);
+			glfwSwapInterval(0.0); //Disable VSync = 0.0, Enable VSync = 1.0
 
 			return true;
 
