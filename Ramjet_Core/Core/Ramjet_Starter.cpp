@@ -26,6 +26,9 @@ using namespace Core::Init;
 using namespace Core::Manager;
 using namespace Core::Rendering;
 
+#define BATCH_RENDERER		1
+#define TEST_50K_SPRITES	0
+
 int main() {
 
 	Window window("Test", 800, 600);
@@ -49,8 +52,10 @@ int main() {
 	TLayer1.add(new Sprite(-2, -2, 4, 4, Maths::vec4(1, 0, 1, 1)));
 
 	// SETTING LAYER 2 (Bottom Layer)
-
 	Core::Tests::TopLayer TLayer2(&shader2);
+
+#if TEST_50K_SPRITES
+	
 	for (float y = -9.0f; y < 9.0f; y += 0.1) {		
 
 		for (float x = -16.0f; x < 16.0f; x += 0.1) {
@@ -61,7 +66,13 @@ int main() {
 
 	}
 
+#else
 
+	Sprite* button = new Sprite(-15.0f, 5.0f, 6, 3, Maths::vec4(1, 1, 1, 1));
+	TLayer2.add(button);
+	TLayer2.add(new Sprite(0.5f, 0.5f, 5.0f, 2.0f, Maths::vec4(1, 0, 1, 1)));
+
+#endif
 
 	Sprite sprite(5, 5, 4, 4, Maths::vec4(1, 0, 1, 1));
 	Sprite sprite2(7, 1, 2, 3, Maths::vec4(0.2f, 0, 1, 1));
@@ -91,8 +102,8 @@ int main() {
 		shader2.enable();
 		shader2.setUniform2f("light_pos", Maths::vec2((float) (x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.0f)));
 
-		TLayer2.render();
 		TLayer1.render();
+		TLayer2.render();
 
 		window.update();
 		fps++;
