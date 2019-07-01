@@ -35,22 +35,22 @@ namespace Core {
 			glUniform1f(getUniformLocation(uniVarName), value);
 		}
 
-		void Shader::setUniform2f(const GLchar* uniVarName, const vec2& value)
+		void Shader::setUniform2f(const GLchar* uniVarName, const Maths::vec2& value)
 		{
 			glUniform2f(getUniformLocation(uniVarName), value.x, value.y);
 		}
 
-		void Shader::setUniform3f(const GLchar* uniVarName, const vec3& value)
+		void Shader::setUniform3f(const GLchar* uniVarName, const Maths::vec3& value)
 		{
 			glUniform3f(getUniformLocation(uniVarName), value.x, value.y, value.z);
 		}
 
-		void Shader::setUniform4f(const GLchar* uniVarName, const vec4& value)
+		void Shader::setUniform4f(const GLchar* uniVarName, const Maths::vec4& value)
 		{
 			glUniform4f(getUniformLocation(uniVarName), value.x, value.y, value.z, value.w);
 		}
 
-		void Shader::setUniformMat4(const GLchar* uniVarName, const mat4& mat)
+		void Shader::setUniformMat4(const GLchar* uniVarName, const Maths::mat4& mat)
 		{
 			glUniformMatrix4fv(getUniformLocation(uniVarName), 1, GL_FALSE, mat.elements);
 		}

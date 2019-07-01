@@ -13,7 +13,7 @@ namespace Core {
 		private:
 			
 		public:			
-			Sprite(float x, float y, float width, float height, const vec4& color);			
+			Sprite(float x, float y, float width, float height, const Maths::vec4& color);
 		};
 
 	}

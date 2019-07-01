@@ -14,7 +14,7 @@ namespace Core {
 			Shader& m_Shader;
 
 		public:
-			Static_Sprite(float x, float y, float width, float height, const vec4& color, Shader& shader);
+			Static_Sprite(float x, float y, float width, float height, const Maths::vec4& color, Shader& shader);
 			~Static_Sprite();
 
 			inline const VertexArray* getVAO() const { return m_VertexArray; }

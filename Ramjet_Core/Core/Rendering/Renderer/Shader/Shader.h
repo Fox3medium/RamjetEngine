@@ -24,10 +24,10 @@ namespace Core {
 
 				void setUniform1i(const GLchar* uniVarName, int value);
 				void setUniform1f(const GLchar* uniVarName, float value);
-				void setUniform2f(const GLchar* uniVarName, const vec2& value);
-				void setUniform3f(const GLchar* uniVarName, const vec3& value);
-				void setUniform4f(const GLchar* uniVarName, const vec4& value);
-				void setUniformMat4(const GLchar* uniVarName, const mat4& mat);
+				void setUniform2f(const GLchar* uniVarName, const Maths::vec2& value);
+				void setUniform3f(const GLchar* uniVarName, const Maths::vec3& value);
+				void setUniform4f(const GLchar* uniVarName, const Maths::vec4& value);
+				void setUniformMat4(const GLchar* uniVarName, const Maths::mat4& mat);
 
 				void enable() const;
 				void disable() const;

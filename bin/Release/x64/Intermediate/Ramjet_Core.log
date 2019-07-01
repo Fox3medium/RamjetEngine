@@ -1,10 +1,15 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Batch2DRenderer.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(10,18): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
+  Ramjet_Starter.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(11,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(47,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(49,39): warning C4305:  '+=': truncation from 'double' to 'float'
+  Sprite.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(51,41): warning C4305:  '+=': truncation from 'double' to 'float'
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(11,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  3 of 263 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
+  15 of 263 functions ( 5.7%) were compiled, the rest were copied from previous compilation.
+    13 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info

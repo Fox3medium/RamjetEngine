@@ -16,7 +16,7 @@ namespace Core {
 				sprite->getVAO()->bind();
 				sprite->getIBO()->bind();
 
-				sprite->getShader().setUniformMat4("ml_matrix", mat4::translation(sprite->getPosition()));
+				sprite->getShader().setUniformMat4("ml_matrix", Maths::mat4::translation(sprite->getPosition()));
 				glDrawElements(GL_TRIANGLES, sprite->getIBO()->getCount(), GL_UNSIGNED_INT, nullptr);
 
 				sprite->getIBO()->unbind();

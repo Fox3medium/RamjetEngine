@@ -4,8 +4,6 @@ namespace Core {
 
 	namespace Rendering {
 
-
-
 		Batch2DRenderer::Batch2DRenderer()
 		{
 			init();
@@ -25,23 +23,23 @@ namespace Core {
 
 		void Batch2DRenderer::submit(const Renderable2D* renderable)
 		{
-			const vec3& position = renderable->getPosition();
-			const vec2& size = renderable->getSize();
-			const vec4& color = renderable->getColor();
+			const Maths::vec3& position = renderable->getPosition();
+			const Maths::vec2& size = renderable->getSize();
+			const Maths::vec4& color = renderable->getColor();
 
 			m_Buffer->vertex = position;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = vec3(position.x, position.y + size.y, position.z);
+			m_Buffer->vertex = Maths::vec3(position.x, position.y + size.y, position.z);
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = vec3(position.x + size.x, position.y + size.y, position.z);
+			m_Buffer->vertex = Maths::vec3(position.x + size.x, position.y + size.y, position.z);
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->vertex = Maths::vec3(position.x + size.x, position.y, position.z);
 			m_Buffer->color = color;
 			m_Buffer++;
 

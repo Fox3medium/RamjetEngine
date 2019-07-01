@@ -35,7 +35,7 @@ int main() {
 	Shader shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
 	shader.enable();
 
-	mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
+	Maths::mat4 ortho = Maths::mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 	shader.setUniformMat4("pr_matrix", ortho);
 
 	/*shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4,3,0)));
@@ -56,7 +56,7 @@ int main() {
 #else
 				Static_Sprite
 #endif
-				(x, y, 0.04f, 0.04f, vec4(rand() % 1000 / 1000.0f, 0, 1, 1)
+				(x, y, 0.04f, 0.04f, Maths::vec4(rand() % 1000 / 1000.0f, 0.3f, 0.5f, 1)
 #if !BATCH_RENDERER
 					, shader
 #endif
@@ -67,23 +67,23 @@ int main() {
 	}
 
 #if BATCH_RENDERER
-	Sprite sprite(5, 5, 4, 4, vec4(1, 0, 1, 1));
-	Sprite sprite2(7, 1, 2, 3, vec4(0.2f, 0, 1, 1));
+	Sprite sprite(5, 5, 4, 4, Maths::vec4(1, 0, 1, 1));
+	Sprite sprite2(7, 1, 2, 3, Maths::vec4(0.2f, 0, 1, 1));
 	Batch2DRenderer renderer;
 #else
-	Static_Sprite sprite(5, 5, 4, 4, vec4(1, 0, 1, 1), shader);
-	Static_Sprite sprite2(7, 1, 2, 3, vec4(0.2f, 0, 1, 1), shader);
+	Static_Sprite sprite(5, 5, 4, 4, Maths::vec4(1, 0, 1, 1), shader);
+	Static_Sprite sprite2(7, 1, 2, 3, Maths::vec4(0.2f, 0, 1, 1), shader);
 	Simple2DRenderer renderer;
 #endif
 
-	shader.setUniform4f("color", vec4(0.2f, 0.3f, 0.8f, 1.0f));
-	shader.setUniform2f("light_pos", vec2(4.0f, 1.5f));	
+	shader.setUniform4f("color", Maths::vec4(0.2f, 0.3f, 0.8f, 1.0f));
+	shader.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
 
 	while (!window.closed()) {
 		window.clear();
 		double x, y;
 		C_Manager->getMousePosition(x, y);
-		shader.setUniform2f("light_pos", vec2((float) (x * 16.0f / 960.0f),(float) (9.0f - y * 9.0f / 540.0f )));		
+		shader.setUniform2f("light_pos", Maths::vec2((float) (x * 16.0f / 960.0f),(float) (9.0f - y * 9.0f / 540.0f )));
 
 #if BATCH_RENDERER
 		renderer.begin();
@@ -96,8 +96,6 @@ int main() {
 		renderer.end();
 #endif
 		renderer.flush();
-
-		//printf("Sprites: %d\n", sprites.size());
 
 		window.update();
 	}

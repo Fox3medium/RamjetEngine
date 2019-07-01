@@ -4,10 +4,12 @@
 #include <math.h>
 
 namespace Utils {
-	
-	inline float toRadians(float degrees)	
-	{
-		return degrees * (M_PI / 180.0f);	
-	}
+	namespace Maths {
 
+		inline float toRadians(float degrees)
+		{
+			return degrees * (M_PI / 180.0f);
+		}
+
+	}
 }

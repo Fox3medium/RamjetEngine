@@ -22,10 +22,10 @@ namespace Utils {
 		/*static void Out(GLenum en);*/
 		/*static void Out(GLchar* gchar);*/
 		static void Out(std::string s);
-		static void Out(vec2 vec);
-		static void Out(vec3 vec);
-		static void Out(vec4 vec);
-		static void Out(mat4 mat);
+		static void Out(Maths::vec2 vec);
+		static void Out(Maths::vec3 vec);
+		static void Out(Maths::vec4 vec);
+		static void Out(Maths::mat4 mat);
 
 
 		static String In();

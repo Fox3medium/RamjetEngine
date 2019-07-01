@@ -1,11 +1,13 @@
 #include "Static_Sprite.h"
 
+using namespace Utils;
+
 namespace Core {
 
 	namespace Rendering {
 
-			Static_Sprite::Static_Sprite(float x, float y, float width, float height, const vec4& color, Shader& shader)
-				: Renderable2D(vec3(x, y, 0), vec2(width, height), color), m_Shader(shader)
+			Static_Sprite::Static_Sprite(float x, float y, float width, float height, const Maths::vec4& color, Shader& shader)
+				: Renderable2D(Maths::vec3(x, y, 0), Maths::vec2(width, height), color), m_Shader(shader)
 			{
 				m_VertexArray = new VertexArray();
 

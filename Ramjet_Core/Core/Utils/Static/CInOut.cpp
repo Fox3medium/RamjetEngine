@@ -58,20 +58,20 @@ namespace Utils {
 		std::cout << s << std::endl;
 	}
 
-	void CInOut::Out(vec2 vec)
+	void CInOut::Out(Maths::vec2 vec)
 	{
 		std::cout << "vec2 x : " << vec.x << " y : " << vec.y << std::endl;
 	}
 
-	void CInOut::Out(vec3 vec)
+	void CInOut::Out(Maths::vec3 vec)
 	{
 	}
 
-	void CInOut::Out(vec4 vec)
+	void CInOut::Out(Maths::vec4 vec)
 	{
 	}
 
-	void CInOut::Out(mat4 mat)
+	void CInOut::Out(Maths::mat4 mat)
 	{
 	}
 
