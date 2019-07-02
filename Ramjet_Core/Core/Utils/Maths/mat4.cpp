@@ -1,6 +1,7 @@
 #include "mat4.h"
 
 namespace Utils {
+
 	namespace Maths {
 
 		mat4::mat4()
@@ -67,6 +68,7 @@ namespace Utils {
 
 		vec3 mat4::multiply(const vec3& other) const
 		{
+			// Here the VEC3 is a VEC4 with it's 4th member = to 1
 			return vec3(
 				columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z + columns[3].x,
 				columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z + columns[3].y,

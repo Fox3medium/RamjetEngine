@@ -40,11 +40,11 @@ namespace Core {
 		private:
 			//FPSCamera* playerCamera;
 
-			int oldWidth;
-			int oldHeight;
+			//int oldWidth;
+			//int oldHeight;
 
 			float playerSpeed;
-			float runSpeed;
+			//float runSpeed;
 
 			bool gameStarted;
 

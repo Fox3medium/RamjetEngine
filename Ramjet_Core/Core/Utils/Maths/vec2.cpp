@@ -3,6 +3,7 @@
 #include <sstream>
 
 namespace Utils {
+
 	namespace Maths {
 
 		vec2::vec2()

@@ -15,3 +15,4 @@ void main()
 	float intensity = 1.0 / length(fs_in.position.xy - light_pos);
 	FragColor = fs_in.color * intensity;
 }
+

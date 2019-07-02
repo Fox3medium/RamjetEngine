@@ -2,6 +2,8 @@
 
 #include "Buffers/Buffers.h"
 #include "Shader/Shader.h"
+#include "Renderer2D.h"
+
 #include <Utils/Maths/maths.h>
 
 using namespace Utils;
@@ -23,6 +25,9 @@ namespace Core {
 			Maths::vec2 m_Size;
 			Maths::vec4 m_Color;
 
+		protected:
+			Renderable2D() {}
+
 		public:
 			Renderable2D(Maths::vec3 position, Maths::vec2 size, Maths::vec4 color)
 				: m_Position(position), m_Size(size), m_Color(color)
@@ -31,6 +36,11 @@ namespace Core {
 
 			virtual ~Renderable2D() {
 
+			}
+
+			virtual void submit(Renderer2D* renderer) const 
+			{
+				renderer->submit(this);
 			}
 
 			inline const Maths::vec3& getPosition() const { return m_Position; }

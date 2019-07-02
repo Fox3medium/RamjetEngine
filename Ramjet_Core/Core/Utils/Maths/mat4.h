@@ -5,6 +5,7 @@
 #include "maths_func.h"
 
 namespace Utils {
+
 	namespace Maths {
 
 		struct mat4

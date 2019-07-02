@@ -4,6 +4,7 @@
 #include <math.h>
 
 namespace Utils {
+
 	namespace Maths {
 
 		inline float toRadians(float degrees)

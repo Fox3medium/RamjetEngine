@@ -3,8 +3,6 @@
 namespace Core {
 
 	namespace Rendering {
-		
-
 
 		VertexArray::VertexArray()
 		{
@@ -42,4 +40,5 @@ namespace Core {
 		}
 
 	}
+
 }

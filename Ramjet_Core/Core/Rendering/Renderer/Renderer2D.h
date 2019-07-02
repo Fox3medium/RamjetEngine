@@ -2,11 +2,15 @@
 
 #include <GLEW/glew.h>
 #include <Utils/Maths/maths.h>
-#include "Renderable2D.h"
+#include <vector>
+
+using namespace Utils;
 
 namespace Core {
 
 	namespace Rendering {
+
+		class Renderable2D;
 	
 		class Renderer2D
 		{
@@ -20,14 +24,7 @@ namespace Core {
 			virtual void submit(const Renderable2D* renderable) = 0;
 			virtual void flush() = 0;
 			virtual void end() {}
-		
-		protected:
-			Renderer2D() {
-				m_TransformationStack.push_back(Maths::mat4::identity());
-				m_TransformationBack = &m_TransformationStack.back();
-			}
 
-		public:
 			void push(const Maths::mat4& matrix, bool override = false) {
 				if (override)
 					m_TransformationStack.push_back(matrix);
@@ -38,11 +35,17 @@ namespace Core {
 			}
 
 			void pop() {
-				if (m_TransformationStack.size() > 1) 
+				if (m_TransformationStack.size() > 1)
 					m_TransformationStack.pop_back();
-				
+
 				m_TransformationBack = &m_TransformationStack.back();
 			}
+		
+		protected:
+			Renderer2D() {
+				m_TransformationStack.push_back(Maths::mat4::identity());
+				m_TransformationBack = &m_TransformationStack.back();
+			}		
 
 		};
 

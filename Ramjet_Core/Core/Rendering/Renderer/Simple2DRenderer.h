@@ -2,6 +2,7 @@
 
 #include <deque>
 #include "Renderer2D.h"
+#include "Renderable2D.h"
 #include "Models/Static_Sprite.h"
 
 using namespace Utils;

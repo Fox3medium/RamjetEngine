@@ -76,14 +76,18 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -104,10 +108,12 @@
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -142,12 +148,14 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <OmitFramePointers>false</OmitFramePointers>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -157,24 +165,28 @@
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
     <ClCompile Include="Core\Managers\Layer_Manager.cpp" />
     <ClCompile Include="Core\Managers\Scene_Manager.cpp" />
+    <ClCompile Include="Core\Managers\Shader_Manager.cpp" />
+    <ClCompile Include="Core\Managers\Texture_Manager.cpp" />
     <ClCompile Include="Core\Ramjet_Starter.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Groups\Group.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Static_Sprite.cpp" />
-    <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
+    <ClCompile Include="Core\Rendering\Texture\Texture.cpp" />
     <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
+    <ClCompile Include="Core\Utils\Fileutils.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec2.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec3.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec4.cpp" />
-    <ClCompile Include="Core\Utils\String.cpp" />
     <ClCompile Include="Core\Utils\Static\CInOut.cpp" />
-    <ClCompile Include="Core\Utils\Fileutils.cpp" />
+    <ClCompile Include="Core\Utils\String.cpp" />
     <ClCompile Include="Core\Utils\Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -188,40 +200,40 @@
     <ClInclude Include="Core\Managers\Control_Manager.h" />
     <ClInclude Include="Core\Managers\Layer_Manager.h" />
     <ClInclude Include="Core\Managers\Scene_Manager.h" />
+    <ClInclude Include="Core\Managers\Shader_Manager.h" />
+    <ClInclude Include="Core\Managers\Texture_Manager.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Groups\Group.h" />
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Static_Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
-    <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
+    <ClInclude Include="Core\Rendering\Texture\Texture.h" />
     <ClInclude Include="Core\Test\Layers\TopLayer.h" />
+    <ClInclude Include="Core\Utils\Fileutils.h" />
+    <ClInclude Include="Core\Utils\ImageLoader.h" />
     <ClInclude Include="Core\Utils\Maths\mat4.h" />
     <ClInclude Include="Core\Utils\Maths\maths.h" />
     <ClInclude Include="Core\Utils\Maths\maths_func.h" />
     <ClInclude Include="Core\Utils\Maths\vec2.h" />
     <ClInclude Include="Core\Utils\Maths\vec3.h" />
     <ClInclude Include="Core\Utils\Maths\vec4.h" />
-    <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\Static\CInOut.h" />
-    <ClInclude Include="Core\Utils\Fileutils.h" />
+    <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
-    <ClInclude Include="Dependencies\Includes\GLFW\glfw3.h" />
-    <ClInclude Include="Dependencies\Includes\GLFW\glfw3native.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Dependencies\Libs\glfw3.lib" />
-    <Library Include="Dependencies\Libs\glfw3dll.lib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\fragment_shader_test.glsl" />
+    <None Include="Assets\Shaders\textFragShader.glsl" />
+    <None Include="Assets\Shaders\textVertShader.glsl" />
     <None Include="Assets\Shaders\vertex_shader_test.glsl" />
-    <None Include="Dependencies\Libs\glfw3.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

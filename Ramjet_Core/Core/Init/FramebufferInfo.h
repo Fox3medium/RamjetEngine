@@ -9,29 +9,13 @@ namespace Core {
 
 		struct FramebufferInfo {
 
-			unsigned int flags;
 			bool msaa;
 
 			FramebufferInfo() {
-				// flags = GLUT_RGBA | GLUT_DOUBLE | GLUT_DEPTH;
 				msaa = false;
 			};
 
-			FramebufferInfo(bool color, bool depth, bool stencil, bool inMsaa) {
-				/* flags = GLUT_DOUBLE;
-				if (color)
-					flags |= GLUT_RGBA | GLUT_ALPHA;
-				if (depth)
-					flags |= GLUT_DEPTH;
-				if (stencil)
-					flags |= GLUT_MULTISAMPLE;
-				if (inMsaa)
-					msaa = inMsaa;
-				else msaa = false; */
-			}
-
 			FramebufferInfo(const FramebufferInfo& FBO) {
-				flags = FBO.flags;
 				msaa = FBO.msaa;
 			}
 
@@ -40,7 +24,6 @@ namespace Core {
 			}
 
 			void operator=(const FramebufferInfo& FBO) {
-				flags = FBO.flags;
 				msaa = FBO.msaa;
 			}
 

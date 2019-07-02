@@ -1,6 +1,7 @@
 #include "vec3.h"
 
 namespace Utils {
+
 	namespace Maths {
 
 		vec3::vec3()

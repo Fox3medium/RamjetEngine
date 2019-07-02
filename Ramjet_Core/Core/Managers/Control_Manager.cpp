@@ -11,7 +11,6 @@ namespace Core {
 		double Control_Manager::m_ScrollX;
 		double Control_Manager::m_ScrollY;
 
-
 		Control_Manager::Control_Manager()
 		{
 			playerSpeed = 2.5f;
