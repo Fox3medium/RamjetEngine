@@ -117,6 +117,11 @@
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -159,6 +164,9 @@
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core\Init\Window.cpp" />
@@ -178,7 +186,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Models\Static_Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
-    <ClCompile Include="Core\Rendering\Texture\Texture.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
@@ -215,7 +223,7 @@
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
     <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
-    <ClInclude Include="Core\Rendering\Texture\Texture.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Texture\Texture.h" />
     <ClInclude Include="Core\Test\Layers\TopLayer.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />
     <ClInclude Include="Core\Utils\ImageLoader.h" />
@@ -234,6 +242,12 @@
     <None Include="Assets\Shaders\textFragShader.glsl" />
     <None Include="Assets\Shaders\textVertShader.glsl" />
     <None Include="Assets\Shaders\vertex_shader_test.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Test\747.png" />
+    <Image Include="Assets\Test\tb.png" />
+    <Image Include="Assets\Test\tc.png" />
+    <Image Include="Assets\Test\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

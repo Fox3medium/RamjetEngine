@@ -93,7 +93,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Groups\Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Rendering\Texture\Texture.cpp">
+    <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -206,10 +206,10 @@
     <ClInclude Include="Core\Rendering\Renderer\Groups\Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Rendering\Texture\Texture.h">
+    <ClInclude Include="Core\Utils\ImageLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Utils\ImageLoader.h">
+    <ClInclude Include="Core\Rendering\Renderer\Texture\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -218,5 +218,19 @@
     <None Include="Assets\Shaders\fragment_shader_test.glsl" />
     <None Include="Assets\Shaders\textFragShader.glsl" />
     <None Include="Assets\Shaders\textVertShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Test\747.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Test\tb.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Test\tc.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Assets\Test\test.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

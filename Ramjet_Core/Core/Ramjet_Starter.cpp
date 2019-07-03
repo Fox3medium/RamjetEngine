@@ -1,3 +1,4 @@
+#include <Utils/Timer.h>// NEEDS TO BE OVER FREE IMAGE !!!!!!
 #include "Init/Window.h"
 #include <Utils/String.h>
 #include <Utils/Static/CInOut.h>
@@ -21,8 +22,7 @@
 
 #include <time.h>
 
-#include <Utils/Timer.h>// NEEDS TO BE OVER FREE IMAGE !!!!!!
-#include "Rendering/Texture/Texture.h"
+#include "Rendering/Renderer/Texture/Texture.h"
 
 using namespace Utils;
 using namespace Core::Init;
@@ -43,11 +43,7 @@ int main() {
 	Shader& shader1 = *s1;
 	shader1.enable();
 
-
-	std::vector<Renderable2D*> sprites;
-
 	srand(time(NULL));
-	   
 	// SETTING LAYER 1 (Top Layer)
 	/*Core::Tests::TopLayer TLayer1(&shader1);
 	TLayer1.add(new Sprite(-2, -2, 4, 4, Maths::vec4(0.3, 0.5, 0.6, 1)));*/
@@ -55,28 +51,40 @@ int main() {
 	// SETTING LAYER 2 (Bottom Layer)
 	Core::Tests::TopLayer TLayer2(&shader1);
 	//Core::Tests::TopLayer TLayer3(&shader3);
-	
-	for (float y = -9.0f; y < 9.0f; y+=0.1) {		
 
-		for (float x = -16.0f; x < 16.0f; x+=0.1) {
+	Texture* textures[] =
+	{
+		new Texture("Assets/Test/test.png"),
+		new Texture("Assets/Test/tb.png"),
+		new Texture("Assets/Test/tc.png")
+	};
+	
+	for (float y = -9.0f; y < 9.0f; y+=2) {		
+
+		for (float x = -16.0f; x < 16.0f; x+=2) {
 		
-			TLayer2.add(new Sprite(x, y, 0.09f, 0.09f, Maths::vec4(rand() % 1000 / 1000.0f, 0.3f, 0.5f, 1)));
+			if(rand() % 4 == 0)
+				TLayer2.add(new Sprite(x, y, 1.9f, 1.9f, Maths::vec4(rand() % 1000 / 1000.0f, 0.3f, 0.5f, 1)));
+			else
+				TLayer2.add(new Sprite(x, y, 1.9f, 1.9f, textures[rand() % 3]));
 
 		}
 
 	}
+
+	GLint texIDs[] =
+	{
+		0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+	};
 
 	// Declare the renderer
 	Batch2DRenderer renderer;
 
 	Maths::mat4 ortho = Maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f);
 
-	// SHADER 3
-	glActiveTexture(GL_TEXTURE0);
-	Texture texture("Assets/Test/747.png");
-	texture.bind();
+	// SHADER 1
 	shader1.enable();
-	shader1.setUniform1i("tex", 0); //0 because Texture is set on chanel 0
+	shader1.setUniform1iv("textures", texIDs, 10); 
 	shader1.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
 	shader1.setUniformMat4("pr_matrix", ortho);
 
@@ -102,6 +110,9 @@ int main() {
 			fps = 0;
 		}
 	}
+
+	for (int i = 0; i < 3; i++)
+		delete textures[i];
 
 	return 0;
 }

@@ -12,6 +12,7 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vertexarray
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\indexbuffer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\buffer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\batch2drenderer.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ramjet_starter.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\texture_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\shader_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\scene_manager.obj
@@ -24,7 +25,7 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\cinout.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vec4.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vec3.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vec2.obj
-d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ramjet_starter.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\texture.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\ramjet_core.exe
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\ramjet_core.pdb
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\ramjet_core.ipdb

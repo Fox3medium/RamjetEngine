@@ -3,6 +3,7 @@
 #include "Buffers/Buffers.h"
 #include "Shader/Shader.h"
 #include "Renderer2D.h"
+#include "Texture/Texture.h"
 
 #include <Utils/Maths/maths.h>
 
@@ -15,6 +16,7 @@ namespace Core {
 		struct VertexData {
 			Maths::vec3 vertex;
 			Maths::vec2 uv;
+			float tid;
 			unsigned int color;
 		};
 	
@@ -25,6 +27,7 @@ namespace Core {
 			Maths::vec2 m_Size;
 			Maths::vec4 m_Color;
 			std::vector<Maths::vec2> m_UV;
+			Texture* m_Texture;
 
 		protected:
 			Renderable2D() { setUVDefault();  }
@@ -49,6 +52,8 @@ namespace Core {
 			inline const Maths::vec2& getSize() const { return m_Size; }
 			inline const Maths::vec4& getColor() const { return m_Color; }
 			inline const std::vector<Maths::vec2>& getUV() const { return m_UV; }
+			// Return texture ID if texture is not nullptr
+			inline const GLuint getTextureID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
 
 		private:
 

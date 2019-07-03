@@ -35,9 +35,19 @@ namespace Core {
 			glUniform1i(getUniformLocation(uniVarName), value);
 		}
 
+		void Shader::setUniform1iv(const GLchar* uniVarName, int* value, int count)
+		{
+			glUniform1iv(getUniformLocation(uniVarName), count, value);
+		}
+
 		void Shader::setUniform1f(const GLchar* uniVarName, float value)
 		{
 			glUniform1f(getUniformLocation(uniVarName), value);
+		}
+
+		void Shader::setUniform1fv(const GLchar* uniVarName, float* value, int count)
+		{
+			glUniform1fv(getUniformLocation(uniVarName), count, value);
 		}
 
 		void Shader::setUniform2f(const GLchar* uniVarName, const Maths::vec2& value)

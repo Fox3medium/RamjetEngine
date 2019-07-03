@@ -17,7 +17,8 @@ namespace Core {
 
 		#define SHADER_VERTEX_INDEX		0
 		#define SHADER_UV_INDEX			1
-		#define SHADER_COLOR_INDEX		2
+		#define SHADER_TEXTURE_INDEX	2
+		#define SHADER_COLOR_INDEX		3
 
 		class Batch2DRenderer : public Renderer2D {
 
@@ -27,6 +28,7 @@ namespace Core {
 			IndexBuffer* m_IBO;
 			GLsizei m_IndexCount;
 			VertexData* m_Buffer;
+			std::vector<GLuint> m_TextureSlots;
 
 		public:
 			Batch2DRenderer();

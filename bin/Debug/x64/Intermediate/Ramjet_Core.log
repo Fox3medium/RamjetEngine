@@ -1,9 +1,14 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   Ramjet_Starter.cpp
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\minwindef.h(130,1): warning C4005:  'APIENTRY': macro redefinition
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\Includes\GLFW\glfw3.h(104): message :  see previous definition of 'APIENTRY'
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(55,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(67,42): warning C4305:  '+=': truncation from 'double' to 'float'
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(69,45): warning C4305:  '+=': truncation from 'double' to 'float'
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(46,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Ramjet_Core.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.exe
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\fragment_shader_test.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textFragShader.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textVertShader.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\vertex_shader_test.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\747.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tb.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tc.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\test.png
+  8 File(s) copied

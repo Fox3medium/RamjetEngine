@@ -26,7 +26,9 @@ namespace Core {
 				~Shader();				
 
 				void setUniform1i(const GLchar* uniVarName, int value);
+				void setUniform1iv(const GLchar* uniVarName, int* value, int count);
 				void setUniform1f(const GLchar* uniVarName, float value);
+				void setUniform1fv(const GLchar* uniVarName, float* value, int count);
 				void setUniform2f(const GLchar* uniVarName, const Maths::vec2& value);
 				void setUniform3f(const GLchar* uniVarName, const Maths::vec3& value);
 				void setUniform4f(const GLchar* uniVarName, const Maths::vec4& value);
