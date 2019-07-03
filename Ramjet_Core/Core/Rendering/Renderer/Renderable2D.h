@@ -14,7 +14,7 @@ namespace Core {
 
 		struct VertexData {
 			Maths::vec3 vertex;
-			//Maths::vec4 color;
+			Maths::vec2 uv;
 			unsigned int color;
 		};
 	
@@ -24,14 +24,16 @@ namespace Core {
 			Maths::vec3 m_Position;
 			Maths::vec2 m_Size;
 			Maths::vec4 m_Color;
+			std::vector<Maths::vec2> m_UV;
 
 		protected:
-			Renderable2D() {}
+			Renderable2D() { setUVDefault();  }
 
 		public:
 			Renderable2D(Maths::vec3 position, Maths::vec2 size, Maths::vec4 color)
 				: m_Position(position), m_Size(size), m_Color(color)
 			{
+				setUVDefault();
 			}
 
 			virtual ~Renderable2D() {
@@ -46,6 +48,17 @@ namespace Core {
 			inline const Maths::vec3& getPosition() const { return m_Position; }
 			inline const Maths::vec2& getSize() const { return m_Size; }
 			inline const Maths::vec4& getColor() const { return m_Color; }
+			inline const std::vector<Maths::vec2>& getUV() const { return m_UV; }
+
+		private:
+
+			void setUVDefault() 
+			{
+				m_UV.push_back(Maths::vec2(0, 0));
+				m_UV.push_back(Maths::vec2(0, 1));
+				m_UV.push_back(Maths::vec2(1, 1));
+				m_UV.push_back(Maths::vec2(1, 0));			
+			}
 
 		};
 

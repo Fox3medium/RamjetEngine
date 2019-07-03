@@ -26,6 +26,7 @@ namespace Core {
 			const Maths::vec3& position = renderable->getPosition();
 			const Maths::vec2& size = renderable->getSize();
 			const Maths::vec4& color = renderable->getColor();
+			const std::vector<Maths::vec2>& uv = renderable->getUV();
 
 			int r = color.x * 255.0f;
 			int g = color.y * 255.0f;
@@ -35,18 +36,22 @@ namespace Core {
 			unsigned int col = a << 24 | b << 16 | g << 8 | r;
 
 			m_Buffer->vertex = *m_TransformationBack * position;
+			m_Buffer->uv = uv[0];
 			m_Buffer->color = col;
 			m_Buffer++;
 
 			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x, position.y + size.y, position.z);
+			m_Buffer->uv = uv[1];
 			m_Buffer->color = col;
 			m_Buffer++;
 
 			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y + size.y, position.z);
+			m_Buffer->uv = uv[2];
 			m_Buffer->color = col;
 			m_Buffer++;
 
 			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->uv = uv[3];
 			m_Buffer->color = col;
 			m_Buffer++;
 
@@ -80,8 +85,11 @@ namespace Core {
 			glBindVertexArray(m_VAO);
 			glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 			glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
+
 			glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
+			glEnableVertexAttribArray(SHADER_UV_INDEX);
 			glEnableVertexAttribArray(SHADER_COLOR_INDEX);
+
 			glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
 			// Using multiplications to know get the offset needed for the buffer size is quite slow.
 			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
@@ -90,6 +98,8 @@ namespace Core {
 			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
 			// USE UNSIGNED INT
 			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
+			glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::uv)));
+
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 			GLuint* indices = new GLuint[RENDERER_INDICES_SIZE];
