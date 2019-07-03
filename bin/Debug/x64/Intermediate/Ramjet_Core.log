@@ -27,13 +27,13 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(84,21): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Static_Sprite.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(62,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(63,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(64,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(65,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
   Fileutils.cpp
   mat4.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(65,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Test\Layers\TopLayer.cpp)
   vec2.cpp
   vec3.cpp
@@ -49,15 +49,11 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(49,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   distance-field.c
   edtaa3func.c
-  font-manager.c
   platform.c
-  text-buffer.c
   texture-atlas.c
   texture-font.c
   utf8-utils.c
   vector.c
-  vertex-attribute.c
-  vertex-buffer.c
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,55): warning C4101:  'pfrac': unreferenced local variable
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,26): warning C4101:  'phiscaled': unreferenced local variable
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,75): warning C4101:  'err1': unreferenced local variable
@@ -82,54 +78,16 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(662,15): warning C4101:  'c': unreferenced local variable
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(720,31): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(722,39): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(722,39): warning C4267: D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(647) : error C4703: potentially uninitialized local pointer variable 'ft_glyph' used
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(311,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(312,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(313,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(314,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(315,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(316,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(345,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(346,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(347,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(348,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(349,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(350,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(378,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(379,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(380,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(381,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(382,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(383,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(411,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(412,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(413,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(414,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(415,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(416,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(443,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(444,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(445,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(446,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(447,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\text-buffer.c(448,39): warning C4267:  '=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(84,45): warning C4267:  '=': conversion from 'size_t' to 'GLsizei', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(198,22): warning C4477:  'fprintf' : format string '%ld' requires an argument of type 'long', but variadic argument 1 has type 'size_t'
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(198,22): message :  consider using '%zd' in the format string
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(198,22): warning C4477:  'fprintf' : format string '%ld' requires an argument of type 'long', but variadic argument 2 has type 'size_t'
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(198,22): message :  consider using '%zd' in the format string
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(420,42): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(426,66): warning C4267:  'function': conversion from 'size_t' to 'GLint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(426,73): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(441,37): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(445,39): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(515,65): warning C4267:  '+=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(559,72): warning C4267:  '-=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(602,69): warning C4267:  '+=': conversion from 'size_t' to 'GLuint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(606,20): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(607,20): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(608,20): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(609,20): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(640,35): warning C4267:  '-=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\vertex-buffer.c(641,35): warning C4267:  '-=': conversion from 'size_t' to 'int', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets(429,5): error MSB6006: "CL.exe" exited with code 2.
+     Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+  Ramjet_Core.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.exe
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\fragment_shader_test.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textFragShader.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textVertShader.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\vertex_shader_test.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\747.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tb.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tc.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\test.png
+  8 File(s) copied

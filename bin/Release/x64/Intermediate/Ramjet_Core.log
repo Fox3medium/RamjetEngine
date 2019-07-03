@@ -1,12 +1,4 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-     Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.exp
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  Generating code
-  1 of 562 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
   Ramjet_Core.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.exe
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\fragment_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textFragShader.glsl
