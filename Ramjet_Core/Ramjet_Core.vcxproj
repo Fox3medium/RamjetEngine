@@ -74,16 +74,16 @@
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -106,14 +106,20 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;NDEBUG;_LIB;FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <EnablePREfast>false</EnablePREfast>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -147,7 +153,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;NDEBUG;_LIB;FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
@@ -155,12 +161,21 @@
       <OmitFramePointers>false</OmitFramePointers>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <EnablePREfast>false</EnablePREfast>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <DisableSpecificWarnings>
+      </DisableSpecificWarnings>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SupportJustMyCode>true</SupportJustMyCode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -196,6 +211,13 @@
     <ClCompile Include="Core\Utils\Static\CInOut.cpp" />
     <ClCompile Include="Core\Utils\String.cpp" />
     <ClCompile Include="Core\Utils\Timer.cpp" />
+    <ClCompile Include="Ext\Freetype-GL\src\distance-field.c" />
+    <ClCompile Include="Ext\Freetype-GL\src\edtaa3func.c" />
+    <ClCompile Include="Ext\Freetype-GL\src\platform.c" />
+    <ClCompile Include="Ext\Freetype-GL\src\texture-atlas.c" />
+    <ClCompile Include="Ext\Freetype-GL\src\texture-font.c" />
+    <ClCompile Include="Ext\Freetype-GL\src\utf8-utils.c" />
+    <ClCompile Include="Ext\Freetype-GL\src\vector.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Controls\IControl.h" />
@@ -236,6 +258,17 @@
     <ClInclude Include="Core\Utils\Static\CInOut.h" />
     <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\distance-field.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\edtaa3func.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\freetype-gl.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\markup.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\opengl.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\platform.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\texture-atlas.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\texture-font.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\utf8-utils.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\vec234.h" />
+    <ClInclude Include="Ext\Freetype-GL\src\vector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\fragment_shader_test.glsl" />
@@ -250,6 +283,5 @@
     <Image Include="Assets\Test\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

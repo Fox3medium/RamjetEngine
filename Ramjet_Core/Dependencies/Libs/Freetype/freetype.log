@@ -1,0 +1,74 @@
+﻿  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  autofit.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftbase.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftbbox.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftbdf.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftbitmap.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftcid.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftfntfmt.c
+  ftfstype.c
+  ftgasp.c
+  ftglyph.c
+  ftgxval.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftinit.c
+  ftlcdfil.c
+  ftmm.c
+  ftotval.c
+  ftpatent.c
+  ftpfr.c
+  ftstroke.c
+  ftsynth.c
+  ftsystem.c
+  fttype1.c
+  ftwinfnt.c
+  bdf.c
+  ftcache.c
+  cff.c
+  type1cid.c
+  ftgzip.c
+  ftlzw.c
+  pcf.c
+  pfr.c
+  psaux.c
+  pshinter.c
+  psmodule.c
+  raster.c
+  sfnt.c
+  smooth.c
+  truetype.c
+  type1.c
+  type42.c
+  winfnt.c
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\psaux\psintrp.c(1001,29): warning C4267:  '=': conversion from 'size_t' to 'FT_Fast', possible loss of data (compiling source file ..\..\..\src\psaux\psaux.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\smooth\ftgrays.c(1773,26): warning C4267:  '+=': conversion from 'size_t' to 'TCoord', possible loss of data (compiling source file ..\..\..\src\smooth\smooth.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\sfnt\sfdriver.c(838,32): warning C4267:  '=': conversion from 'size_t' to 'FT_UInt', possible loss of data (compiling source file ..\..\..\src\sfnt\sfnt.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\sfnt\sfdriver.c(989,44): warning C4244:  'function': conversion from '__int64' to 'const unsigned int', possible loss of data (compiling source file ..\..\..\src\sfnt\sfnt.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\truetype\ttgload.c(1797,42): warning C4312:  'type cast': conversion from 'unsigned long' to 'void *' of greater size (compiling source file ..\..\..\src\truetype\truetype.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(273,49): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(293,58): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(325,65): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(355,23): warning C4267:  '=': conversion from 'size_t' to 'FT_UInt', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(562,57): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(568,56): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(574,59): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(580,61): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1driver.c(586,56): warning C4267:  '=': conversion from 'size_t' to 'FT_ULong', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1load.c(1581,68): warning C4244:  '=': conversion from '__int64' to 'FT_Int', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type1\t1load.c(1742,40): warning C4244:  '=': conversion from '__int64' to 'FT_Int', possible loss of data (compiling source file ..\..\..\src\type1\type1.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type42\t42parse.c(821,66): warning C4244:  '=': conversion from '__int64' to 'FT_Int', possible loss of data (compiling source file ..\..\..\src\type42\type42.c)
+D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\type42\t42parse.c(821,66): warning C4244: D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\src\truetype\ttgxvar.c(2137) : warning C4701: potentially uninitialized local variable 'fvar_head' used
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  ftdebug.c
+  freetype.vcxproj -> D:\GameEngine\OpenGL LIbs\Freetype\freetype-2.9\builds\windows\vc2010\..\..\..\objs\x64\Release Static\freetype.lib

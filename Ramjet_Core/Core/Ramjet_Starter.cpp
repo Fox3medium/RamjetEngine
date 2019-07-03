@@ -5,6 +5,9 @@
 #include <Utils/Maths/maths.h>
 #include <Utils/Fileutils.h>
 
+#include <freetype/ft2build.h>
+#include <freetype/freetype/freetype.h>
+
 #include "Rendering/Renderer/Shader/Shader.h"
 #include "Managers/Control_Manager.h"
 
