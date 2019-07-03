@@ -30,11 +30,11 @@ namespace Core {
 			Texture* m_Texture;
 
 		protected:
-			Renderable2D() { setUVDefault();  }
+			Renderable2D() : m_Texture(nullptr) { setUVDefault();  }
 
 		public:
 			Renderable2D(Maths::vec3 position, Maths::vec2 size, Maths::vec4 color)
-				: m_Position(position), m_Size(size), m_Color(color)
+				: m_Position(position), m_Size(size), m_Color(color), m_Texture(nullptr)
 			{
 				setUVDefault();
 			}
@@ -53,7 +53,7 @@ namespace Core {
 			inline const Maths::vec4& getColor() const { return m_Color; }
 			inline const std::vector<Maths::vec2>& getUV() const { return m_UV; }
 			// Return texture ID if texture is not nullptr
-			inline const GLuint getTextureID() const { return m_Texture == nullptr ? 0 : m_Texture->getID(); }
+			inline const GLuint getTextureID() const { return m_Texture ? m_Texture->getID() : 0; }
 
 		private:
 

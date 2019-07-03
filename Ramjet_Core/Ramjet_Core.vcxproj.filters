@@ -102,19 +102,13 @@
     <ClCompile Include="Ext\Freetype-GL\src\texture-atlas.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ext\Freetype-GL\src\utf8-utils.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Ext\Freetype-GL\src\vector.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Ext\Freetype-GL\src\texture-font.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Ext\Freetype-GL\src\distance-field.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Ext\Freetype-GL\src\edtaa3func.c">
+    <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -245,9 +239,6 @@
     <ClInclude Include="Ext\Freetype-GL\src\texture-atlas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ext\Freetype-GL\src\utf8-utils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Ext\Freetype-GL\src\vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -257,13 +248,7 @@
     <ClInclude Include="Ext\Freetype-GL\src\vec234.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Ext\Freetype-GL\src\distance-field.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ext\Freetype-GL\src\markup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Ext\Freetype-GL\src\edtaa3func.h">
+    <ClInclude Include="Core\Rendering\Renderer\Models\Label.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

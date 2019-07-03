@@ -1,93 +1,16 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Window.cpp
-  Control_Manager.cpp
-  Layer_Manager.cpp
-  Scene_Manager.cpp
-  Shader_Manager.cpp
-  Texture_Manager.cpp
   Ramjet_Starter.cpp
-  Batch2DRenderer.cpp
-  Buffer.cpp
-  IndexBuffer.cpp
-  VertexArray.cpp
-  Group.cpp
-  Layer.cpp
-  Sprite.cpp
-  Static_Sprite.cpp
-  Shader.cpp
-  Simple2DRenderer.cpp
-  Texture.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Init\Window.cpp)
-  TopLayer.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Managers\Control_Manager.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Groups\Group.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Shader\Shader.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Simple2DRenderer.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(84,21): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Static_Sprite.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(62,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(63,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(64,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
-  Fileutils.cpp
-  mat4.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(65,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Test\Layers\TopLayer.cpp)
-  vec2.cpp
-  vec3.cpp
-  vec4.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Sprite.cpp(13,100): warning C4305:  'argument': truncation from 'double' to 'const float'
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Ramjet_Starter.cpp)
-  CInOut.cpp
-  String.cpp
-  Timer.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Utils\Fileutils.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Utils\Maths\mat4.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Utils\Static\CInOut.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(49,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  distance-field.c
-  edtaa3func.c
-  platform.c
-  texture-atlas.c
-  texture-font.c
-  utf8-utils.c
-  vector.c
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,55): warning C4101:  'pfrac': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,26): warning C4101:  'phiscaled': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,75): warning C4101:  'err1': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(67,15): warning C4101:  'p': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(67,17): warning C4101:  'q': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,46): warning C4101:  'errsign': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,21): warning C4101:  'phi': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,81): warning C4101:  'err': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,69): warning C4101:  'err0': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,62): warning C4101:  'qfrac': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\edtaa3func.c(68,37): warning C4101:  'ascaled': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(24,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(121,23): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(197,31): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(222,32): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(223,20): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(179,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(271,27): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(66,49): warning C4267:  'function': conversion from 'size_t' to 'FT_Long', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(616,63): warning C4267:  'function': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(616,71): warning C4267:  'function': conversion from 'size_t' to 'unsigned int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(662,15): warning C4101:  'c': unreferenced local variable
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(720,31): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(722,39): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
-     Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.exp
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(50,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Ramjet_Core.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.exe
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\fragment_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textFragShader.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textVertShader.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\vertex_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\747.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\SourceCodePro-Light.ttf
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\SourceSansPro-Light.ttf
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tb.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tc.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\test.png
-  8 File(s) copied
+  10 File(s) copied

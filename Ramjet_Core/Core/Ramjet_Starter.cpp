@@ -26,6 +26,7 @@
 #include <time.h>
 
 #include "Rendering/Renderer/Texture/Texture.h"
+#include "Rendering/Renderer/Models/Label.h"
 
 using namespace Utils;
 using namespace Core::Init;
@@ -75,6 +76,13 @@ int main() {
 
 	}
 
+	Group* g = new Group(Maths::mat4::translation(Maths::vec3(-15.8f, 7.0f, 0.0f)));
+	Label* fpsL = new Label("", 0.4f, 0.4f, Maths::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	g->add(new Sprite(0, 0, 5, 1.5f, Maths::vec4(0.3f, 0.3f, 0.3f, 0.8f)));
+	g->add(fpsL);
+
+	TLayer2.add(g);
+
 	GLint texIDs[] =
 	{
 		0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -109,6 +117,7 @@ int main() {
 		fps++;
 		if (time.elapsed() - timer > 1.0f) {
 			timer += 1.0f;
+			fpsL->setText(fps, " fps");
 			printf("%d fps\n", fps);
 			fps = 0;
 		}

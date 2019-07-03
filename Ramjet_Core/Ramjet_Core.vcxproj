@@ -74,7 +74,7 @@
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
@@ -83,7 +83,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -197,6 +197,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Groups\Group.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Static_Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
@@ -211,12 +212,9 @@
     <ClCompile Include="Core\Utils\Static\CInOut.cpp" />
     <ClCompile Include="Core\Utils\String.cpp" />
     <ClCompile Include="Core\Utils\Timer.cpp" />
-    <ClCompile Include="Ext\Freetype-GL\src\distance-field.c" />
-    <ClCompile Include="Ext\Freetype-GL\src\edtaa3func.c" />
     <ClCompile Include="Ext\Freetype-GL\src\platform.c" />
     <ClCompile Include="Ext\Freetype-GL\src\texture-atlas.c" />
     <ClCompile Include="Ext\Freetype-GL\src\texture-font.c" />
-    <ClCompile Include="Ext\Freetype-GL\src\utf8-utils.c" />
     <ClCompile Include="Ext\Freetype-GL\src\vector.c" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +237,7 @@
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
     <ClInclude Include="Core\Rendering\Renderer\Groups\Group.h" />
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Models\Label.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Static_Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
@@ -258,15 +257,11 @@
     <ClInclude Include="Core\Utils\Static\CInOut.h" />
     <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
-    <ClInclude Include="Ext\Freetype-GL\src\distance-field.h" />
-    <ClInclude Include="Ext\Freetype-GL\src\edtaa3func.h" />
     <ClInclude Include="Ext\Freetype-GL\src\freetype-gl.h" />
-    <ClInclude Include="Ext\Freetype-GL\src\markup.h" />
     <ClInclude Include="Ext\Freetype-GL\src\opengl.h" />
     <ClInclude Include="Ext\Freetype-GL\src\platform.h" />
     <ClInclude Include="Ext\Freetype-GL\src\texture-atlas.h" />
     <ClInclude Include="Ext\Freetype-GL\src\texture-font.h" />
-    <ClInclude Include="Ext\Freetype-GL\src\utf8-utils.h" />
     <ClInclude Include="Ext\Freetype-GL\src\vec234.h" />
     <ClInclude Include="Ext\Freetype-GL\src\vector.h" />
   </ItemGroup>

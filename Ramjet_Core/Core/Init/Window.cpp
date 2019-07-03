@@ -83,6 +83,9 @@ namespace Core {
 			glfwSetMouseButtonCallback(m_Window, processMButtonInput);
 			glfwSwapInterval(0.0); //Disable VSync = 0.0, Enable VSync = 1.0
 
+			glEnable(GL_BLEND);
+			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 			return true;
 
 		}
