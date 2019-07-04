@@ -185,8 +185,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core\Init\Window.cpp" />
+    <ClCompile Include="Core\Managers\AI\AI_Director.cpp" />
+    <ClCompile Include="Core\Managers\AI\Behaviour_Manager.cpp" />
+    <ClCompile Include="Core\Managers\AI\Strategy_Manager.cpp" />
+    <ClCompile Include="Core\Managers\AI\Wave_Manager.cpp" />
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
     <ClCompile Include="Core\Managers\Font_Manager.cpp" />
+    <ClCompile Include="Core\Managers\AI_Manager.cpp" />
     <ClCompile Include="Core\Managers\Layer_Manager.cpp" />
     <ClCompile Include="Core\Managers\Scene_Manager.cpp" />
     <ClCompile Include="Core\Managers\Shader_Manager.cpp" />
@@ -227,6 +232,11 @@
     <ClInclude Include="Core\Init\IListener.h" />
     <ClInclude Include="Core\Init\Window.h" />
     <ClInclude Include="Core\Init\WindowInfo.h" />
+    <ClInclude Include="Core\Managers\AI\AI_Director.h" />
+    <ClInclude Include="Core\Managers\AI\Behaviour_Manager.h" />
+    <ClInclude Include="Core\Managers\AI\Strategy_Manager.h" />
+    <ClInclude Include="Core\Managers\AI\Wave_Manager.h" />
+    <ClInclude Include="Core\Managers\AI_Manager.h" />
     <ClInclude Include="Core\Managers\Control_Manager.h" />
     <ClInclude Include="Core\Managers\Font_Manager.h" />
     <ClInclude Include="Core\Managers\Layer_Manager.h" />
