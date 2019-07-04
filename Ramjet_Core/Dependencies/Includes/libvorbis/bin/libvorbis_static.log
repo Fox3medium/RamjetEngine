@@ -1,0 +1,47 @@
+﻿  analysis.c
+  bitrate.c
+  block.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\block.c(255,10): warning C4456:  declaration of 'i' hides previous local declaration
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\block.c(171,7): message :  see declaration of 'i'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\block.c(1028,10): warning C4456:  declaration of 'i' hides previous local declaration
+  codebook.c
+  envelope.c
+  floor0.c
+  floor1.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\block.c(971,7): message :  see declaration of 'i'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\floor1.c(496,15): warning C4457:  declaration of 'a' hides function parameter
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\floor1.c(456,32): message :  see declaration of 'a'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\floor1.c(713,13): warning C4456:  declaration of 'y0' hides previous local declaration
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\floor1.c(612,9): message :  see declaration of 'y0'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\floor1.c(714,13): warning C4456:  declaration of 'y1' hides previous local declaration
+  info.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\floor1.c(613,9): message :  see declaration of 'y1'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(61,9): warning C4996:  'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(69,9): warning C4996:  'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(70,9): warning C4996:  'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(71,9): warning C4996:  'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(94,9): warning C4996:  'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(95,9): warning C4996:  'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(116,9): warning C4996:  'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  lookup.c
+  lpc.c
+  lsp.c
+  mapping0.c
+  mdct.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\info.c(117,9): warning C4996:  'strcat': This function or variable may be unsafe. Consider using strcat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\mdct.c(78,32): warning C4456:  declaration of 'i' hides previous local declaration
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\mdct.c(55,7): message :  see declaration of 'i'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\mdct.c(439,19): warning C4456:  declaration of 'iX' hides previous local declaration
+  psy.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\mdct.c(403,14): message :  see declaration of 'iX'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\psy.c(238,16): warning C4456:  declaration of 'bin' hides previous local declaration
+  registry.c
+  res0.c
+  sharedbook.c
+  smallft.c
+  synthesis.c
+  vorbisenc.c
+  Compiling...
+  window.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\psy.c(159,27): message :  see declaration of 'bin'
+  libvorbis_static.vcxproj -> D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\win32\VS2010\x64\Release\libvorbis_static.lib

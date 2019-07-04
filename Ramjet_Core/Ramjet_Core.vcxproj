@@ -74,16 +74,16 @@
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
-    <IncludePath>$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
     <RunCodeAnalysis>false</RunCodeAnalysis>
@@ -119,7 +119,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbisfile_static.lib;libogg.lib;libvorbis_static.lib;OpenAL32.lib;freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -151,7 +151,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;NDEBUG;_LIB;FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -175,7 +175,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbisfile_static.lib;libogg.lib;libvorbis_static.lib;OpenAL32.lib;freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
     </Link>
@@ -223,6 +223,12 @@
     <ClCompile Include="Ext\Freetype-GL\src\texture-atlas.c" />
     <ClCompile Include="Ext\Freetype-GL\src\texture-font.c" />
     <ClCompile Include="Ext\Freetype-GL\src\vector.c" />
+    <ClCompile Include="Ext\gorilla-audio\common\gc_common.c" />
+    <ClCompile Include="Ext\gorilla-audio\common\gc_thread.c" />
+    <ClCompile Include="Ext\gorilla-audio\devices\ga_openal.c" />
+    <ClCompile Include="Ext\gorilla-audio\ga.c" />
+    <ClCompile Include="Ext\gorilla-audio\gau.c" />
+    <ClCompile Include="Ext\gorilla-audio\ga_stream.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Controls\IControl.h" />
@@ -278,6 +284,13 @@
     <ClInclude Include="Ext\Freetype-GL\src\texture-font.h" />
     <ClInclude Include="Ext\Freetype-GL\src\vec234.h" />
     <ClInclude Include="Ext\Freetype-GL\src\vector.h" />
+    <ClInclude Include="Ext\gorilla-audio\common\gc_common.h" />
+    <ClInclude Include="Ext\gorilla-audio\common\gc_thread.h" />
+    <ClInclude Include="Ext\gorilla-audio\common\gc_types.h" />
+    <ClInclude Include="Ext\gorilla-audio\devices\ga_openal.h" />
+    <ClInclude Include="Ext\gorilla-audio\ga.h" />
+    <ClInclude Include="Ext\gorilla-audio\gau.h" />
+    <ClInclude Include="Ext\gorilla-audio\ga_internal.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\fragment_shader_test.glsl" />

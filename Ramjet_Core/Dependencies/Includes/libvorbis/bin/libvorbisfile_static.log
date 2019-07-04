@@ -1,0 +1,23 @@
+﻿  vorbisfile.c
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(71,1): warning C4267:  'initializing': conversion from 'size_t' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(258,42): warning C4244:  'function': conversion from 'ogg_int64_t' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(272,27): warning C4244:  '=': conversion from 'ogg_int64_t' to 'int', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(544,25): warning C4244:  'return': conversion from 'ogg_int64_t' to 'int', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(565,23): warning C4244:  'return': conversion from 'ogg_int64_t' to 'int', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(568,23): warning C4244:  'return': conversion from 'ogg_int64_t' to 'int', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(578,23): warning C4244:  'return': conversion from 'ogg_int64_t' to 'int', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(640,23): warning C4244:  'return': conversion from 'ogg_int64_t' to 'int', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(873,21): warning C4244:  'function': conversion from 'ogg_int64_t' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1011,1): warning C4996:  'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): message :  see declaration of 'fopen'
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1117,35): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1118,21): warning C4244:  'return': conversion from 'double' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1122,80): warning C4244:  'return': conversion from 'double' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1150,54): warning C4244:  '=': conversion from 'double' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1763,39): warning C4244:  '=': conversion from 'ogg_int64_t' to 'long', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1800,1): warning C4244:  'initializing': conversion from 'double' to 'ogg_int64_t', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(1830,1): warning C4244:  'initializing': conversion from 'double' to 'ogg_int64_t', possible loss of data
+D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\lib\vorbisfile.c(2166,1): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1445,5): warning MSB8012: TargetPath(D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\win32\VS2010\x64\Release\libvorbisfile.lib) does not match the Library's OutputFile property value (D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\win32\VS2010\x64\Release\libvorbisfile_static.lib). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1447,5): warning MSB8012: TargetName(libvorbisfile) does not match the Library's OutputFile property value (libvorbisfile_static). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Lib.OutputFile).
+  libvorbisfile_static.vcxproj -> D:\GameEngine\OpenGL LIbs\libvorbis-1.3.6\win32\VS2010\x64\Release\libvorbisfile.lib

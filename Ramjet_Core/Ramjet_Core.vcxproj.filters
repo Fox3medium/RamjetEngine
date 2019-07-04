@@ -132,6 +132,24 @@
     <ClCompile Include="Core\Managers\AI\Wave_Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ext\gorilla-audio\common\gc_common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\gorilla-audio\common\gc_thread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\gorilla-audio\devices\ga_openal.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\gorilla-audio\ga.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\gorilla-audio\ga_stream.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Ext\gorilla-audio\gau.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -291,6 +309,27 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Managers\AI\Wave_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\common\gc_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\common\gc_thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\common\gc_types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\devices\ga_openal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\ga.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\ga_internal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Ext\gorilla-audio\gau.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

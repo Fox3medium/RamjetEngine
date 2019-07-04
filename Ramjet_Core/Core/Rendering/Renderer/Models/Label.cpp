@@ -6,6 +6,13 @@ namespace Core {
 	using namespace Manager;
 
 	namespace Rendering {
+		Label::Label(std::string text, float x, float y, unsigned int color)
+			: Renderable2D(), m_Text(text), position(m_Position), m_Font(Font_Manager::get("SourceSansPro"))
+		{
+			position = Maths::vec3(x, y, 0.0f);
+			m_Color = color;
+		}
+
 		Label::Label(std::string text, float x, float y, Font* font, unsigned int color)
 			: Renderable2D(), m_Text(text), position(m_Position), m_Font(font)
 		{

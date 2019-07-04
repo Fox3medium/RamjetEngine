@@ -14,7 +14,7 @@ namespace Core {
 		Font* Font_Manager::get(const std::string& name)
 		{
 			std::map<std::string, Font*>::iterator i = m_Fonts.find(name);
-			if (i == m_Fonts.end()) {
+			if (i != m_Fonts.end()) {
 				return m_Fonts[name];
 			}
 			return m_Fonts["SourceSansPro"];
@@ -22,8 +22,9 @@ namespace Core {
 
 		Font* Font_Manager::get(const std::string& name, unsigned int size)
 		{
-			std::map<std::string, Font*>::iterator i = m_Fonts.find(name + std::to_string(size));
-			if (i == m_Fonts.end()) {
+			std::string n = name + std::to_string(size);
+			std::map<std::string, Font*>::iterator i = m_Fonts.find(n);
+			if (i != m_Fonts.end()) {
 				return m_Fonts[name+std::to_string(size)];
 			}
 			
