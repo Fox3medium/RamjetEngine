@@ -6,7 +6,7 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Rend
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(55,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(56,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(57,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(59,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(66,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
      Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.exp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
@@ -19,11 +19,10 @@ glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textVertShader.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\vertex_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\747.png
-  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\BWV542.wav
-  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\Nimrod.wav
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\SourceCodePro-Light.ttf
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\SourceSansPro-Light.ttf
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tb.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tc.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\test.png
-  12 File(s) copied
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\untitled.wav
+  11 File(s) copied

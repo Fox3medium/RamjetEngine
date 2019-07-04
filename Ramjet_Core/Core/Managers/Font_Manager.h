@@ -21,7 +21,7 @@ namespace Core {
 			static void clean();
 
 		private:
-			Font_Manager();
+			Font_Manager() {}
 			
 		};
 

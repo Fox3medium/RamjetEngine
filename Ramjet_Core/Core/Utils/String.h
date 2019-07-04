@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-
+#include <vector>
 
 namespace Utils {
 
@@ -100,6 +100,10 @@ namespace Utils {
 		/*!
 		*/
 		String subStr(unsigned start) const;
+
+		/*!
+		*/
+		std::vector<std::string> splitStr(const std::string &str, char delimeter) const;
 
 		/*!
 		*/

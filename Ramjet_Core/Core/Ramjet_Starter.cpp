@@ -9,7 +9,6 @@
 #include <freetype/freetype/freetype.h>
 
 #include "Rendering/Renderer/Shader/Shader.h"
-#include "Managers/Control_Manager.h"
 
 #include "Rendering/Renderer/Buffers/Buffers.h"
 #include "Rendering/Renderer/Simple2DRenderer.h"
@@ -29,7 +28,10 @@
 #include <gorilla-audio/ga.h>
 #include <gorilla-audio/gau.h>
 
+// MANAGERS
+#include <Control_Manager.h>
 #include <Font_Manager.h>
+#include <Sound_Manager.h>
 
 using namespace Utils;
 using namespace Core::Init;
@@ -48,6 +50,11 @@ int main() {
 	Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 32));
 	Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 24));
 	Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 12));
+
+	Sound_Manager::init();
+	Sound_Manager::add(new Sound("test", "Assets/Test/untitled.wav"));
+
+
 
 	Shader* s1 = new Shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
 	Shader* s2 = new Shader("Assets/Shaders/textVertShader.glsl", "Assets/Shaders/textFragShader.glsl");
@@ -126,6 +133,7 @@ int main() {
 	while (!window.closed()) {
 
 		window.clear();
+		
 		double x, y;
 		C_Manager->getMousePosition(x, y);
 		// WHEN MULTIPLE SHADER. SHADERS MUST BE ENABLED !!!
@@ -144,6 +152,7 @@ int main() {
 			rs[i]->setColor(Maths::vec4(c, 0, 1, 1));
 		}
 
+		Sound_Manager::update();
 		window.update();
 		fps++;
 		if (time.elapsed() - timer > 1.0f) {
@@ -158,6 +167,7 @@ int main() {
 		delete textures[i];
 
 	Font_Manager::clean();
+	Sound_Manager::clean();
 
 	return 0;
 }

@@ -48,6 +48,30 @@ namespace Core {
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)
 				CInOut::Out("YOU PRESS ALT");
 
+			// SOUND MANAGER TEST 
+			if (glfwGetKey(activeWin, GLFW_KEY_P) == GLFW_PRESS)
+				Sound_Manager::get("test")->play();
+			if (glfwGetKey(activeWin, GLFW_KEY_L) == GLFW_PRESS)
+				Sound_Manager::get("test")->loop();
+			if (glfwGetKey(activeWin, GLFW_KEY_O) == GLFW_PRESS)
+				Sound_Manager::get("test")->pause();
+			if (glfwGetKey(activeWin, GLFW_KEY_I) == GLFW_PRESS)
+				Sound_Manager::get("test")->resume();
+			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS)
+				Sound_Manager::get("test")->stop();
+
+			if (glfwGetKey(activeWin, GLFW_KEY_UP) == GLFW_PRESS) 
+			{
+				Sound_Manager::get("test")->setGain(0.05f);				
+			}
+				
+
+			if (glfwGetKey(activeWin, GLFW_KEY_DOWN) == GLFW_PRESS)
+			{
+				Sound_Manager::get("test")->setGain(-0.05f);
+			}
+
+
 			// MOUSE INPUT
 			if (glfwGetMouseButton(activeWin, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS)
 				CInOut::Out("YOU PRESS MB1");

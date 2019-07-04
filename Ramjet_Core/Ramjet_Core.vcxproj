@@ -184,6 +184,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Core\Audio\Sound.cpp" />
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\AI\AI_Director.cpp" />
     <ClCompile Include="Core\Managers\AI\Behaviour_Manager.cpp" />
@@ -195,6 +196,7 @@
     <ClCompile Include="Core\Managers\Layer_Manager.cpp" />
     <ClCompile Include="Core\Managers\Scene_Manager.cpp" />
     <ClCompile Include="Core\Managers\Shader_Manager.cpp" />
+    <ClCompile Include="Core\Managers\Sound_Manager.cpp" />
     <ClCompile Include="Core\Managers\Texture_Manager.cpp" />
     <ClCompile Include="Core\Ramjet_Starter.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
@@ -231,6 +233,7 @@
     <ClCompile Include="Ext\gorilla-audio\ga_stream.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Audio\Sound.h" />
     <ClInclude Include="Core\Controls\IControl.h" />
     <ClInclude Include="Core\Init\ContextInfo.h" />
     <ClInclude Include="Core\Init\DebugOutput.h" />
@@ -248,6 +251,7 @@
     <ClInclude Include="Core\Managers\Layer_Manager.h" />
     <ClInclude Include="Core\Managers\Scene_Manager.h" />
     <ClInclude Include="Core\Managers\Shader_Manager.h" />
+    <ClInclude Include="Core\Managers\Sound_Manager.h" />
     <ClInclude Include="Core\Managers\Texture_Manager.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
@@ -276,6 +280,7 @@
     <ClInclude Include="Core\Utils\Maths\vec4.h" />
     <ClInclude Include="Core\Utils\Static\CInOut.h" />
     <ClInclude Include="Core\Utils\String.h" />
+    <ClInclude Include="Core\Utils\StringUtils.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
     <ClInclude Include="Ext\Freetype-GL\src\freetype-gl.h" />
     <ClInclude Include="Ext\Freetype-GL\src\opengl.h" />
