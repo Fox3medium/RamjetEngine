@@ -23,34 +23,37 @@
 
 #include "Test/Layers/TopLayer.h"
 
-#include <time.h>
-
 #include "Rendering/Renderer/Texture/Texture.h"
 #include "Rendering/Renderer/Models/Label.h"
+
+#include <Font_Manager.h>
 
 using namespace Utils;
 using namespace Core::Init;
 using namespace Core::Manager;
 using namespace Core::Rendering;
 
-#define BATCH_RENDERER		1
-#define TEST_50K_SPRITES	1
-
 int main() {
 
-	Window window("Test", 800, 600);
+	Window window("Test", 960, 540);
 
 	Control_Manager* C_Manager = new Control_Manager();
 	window.setControl(C_Manager);
 
+	Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 32));
+	Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 24));
+	Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 12));
+
 	Shader* s1 = new Shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
+	Shader* s2 = new Shader("Assets/Shaders/textVertShader.glsl", "Assets/Shaders/textFragShader.glsl");
 	Shader& shader1 = *s1;
+	Shader& shader2 = *s2;
 	shader1.enable();
+	shader2.enable();
 
 	srand(time(NULL));
 	// SETTING LAYER 1 (Top Layer)
-	/*Core::Tests::TopLayer TLayer1(&shader1);
-	TLayer1.add(new Sprite(-2, -2, 4, 4, Maths::vec4(0.3, 0.5, 0.6, 1)));*/
+	Core::Tests::TopLayer TLayer1(&shader2);
 
 	// SETTING LAYER 2 (Bottom Layer)
 	Core::Tests::TopLayer TLayer2(&shader1);
@@ -63,25 +66,31 @@ int main() {
 		new Texture("Assets/Test/tc.png")
 	};
 	
-	for (float y = -9.0f; y < 9.0f; y+=2) {		
+	for (float y = -9.0f; y < 9.0f; y+=1.0) {		
 
-		for (float x = -16.0f; x < 16.0f; x+=2) {
+		for (float x = -16.0f; x < 16.0f; x+=1.0) {
 		
-			if(rand() % 4 == 0)
-				TLayer2.add(new Sprite(x, y, 1.9f, 1.9f, Maths::vec4(rand() % 1000 / 1000.0f, 0.3f, 0.5f, 1)));
+			if (rand() % 4 == 0) 
+			{
+				int r = rand() % 256;
+
+				int col = 0xffff00 << 8 | r;
+
+				TLayer2.add(new Sprite(x, y, 0.9f, 0.9f, col));
+			}				
 			else
-				TLayer2.add(new Sprite(x, y, 1.9f, 1.9f, textures[rand() % 3]));
+				TLayer2.add(new Sprite(x, y, 0.9f, 0.9f, textures[rand() % 3]));
 
 		}
 
 	}
 
 	Group* g = new Group(Maths::mat4::translation(Maths::vec3(-15.8f, 7.0f, 0.0f)));
-	Label* fpsL = new Label("", 0.4f, 0.4f, Maths::vec4(1.0f, 1.0f, 1.0f, 1.0f));
-	g->add(new Sprite(0, 0, 5, 1.5f, Maths::vec4(0.3f, 0.3f, 0.3f, 0.8f)));
+	Label* fpsL = new Label("", 0.4f, 0.4f, "SourceSansPro", 12, CONSOLE_COLOR_RED);
+	g->add(new Sprite(0, 0, 5, 1.5f, CONSOLE_BACKGROUND));
 	g->add(fpsL);
 
-	TLayer2.add(g);
+	TLayer1.add(g);
 
 	GLint texIDs[] =
 	{
@@ -99,19 +108,36 @@ int main() {
 	shader1.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
 	shader1.setUniformMat4("pr_matrix", ortho);
 
+	// SHADER 1
+	shader2.enable();
+	shader2.setUniform1iv("textures", texIDs, 10);
+	shader2.setUniform2f("light_pos", Maths::vec2(4.0f, 1.5f));
+	shader2.setUniformMat4("pr_matrix", ortho);
+
 	Timer time;
 	float timer = 0.0f;
 	unsigned int fps = 0;
 
 	while (!window.closed()) {
+
 		window.clear();
 		double x, y;
 		C_Manager->getMousePosition(x, y);
 		// WHEN MULTIPLE SHADER. SHADERS MUST BE ENABLED !!!
 		shader1.enable();
-		shader1.setUniform2f("light_pos", Maths::vec2((float)(x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.0f)));
+		shader1.setUniform2f("light_pos", Maths::vec2((float)(x * 32.0f / window.getWidth() -16.0f), (float)(9.0f - y * 18.0f / window.getHeight())));
+
+		shader2.enable();
 
 		TLayer2.render();
+		TLayer1.render();
+
+		const std::vector<Renderable2D*>& rs = TLayer2.getRenderable();
+		for (int i = 0; i < rs.size(); i++)
+		{
+			float c = sin(window.getLastTime()) / 2 + 0.5f;
+			rs[i]->setColor(Maths::vec4(c, 0, 1, 1));
+		}
 
 		window.update();
 		fps++;
@@ -125,6 +151,8 @@ int main() {
 
 	for (int i = 0; i < 3; i++)
 		delete textures[i];
+
+	Font_Manager::clean();
 
 	return 0;
 }

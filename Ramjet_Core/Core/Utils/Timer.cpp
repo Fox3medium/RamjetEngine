@@ -2,22 +2,15 @@
 
 Utils::Timer::Timer()
 {
-	LARGE_INTEGER frequency;
-	QueryPerformanceFrequency(&frequency);
-	m_Frequency = 1.0 / frequency.QuadPart;
-	QueryPerformanceCounter(&m_TimeStart);
+	reset();
 }
 
 void Utils::Timer::reset()
 {
-	QueryPerformanceCounter(&m_TimeStart);
-
+	m_Start = HighResolutionClock::now();
 }
 
 float Utils::Timer::elapsed()
 {
-	LARGE_INTEGER currentTIme;
-	QueryPerformanceCounter(&currentTIme);
-	unsigned __int64 cycle = currentTIme.QuadPart - m_TimeStart.QuadPart;
-	return float(cycle * m_Frequency);
+	return std::chrono::duration_cast<milliseconds_type>(HighResolutionClock::now() - m_Start).count() / 1000.0f;
 }

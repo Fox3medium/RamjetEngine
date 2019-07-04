@@ -74,7 +74,7 @@
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
@@ -186,6 +186,7 @@
   <ItemGroup>
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
+    <ClCompile Include="Core\Managers\Font_Manager.cpp" />
     <ClCompile Include="Core\Managers\Layer_Manager.cpp" />
     <ClCompile Include="Core\Managers\Scene_Manager.cpp" />
     <ClCompile Include="Core\Managers\Shader_Manager.cpp" />
@@ -195,6 +196,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Font\Font.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Groups\Group.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp" />
@@ -226,6 +228,7 @@
     <ClInclude Include="Core\Init\Window.h" />
     <ClInclude Include="Core\Init\WindowInfo.h" />
     <ClInclude Include="Core\Managers\Control_Manager.h" />
+    <ClInclude Include="Core\Managers\Font_Manager.h" />
     <ClInclude Include="Core\Managers\Layer_Manager.h" />
     <ClInclude Include="Core\Managers\Scene_Manager.h" />
     <ClInclude Include="Core\Managers\Shader_Manager.h" />
@@ -235,6 +238,7 @@
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Font\Font.h" />
     <ClInclude Include="Core\Rendering\Renderer\Groups\Group.h" />
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Label.h" />

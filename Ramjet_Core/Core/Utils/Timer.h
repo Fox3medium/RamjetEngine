@@ -1,14 +1,15 @@
 #pragma once
 
-#include <Windows.h>
+#include <chrono>
 
 namespace Utils {
 
 	class Timer {
 	
 	private:
-		LARGE_INTEGER m_TimeStart;
-		double m_Frequency;
+		typedef std::chrono::high_resolution_clock HighResolutionClock;
+		typedef std::chrono::duration<float, std::milli> milliseconds_type;
+		std::chrono::time_point<HighResolutionClock> m_Start;
 
 	public:
 		Timer();

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\</FILEPATH>
+      <FILENAME>Batch2DRenderer.cpp</FILENAME>
+      <LINE>146</LINE>
+      <COLUMN>62</COLUMN>
+    </SFA>
+    <DEFECTCODE>26451</DEFECTCODE>
+    <DESCRIPTION>Arithmetic overflow: Using operator '-' on a 4 byte value and then casting the result to a 8 byte value. Cast the value to the wider type before calling operator '-' to avoid overflow (io.2).</DESCRIPTION>
+    <FUNCTION>Core::Rendering::Batch2DRenderer::drawString</FUNCTION>
+    <DECORATED>?drawString@Batch2DRenderer@Rendering@Core@@UEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUvec3@Maths@Utils@@AEBUvec4@78@@Z</DECORATED>
+    <FUNCLINE>97</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

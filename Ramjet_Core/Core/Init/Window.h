@@ -55,7 +55,7 @@ namespace Core {
 
 
 
-			private :
+			protected :
 
 				bool init(const WindowInfo& windowInfo, const ContextInfo& contextInfo, const FramebufferInfo& framebufferInfo);
 
@@ -80,6 +80,9 @@ namespace Core {
 				//LISTENER FUNCTIONS
 				static void setListener(IListener*& listener);
 				static void setControl(Control_Manager*& control);
+
+				static float getDeltaTime();
+				static float getLastTime();
 
 			private:
 

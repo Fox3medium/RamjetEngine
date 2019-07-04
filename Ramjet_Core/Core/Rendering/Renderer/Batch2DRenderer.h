@@ -5,8 +5,6 @@
 #include "Renderable2D.h"
 #include "Buffers/IndexBuffer.h"
 
-#include <freetype-gl.h>
-
 namespace Core {
 
 	namespace Rendering {
@@ -32,16 +30,13 @@ namespace Core {
 			VertexData* m_Buffer;
 			std::vector<GLuint> m_TextureSlots;
 
-			ftgl::texture_atlas_t* m_FTAtlas;
-			ftgl::texture_font_t* m_FTFont;
-
 		public:
 			Batch2DRenderer();
 			~Batch2DRenderer();
 
 			void begin() override;
 			void submit(const Renderable2D* renderable) override;
-			void drawString(std::string& text, const Maths::vec3& position, const Maths::vec4& Color) override;
+			void drawString(std::string& text, const Maths::vec3& position, const Font& font, unsigned int color) override;
 			void end() override;
 			void flush() override;
 

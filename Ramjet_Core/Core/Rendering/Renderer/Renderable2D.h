@@ -25,7 +25,7 @@ namespace Core {
 		protected:
 			Maths::vec3 m_Position;
 			Maths::vec2 m_Size;
-			Maths::vec4 m_Color;
+			unsigned int m_Color;
 			std::vector<Maths::vec2> m_UV;
 			Texture* m_Texture;
 
@@ -33,7 +33,7 @@ namespace Core {
 			Renderable2D() : m_Texture(nullptr) { setUVDefault();  }
 
 		public:
-			Renderable2D(Maths::vec3 position, Maths::vec2 size, Maths::vec4 color)
+			Renderable2D(Maths::vec3 position, Maths::vec2 size, unsigned int color)
 				: m_Position(position), m_Size(size), m_Color(color), m_Texture(nullptr)
 			{
 				setUVDefault();
@@ -48,9 +48,20 @@ namespace Core {
 				renderer->submit(this);
 			}
 
+			void setColor(unsigned int color) { m_Color = color; }
+			void setColor(const Maths::vec4& color)
+			{
+				int r = color.x * 255.0f;
+				int g = color.y * 255.0f;
+				int b = color.z * 255.0f;
+				int a = color.w * 255.0f;
+
+				m_Color = a << 24 | b << 16 | g << 8 | r;
+			}
+
 			inline const Maths::vec3& getPosition() const { return m_Position; }
 			inline const Maths::vec2& getSize() const { return m_Size; }
-			inline const Maths::vec4& getColor() const { return m_Color; }
+			inline const unsigned int getColor() const { return m_Color; }
 			inline const std::vector<Maths::vec2>& getUV() const { return m_UV; }
 			// Return texture ID if texture is not nullptr
 			inline const GLuint getTextureID() const { return m_Texture ? m_Texture->getID() : 0; }

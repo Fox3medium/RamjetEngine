@@ -10,7 +10,7 @@ namespace Core {
 		GLFWwindow* Window::m_Window;*/
 		IListener* Window::m_listener = NULL;
 		IControl* Window::m_control = NULL;
-		float Window::m_deltaTime = 0;
+		float Window::m_deltaTime = 0.0f;
 		float Window::m_last = 0;
 
 		Window::Window(const char* in_name, int in_width, int in_height)
@@ -20,7 +20,7 @@ namespace Core {
 			m_Height = in_height;
 			m_Closed = false;
 
-			WindowInfo WInfo = WindowInfo();
+			WindowInfo WInfo = WindowInfo(in_width, in_height);
 			ContextInfo CInfo = ContextInfo();
 			FramebufferInfo FInfo = FramebufferInfo();
 
@@ -74,7 +74,7 @@ namespace Core {
 
 			std::cout << "OpenGL version : " << glGetString(GL_VERSION) << std::endl;
 
-			glfwSetWindowSizeCallback(m_Window, windowSizeCallback);
+			glfwSetFramebufferSizeCallback(m_Window, windowSizeCallback);
 			glfwSetWindowUserPointer(m_Window, this);
 			glfwSetWindowRefreshCallback(m_Window, idleCallback);
 			glfwSetCursorPosCallback(m_Window, processMouseInput);
@@ -101,6 +101,7 @@ namespace Core {
 
 		void Window::update()
 		{
+			tick();
 			GLenum error = glGetError();
 			if (error != GL_NO_ERROR)
 				std::cout << "OpenGL Error: " << error << std::endl;
@@ -128,6 +129,9 @@ namespace Core {
 		{
 			//glfwGetFramebufferSize(m_Window, &m_Width, &m_Height);
 			glViewport(0, 0, width, height);
+			Window* win = (Window*)glfwGetWindowUserPointer(window);
+			win->m_Width = width;
+			win->m_Height = height;
 		}
 
 		void Window::idleCallback(GLFWwindow* window)
@@ -165,6 +169,9 @@ namespace Core {
 
 		void Window::tick()
 		{
+			float current = glfwGetTime();
+			m_deltaTime = current - m_last;
+			m_last = current;
 		}
 
 		void Window::setListener(IListener*& listener)
@@ -174,6 +181,16 @@ namespace Core {
 		void Window::setControl(Control_Manager*& control)
 		{
 			m_control = control;
+		}
+
+		float Window::getDeltaTime()
+		{
+			return m_deltaTime;
+		}
+
+		float Window::getLastTime()
+		{
+			return m_last;
 		}
 
 	}

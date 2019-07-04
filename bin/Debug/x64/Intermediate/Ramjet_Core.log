@@ -1,7 +1,11 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   Ramjet_Starter.cpp
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(50,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(54,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(55,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(56,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(57,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Ramjet_Starter.cpp(48,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Ramjet_Core.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Debug\x64\Ramjet_Core.exe
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\fragment_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textFragShader.glsl

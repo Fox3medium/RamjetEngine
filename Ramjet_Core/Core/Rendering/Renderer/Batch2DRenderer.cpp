@@ -25,12 +25,11 @@ namespace Core {
 		{
 			const Maths::vec3& position = renderable->getPosition();
 			const Maths::vec2& size = renderable->getSize();
-			const Maths::vec4& color = renderable->getColor();
+			const unsigned int color = renderable->getColor();
 			const std::vector<Maths::vec2>& uv = renderable->getUV();
 			const GLuint tid = renderable->getTextureID();
 
 			float textureSlot = 0.0f;
-			unsigned int col = 0;
 
 			if (tid > 0)
 			{
@@ -56,60 +55,44 @@ namespace Core {
 					m_TextureSlots.push_back(tid);
 					textureSlot = (float)(m_TextureSlots.size());
 				}
-			}
-
-			int r = color.x * 255.0f;
-			int g = color.y * 255.0f;
-			int b = color.z * 255.0f;
-			int a = color.w * 255.0f;
-
-			col = a << 24 | b << 16 | g << 8 | r;
-
-			
+			}			
 
 			m_Buffer->vertex = *m_TransformationBack * position;
 			m_Buffer->uv = uv[0];
 			m_Buffer->tid = textureSlot;
-			m_Buffer->color = col;
+			m_Buffer->color = color;
 			m_Buffer++;
 
 			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x, position.y + size.y, position.z);
 			m_Buffer->uv = uv[1];
 			m_Buffer->tid = textureSlot;
-			m_Buffer->color = col;
+			m_Buffer->color = color;
 			m_Buffer++;
 
 			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y + size.y, position.z);
 			m_Buffer->uv = uv[2];
 			m_Buffer->tid = textureSlot;
-			m_Buffer->color = col;
+			m_Buffer->color = color;
 			m_Buffer++;
 
 			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y, position.z);
 			m_Buffer->uv = uv[3];
 			m_Buffer->tid = textureSlot;
-			m_Buffer->color = col;
+			m_Buffer->color = color;
 			m_Buffer++;
 
 			m_IndexCount += 6;
 		}
 
-		void Batch2DRenderer::drawString(std::string& text, const Maths::vec3& position, const Maths::vec4& Color)
+		void Batch2DRenderer::drawString(std::string& text, const Maths::vec3& position, const Font& font, unsigned int color)
 		{
 			using namespace ftgl;
-
-			int r = Color.x * 255.0f;
-			int g = Color.y * 255.0f;
-			int b = Color.z * 255.0f;
-			int a = Color.w * 255.0f;
-
-			unsigned int col = a << 24 | b << 16 | g << 8 | r;
 
 			float ts = 0.0f;
 			bool found = false;
 			for (int i = 0; i < m_TextureSlots.size(); i++)
 			{
-				if (m_TextureSlots[i] == m_FTAtlas->id)
+				if (m_TextureSlots[i] == font.getID())
 				{
 					ts = (float)(i + 1);
 					found = true;
@@ -125,7 +108,7 @@ namespace Core {
 					flush();
 					begin();
 				}
-				m_TextureSlots.push_back(m_FTAtlas->id);
+				m_TextureSlots.push_back(font.getID());
 				ts = (float)(m_TextureSlots.size());
 			}
 
@@ -134,10 +117,12 @@ namespace Core {
 
 			float x = position.x;
 
+			texture_font_t* ftFont = font.getFTFont();
+
 			for (int i = 0; i < text.length(); i++)
 			{
 				char c = text[i];
-				texture_glyph_t* glyph = texture_font_get_glyph(m_FTFont, c);
+				texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
 				if (glyph != NULL)
 				{
 
@@ -160,25 +145,25 @@ namespace Core {
 					m_Buffer->vertex = *m_TransformationBack * Maths::vec3(x0, y0, 0);
 					m_Buffer->uv = Maths::vec2(u0, v0);
 					m_Buffer->tid = ts;
-					m_Buffer->color = col;
+					m_Buffer->color = color;
 					m_Buffer++;
 
 					m_Buffer->vertex = *m_TransformationBack * Maths::vec3(x0, y1, 0);
 					m_Buffer->uv = Maths::vec2(u0, v1);
 					m_Buffer->tid = ts;
-					m_Buffer->color = col;
+					m_Buffer->color = color;
 					m_Buffer++;
 
 					m_Buffer->vertex = *m_TransformationBack * Maths::vec3(x1, y1, 0);
 					m_Buffer->uv = Maths::vec2(u1, v1);
 					m_Buffer->tid = ts;
-					m_Buffer->color = col;
+					m_Buffer->color = color;
 					m_Buffer++;
 
 					m_Buffer->vertex = *m_TransformationBack * Maths::vec3(x1, y0, 0);
 					m_Buffer->uv = Maths::vec2(u1, v0);
 					m_Buffer->tid = ts;
-					m_Buffer->color = col;
+					m_Buffer->color = color;
 					m_Buffer++;
 
 					m_IndexCount += 6;
@@ -259,9 +244,6 @@ namespace Core {
 			m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
 			glBindVertexArray(0);
-
-			m_FTAtlas = ftgl::texture_atlas_new(512, 512, 2);
-			m_FTFont = ftgl::texture_font_new_from_file(m_FTAtlas, 32, "Assets/Test/SourceSansPro-Light.ttf");
 		}
 
 	}

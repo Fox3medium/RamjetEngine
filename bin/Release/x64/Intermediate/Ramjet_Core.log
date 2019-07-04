@@ -1,11 +1,15 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
-  texture-font.c
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(93,49): warning C4267:  'function': conversion from 'size_t' to 'FT_Long', possible loss of data
+  Batch2DRenderer.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(12,19): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(54,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(55,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(56,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(57,11): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
      Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin\Release\x64\Ramjet_Core.exp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  1 of 646 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  2 of 845 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

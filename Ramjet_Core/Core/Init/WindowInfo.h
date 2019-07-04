@@ -26,6 +26,16 @@ namespace Core {
 				bisFullscreen = false;
 			}
 
+			WindowInfo(int in_width, int in_height) {
+				name = "Game";
+				width = in_width;
+				height = in_height;
+				position_x = 500;
+				position_y = 300;
+				bisReshapable = true;
+				bisFullscreen = false;
+			}
+
 			WindowInfo(String inName, int start_position_x, int start_position_y, int inWidth, int inHeight, bool isReshapable, bool isFullscreen) {
 				name = inName;
 				width = inWidth;

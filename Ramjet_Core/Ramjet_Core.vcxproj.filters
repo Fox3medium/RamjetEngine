@@ -111,6 +111,12 @@
     <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Managers\Font_Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Rendering\Renderer\Font\Font.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -249,6 +255,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Rendering\Renderer\Models\Label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Managers\Font_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Rendering\Renderer\Font\Font.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
