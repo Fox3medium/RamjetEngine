@@ -1,7 +1,5 @@
 #include "Font.h"
 
-using namespace Utils;
-
 namespace Core {
 
 	namespace Rendering {
@@ -17,7 +15,7 @@ namespace Core {
 
 		void Font::setScale(float x, float y)
 		{
-			m_Scale = Utils::Maths::vec2(x, y);
+			m_Scale = Maths::vec2(x, y);
 		}
 
 	}

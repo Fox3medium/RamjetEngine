@@ -225,7 +225,10 @@
     <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
+    <ClCompile Include="Core\Utils\Maths\AABB.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
+    <ClCompile Include="Core\Utils\Maths\Quaternion.cpp" />
+    <ClCompile Include="Core\Utils\Maths\Rectangle.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec2.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec3.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec4.cpp" />
@@ -287,9 +290,13 @@
     <ClInclude Include="Core\Utils\Fileutils.h" />
     <ClInclude Include="Core\Utils\ImageLoader.h" />
     <ClInclude Include="Core\Utils\Log.h" />
+    <ClInclude Include="Core\Utils\Maths\AABB.h" />
     <ClInclude Include="Core\Utils\Maths\mat4.h" />
     <ClInclude Include="Core\Utils\Maths\maths.h" />
     <ClInclude Include="Core\Utils\Maths\maths_func.h" />
+    <ClInclude Include="Core\Utils\Maths\Quaternion.h" />
+    <ClInclude Include="Core\Utils\Maths\Rectangle.h" />
+    <ClInclude Include="Core\Utils\Maths\tvec2.h" />
     <ClInclude Include="Core\Utils\Maths\vec2.h" />
     <ClInclude Include="Core\Utils\Maths\vec3.h" />
     <ClInclude Include="Core\Utils\Maths\vec4.h" />

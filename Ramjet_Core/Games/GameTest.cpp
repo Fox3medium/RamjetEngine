@@ -37,8 +37,8 @@ public:
 		window->setControl(C_Manager);
 		shader = new Shader("Assets/Shaders/vertex_shader_test.glsl", "Assets/Shaders/fragment_shader_test.glsl");
 		shader1 = new Shader("Assets/Shaders/textVertShader.glsl", "Assets/Shaders/textFragShader.glsl");
-		layer = new Layer(new Batch2DRenderer(), shader, Maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
-		layerUI = new Layer(new Batch2DRenderer(), shader1, Maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+		layer = new Layer(new Batch2DRenderer(), shader, Maths::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+		layerUI = new Layer(new Batch2DRenderer(), shader1, Maths::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 		sprite = new Sprite(0.0f, 0.0f, 4, 4, new Texture("Assets/Test/tb.png"));
 		layer->add(sprite);
 

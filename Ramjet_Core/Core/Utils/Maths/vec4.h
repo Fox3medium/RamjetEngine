@@ -1,37 +1,42 @@
 #pragma once
 
-#include <iostream>
+#include "vec3.h"
 
-namespace Utils {
-	namespace Maths {
+namespace Maths {
 
-		struct vec4
-		{
-			float x, y, z, w;
+	struct mat4;
 
-			vec4() = default;
-			vec4(const float& x, const float& y, const float& z, const float& w);
+	struct vec4
+	{
+		float x, y, z, w;
 
-			vec4& add(const vec4& other);
-			vec4& subtract(const vec4& other);
-			vec4& multiply(const vec4& other);
-			vec4& divide(const vec4& other);
+		vec4() = default;
+		vec4(float scalar);
+		vec4(float x, float y, float z, float w);
+		vec4(const vec3& xyz, float w);
 
-			friend vec4 operator+(vec4 left, const vec4& right);
-			friend vec4 operator-(vec4 left, const vec4& right);
-			friend vec4 operator*(vec4 left, const vec4& right);
-			friend vec4 operator/(vec4 left, const vec4& right);
+		vec4& Add(const vec4& other);
+		vec4& Subtract(const vec4& other);
+		vec4& Multiply(const vec4& other);
+		vec4& Divide(const vec4& other);
 
-			bool operator==(const vec4& other);
-			bool operator!=(const vec4& other);
+		vec4 Multiply(const mat4& transform) const;
 
-			vec4& operator+=(const vec4& other);
-			vec4& operator-=(const vec4& other);
-			vec4& operator*=(const vec4& other);
-			vec4& operator/=(const vec4& other);
+		friend vec4 operator+(vec4 left, const vec4& right);
+		friend vec4 operator-(vec4 left, const vec4& right);
+		friend vec4 operator*(vec4 left, const vec4& right);
+		friend vec4 operator/(vec4 left, const vec4& right);
 
-			friend std::ostream& operator<<(std::ostream& stream, const vec4& vector);
-		};
+		bool operator==(const vec4& other);
+		bool operator!=(const vec4& other);
 
-	}
+		vec4& operator+=(const vec4& other);
+		vec4& operator-=(const vec4& other);
+		vec4& operator*=(const vec4& other);
+		vec4& operator/=(const vec4& other);
+
+		float Dot(const vec4& other);
+
+	};
+
 }

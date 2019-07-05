@@ -5,8 +5,6 @@
 #include <vector>
 #include "Font/Font.h"
 
-using namespace Utils;
-
 namespace Core {
 
 	namespace Rendering {
@@ -53,7 +51,7 @@ namespace Core {
 			virtual ~Renderer2D() {}
 		protected:
 			Renderer2D() {
-				m_TransformationStack.push_back(Maths::mat4::identity());
+				m_TransformationStack.push_back(Maths::mat4::Identity());
 				m_TransformationBack = &m_TransformationStack.back();
 			}		
 

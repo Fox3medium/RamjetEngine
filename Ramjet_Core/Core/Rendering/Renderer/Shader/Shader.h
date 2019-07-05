@@ -19,7 +19,7 @@ namespace Core {
 				const char* m_VertPath;
 				const char* m_FragPath;
 
-				std::map<String, GLuint> m_UniformMap;
+				std::map<std::string, GLuint> m_UniformMap;
 
 			public:
 				Shader(const char* vertPath, const char* fragPath);

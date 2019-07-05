@@ -23,7 +23,7 @@ namespace Core {
 
 		GLuint Shader::getUniformLocation(const GLchar* name)
 		{
-			std::map<String, GLuint>::iterator i = m_UniformMap.find(name);
+			std::map<std::string, GLuint>::iterator i = m_UniformMap.find(name);
 			if (i == m_UniformMap.end()) {
 				m_UniformMap[name] = glGetUniformLocation(m_ShaderID, name);
 			}
