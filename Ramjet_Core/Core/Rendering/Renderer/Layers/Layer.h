@@ -13,12 +13,10 @@ namespace Core {
 			Renderer2D* m_Renderer;
 			std::vector<Renderable2D*> m_Renderables;
 			Shader* m_Shader;
-			Maths::mat4 m_ProjectionMatrix;
-
-		protected:
-			Layer(Renderer2D* renderer, Shader* shader, Maths::mat4 projectionMatrix);
+			Maths::mat4 m_ProjectionMatrix;			
 
 		public:
+			Layer(Renderer2D* renderer, Shader* shader, Maths::mat4 projectionMatrix);
 			virtual ~Layer();
 			virtual void add(Renderable2D* renderable);
 			virtual void render();

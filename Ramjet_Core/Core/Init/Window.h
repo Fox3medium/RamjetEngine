@@ -19,10 +19,12 @@
 #include "IListener.h"
 #include "WindowInfo.h"
 
-using namespace Core::Manager;
-using namespace Core::Controls;
+
 
 namespace Core {
+
+	using namespace Manager;
+	using namespace Controls;
 
 	namespace Init{
 

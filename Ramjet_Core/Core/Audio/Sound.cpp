@@ -73,6 +73,8 @@ namespace Core {
 
 		void Sound::resume()
 		{
+			if (b_Playing)
+				return;
 			gc_int32 quit = 0;
 			ga_handle_play(m_Handle);
 			b_Playing = true;

@@ -13,11 +13,13 @@ namespace Core {
 		private:
 
 			Font* m_Font;
-			std::string& m_Text;
+			
 			Maths::vec3& position;
 			float m_x, m_y;
 
 		public:
+
+			std::string m_Text;
 
 			Label(std::string text, float x, float y, unsigned int color);
 			Label(std::string text, float x, float y, Font* font, unsigned int color);
@@ -26,6 +28,7 @@ namespace Core {
 			void submit(Renderer2D* renderer) const override;
 
 			void setText(unsigned int i , std::string s);
+			void setText(std::string s);
 
 			void validateFont(const std::string& name, int size = -1);
 		};

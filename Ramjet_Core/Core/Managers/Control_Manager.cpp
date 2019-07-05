@@ -10,11 +10,16 @@ namespace Core {
 		double Control_Manager::m_MouseY;
 		double Control_Manager::m_ScrollX;
 		double Control_Manager::m_ScrollY;
+		bool Control_Manager::m_keys[MAX_KEYS];
 
 		Control_Manager::Control_Manager()
 		{
 			playerSpeed = 2.5f;
 			gameStarted = false;
+
+			for (int i = 0; i < MAX_KEYS; i++)
+				m_keys[i] = false;
+
 			//playerCamera = new FPSCamera();
 		}
 
@@ -31,14 +36,40 @@ namespace Core {
 				glfwSetWindowShouldClose(activeWin, true);
 			if (glfwGetKey(activeWin, GLFW_KEY_SPACE) == GLFW_PRESS)
 				CInOut::Out("YOU PRESS SPACE BAR");
+			// RIGHT
 			if (glfwGetKey(activeWin, GLFW_KEY_D) == GLFW_PRESS)
+			{
+				m_keys[GLFW_KEY_D] = true;
 				CInOut::Out("YOU PRESS D");
+			}
+			else
+				m_keys[GLFW_KEY_D] = false;
+			// LEFT
 			if (glfwGetKey(activeWin, GLFW_KEY_A) == GLFW_PRESS)
+			{
+				m_keys[GLFW_KEY_A] = true;
 				CInOut::Out("YOU PRESS A");
+			}
+			else
+				m_keys[GLFW_KEY_A] = false;
+			//FORWARD
 			if (glfwGetKey(activeWin, GLFW_KEY_W) == GLFW_PRESS)
+			{
+				m_keys[GLFW_KEY_W] = true;
 				CInOut::Out("YOU PRESS W");
-			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS)
+			}
+			else
+				m_keys[GLFW_KEY_W] = false;
+			// BACK
+			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS) 
+			{
+				m_keys[GLFW_KEY_S] = true;
 				CInOut::Out("YOU PRESS S");
+			}
+			else
+				m_keys[GLFW_KEY_S] = false;
+				
+
 			if (glfwGetKey(activeWin, GLFW_KEY_E) == GLFW_PRESS)
 				CInOut::Out("YOU PRESS E");
 			if (glfwGetKey(activeWin, GLFW_KEY_Q) == GLFW_PRESS)
@@ -57,7 +88,7 @@ namespace Core {
 				Sound_Manager::get("test")->pause();
 			if (glfwGetKey(activeWin, GLFW_KEY_I) == GLFW_PRESS)
 				Sound_Manager::get("test")->resume();
-			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS)
+			if (glfwGetKey(activeWin, GLFW_KEY_U) == GLFW_PRESS)
 				Sound_Manager::get("test")->stop();
 
 			if (glfwGetKey(activeWin, GLFW_KEY_UP) == GLFW_PRESS) 
@@ -104,7 +135,7 @@ namespace Core {
 
 		bool Control_Manager::isKeyPressed(unsigned int keycode)
 		{
-			return true;
+			return m_keys[keycode];
 		}
 
 		void Control_Manager::getMousePosition(double& x, double& y) const

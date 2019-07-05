@@ -70,8 +70,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
@@ -136,14 +138,21 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libvorbisfile_static.lib;libogg.lib;libvorbis_static.lib;OpenAL32.lib;freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -152,7 +161,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
+      <ConformanceMode>false</ConformanceMode>
       <PreprocessorDefinitions>GLEW_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;WIN32;NDEBUG;_LIB;FT2_BUILD_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
@@ -162,14 +171,16 @@
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <EnablePREfast>false</EnablePREfast>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <RuntimeTypeInfo>
+      </RuntimeTypeInfo>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
       <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <SupportJustMyCode>true</SupportJustMyCode>
+      <SupportJustMyCode>false</SupportJustMyCode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -178,6 +189,8 @@
       <AdditionalDependencies>libvorbisfile_static.lib;libogg.lib;libvorbis_static.lib;OpenAL32.lib;freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>
       </AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <PostBuildEvent>
       <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
@@ -208,9 +221,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
-    <ClCompile Include="Core\Rendering\Renderer\Models\Static_Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
-    <ClCompile Include="Core\Rendering\Renderer\Simple2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
@@ -231,8 +242,10 @@
     <ClCompile Include="Ext\gorilla-audio\ga.c" />
     <ClCompile Include="Ext\gorilla-audio\gau.c" />
     <ClCompile Include="Ext\gorilla-audio\ga_stream.c" />
+    <ClCompile Include="Games\GameTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Core\2DEngine.h" />
     <ClInclude Include="Core\Audio\Sound.h" />
     <ClInclude Include="Core\Controls\IControl.h" />
     <ClInclude Include="Core\Init\ContextInfo.h" />
@@ -249,10 +262,13 @@
     <ClInclude Include="Core\Managers\Control_Manager.h" />
     <ClInclude Include="Core\Managers\Font_Manager.h" />
     <ClInclude Include="Core\Managers\Layer_Manager.h" />
+    <ClInclude Include="Core\Managers\Managers.h" />
     <ClInclude Include="Core\Managers\Scene_Manager.h" />
     <ClInclude Include="Core\Managers\Shader_Manager.h" />
     <ClInclude Include="Core\Managers\Sound_Manager.h" />
     <ClInclude Include="Core\Managers\Texture_Manager.h" />
+    <ClInclude Include="Core\Core.h" />
+    <ClInclude Include="Core\Rendering\Renderer\2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
@@ -263,11 +279,9 @@
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Label.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
-    <ClInclude Include="Core\Rendering\Renderer\Models\Static_Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
-    <ClInclude Include="Core\Rendering\Renderer\Simple2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Texture\Texture.h" />
     <ClInclude Include="Core\Test\Layers\TopLayer.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />

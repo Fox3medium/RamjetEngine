@@ -30,7 +30,7 @@ namespace Core {
 		public:
 			virtual void begin() {}
 			virtual void submit(const Renderable2D* renderable) = 0;
-			virtual void drawString(std::string& text, const Maths::vec3& position, const Font& font, unsigned int Color) {};
+			virtual void drawString(const std::string& text, const Maths::vec3& position, const Font& font, unsigned int Color) {};
 			virtual void flush() = 0;
 			virtual void end() {}
 

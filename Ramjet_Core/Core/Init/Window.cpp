@@ -112,7 +112,7 @@ namespace Core {
 
 		bool Window::closed() const
 		{
-			return glfwWindowShouldClose(m_Window);
+			return glfwWindowShouldClose(m_Window) == 1;
 		}
 
 		int Window::getWidth() const

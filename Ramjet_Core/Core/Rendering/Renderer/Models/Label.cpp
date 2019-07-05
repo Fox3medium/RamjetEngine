@@ -42,9 +42,14 @@ namespace Core {
 		{
 			renderer->drawString(m_Text, position, *m_Font, m_Color);
 		}
-		void Label::setText(unsigned int i, std::string s)
+		void Label::setText(unsigned int i,std::string s)
 		{
 			m_Text = std::to_string(i) + s;
+		}
+
+		void Label::setText(std::string s)
+		{
+			m_Text = s;
 		}
 
 		void Label::validateFont(const std::string& name, int size)

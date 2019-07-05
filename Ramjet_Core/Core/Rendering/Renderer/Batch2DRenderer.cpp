@@ -46,7 +46,7 @@ namespace Core {
 
 				if (!found)
 				{
-					if (m_TextureSlots.size() >= 32)
+					if (m_TextureSlots.size() >= RENDERER_MAX_TEXTURES)
 					{
 						end();
 						flush();
@@ -84,7 +84,7 @@ namespace Core {
 			m_IndexCount += 6;
 		}
 
-		void Batch2DRenderer::drawString(std::string& text, const Maths::vec3& position, const Font& font, unsigned int color)
+		void Batch2DRenderer::drawString(const std::string& text, const Maths::vec3& position, const Font& font, unsigned int color)
 		{
 			using namespace ftgl;
 
@@ -112,8 +112,9 @@ namespace Core {
 				ts = (float)(m_TextureSlots.size());
 			}
 
-			float scaleX = 960.0f / 32.0f;
-			float scaleY = 540.0f / 18.0f;
+			/*float scaleX = 960.0f / 32.0f;
+			float scaleY = 540.0f / 18.0f;*/
+			const Maths::vec2& scale = font.getScale();
 
 			float x = position.x;
 
@@ -129,13 +130,13 @@ namespace Core {
 					if (i > 0)
 					{
 						float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-						x += kerning / scaleX;
+						x += kerning / scale.x;
 					}
 
-					float x0 = x + glyph->offset_x / scaleX;
-					float y0 = position.y + glyph->offset_y / scaleY;
-					float x1 = x0 + glyph->width / scaleX;
-					float y1 = y0 - glyph->height / scaleY;
+					float x0 = x + glyph->offset_x / scale.x;
+					float y0 = position.y + glyph->offset_y / scale.y;
+					float x1 = x0 + glyph->width / scale.x;
+					float y1 = y0 - glyph->height / scale.y;
 
 					float u0 = glyph->s0;
 					float v0 = glyph->t0;
@@ -168,7 +169,7 @@ namespace Core {
 
 					m_IndexCount += 6;
 
-					x += glyph->advance_x / scaleX;
+					x += glyph->advance_x / scale.x;
 				}
 
 			}
@@ -197,6 +198,7 @@ namespace Core {
 			glBindVertexArray(0);
 
 			m_IndexCount = 0;
+			m_TextureSlots.clear();
 		}
 
 		void Batch2DRenderer::init()
