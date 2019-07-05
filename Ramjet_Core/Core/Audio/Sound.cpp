@@ -10,7 +10,7 @@ namespace Core {
 	namespace Audio {
 
 		Sound::Sound(const std::string& name, const std::string& filename)
-			: m_Name(name), m_FileName(filename), b_Playing(false)
+			: m_Name(name), m_FileName(filename), b_Playing(false), m_Count(0)
 		{
 			std::vector<std::string> split = Utils::split_string(m_FileName, '.');
 			if (split.size() < 2) {
@@ -33,7 +33,9 @@ namespace Core {
 		void destroy_on_finish(ga_Handle* in_Handle, void* in_context)
 		{
 			Sound* sound = (Sound*)in_Handle->sound;
-			sound->stop();
+			sound->m_Count--;
+			if(sound->m_Count == 0)
+				sound->stop();
 			// ga_handle_destroy(in_Handle);
 		}
 
@@ -52,6 +54,7 @@ namespace Core {
 			ga_handle_play(m_Handle);
 			b_Playing = true;
 			setGain(m_Gain);
+			m_Count++;
 		}
 
 		void Sound::loop()

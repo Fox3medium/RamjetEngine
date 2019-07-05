@@ -5,7 +5,7 @@
 
 namespace Utils {
 
-	static BYTE* load_image(const char* filename, GLsizei* width, GLsizei* height) {
+	static BYTE* load_image(const char* filename, GLsizei* width, GLsizei* height, unsigned int* bits) {
 		FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 		FIBITMAP* dib = nullptr;
 		fif = FreeImage_GetFileType(filename, 0);
@@ -22,9 +22,9 @@ namespace Utils {
 		*width = FreeImage_GetWidth(dib);
 		*height = FreeImage_GetHeight(dib);
 
-		int bits = FreeImage_GetBPP(dib);
+		*bits = FreeImage_GetBPP(dib);
 
-		int size = *width * *height * (bits / 8);
+		int size = *width * *height * (*bits / 8);
 		BYTE* result = new BYTE[size];
 		memcpy(result, pixels, size);
 

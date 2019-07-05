@@ -22,6 +22,8 @@ namespace Core {
 			ga_Handle* m_Handle;
 			gc_int32 m_Position;
 
+			unsigned int m_Count;
+
 			bool b_Playing;
 			float m_Gain;
 

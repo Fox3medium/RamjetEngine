@@ -137,7 +137,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>false</ConformanceMode>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
@@ -286,6 +286,7 @@
     <ClInclude Include="Core\Test\Layers\TopLayer.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />
     <ClInclude Include="Core\Utils\ImageLoader.h" />
+    <ClInclude Include="Core\Utils\Log.h" />
     <ClInclude Include="Core\Utils\Maths\mat4.h" />
     <ClInclude Include="Core\Utils\Maths\maths.h" />
     <ClInclude Include="Core\Utils\Maths\maths_func.h" />

@@ -1,16 +1,19 @@
 #pragma once
 
 // OpenGL
-#include <GLEW\glew.h>
-#include <GLFW\glfw3.h>
+#include <GLEW/glew.h>
+#include <GLFW/glfw3.h>
 
 // Listener
-#include "..//Controls/IControl.h" // Listener
-#include "..//Managers/Control_Manager.h" // Linked Manager
+#include "../Controls/IControl.h" // Listener
+#include "../Managers/Control_Manager.h" // Linked Manager
+#include "../Managers/Sound_Manager.h"
+#include "../Managers/Font_Manager.h"
+#include "../Managers/Texture_Manager.h"
 
 // Utilities
-#include <Utils\String.h>
-#include <Utils\Static\CInOut.h>
+#include <Utils/String.h>
+#include <Utils/Static/CInOut.h>
 
 // Other
 #include "ContextInfo.h"

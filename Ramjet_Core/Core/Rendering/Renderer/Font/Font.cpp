@@ -1,10 +1,13 @@
 #include "Font.h"
+
+using namespace Utils;
+
 namespace Core {
 
 	namespace Rendering {
 
 		Font::Font(std::string name, std::string filename, int size)
-			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(960/(12*2), 540/12)
+			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(960 / (size), 540 / (size / 2))
 		{
 			if (size != FONT_STD_SIZE)
 				m_Name = name + std::to_string(size);

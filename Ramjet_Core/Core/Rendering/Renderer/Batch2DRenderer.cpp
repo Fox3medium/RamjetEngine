@@ -5,6 +5,7 @@ namespace Core {
 	namespace Rendering {
 
 		Batch2DRenderer::Batch2DRenderer()
+			: m_IndexCount(0)
 		{
 			init();
 		}
@@ -13,6 +14,7 @@ namespace Core {
 		{
 			delete m_IBO;
 			glDeleteBuffers(1, &m_VBO);
+			glDeleteVertexArrays(1, &m_VAO);
 		}
 
 		void Batch2DRenderer::begin()

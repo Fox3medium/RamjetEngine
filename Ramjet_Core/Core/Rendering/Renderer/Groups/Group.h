@@ -17,6 +17,8 @@ namespace Core {
 			~Group();
 			void add(Renderable2D* renderable);
 			void submit(Renderer2D* renderer) const override;
+
+			Maths::mat4& getTransformRef() { return m_TransformationMatrix; }
 		};
 
 	}

@@ -30,6 +30,9 @@ namespace Core {
 
 		Window::~Window()
 		{
+			Manager::Font_Manager::clean();
+			Manager::Texture_Manager::clean();
+			Manager::Sound_Manager::clean();
 			glfwTerminate();
 		}
 
@@ -106,8 +109,10 @@ namespace Core {
 			if (error != GL_NO_ERROR)
 				std::cout << "OpenGL Error: " << error << std::endl;
 
-			glfwPollEvents();
 			glfwSwapBuffers(m_Window);
+			glfwPollEvents();
+
+			Manager::Sound_Manager::update();
 		}
 
 		bool Window::closed() const

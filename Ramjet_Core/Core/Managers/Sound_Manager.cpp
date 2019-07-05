@@ -20,6 +20,7 @@ namespace Core {
 		void Sound_Manager::add(Sound* sound)
 		{
 			m_Sounds[sound->getName()] = sound;
+			//return sound;
 		}
 
 		Sound* Sound_Manager::get(const std::string& name)
@@ -28,6 +29,7 @@ namespace Core {
 			if (i != m_Sounds.end()) {
 				return m_Sounds[name];
 			}
+			// TODO RETURN DEFAULT
 			return nullptr;
 		}
 
@@ -38,9 +40,12 @@ namespace Core {
 
 		void Sound_Manager::clean()
 		{
-			m_Sounds.clear();
-			gau_manager_destroy(m_Manager);
-			gc_shutdown();
+			if (!m_Sounds.empty()) {
+				gau_manager_destroy(m_Manager);
+				gc_shutdown();
+				m_Sounds.clear();
+			}
+			
 		}
 
 	}

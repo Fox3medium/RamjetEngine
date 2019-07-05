@@ -50,6 +50,7 @@ namespace Core {
 				m_TransformationBack = &m_TransformationStack.back();
 			}
 		
+			virtual ~Renderer2D() {}
 		protected:
 			Renderer2D() {
 				m_TransformationStack.push_back(Maths::mat4::identity());
