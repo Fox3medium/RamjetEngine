@@ -39,13 +39,13 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -84,7 +84,7 @@
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(WindowsSDK_IncludePath);$(VC_IncludePath);$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
@@ -251,7 +251,6 @@
     <ClCompile Include="Ext\gorilla-audio\ga.c" />
     <ClCompile Include="Ext\gorilla-audio\gau.c" />
     <ClCompile Include="Ext\gorilla-audio\ga_stream.c" />
-    <ClCompile Include="Games\GameTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\2DEngine.h" />
@@ -310,6 +309,7 @@
     <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\StringUtils.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
+    <ClInclude Include="Core\Core_OpenGL.h" />
     <ClInclude Include="Ext\Freetype-GL\src\freetype-gl.h" />
     <ClInclude Include="Ext\Freetype-GL\src\opengl.h" />
     <ClInclude Include="Ext\Freetype-GL\src\platform.h" />

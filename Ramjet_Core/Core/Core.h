@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../Core/Utils/Log.h"
 #include "2DEngine.h"
 
 namespace Core {

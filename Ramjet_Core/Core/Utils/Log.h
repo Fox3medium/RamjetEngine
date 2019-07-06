@@ -39,6 +39,21 @@ namespace Logs
 			static const bool value = (sizeof(test<T>(0)) == 1);
 		};
 
+
+		template <typename T>
+		static const char* to_string_internal(const T& v, const std::true_type& ignored)
+		{
+			sprintf(to_string_buffer, "Container of size: %d, contents: %s", v.size(), format_iterators(v.begin(), v.end()).c_str());
+			return to_string_buffer;
+		}
+
+		template <typename T>
+		static const char* to_string_internal(const T& t, const std::false_type& ignored)
+		{
+			auto x = std::to_string(t);
+			return strcpy(to_string_buffer, x.c_str());
+		}
+
 		template <typename T>
 		static const char* to_string(const T& t)
 		{
@@ -61,19 +76,6 @@ namespace Logs
 			return result;
 		}
 
-		template <typename T>
-		static const char* to_string_internal(const T& v, const std::true_type& ignored)
-		{
-			sprintf(to_string_buffer, "Container of size: %d, contents: %s", v.size(), format_iterators(v.begin(), v.end()).c_str());
-			return to_string_buffer;
-		}
-
-		template <typename T>
-		static const char* to_string_internal(const T& t, const std::false_type& ignored)
-		{
-			auto x = std::to_string(t);
-			return strcpy(to_string_buffer, x.c_str());
-		}
 
 		template<typename X, typename Y>
 		static const char* to_string(const std::pair<typename X, typename Y>& v)

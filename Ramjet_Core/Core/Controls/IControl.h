@@ -1,7 +1,7 @@
 #pragma once
 
-#include <GLEW\glew.h>
-#include <GLFW\glfw3.h>
+#include <GLEW/glew.h>
+#include <GLFW/glfw3.h>
 
 namespace Core {
 

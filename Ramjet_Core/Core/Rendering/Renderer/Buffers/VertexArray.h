@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include <GLEW\glew.h>
+#include <GLEW/glew.h>
 
 #include "Buffer.h"
 

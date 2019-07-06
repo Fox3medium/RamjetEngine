@@ -150,9 +150,6 @@
     <ClCompile Include="Core\Managers\Sound_Manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Games\GameTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Utils\Maths\AABB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -372,6 +369,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Utils\Maths\tvec2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Core_OpenGL.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
