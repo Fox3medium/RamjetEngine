@@ -33,6 +33,7 @@ namespace Core {
 
 		void Font_Manager::clean()
 		{
+			CORE_INFO("FONT MANAGER CLEAN.");
 			m_Fonts.clear();
 		}
 

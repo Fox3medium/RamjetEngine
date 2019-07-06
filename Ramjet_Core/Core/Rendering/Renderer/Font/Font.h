@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Utils/Log.h>
 #include <freetype-gl.h>
 #include <string>
 

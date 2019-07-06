@@ -6,10 +6,8 @@ namespace Utils {
 	std::string read_file(const char* filepath)
 	{
 		FILE* file = fopen(filepath, "rt");
-		if (file == nullptr) {
-			CInOut::Out("ERROR NO FILE");
-			return "";
-		}
+		if (file == nullptr)
+			CORE_ASSERT(file, "Could not open file '", filepath, "' !");
 
 		fseek(file, 0, SEEK_END);
 		unsigned long length = ftell(file);

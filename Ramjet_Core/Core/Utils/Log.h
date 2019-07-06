@@ -3,6 +3,7 @@
 #include <Windows.h>
 
 #include <stdio.h>
+#include <iostream>
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -19,7 +20,7 @@ namespace std {
 	template <typename T>
 	string to_string(const T& t) 
 	{
-		return "[ERROR] unsupported type in function to_string()";
+		return std::string("[Unsupported type] " + typeid(T).name() + std::string("!"));
 	}
 
 }
@@ -60,6 +61,30 @@ namespace Logs
 			return to_string_internal<T>(t, std::integral_constant<bool, has_iterator<T>::value>());
 		}
 
+		template <>
+		static const char* to_string<char>(char const& t)
+		{
+			return &t;
+		}
+
+		template <>
+		static const char* to_string<char*>(char* const& t)
+		{
+			return t;
+		}
+
+		template <>
+		static const char* to_string<char const*>(char const* const& t)
+		{
+			return t;
+		}
+
+		template <>
+		static const char* to_string<std::string>(std::string const& t)
+		{
+			return t.c_str();
+		}
+
 		template <typename T>
 		static std::string format_iterators(T& begin, T& end)
 		{
@@ -85,7 +110,7 @@ namespace Logs
 		}
 
 		template<>
-		static  const char* to_string_internal<const char*>(const char* const& v, const std::false_type& ignored)
+		static const char* to_string_internal<const char*>(const char* const& v, const std::false_type& ignored)
 		{
 			return v;
 		}
@@ -113,13 +138,15 @@ namespace Logs
 		}
 
 		template <typename... Args>
-		static void log_message(int level, Args... args)
+		static void log_message(int level, bool newline, Args... args)
 		{
 			char buffer[1024 * 10];
 			int position = 0;
 			print_log_internal(buffer, position, std::forward<Args>(args)...);
 
-			buffer[position++] = '\n';
+			if (newline)
+				buffer[position++] = '\n';
+
 			buffer[position] = 0;
 
 			HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -143,48 +170,57 @@ namespace Logs
 
 }
 
-#define CORE_ASSERT(x, m) do { if (!(x)) { \char* file = __FILE__; \
-		unsigned int last = 0; \
-		char* c; \
-		for (c = file; *c != '\0'; c++) \
-				{ \
-				CORE_LOG_LEVEL \
-			if (*c == '\\' || *c == '/') \
-				last = c - file; \
-				} \
-		printf("\n"); \
-		printf("*************************\n"); \
-		printf("    ASSERTION FAILED!    \n"); \
-		printf("*************************\n"); \
-		printf("%s\n", #x); \
-		char* message = m; \
-		if (message[0] != '\0') \
-			printf("%s\n", m); \
-		printf("-> "); \
-		for (int i = last + 1; i < c - file; i++) \
-			printf("%c", file[i]); \
-		printf(":%d\n", __LINE__); \
-		*(int*)NULL = 8; \
-	} \
-	} while(0) 
-
 #ifndef CORE_LOG_LEVEL
 	#define CORE_LOG_LEVEL CORE_LOG_LEVEL_INFO
 #endif // CORE_LOG_LEVEL
 
 #if CORE_LOG_LEVEL >= CORE_LOG_LEVEL_FATAL
-#define CORE_FATAL(...) Logs::Internal::log_message(CORE_LOG_LEVEL_FATAL, "CORE:    ", __VA_ARGS__)
+#define CORE_FATAL(...) Logs::Internal::log_message(CORE_LOG_LEVEL_FATAL, true, "/!\\FATAL ERROR /!\\:    ", __VA_ARGS__)
+#define _CORE_FATAL(...) Logs::Internal::log_message(CORE_LOG_LEVEL_FATAL, false, __VA_ARGS__)
+#else
+#define CORE_FATAL(...)
 #endif
 
 #if CORE_LOG_LEVEL >= CORE_LOG_LEVEL_ERROR
-#define CORE_ERROR(...) Logs::Internal::log_message(CORE_LOG_LEVEL_ERROR, "CORE:    ", __VA_ARGS__)
+#define CORE_ERROR(...) Logs::Internal::log_message(CORE_LOG_LEVEL_ERROR, true, "ERROR:    ", __VA_ARGS__)
+#else
+#define CORE_ERROR(...)
 #endif
 
 #if CORE_LOG_LEVEL >= CORE_LOG_LEVEL_WARN
-#define CORE_WARN(...) Logs::Internal::log_message(CORE_LOG_LEVEL_WARN, "CORE:    ", __VA_ARGS__)
+#define CORE_WARN(...) Logs::Internal::log_message(CORE_LOG_LEVEL_WARN, true, "WARNING:    ", __VA_ARGS__)
+#else
+#define CORE_WARN(...)
 #endif
 
 #if CORE_LOG_LEVEL >= CORE_LOG_LEVEL_INFO
-#define CORE_INFO(...) Logs::Internal::log_message(CORE_LOG_LEVEL_INFO, "CORE:    ", __VA_ARGS__)
+#define CORE_INFO(...) Logs::Internal::log_message(CORE_LOG_LEVEL_INFO, true, "INFO:    ", __VA_ARGS__)
+#else
+#define CORE_INFO(...)
 #endif 
 
+#define CORE_ASSERT(x, ...) \
+	do { \
+	if (!(x)) \
+		{ \
+		char* file = __FILE__; \
+		unsigned int last = 0; \
+		char* c; \
+		for (c = file; *c != '\0'; c++) \
+				{ \
+			if (*c == '\\' || *c == '/') \
+				last = c - file; \
+				} \
+		CORE_FATAL(""); \
+		CORE_FATAL("*************************"); \
+		CORE_FATAL("    ASSERTION FAILED!    "); \
+		CORE_FATAL("*************************"); \
+		CORE_FATAL(#x); \
+		CORE_FATAL(__VA_ARGS__); \
+		_CORE_FATAL("-> "); \
+		for (int i = last + 1; i < c - file; i++) \
+			_CORE_FATAL(file[i]); \
+		_CORE_FATAL(":", __LINE__, "\n"); \
+		*(int*)NULL = 8; \
+		} \
+	} while(0)

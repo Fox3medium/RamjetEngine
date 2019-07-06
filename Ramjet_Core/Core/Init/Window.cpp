@@ -26,6 +26,8 @@ namespace Core {
 
 			if (!init(WInfo, CInfo, FInfo))
 				glfwTerminate();
+
+			Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 12));
 		}
 
 		Window::~Window()

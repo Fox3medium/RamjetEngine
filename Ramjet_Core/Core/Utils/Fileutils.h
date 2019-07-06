@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Utils/Log.h>
 #include <string>
 
 namespace Utils {
