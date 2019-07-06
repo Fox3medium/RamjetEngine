@@ -1,12 +1,13 @@
+#include "../Core/Utils/Log.h"
 #include "../Core/Core.h"
 
-using namespace Core;
-using namespace Rendering;
-using namespace Manager;
-using namespace Init;
+using namespace Core::Rendering;
+using namespace Core::Manager;
+using namespace Core::Init;
+using namespace Core::Audio;
 using namespace Utils;
 
-class GameTest : public Core {
+class GameTest : public Core::Core {
 
 private:
 	Window* window;
@@ -54,7 +55,7 @@ public:
 	{
 		unsigned int f = m_Fps;
 		fps->setText(f, " fps");
-		std::cout << getUPS() << " ups, " << getFPS() << " fps" << std::endl;
+		CORE_INFO(getUPS(), " ups, ", getFPS(), " fps");
 	}
 
 	void update() override

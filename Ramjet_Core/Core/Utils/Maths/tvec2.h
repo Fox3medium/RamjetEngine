@@ -144,7 +144,7 @@ namespace Maths {
 	template <class T>
 	std::ostream& operator<<(std::ostream& stream, const tvec2<T>& vector)
 	{
-		stream << "tvec2: (" << vector.x << ", " << vector.y << ")";
+		/*stream << "tvec2: (" << vector.x << ", " << vector.y << ")";*/
 		return stream;
 	}
 

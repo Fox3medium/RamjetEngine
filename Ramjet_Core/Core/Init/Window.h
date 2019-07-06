@@ -12,7 +12,7 @@
 #include "../Managers/Texture_Manager.h"
 
 // Utilities
-#include <Utils/String.h>
+//#include <Utils/String.h>
 #include <Utils/Static/CInOut.h>
 
 // Other

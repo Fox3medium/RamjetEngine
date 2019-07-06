@@ -8,9 +8,9 @@
 #include <gorilla-audio/ga.h>
 #include <gorilla-audio/gau.h>
 
-using namespace Core::Audio;
-
 namespace Core {
+	
+	using namespace Audio;
 
 	namespace Manager {
 		

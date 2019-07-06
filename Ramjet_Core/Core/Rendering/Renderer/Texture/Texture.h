@@ -1,11 +1,11 @@
 #pragma once
 
+#include <Utils/Log.h>
 #include <GLEW/glew.h>
 
 #include <FreeImage/FreeImage.h>
 
 #include <iostream>
-#include <Utils/Log.h>
 
 
 #include <Utils/String.h>
@@ -28,7 +28,7 @@ namespace Core {
 
 		public:
 			Texture(const String& fileName);
-			Texture(const String& mname, const String& fileName);
+			Texture(const String& name, const String& fileName);
 			~Texture();
 			void bind() const;
 			void unbind() const;
