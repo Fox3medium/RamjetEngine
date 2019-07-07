@@ -2,6 +2,7 @@
 
 #include "../Renderable2D.h"
 #include "../Renderer2D.h"
+#include <Utils/types.h>
 
 namespace Core {
 
@@ -20,6 +21,8 @@ namespace Core {
 			virtual ~Layer();
 			virtual void add(Renderable2D* renderable);
 			virtual void render();
+
+			inline void setMask(const Texture* mask) const { m_Renderer->setMask(mask); }
 
 			inline const std::vector<Renderable2D*>& getRenderable() const { return m_Renderables; }
 

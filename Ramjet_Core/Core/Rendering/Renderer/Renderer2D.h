@@ -4,6 +4,7 @@
 #include <Utils/Maths/maths.h>
 #include <vector>
 #include "Font/Font.h"
+#include "Texture/Texture.h"
 
 namespace Core {
 
@@ -24,6 +25,7 @@ namespace Core {
 
 			std::vector<Maths::mat4> m_TransformationStack;
 			const Maths::mat4* m_TransformationBack;
+			const Texture* m_Mask;
 
 		public:
 			virtual void begin() {}
@@ -47,6 +49,8 @@ namespace Core {
 
 				m_TransformationBack = &m_TransformationStack.back();
 			}
+
+			virtual void setMask(const Texture* mask) { m_Mask = mask; }
 		
 			virtual ~Renderer2D() {}
 		protected:

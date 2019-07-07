@@ -14,15 +14,17 @@ namespace Core {
 		class Shader {
 			private :
 				//Shader ID
+				std::string m_Name;
 				GLuint m_ShaderID;
 
-				const char* m_VertPath;
-				const char* m_FragPath;
+				const char* m_VertSrc;
+				const char* m_FragSrc;
 
 				std::map<std::string, GLuint> m_UniformMap;
 
 			public:
-				Shader(const char* vertPath, const char* fragPath);
+				/*Load a shader stored in code if true*/
+				Shader(const std::string& name, const char* vertPath, const char* fragPath, bool isFromCode);
 				~Shader();				
 
 				void setUniform1i(const GLchar* uniVarName, int value);
@@ -37,10 +39,13 @@ namespace Core {
 				void enable() const;
 				void disable() const;
 
+				inline const GLuint getShaderID() { return m_ShaderID; }
+				inline const std::string getShaderName() { return m_Name; }
+
 			private:
 				GLuint getUniformLocation(const GLchar* name);
 
-				GLuint load();
+				GLuint load(const char* vertSrc, const char* fragSrc, bool isFromCode);
 		};
 
 	}

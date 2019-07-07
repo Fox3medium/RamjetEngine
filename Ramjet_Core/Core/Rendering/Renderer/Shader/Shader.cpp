@@ -1,6 +1,7 @@
 #include "Shader.h"
 #include <Utils\Static\CInOut.h>
 
+#include <iostream>
 #include <vector>
 
 using namespace Utils;
@@ -9,10 +10,20 @@ namespace Core {
 
 	namespace Rendering {
 
-		Shader::Shader(const char* vertPath, const char* fragPath)
-			: m_VertPath(vertPath), m_FragPath(fragPath)
+		Shader::Shader(const std::string& name, const char* vertPath, const char* fragPath, bool isFromCode)
+			: m_Name(name), m_VertSrc(vertPath), m_FragSrc(fragPath)
 		{
-			m_ShaderID = load();
+			std::string vertSourceString;
+			std::string fragSourceString;
+
+			if (!isFromCode) {
+				vertSourceString = read_file(m_VertSrc);
+				fragSourceString = read_file(m_FragSrc);
+
+				m_VertSrc = vertSourceString.c_str();
+				m_FragSrc = fragSourceString.c_str();
+			}
+			m_ShaderID = load(m_VertSrc, m_FragSrc, isFromCode);
 		}
 
 		Shader::~Shader()
@@ -25,7 +36,13 @@ namespace Core {
 		{
 			std::map<std::string, GLuint>::iterator i = m_UniformMap.find(name);
 			if (i == m_UniformMap.end()) {
-				m_UniformMap[name] = glGetUniformLocation(m_ShaderID, name);
+				GLuint result = glGetUniformLocation(m_ShaderID, name);
+				if (result == -1) {
+					CORE_ERROR(m_Name.c_str(), ": Could not find uniform ", name, " in shader!");
+					return NULL;
+				}					
+				else
+					m_UniformMap[name] = result;
 			}
 			return m_UniformMap.at(name);
 		}
@@ -80,24 +97,15 @@ namespace Core {
 			glUseProgram(0);
 		}
 
-		GLuint Shader::load()
+		GLuint Shader::load(const char* vertSrc, const char* fragSrc, bool isFromCode)
 		{
 			GLuint program = glCreateProgram();
 
 			GLuint vertex = glCreateShader(GL_VERTEX_SHADER); //How the GPU works on vertices
 			GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)
 
-			//load vertex and fragment files 
-			std::string vertFileStr = read_file(m_VertPath);
-			std::string fragFileStr = read_file(m_FragPath);
-
-			// Longer but avoid problem with the vertFileStr being destroyed prematurely,
-			// Then causing the shader loading and compiling errors.
-			const char* vertFile = vertFileStr.c_str();
-			const char* fragFile = fragFileStr.c_str();
-
 			// link the shader ID to the shader file
-			glShaderSource(vertex, 1, &vertFile, NULL);
+			glShaderSource(vertex, 1, &m_VertSrc, NULL);
 			// Compile the shader
 			glCompileShader(vertex);
 
@@ -115,7 +123,7 @@ namespace Core {
 			}
 
 			// link the shader ID to the shader file
-			glShaderSource(fragment, 1, &fragFile, NULL);
+			glShaderSource(fragment, 1, &m_FragSrc, NULL);
 			// Compile the shader
 			glCompileShader(fragment);
 

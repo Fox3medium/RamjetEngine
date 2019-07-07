@@ -36,7 +36,7 @@ namespace Core {
 			if (tid > 0)
 			{
 				bool found = false;
-				for (int i = 0; i < m_TextureSlots.size(); i++)
+				for (uint i = 0; i < m_TextureSlots.size(); i++)
 				{
 					if (m_TextureSlots[i] == tid)
 					{
@@ -92,7 +92,7 @@ namespace Core {
 
 			float ts = 0.0f;
 			bool found = false;
-			for (int i = 0; i < m_TextureSlots.size(); i++)
+			for (uint i = 0; i < m_TextureSlots.size(); i++)
 			{
 				if (m_TextureSlots[i] == font.getID())
 				{
@@ -122,7 +122,7 @@ namespace Core {
 
 			texture_font_t* ftFont = font.getFTFont();
 
-			for (int i = 0; i < text.length(); i++)
+			for (uint i = 0; i < text.length(); i++)
 			{
 				char c = text[i];
 				texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
@@ -185,11 +185,14 @@ namespace Core {
 
 		void Batch2DRenderer::flush()
 		{
-			for (int i = 0; i < m_TextureSlots.size(); i++)
+			for (uint i = 0; i < m_TextureSlots.size(); i++)
 			{
 				glActiveTexture(GL_TEXTURE0 + i);
 				glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
 			}
+
+			glActiveTexture(GL_TEXTURE31);
+			m_Mask->bind();
 
 			glBindVertexArray(m_VAO);
 			m_IBO->bind();

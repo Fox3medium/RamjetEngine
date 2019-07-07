@@ -310,6 +310,7 @@
     <ClInclude Include="Core\Utils\StringUtils.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
     <ClInclude Include="Core\Core_OpenGL.h" />
+    <ClInclude Include="Core\Utils\types.h" />
     <ClInclude Include="Ext\Freetype-GL\src\freetype-gl.h" />
     <ClInclude Include="Ext\Freetype-GL\src\opengl.h" />
     <ClInclude Include="Ext\Freetype-GL\src\platform.h" />

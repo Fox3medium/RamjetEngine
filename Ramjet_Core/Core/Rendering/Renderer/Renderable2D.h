@@ -5,7 +5,7 @@
 #include "Renderer2D.h"
 #include "Texture/Texture.h"
 
-#include <Utils/Maths/maths.h>
+#include <Utils/types.h>
 
 using namespace Utils;
 
@@ -51,10 +51,10 @@ namespace Core {
 			void setColor(unsigned int color) { m_Color = color; }
 			void setColor(const Maths::vec4& color)
 			{
-				int r = color.x * 255.0f;
-				int g = color.y * 255.0f;
-				int b = color.z * 255.0f;
-				int a = color.w * 255.0f;
+				uint r = color.x * 255.0f;
+				uint g = color.y * 255.0f;
+				uint b = color.z * 255.0f;
+				uint a = color.w * 255.0f;
 
 				m_Color = a << 24 | b << 16 | g << 8 | r;
 			}

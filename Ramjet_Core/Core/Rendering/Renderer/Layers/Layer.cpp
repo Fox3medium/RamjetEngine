@@ -16,10 +16,11 @@ namespace Core {
 				 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,
 				10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
 				20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-				30, 31
+				30
 			};
 
-			m_Shader->setUniform1iv("textures", texIDs, 32);
+			m_Shader->setUniform1iv("textures", texIDs, 31);
+			m_Shader->setUniform1i("mask_texture", 31);
 
 			m_Shader->disable();
 		}
@@ -28,7 +29,7 @@ namespace Core {
 		{
 			delete m_Shader;
 			delete m_Renderer;
-			for (int i = 0; i < m_Renderables.size(); i++)
+			for (uint i = 0; i < m_Renderables.size(); i++)
 				delete m_Renderables[i];
 		}
 

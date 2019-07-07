@@ -16,6 +16,8 @@
 
 #include "Quaternion.h"
 
+#include "../types.h"
+
 namespace Maths {
 	
 	typedef tvec2<int> ivec2;

@@ -2,6 +2,7 @@
 
 #include <vector>
 #include <GLEW/glew.h>
+#include <Utils/types.h>
 
 #include "Buffer.h"
 

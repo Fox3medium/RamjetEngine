@@ -4,6 +4,8 @@ namespace Core {
 
 	namespace Rendering {
 
+		TextureWrap Texture::m_WrapMode = REPEAT;
+
 		Texture::Texture(const String& fileName)
 			: m_FileName(fileName), m_Name(fileName)
 		{
@@ -40,6 +42,8 @@ namespace Core {
 			glBindTexture(GL_TEXTURE_2D, result);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLuint)m_WrapMode);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (GLuint)m_WrapMode);
 
 			if (m_Bits != 24 && m_Bits != 32)
 				CORE_ERROR("[TEXTURE] unsupporred image bit depth! %d", m_Bits);

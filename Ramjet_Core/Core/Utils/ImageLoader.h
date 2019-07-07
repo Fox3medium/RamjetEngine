@@ -17,7 +17,9 @@ namespace Utils {
 		if (FreeImage_FIFSupportsReading(fif))
 			dib = FreeImage_Load(fif, filename);
 
-		CORE_ASSERT(dib, "Could not load image '", filename, "'!");
+		// TODO Uncomment
+		// Must be commented for debug mode? Why? CHECK COMPILER AND C++ SETTINGS
+		// CORE_ASSERT(dib, "Could not load image ", filename, " !");
 
 		BYTE* pixels = FreeImage_GetBits(dib);
 		*width = FreeImage_GetWidth(dib);

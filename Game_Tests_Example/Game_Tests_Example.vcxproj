@@ -71,7 +71,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(WindowsSDK_IncludePath);$(VC_IncludePath);$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)bin\Release\x64;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)bin\Debug\x64;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)bin_Game\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin_Game\$(Configuration)\$(Platform)\Intermediate</IntDir>
   </PropertyGroup>
@@ -98,12 +98,10 @@
       <AdditionalDependencies>Ramjet_Core.lib;libvorbisfile_static.lib;libogg.lib;libvorbis_static.lib;OpenAL32.lib;freetype.lib;FreeImage.lib;glfw3.lib;glew32s.lib;opengl32.lib;msvcrt.lib;msvcmrt.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\;
-</Command>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-      </Command>
+      <Command>copy /Y $(SolutionDir)Ramjet_Core\Dependencies\DLLs_Backup\* $(OutDir)</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -163,6 +161,9 @@
     <PostBuildEvent>
       <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>copy /Y $(SolutionDir)Ramjet_Core\Dependencies\DLLs_Backup\* $(OutDir)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\GameTest.cpp" />

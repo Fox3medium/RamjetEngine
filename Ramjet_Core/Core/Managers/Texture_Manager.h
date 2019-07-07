@@ -1,6 +1,7 @@
 #pragma once
 
 #include <map>
+#include <Utils/types.h>
 #include "../Rendering/Renderer/Texture/Texture.h"
 
 namespace Core {
