@@ -17,21 +17,25 @@ namespace Utils {
 		if (FreeImage_FIFSupportsReading(fif))
 			dib = FreeImage_Load(fif, filename);
 
+		if (dib == nullptr)
+			CORE_WARN("Could not load the file : ", filename);
 		// TODO Uncomment
 		// Must be commented for debug mode? Why? CHECK COMPILER AND C++ SETTINGS
 		// CORE_ASSERT(dib, "Could not load image ", filename, " !");
 
-		BYTE* pixels = FreeImage_GetBits(dib);
-		*width = FreeImage_GetWidth(dib);
-		*height = FreeImage_GetHeight(dib);
+		FIBITMAP* bitmap = FreeImage_ConvertTo32Bits(dib);
+		FreeImage_Unload(dib);
 
-		*bits = FreeImage_GetBPP(dib);
+		BYTE* pixels = FreeImage_GetBits(bitmap);
+		*width = FreeImage_GetWidth(bitmap);
+		*height = FreeImage_GetHeight(bitmap);
+		*bits = FreeImage_GetBPP(bitmap);
 
 		int size = *width * *height * (*bits / 8);
 		BYTE* result = new BYTE[size];
 		memcpy(result, pixels, size);
 
-		FreeImage_Unload(dib);
+		FreeImage_Unload(bitmap);
 		
 		return result;
 	}

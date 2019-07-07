@@ -3,35 +3,6 @@
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\libogg.dll
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\OpenAL32.dll
           3 file(s) copied.
-  GameTest.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(54,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(55,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(56,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(57,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(142): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,unsigned int,_Ty,unsigned int,_Ty>(char *,int &,First &&,unsigned int &&,_Ty &&,unsigned int &&,_Ty &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(142): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(142): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(142): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(142): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(142): message :         ]
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\src\GameTest.cpp(69): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,unsigned int,const char*,unsigned int,const char*>(int,bool,const char *,unsigned int,const char *,unsigned int,const char *)' being compiled
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(595): message :  see reference to class template instantiation 'std::chrono::duration<double,std::ratio<1,1>>' being compiled
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(172): message :  see reference to class template instantiation 'std::chrono::duration<__int64,std::nano>' being compiled
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.21.27702\include\chrono(574): message :  see reference to class template instantiation 'std::chrono::time_point<std::chrono::steady_clock,std::chrono::steady_clock::duration>' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(122,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :         ]
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,const char*>(char *,int &,First &&,const char *&&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :             _Ty=unsigned int,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :             First=unsigned int
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(129): message :         ]
   libvorbis_static.lib(info.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.exp
@@ -45,11 +16,14 @@ glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\textVertShader.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Shaders\vertex_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\747.png
-  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\mask.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\awesomeface.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\awesomeface2.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\mask.tif
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\SourceCodePro-Light.ttf
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\SourceSansPro-Light.ttf
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tb.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\tc.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\test.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\untitled.wav
-  12 File(s) copied
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Assets\Test\wall.jpg
+  15 File(s) copied

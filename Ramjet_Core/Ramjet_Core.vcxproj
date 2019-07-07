@@ -130,7 +130,7 @@
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(SolutionDir)Game_Tests_Example\Assets</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -199,7 +199,7 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(SolutionDir)Game_Tests_Example\Assets</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

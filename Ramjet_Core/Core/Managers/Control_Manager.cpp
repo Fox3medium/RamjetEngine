@@ -40,7 +40,6 @@ namespace Core {
 			if (glfwGetKey(activeWin, GLFW_KEY_D) == GLFW_PRESS)
 			{
 				m_keys[GLFW_KEY_D] = true;
-				CInOut::Out("YOU PRESS D");
 			}
 			else
 				m_keys[GLFW_KEY_D] = false;
@@ -48,7 +47,6 @@ namespace Core {
 			if (glfwGetKey(activeWin, GLFW_KEY_A) == GLFW_PRESS)
 			{
 				m_keys[GLFW_KEY_A] = true;
-				CInOut::Out("YOU PRESS A");
 			}
 			else
 				m_keys[GLFW_KEY_A] = false;
@@ -56,7 +54,6 @@ namespace Core {
 			if (glfwGetKey(activeWin, GLFW_KEY_W) == GLFW_PRESS)
 			{
 				m_keys[GLFW_KEY_W] = true;
-				CInOut::Out("YOU PRESS W");
 			}
 			else
 				m_keys[GLFW_KEY_W] = false;
@@ -64,7 +61,6 @@ namespace Core {
 			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS) 
 			{
 				m_keys[GLFW_KEY_S] = true;
-				CInOut::Out("YOU PRESS S");
 			}
 			else
 				m_keys[GLFW_KEY_S] = false;

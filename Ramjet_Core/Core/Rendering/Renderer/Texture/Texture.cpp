@@ -46,11 +46,17 @@ namespace Core {
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (GLuint)m_WrapMode);
 
 			if (m_Bits != 24 && m_Bits != 32)
-				CORE_ERROR("[TEXTURE] unsupporred image bit depth! %d", m_Bits);
+				CORE_ERROR("[TEXTURE] unsupporred image bit depth! %d on file ", m_Bits, " '",m_FileName.toChars(),"'!");
 
 			GLint internalFormat = m_Bits == 32 ? GL_RGBA : GL_RGB;
 			GLenum format = m_Bits == 32 ? GL_BGRA : GL_BGR;
 
+			// If the image format is not a multiple of 4 it require GL_UNPACK_ALIGNMENT to 1 for it to be loaded
+			if (m_Width % 4 != 0) 
+			{
+				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+				CORE_WARN("[TEXTURE] Mmage format is not a multiple of 4 it require GL_UNPACK_ALIGNMENT to 1 for it to be loaded ", m_FileName.toChars());
+			}
 			glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_Width, m_Height, 0, format, GL_UNSIGNED_BYTE, pixels);
 			glBindTexture(GL_TEXTURE_2D, 0);
 
