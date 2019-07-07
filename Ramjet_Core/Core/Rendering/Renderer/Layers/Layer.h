@@ -22,7 +22,7 @@ namespace Core {
 			virtual void add(Renderable2D* renderable);
 			virtual void render();
 
-			inline void setMask(const Texture* mask) const { m_Renderer->setMask(mask); }
+			inline void setMask(const Mask* mask) const { m_Renderer->setMask(mask); }
 
 			inline const std::vector<Renderable2D*>& getRenderable() const { return m_Renderables; }
 

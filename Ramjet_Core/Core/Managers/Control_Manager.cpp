@@ -67,9 +67,17 @@ namespace Core {
 				
 
 			if (glfwGetKey(activeWin, GLFW_KEY_E) == GLFW_PRESS)
-				CInOut::Out("YOU PRESS E");
+			{
+				m_keys[GLFW_KEY_E] = true;
+			}
+			else
+				m_keys[GLFW_KEY_E] = false;
 			if (glfwGetKey(activeWin, GLFW_KEY_Q) == GLFW_PRESS)
-				CInOut::Out("YOU PRESS Q");
+			{
+				m_keys[GLFW_KEY_Q] = true;
+			}
+			else
+				m_keys[GLFW_KEY_Q] = false;
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
 				CInOut::Out("YOU PRESS CONTROL");
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)

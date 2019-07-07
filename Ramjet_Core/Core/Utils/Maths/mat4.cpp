@@ -287,9 +287,9 @@ namespace Maths {
 	{
 		mat4 result(1.0f);
 
-		result.elements[0 + 3 * 4] = translation.x;
-		result.elements[1 + 3 * 4] = translation.y;
-		result.elements[2 + 3 * 4] = translation.z;
+		result.elements[3 + 0 * 4] = translation.x;
+		result.elements[3 + 1 * 4] = translation.y;
+		result.elements[3 + 2 * 4] = translation.z;
 
 		return result;
 	}

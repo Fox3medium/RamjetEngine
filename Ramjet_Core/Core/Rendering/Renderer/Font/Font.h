@@ -24,6 +24,7 @@ namespace Core {
 
 		public:
 			Font(std::string name, std::string filename, float size);
+			Font(std::string name, const byte* data, unsigned int datasize, float size);
 
 			inline ftgl::texture_font_t* getFTFont() const { return m_FTFont; }
 

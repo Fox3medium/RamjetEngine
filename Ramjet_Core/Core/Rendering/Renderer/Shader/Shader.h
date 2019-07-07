@@ -24,7 +24,7 @@ namespace Core {
 
 			public:
 				/*Load a shader stored in code if true*/
-				Shader(const std::string& name, const char* vertPath, const char* fragPath, bool isFromCode);
+				Shader(const std::string& name, const char* vertPath, const char* fragPath, bool isFromCode = false);
 				~Shader();				
 
 				void setUniform1i(const GLchar* uniVarName, int value);

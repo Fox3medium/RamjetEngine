@@ -43,7 +43,7 @@ namespace Core {
 			m_WInfo = windowInfo;
 
 			if (!glfwInit()) {
-				CInOut::Out("ERROR : GLFW Failed to initialize.");
+				CORE_FATAL("Failed to initialize GLFW!");
 				return false;
 			}
 
@@ -67,17 +67,17 @@ namespace Core {
 			}
 
 			if (!m_Window) {
-				CInOut::Out("ERROR : Failed to create OpenGL window.");
+				CORE_FATAL("Failed to create OpenGL window.");
 				return false;
 			}
 
 			glfwMakeContextCurrent(m_Window);			
 
 			if (glewInit() != GLEW_OK) {
-				CInOut::Out("ERROR : GLEW initialize failed.");
+				CORE_FATAL("ERROR : GLEW initialize failed.");
 			}
 
-			std::cout << "OpenGL version : " << glGetString(GL_VERSION) << std::endl;
+			CORE_INFO("OpenGL version: ", glGetString(GL_VERSION));
 
 			glfwSetFramebufferSizeCallback(m_Window, windowSizeCallback);
 			glfwSetWindowUserPointer(m_Window, this);

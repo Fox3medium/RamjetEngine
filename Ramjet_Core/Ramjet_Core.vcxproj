@@ -210,6 +210,7 @@
     <ClCompile Include="Core\Managers\AI\Strategy_Manager.cpp" />
     <ClCompile Include="Core\Managers\AI\Wave_Manager.cpp" />
     <ClCompile Include="Core\Managers\Control_Manager.cpp" />
+    <ClCompile Include="Core\Managers\embed\Embedded.cpp" />
     <ClCompile Include="Core\Managers\Font_Manager.cpp" />
     <ClCompile Include="Core\Managers\AI_Manager.cpp" />
     <ClCompile Include="Core\Managers\Layer_Manager.cpp" />
@@ -268,6 +269,7 @@
     <ClInclude Include="Core\Managers\AI\Wave_Manager.h" />
     <ClInclude Include="Core\Managers\AI_Manager.h" />
     <ClInclude Include="Core\Managers\Control_Manager.h" />
+    <ClInclude Include="Core\Managers\embed\Embedded.h" />
     <ClInclude Include="Core\Managers\Font_Manager.h" />
     <ClInclude Include="Core\Managers\Layer_Manager.h" />
     <ClInclude Include="Core\Managers\Managers.h" />
@@ -290,6 +292,7 @@
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Texture\Mask.h" />
     <ClInclude Include="Core\Rendering\Renderer\Texture\Texture.h" />
     <ClInclude Include="Core\Test\Layers\TopLayer.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />

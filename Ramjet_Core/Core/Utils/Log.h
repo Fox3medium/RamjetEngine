@@ -85,6 +85,12 @@ namespace Logs
 			return t.c_str();
 		}
 
+		template <>
+		static const char* to_string<unsigned char const*>(unsigned char const* const& t)
+		{
+			return (const char*)t;
+		}
+
 		template <typename T>
 		static std::string format_iterators(T& begin, T& end)
 		{

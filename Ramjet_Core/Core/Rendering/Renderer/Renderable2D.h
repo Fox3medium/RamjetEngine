@@ -14,9 +14,17 @@ namespace Core {
 	namespace Rendering {
 
 		struct VertexData {
+			// Vertex point 
 			Maths::vec3 vertex;
+			// UV of that vertex
 			Maths::vec2 uv;
+			// UV of the mask
+			Maths::vec2 mask_uv;
+			// Texture ID
 			float tid;
+			// Mask ID
+			float mid;
+			// Color
 			unsigned int color;
 		};
 	
@@ -65,6 +73,7 @@ namespace Core {
 			inline const std::vector<Maths::vec2>& getUV() const { return m_UV; }
 			// Return texture ID if texture is not nullptr
 			inline const GLuint getTextureID() const { return m_Texture ? m_Texture->getID() : 0; }
+			inline const Texture* getTexture() const { return m_Texture; }
 
 		private:
 

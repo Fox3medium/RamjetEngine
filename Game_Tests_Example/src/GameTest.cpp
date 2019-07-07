@@ -18,7 +18,7 @@ private:
 	Sprite* sprite;
 	Shader* shader;
 	Shader* shader1;
-	Maths::vec3 mask;
+	Mask* mask;
 
 public:
 	GameTest() 
@@ -30,6 +30,7 @@ public:
 		delete layer;
 		Font_Manager::clean();
 		Sound_Manager::clean();
+		Shader_Manager::clean();
 	}
 
 	void init() override
@@ -43,12 +44,12 @@ public:
 		Sound_Manager::init();
 
 		window->setControl(C_Manager);
-		shader =  Shader_Manager::get("DefaultShader");
-		shader1 = Shader_Manager::get("DefaultShader");
+		shader = Shader_Manager::DefaultShader();
+		shader1 = Shader_Manager::DefaultShader();
 		layer = new Layer(new Batch2DRenderer(), shader, Maths::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 		layerUI = new Layer(new Batch2DRenderer(), shader1, Maths::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
-		sprite = new Sprite(0.0f, 0.0f, 4, 4, new Texture("tb","Assets/Test/awesomeface.png"));
-		layer->add(sprite);
+		Texture_Manager::add(new Texture("tb", "Assets/Test/awesomeface.png"));
+		sprite = new Sprite(0.0f, 0.0f, 4, 4, Texture_Manager::get("tb"));
 
 		for (float y = -9.0f; y < 9.0f; y+=1.0) {		
 
@@ -68,15 +69,15 @@ public:
 				}
 
 		}
+		layer->add(sprite);
+		
 
-		Texture::setWrap(TextureWrap::CLAMP_TO_BORDER);
-		layer->setMask(new Texture("Mask", "Assets/Test/mask.tif"));
-		layerUI->setMask(new Texture("Mask2", "Assets/Test/tb.png"));
-		shader->enable();
-		shader->setUniformMat4("mask_matrix", Maths::mat4::Translate(mask));
+		Texture::setWrap(TextureWrap::CLAMP_TO_BORDER);;
+		mask = new Mask(new Texture("Mask", "Assets/Test/mask.tif"));
+		layer->setMask(mask);
 
 		Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 24));
-		fps = new Label("SourceSansPro", -15.5f, 7.8f, CONSOLE_COLOR_RED);
+		fps = new Label("SourceSansPro", -15.5f, 7.8f, DEBUG_COLOR_RED);
 		layerUI->add(fps);
 
 		Sound_Manager::add(new Sound("test", "Assets/Test/untitled.wav"));
@@ -86,29 +87,29 @@ public:
 	{
 		unsigned int f = m_Fps;
 		fps->setText(f, " fps");
-		CORE_INFO("x= ", mask.x, " y= ", mask.y);
 		CORE_INFO(getUPS(), " ups, ", getFPS(), " fps");
 	}
 
 	void update() override
 	{
+		static Maths::vec3 pos(0, 0, 0);
 		float speed = 0.05f;
 		if (C_Manager->isKeyPressed(GLFW_KEY_W))
-			mask.y += speed;
+			pos.y += speed;
 		if (C_Manager->isKeyPressed(GLFW_KEY_S))
-			mask.y -= speed;
+			pos.y -= speed;
 		if (C_Manager->isKeyPressed(GLFW_KEY_A))
-			mask.x -= speed;
+			pos.x -= speed;
 		if (C_Manager->isKeyPressed(GLFW_KEY_D))
-			mask.x += speed;
+			pos.x += speed;
 
-		static Maths::vec3 scale(1, 1, 1);
-		if (C_Manager->isKeyPressed(GLFW_KEY_W))
+		static Maths::vec3 scale(0, 0, 0);
+		if (C_Manager->isKeyPressed(GLFW_KEY_Q))
 		{
 			scale.x += speed;
 			scale.y += speed;
 		}
-		else if (C_Manager->isKeyPressed(GLFW_KEY_S))
+		else if (C_Manager->isKeyPressed(GLFW_KEY_E))
 		{
 			scale.x -= speed;
 			scale.y -= speed;
@@ -117,14 +118,15 @@ public:
 		double x, y;
 		C_Manager->getMousePosition(x, y);
 
-		shader->enable();
+		//shader->enable();
 		//shader->setUniform2f("light_pos", Maths::vec2((float)(x * 32.0f / window->getWidth() - 16.0f), (float)(9.0f - y * 18.0f / window->getHeight())));
-		shader->setUniformMat4("mask_matrix", Maths::mat4::Translate(mask) * Maths::mat4::Scale(scale));
+		//mask->transform = Maths::mat4::Translate(pos);
+		mask->SetModifier(pos, scale);
 	}
 
 	void render() override
 	{
-		shader->enable();
+		//shader->enable();
 		layer->render();
 		shader1->enable();
 		layerUI->render();

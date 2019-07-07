@@ -3,35 +3,6 @@
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\libogg.dll
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\OpenAL32.dll
           3 file(s) copied.
-  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
-  GameTest.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(54,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(55,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(56,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(57,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\src\GameTest.cpp(118,12): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\src\GameTest.cpp(119,12): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(131,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(145): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty,_Ty>(char *,int &,First &&,_Ty &&,_Ty &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(145): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(145): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(145): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(145): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(145): message :         ]
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\ImageLoader.h(21): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*,const char*>(int,bool,const char *,const char *,const char *)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(122,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :         ]
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(136): message :         ]
      Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Release\x64\Game_Tests_Example.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Release\x64\Game_Tests_Example.exp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code

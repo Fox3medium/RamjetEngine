@@ -34,52 +34,51 @@ namespace Core {
 			float textureSlot = 0.0f;
 
 			if (tid > 0)
+				textureSlot = submitTexture(renderable->getTexture());
+
+			Maths::mat4 maskTransform = Maths::mat4::Identity();
+			const GLuint mid = m_Mask ? m_Mask->texture->getID() : 0;
+			float ms = 0.0f;
+
+			if (m_Mask != nullptr)
 			{
-				bool found = false;
-				for (uint i = 0; i < m_TextureSlots.size(); i++)
-				{
-					if (m_TextureSlots[i] == tid)
-					{
-						textureSlot = (float)(i + 1);
-						found = true;
-						break;
-					}
-				}
+				maskTransform = Maths::mat4::Invert(m_Mask->transform);
+				ms = submitTexture(m_Mask->texture);
+			}
 
-				if (!found)
-				{
-					if (m_TextureSlots.size() >= RENDERER_MAX_TEXTURES)
-					{
-						end();
-						flush();
-						begin();
-					}
-					m_TextureSlots.push_back(tid);
-					textureSlot = (float)(m_TextureSlots.size());
-				}
-			}			
-
-			m_Buffer->vertex = *m_TransformationBack * position;
+			Maths::vec3 vertex = *m_TransformationBack * position;
+			m_Buffer->vertex = vertex;
 			m_Buffer->uv = uv[0];
+			m_Buffer->mask_uv = maskTransform * vertex;
 			m_Buffer->tid = textureSlot;
+			m_Buffer->mid = ms;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x, position.y + size.y, position.z);
+			vertex = *m_TransformationBack * Maths::vec3(position.x, position.y + size.y, position.z);
+			m_Buffer->vertex = vertex;
 			m_Buffer->uv = uv[1];
+			m_Buffer->mask_uv = maskTransform * vertex;
 			m_Buffer->tid = textureSlot;
+			m_Buffer->mid = ms;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y + size.y, position.z);
+			vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y + size.y, position.z);
+			m_Buffer->vertex = vertex;
 			m_Buffer->uv = uv[2];
+			m_Buffer->mask_uv = maskTransform * vertex;
 			m_Buffer->tid = textureSlot;
+			m_Buffer->mid = ms;
 			m_Buffer->color = color;
 			m_Buffer++;
 
-			m_Buffer->vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y, position.z);
+			vertex = *m_TransformationBack * Maths::vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->vertex = vertex;
 			m_Buffer->uv = uv[3];
+			m_Buffer->mask_uv = maskTransform * vertex;
 			m_Buffer->tid = textureSlot;
+			m_Buffer->mid = ms;
 			m_Buffer->color = color;
 			m_Buffer++;
 
@@ -92,30 +91,9 @@ namespace Core {
 
 			float ts = 0.0f;
 			bool found = false;
-			for (uint i = 0; i < m_TextureSlots.size(); i++)
-			{
-				if (m_TextureSlots[i] == font.getID())
-				{
-					ts = (float)(i + 1);
-					found = true;
-					break;
-				}
-			}
+			
+			ts = submitTexture(font.getID());
 
-			if (!found)
-			{
-				if (m_TextureSlots.size() >= 32)
-				{
-					end();
-					flush();
-					begin();
-				}
-				m_TextureSlots.push_back(font.getID());
-				ts = (float)(m_TextureSlots.size());
-			}
-
-			/*float scaleX = 960.0f / 32.0f;
-			float scaleY = 540.0f / 18.0f;*/
 			const Maths::vec2& scale = font.getScale();
 
 			float x = position.x;
@@ -191,9 +169,6 @@ namespace Core {
 				glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
 			}
 
-			glActiveTexture(GL_TEXTURE31);
-			m_Mask->bind();
-
 			glBindVertexArray(m_VAO);
 			m_IBO->bind();
 
@@ -217,19 +192,29 @@ namespace Core {
 
 			glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
 			glEnableVertexAttribArray(SHADER_UV_INDEX);
+			glEnableVertexAttribArray(SHADER_MASK_UV_INDEX);
 			glEnableVertexAttribArray(SHADER_TEXTURE_INDEX);
+			glEnableVertexAttribArray(SHADER_MASK_INDEX);
 			glEnableVertexAttribArray(SHADER_COLOR_INDEX);
 
-			glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
-			glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::uv)));
-			glVertexAttribPointer(SHADER_TEXTURE_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::tid)));
+			glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+				(const GLvoid*)0);
+			glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+				(const GLvoid*)(offsetof(VertexData,uv)));
+			glVertexAttribPointer(SHADER_MASK_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+				(const GLvoid*)(offsetof(VertexData, mask_uv)));
+			glVertexAttribPointer(SHADER_TEXTURE_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+				(const GLvoid*)(offsetof(VertexData, tid)));
+			glVertexAttribPointer(SHADER_MASK_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+				(const GLvoid*)(offsetof(VertexData, mid)));
 			// Using multiplications to know get the offset needed for the buffer size is quite slow.
 			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
 			// Using offsetof will directly check in memory the space needed. REQUIRE <cstddef>
 			// USE VEC 4
 			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
 			// USE UNSIGNED INT
-			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));		
+			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, 
+				(const GLvoid*)(offsetof(VertexData, VertexData::color)));		
 
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -251,6 +236,39 @@ namespace Core {
 			m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
 			glBindVertexArray(0);
+		}
+
+		float Batch2DRenderer::submitTexture(uint textureID)
+		{
+			float result = 0.0f;
+			bool found = false;
+			for (uint i = 0; i < m_TextureSlots.size(); i++)
+			{
+				if (m_TextureSlots[i] == textureID)
+				{
+					result = (float)(i + 1);
+					found = true;
+					break;
+				}
+			}
+
+			if (!found)
+			{
+				if (m_TextureSlots.size() >= RENDERER_MAX_TEXTURES)
+				{
+					end();
+					flush();
+					begin();
+				}
+				m_TextureSlots.push_back(textureID);
+				result = (float)(m_TextureSlots.size());
+			}
+			return result;
+		}
+
+		float Batch2DRenderer::submitTexture(const Texture* texture)
+		{
+			return submitTexture(texture->getID());
 		}
 
 	}

@@ -1,5 +1,4 @@
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ramjet_core.pdb
-d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\font.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vertexarray.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\indexbuffer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\buffer.obj
@@ -12,6 +11,7 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\scene_manag
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\layer_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ai_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\font_manager.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\embedded.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\control_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\wave_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\strategy_manager.obj
@@ -37,6 +37,7 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\sprite.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\label.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\layer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\group.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\font.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ga_stream.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\gau.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ga.obj

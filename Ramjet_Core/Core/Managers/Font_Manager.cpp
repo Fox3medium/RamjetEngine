@@ -1,10 +1,16 @@
 #include "Font_Manager.h"
+#include "embed/Embedded.h"
 
 namespace Core {
 
 	namespace Manager {
 
 		std::map<std::string, Font*> Font_Manager::m_Fonts;
+
+		void Font_Manager::init()
+		{
+			add(new Font("SourceSansPro", Core::Internal::DEFAULT_FONT, Core::Internal::DEFAULT_FONT_SIZE, 24));
+		}
 
 		void Font_Manager::add(Font* font)
 		{

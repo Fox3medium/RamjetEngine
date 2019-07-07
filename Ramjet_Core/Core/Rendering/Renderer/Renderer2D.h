@@ -5,17 +5,18 @@
 #include <vector>
 #include "Font/Font.h"
 #include "Texture/Texture.h"
+#include "Texture/Mask.h"
 
 namespace Core {
 
 	namespace Rendering {
 
-		#define CONSOLE_COLOR_RED		0xFF0000FF
-		#define CONSOLE_COLOR_GREEN		0x00FF00FF
-		#define CONSOLE_COLOR_BLUE		0x0000FFFF
-		#define CONSOLE_COLOR_WHITE		0xFFFFFFFF
-		#define CONSOLE_COLOR_BLACK		0x000000FF
-		#define CONSOLE_BACKGROUND		0x505050DD
+		#define DEBUG_COLOR_RED		0xFF0000FF
+		#define DEBUG_COLOR_GREEN		0x00FF00FF
+		#define DEBUG_COLOR_BLUE		0x0000FFFF
+		#define DEBUG_COLOR_WHITE		0xFFFFFFFF
+		#define DEBUG_COLOR_BLACK		0x000000FF
+		#define DEBUG_BACKGROUND		0x505050DD
 
 		class Renderable2D;
 	
@@ -25,9 +26,19 @@ namespace Core {
 
 			std::vector<Maths::mat4> m_TransformationStack;
 			const Maths::mat4* m_TransformationBack;
-			const Texture* m_Mask;
+			const Mask* m_Mask;
+
+		protected:
+			Renderer2D() 
+				: m_Mask(nullptr)
+			{
+				m_TransformationStack.push_back(Maths::mat4::Identity());
+				m_TransformationBack = &m_TransformationStack.back();
+			}		
 
 		public:
+			virtual ~Renderer2D() {}
+
 			virtual void begin() {}
 			virtual void submit(const Renderable2D* renderable) = 0;
 			virtual void drawString(const std::string& text, const Maths::vec3& position, const Font& font, unsigned int Color) {};
@@ -50,14 +61,7 @@ namespace Core {
 				m_TransformationBack = &m_TransformationStack.back();
 			}
 
-			virtual void setMask(const Texture* mask) { m_Mask = mask; }
-		
-			virtual ~Renderer2D() {}
-		protected:
-			Renderer2D() {
-				m_TransformationStack.push_back(Maths::mat4::Identity());
-				m_TransformationBack = &m_TransformationStack.back();
-			}		
+			virtual void setMask(const Mask* mask) { m_Mask = mask; }
 
 		};
 

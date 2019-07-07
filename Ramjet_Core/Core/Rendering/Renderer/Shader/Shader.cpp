@@ -117,7 +117,9 @@ namespace Core {
 				glGetShaderiv(vertex, GL_INFO_LOG_LENGTH, &length);
 				std::vector<char> error(length);
 				glGetShaderInfoLog(vertex, length, &length, &error[0]);
-				std::cout << "Fail to compile vertex shader ! " << std::endl << &error[0] << std::endl;
+				CORE_ERROR("Failed to compile vertex shader!");
+				CORE_ERROR(&error[0]);
+				CORE_ASSERT(false, "failed to compile vertex shader!");
 				glDeleteShader(vertex);
 				return 0;
 			}
@@ -134,7 +136,9 @@ namespace Core {
 				glGetShaderiv(fragment, GL_INFO_LOG_LENGTH, &length);
 				std::vector<char> error(length);
 				glGetShaderInfoLog(fragment, length, &length, &error[0]);
-				std::cout << "Fail to compile fragment shader ! " << std::endl << &error[0] << std::endl;
+				CORE_ERROR("Failed to compile fragment shader!");
+				CORE_ERROR(&error[0]);
+				CORE_ASSERT(false, "failed to compile fragment shader!");
 				glDeleteShader(fragment);
 				return 0;
 			}

@@ -15,6 +15,7 @@ namespace Core {
 			static std::map<std::string, Font*> m_Fonts;
 
 		public:
+			static void init();
 			static void add(Font* font);
 			static Font* get(const std::string& name);
 			static Font* get(const std::string& name, unsigned int size);
