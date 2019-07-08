@@ -8,7 +8,7 @@
 #include <iostream>
 
 
-#include <Utils/String.h>
+//#include <Utils/String.h>
 #include <Utils/ImageLoader.h>
 #include <Utils/types.h>
 
@@ -31,7 +31,8 @@ namespace Core {
 		{
 
 		private:
-			String m_Name, m_FileName;
+			std::string m_Name;
+			std::string m_FileName;
 			GLuint m_TextureID;
 			GLsizei m_Width, m_Height;
 			unsigned int m_Bits;
@@ -40,15 +41,15 @@ namespace Core {
 
 		public:
 			Texture(uint width, uint height);
-			Texture(const String& fileName);
-			Texture(const String& name, const String& fileName);
+			Texture(const std::string& fileName);
+			Texture(const std::string& name, const std::string& fileName);
 			~Texture();
 			void bind() const;
 			void unbind() const;
 
 			inline static void setWrap(TextureWrap mode) { m_WrapMode = mode; }
 
-			inline const String getName() const { return m_Name; }
+			inline const std::string& getName() const { return m_Name; }
 			inline const unsigned int getID() const { return m_TextureID; }
 			inline const unsigned int getWidth() const { return m_Width; }
 			inline const unsigned int getHeight() const { return m_Height; }

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Renderable2D.h"
-#include <Utils/String.h>
+//#include <Utils/String.h>
 #include <Font_Manager.h>
 
 namespace Core {
@@ -12,8 +12,7 @@ namespace Core {
 		{
 		private:
 
-			Font* m_Font;
-			
+			Font* m_Font;			
 			Maths::vec3& position;
 			float m_x, m_y;
 

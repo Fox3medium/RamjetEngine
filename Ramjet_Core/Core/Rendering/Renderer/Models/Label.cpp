@@ -62,7 +62,7 @@ namespace Core {
 				std::cout << ", Size= " << size;
 			std::cout << std::endl;
 
-			m_Font = Font_Manager::get("SourceSansPro");
+			m_Font = Font_Manager::get(name);
 		}
 	}
 

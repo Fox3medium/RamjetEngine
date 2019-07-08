@@ -1,5 +1,17 @@
 #include "FrameBuffer.h"
 
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
+#ifdef _DEBUG
+#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
+// Replace _NORMAL_BLOCK with _CLIENT_BLOCK if you want the
+// allocations to be of _CLIENT_BLOCK type
+#else
+#define DBG_NEW new
+#endif
+
 namespace Core {
 
 	namespace Rendering {
@@ -7,7 +19,7 @@ namespace Core {
 		FrameBuffer::FrameBuffer(const Maths::tvec2<uint>& size)
 			: m_Size(size), m_Width(m_Size.x), m_Height(m_Size.y)
 		{
-			create(size.x, size.y);
+			create(m_Width, m_Height);
 		}
 
 		FrameBuffer::FrameBuffer(uint width, uint height)
@@ -18,13 +30,14 @@ namespace Core {
 
 		FrameBuffer::~FrameBuffer()
 		{
-			glDeleteFramebuffers(1, &m_Data.framebufferID);
+			// GPU -> MEMORY LEAK TODO RESOLVE
+			glDeleteFramebuffers(1, &m_Data.framebufferID);	
+			// SHOULD NOT BE REQUIRED
 			glDeleteRenderbuffers(1, &m_Data.depthbufferID);
-			delete m_Texture;
-			
+			delete m_Texture;	
 		}
 
-		void FrameBuffer::bind() const
+		void FrameBuffer::bind()
 		{
 			glBindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
 			glViewport(0, 0, m_Width, m_Height);
@@ -32,7 +45,9 @@ namespace Core {
 
 		void FrameBuffer::clear()
 		{
-			glClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
+			//NOT FUNCTIONAL?!
+			//glClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
+			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
@@ -41,7 +56,7 @@ namespace Core {
 			glGenFramebuffers(1, &m_Data.framebufferID);
 			glGenRenderbuffers(1, &m_Data.depthbufferID);
 
-			m_Texture = new Texture(width, height);
+			m_Texture = DBG_NEW Texture(width, height);
 
 			glBindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
 			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);

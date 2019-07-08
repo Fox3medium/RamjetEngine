@@ -6,21 +6,21 @@ namespace Core {
 
 	namespace Rendering {
 		Sprite::Sprite(Texture* texture)
-			: Renderable2D(Maths::vec3(0.0f, 0.0f, 0.0f), Maths::vec2((float) texture->getWidth(), (float) texture->getHeight()), 0xBD92DFFF), 
+			: Renderable2D(Maths::vec3(0.0f, 0.0f, 0.0f), Maths::vec2((float) texture->getWidth(), (float) texture->getHeight()), 0xFFFFFFFF), 
 			position(m_Position), size(m_Size)
 		{
 			m_Texture = texture;
 		}
 
 		Sprite::Sprite(float x, float y, Texture* texture)
-			: Renderable2D(Maths::vec3(x, y, 0.0f), Maths::vec2((float)texture->getWidth(), (float)texture->getHeight()), 0xBD92DFFF),
+			: Renderable2D(Maths::vec3(x, y, 0.0f), Maths::vec2((float)texture->getWidth(), (float)texture->getHeight()), 0xFFFFFFFF),
 			position(m_Position), size(m_Size)
 		{
 			m_Texture = texture;
 		}
 		
 		Sprite::Sprite(float x, float y, float width, float height, Texture* texture)
-			: Renderable2D(Maths::vec3(x, y, 0.0f), Maths::vec2(width, height), 0xBD92DFFF),
+			: Renderable2D(Maths::vec3(x, y, 0.0f), Maths::vec2(width, height), 0xFFFFFFFF),
 			position(m_Position), size(m_Size)
 		{
 			m_Texture = texture;

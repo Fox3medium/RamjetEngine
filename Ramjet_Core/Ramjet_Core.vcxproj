@@ -117,7 +117,7 @@
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
       <MultiProcessorCompilation>false</MultiProcessorCompilation>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
     </ClCompile>
@@ -219,7 +219,6 @@
     <ClCompile Include="Core\Managers\Shader_Manager.cpp" />
     <ClCompile Include="Core\Managers\Sound_Manager.cpp" />
     <ClCompile Include="Core\Managers\Texture_Manager.cpp" />
-    <ClCompile Include="Core\Ramjet_Starter.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\FrameBuffer.cpp" />

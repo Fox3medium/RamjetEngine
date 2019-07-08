@@ -33,11 +33,12 @@ namespace Core {
 			GLsizei m_IndexCount;
 			VertexData* m_Buffer;
 			std::vector<GLuint> m_TextureSlots;
+
 			FrameBuffer* m_Framebuffer;
 			int m_ScreenBuffer;
-			uint m_ScreenQuad;
 			Maths::tvec2<uint> m_ViewportSize, m_ScreenSize;
 			Shader* m_SimpleShader;
+			uint m_ScreenQuad;
 			RenderTarget m_Target;
 
 		public:

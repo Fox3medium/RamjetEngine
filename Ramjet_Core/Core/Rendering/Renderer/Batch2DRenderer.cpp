@@ -11,6 +11,7 @@ namespace Core {
 			: m_IndexCount(0), m_ScreenSize(screenSize), m_ViewportSize(screenSize), m_Target(RenderTarget::SCREEN)
 		{
 			init();
+			m_Mask = nullptr;
 		}
 
 		Batch2DRenderer::~Batch2DRenderer()
@@ -24,16 +25,17 @@ namespace Core {
 		{
 			if (m_Target == RenderTarget::BUFFER) 
 			{
-				if (m_ViewportSize != m_Framebuffer->getSize()) 
+				if (m_ViewportSize != m_Framebuffer->getSize())
 				{
 					delete m_Framebuffer;
 					m_Framebuffer = new FrameBuffer(m_ViewportSize);
 				}
+
 				m_Framebuffer->bind();
 				m_Framebuffer->clear();
 			}
 			else 
-			{
+			{				
 				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
 				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
 			}
@@ -177,6 +179,7 @@ namespace Core {
 		{
 			glUnmapBuffer(GL_ARRAY_BUFFER);
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
 		void Batch2DRenderer::flush()
@@ -200,6 +203,7 @@ namespace Core {
 
 			if (m_Target == RenderTarget::BUFFER) 
 			{
+				// Display Framebuffer - potentially move to Framebuffer class
 				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
 				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
 				m_SimpleShader->enable();
@@ -213,6 +217,7 @@ namespace Core {
 				m_IBO->unbind();
 				glBindVertexArray(0);
 				m_SimpleShader->disable();
+
 			}
 		}
 
@@ -272,6 +277,8 @@ namespace Core {
 
 			glBindVertexArray(0);
 
+			delete indices;
+
 			using namespace Manager;
 			//Set framebuffer
 			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_ScreenBuffer);
@@ -281,7 +288,7 @@ namespace Core {
 			m_SimpleShader->setUniformMat4("pr_matrix", Maths::mat4::Orthographic(0, m_ScreenSize.x, m_ScreenSize.y, 0, -1.0f, 1.0f));
 			m_SimpleShader->setUniform1i("tex", 0);
 			m_SimpleShader->disable();
-			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, m_ScreenSize.x, m_ScreenSize.y); 
+			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, m_ScreenSize.x, m_ScreenSize.y);
 		}
 
 		float Batch2DRenderer::submitTexture(uint textureID)

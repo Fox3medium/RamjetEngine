@@ -15,8 +15,8 @@ namespace Core {
 			Mask(Texture* in_texture, const Maths::mat4& in_transform = Maths::mat4::Identity()) 
 				: texture(in_texture), transform(in_transform)
 			{
-				m_Translate = Maths::vec3(-16.0f, -9.0f, 1.0f);
-				m_Scale = Maths::vec3(32.0f, 18.0f, 1.0f);
+				/*m_Translate = Maths::vec3(-16.0f, -9.0f, 1.0f);
+				m_Scale = Maths::vec3(32.0f, 18.0f, 1.0f);*/
 			}
 
 			void SetPosition(const Maths::vec3& translate)
@@ -36,12 +36,12 @@ namespace Core {
 
 		private:
 
-			Maths::vec3 m_Translate;
+		/*	Maths::vec3 m_Translate;
 			Maths::vec3 m_Scale;
-
+*/
 			void Update(const Maths::vec3& translate, const Maths::vec3& scale)
 			{
-				transform = Maths::mat4::Translate(m_Translate + translate) * Maths::mat4::Scale(m_Scale + scale);
+				/*transform = Maths::mat4::Translate(m_Translate + translate) * Maths::mat4::Scale(m_Scale + scale);*/
 			}
 		};
 

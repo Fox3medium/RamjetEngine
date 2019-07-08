@@ -7,7 +7,7 @@ namespace Core {
 
 	class Core {
 
-	protected:
+	private:
 		Init::Window* m_Window;
 		Timer* m_Timer;
 		unsigned int m_Fps, m_UpdatePerSec;

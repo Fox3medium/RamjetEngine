@@ -56,12 +56,12 @@ namespace Core {
 				const GLFWvidmode* mode = glfwGetVideoMode(primary);
 				m_WInfo.height = mode->height;
 				m_WInfo.width = mode->width;
-				m_Window = glfwCreateWindow(mode->width, mode->height, m_WInfo.name,
+				m_Window = glfwCreateWindow(mode->width, mode->height, m_WInfo.name.c_str(),
 					primary, // fullscreen
 					NULL); // share ressources
 			}
 			else {
-				m_Window = glfwCreateWindow(m_WInfo.width, m_WInfo.height, m_WInfo.name,
+				m_Window = glfwCreateWindow(m_WInfo.width, m_WInfo.height, m_WInfo.name.c_str(),
 					NULL, // fullscreen
 					NULL); // share ressources
 			}
@@ -81,6 +81,7 @@ namespace Core {
 
 			glfwSetFramebufferSizeCallback(m_Window, windowSizeCallback);
 			glfwSetWindowUserPointer(m_Window, this);
+
 			glfwSetWindowRefreshCallback(m_Window, idleCallback);
 			glfwSetCursorPosCallback(m_Window, processMouseInput);
 			glfwSetScrollCallback(m_Window, processScrollInput);

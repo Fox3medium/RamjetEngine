@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Utils/String.h>
+//#include <Utils/String.h>
 #include <FreeImage/FreeImage.h>
 
 namespace Utils {

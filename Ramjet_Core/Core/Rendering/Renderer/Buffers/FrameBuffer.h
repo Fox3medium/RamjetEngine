@@ -11,21 +11,23 @@
 namespace Core {
 
 	namespace Rendering {
+
+		struct FramebufferData
+		{
+			uint framebufferID;
+			uint depthbufferID;
+		};
 	
 		class FrameBuffer {
 
-		private:
-			struct FramebufferData 
-			{
-				uint framebufferID;
-				uint depthbufferID;
-			};
+		private:			
 
 			Texture* m_Texture;
 			FramebufferData m_Data;
 			Maths::tvec2<uint> m_Size;
 			uint& m_Width;
 			uint& m_Height;
+
 			Maths::vec4 m_ClearColor;
 
 		public:
@@ -34,7 +36,7 @@ namespace Core {
 
 			~FrameBuffer();
 
-			void bind() const;
+			void bind();
 			void clear();
 
 			inline const Maths::tvec2<uint>& getSize() const { return m_Size; }
