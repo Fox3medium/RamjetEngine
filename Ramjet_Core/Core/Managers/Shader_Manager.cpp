@@ -9,7 +9,7 @@ namespace Core {
 		std::map<std::string, Shader* > Shader_Manager::m_Shaders;
 		std::map<std::string, GLuint > Shader_Manager::m_SID;
 
-		Shader* Shader_Manager::add(std::string name, Shader* shader)
+		Shader* Shader_Manager::add(const std::string& name, Shader* shader)
 		{
 			m_Shaders[name] = shader;
 			m_SID[name] = shader->getShaderID();
@@ -55,6 +55,11 @@ namespace Core {
 		Shader* Shader_Manager::BasicLightShader()
 		{
 			return m_Shaders["BasicLightShader"];
+		}
+
+		Shader* Shader_Manager::SimpleShader()
+		{
+			return m_Shaders["SimpleShader"];
 		}
 
 		const char* default_shader_vert =
@@ -187,10 +192,51 @@ namespace Core {
 			"	color = texColor * intensity;\n"
 			"}\n";
 
+		const char* simple_shader_vert =
+			"#version 330 core\n"
+			"\n"
+			"layout (location = 0) in vec4 position;\n"
+			"layout (location = 1) in vec2 uv;\n"
+			"layout (location = 2) in vec2 mask_uv;\n"
+			"layout (location = 3) in float tid;\n"
+			"layout (location = 4) in float mid;\n"
+			"layout (location = 5) in vec4 color;\n"
+			"\n"
+			"uniform mat4 pr_matrix;\n"
+			"\n"
+			"out DATA\n"
+			"{\n"
+			"	vec2 uv;\n"
+			"} vs_out;\n"
+			"\n"
+			"void main()\n"
+			"{\n"
+			"	gl_Position = pr_matrix * position;\n"
+			"	vs_out.uv = uv;\n"
+			"}\n";
+
+		const char* simple_shader_frag =
+			"#version 330 core\n"
+			"\n"
+			"layout (location = 0) out vec4 color;\n"
+			"\n"
+			"uniform sampler2D tex;\n"
+			"\n"
+			"in DATA\n"
+			"{\n"
+			"	vec2 uv;\n"
+			"} fs_in;\n"
+			"\n"
+			"void main()\n"
+			"{\n"
+			"	color = texture(tex, fs_in.uv);\n"
+			"}\n";
+
 		void Shader_Manager::init()
 		{
 			add("DefaultShader", new Shader("DefaultVertShader", default_shader_vert, default_shader_frag, true));
 			add("BasicLightShader", new Shader("BasicLightShader", basic_light_shader_vert, basic_light_shader_frag, true));
+			add("SimpleShader", new Shader("SimpleShader", simple_shader_vert, simple_shader_frag, true));
 		}
 
 	}

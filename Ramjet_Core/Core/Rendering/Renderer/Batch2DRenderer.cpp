@@ -1,11 +1,14 @@
 #include "Batch2DRenderer.h"
 
+#include <Managers/Mesh_Manager.h>
+#include <Managers/Shader_Manager.h>
+
 namespace Core {
 
 	namespace Rendering {
 
-		Batch2DRenderer::Batch2DRenderer()
-			: m_IndexCount(0)
+		Batch2DRenderer::Batch2DRenderer(const Maths::tvec2<uint>& screenSize)
+			: m_IndexCount(0), m_ScreenSize(screenSize), m_ViewportSize(screenSize), m_Target(RenderTarget::SCREEN)
 		{
 			init();
 		}
@@ -19,6 +22,21 @@ namespace Core {
 
 		void Batch2DRenderer::begin()
 		{
+			if (m_Target == RenderTarget::BUFFER) 
+			{
+				if (m_ViewportSize != m_Framebuffer->getSize()) 
+				{
+					delete m_Framebuffer;
+					m_Framebuffer = new FrameBuffer(m_ViewportSize);
+				}
+				m_Framebuffer->bind();
+				m_Framebuffer->clear();
+			}
+			else 
+			{
+				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
+				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+			}
 			glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
 			m_Buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
 		}
@@ -179,6 +197,23 @@ namespace Core {
 
 			m_IndexCount = 0;
 			m_TextureSlots.clear();
+
+			if (m_Target == RenderTarget::BUFFER) 
+			{
+				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
+				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+				m_SimpleShader->enable();
+
+				glActiveTexture(GL_TEXTURE0);
+				m_Framebuffer->getTexture()->bind();
+
+				glBindVertexArray(m_ScreenQuad);
+				m_IBO->bind();
+				glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
+				m_IBO->unbind();
+				glBindVertexArray(0);
+				m_SimpleShader->disable();
+			}
 		}
 
 		void Batch2DRenderer::init()
@@ -236,6 +271,17 @@ namespace Core {
 			m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
 			glBindVertexArray(0);
+
+			using namespace Manager;
+			//Set framebuffer
+			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_ScreenBuffer);
+			m_Framebuffer = new FrameBuffer(m_ViewportSize);
+			m_SimpleShader = Shader_Manager::SimpleShader();
+			m_SimpleShader->enable();
+			m_SimpleShader->setUniformMat4("pr_matrix", Maths::mat4::Orthographic(0, m_ScreenSize.x, m_ScreenSize.y, 0, -1.0f, 1.0f));
+			m_SimpleShader->setUniform1i("tex", 0);
+			m_SimpleShader->disable();
+			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, m_ScreenSize.x, m_ScreenSize.y); 
 		}
 
 		float Batch2DRenderer::submitTexture(uint textureID)

@@ -49,6 +49,8 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\vector.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\texture-font.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\texture-atlas.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\platform.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\framebuffer.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\mesh_manager.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\ramjet_core.lib
 d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\ramjet_core.pdb
 d:\gameengine\ramjet_engine\ramjet_core\bin\debug\x64\intermediate\ramjet_core.tlog\cl.command.1.tlog

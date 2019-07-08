@@ -64,7 +64,7 @@ namespace Core {
 			}
 			else
 				m_keys[GLFW_KEY_S] = false;
-				
+
 
 			if (glfwGetKey(activeWin, GLFW_KEY_E) == GLFW_PRESS)
 			{
@@ -72,12 +72,30 @@ namespace Core {
 			}
 			else
 				m_keys[GLFW_KEY_E] = false;
+
 			if (glfwGetKey(activeWin, GLFW_KEY_Q) == GLFW_PRESS)
 			{
 				m_keys[GLFW_KEY_Q] = true;
 			}
 			else
 				m_keys[GLFW_KEY_Q] = false;
+
+
+			if (glfwGetKey(activeWin, GLFW_KEY_1) == GLFW_PRESS)
+			{
+				m_keys[GLFW_KEY_1] = true;
+			}
+			else
+				m_keys[GLFW_KEY_1] = false;
+
+			if (glfwGetKey(activeWin, GLFW_KEY_2) == GLFW_PRESS)
+			{
+				m_keys[GLFW_KEY_2] = true;
+			}
+			else
+				m_keys[GLFW_KEY_2] = false;
+
+
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
 				CInOut::Out("YOU PRESS CONTROL");
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)

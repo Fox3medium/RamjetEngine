@@ -10,6 +10,7 @@
 
 #include <Utils/String.h>
 #include <Utils/ImageLoader.h>
+#include <Utils/types.h>
 
 using namespace Utils;
 
@@ -38,6 +39,7 @@ namespace Core {
 			static TextureWrap m_WrapMode;
 
 		public:
+			Texture(uint width, uint height);
 			Texture(const String& fileName);
 			Texture(const String& name, const String& fileName);
 			~Texture();

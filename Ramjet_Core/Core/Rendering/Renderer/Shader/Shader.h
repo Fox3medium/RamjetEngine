@@ -10,6 +10,13 @@ using namespace Utils;
 namespace Core {
 
 	namespace Rendering {
+
+		#define SHADER_VERTEX_INDEX		0
+		#define SHADER_UV_INDEX			1
+		#define SHADER_MASK_UV_INDEX	2
+		#define SHADER_TEXTURE_INDEX	3
+		#define SHADER_MASK_INDEX		4
+		#define SHADER_COLOR_INDEX		5
 	
 		class Shader {
 			private :

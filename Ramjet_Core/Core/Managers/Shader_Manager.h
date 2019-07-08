@@ -17,7 +17,7 @@ namespace Core {
 
 		public:
 			static void init();
-			static Shader* add(std::string name, Shader* shader);
+			static Shader* add(const std::string& name, Shader* shader);
 			/*return Shader*/
 			static Shader* get(const std::string& name);
 			/*Return shader's ID*/
@@ -29,6 +29,7 @@ namespace Core {
 
 			static Shader* DefaultShader();
 			static Shader* BasicLightShader();
+			static Shader* SimpleShader();
 
 		private:
 			Shader_Manager() {}

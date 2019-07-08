@@ -6,6 +6,12 @@ namespace Core {
 
 		TextureWrap Texture::m_WrapMode = REPEAT;
 
+		Texture::Texture(uint width, uint height)
+			: m_Width(width), m_Height(height), m_FileName("NULL")
+		{
+			m_TextureID = load();
+		}
+
 		Texture::Texture(const String& fileName)
 			: m_FileName(fileName), m_Name(fileName)
 		{
@@ -35,7 +41,12 @@ namespace Core {
 
 		GLuint Texture::load()
 		{
-			BYTE* pixels = load_image(m_FileName, &m_Width, &m_Height, &m_Bits);
+			BYTE* pixels = nullptr;
+
+			if (m_FileName != "NULL")
+				pixels = load_image(m_FileName, &m_Width, &m_Height, &m_Bits);
+			else
+				m_Bits = 32;
 
 			GLuint result;
 			glGenTextures(1, &result);
@@ -57,10 +68,10 @@ namespace Core {
 				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 				CORE_WARN("[TEXTURE] Mmage format is not a multiple of 4 it require GL_UNPACK_ALIGNMENT to 1 for it to be loaded ", m_FileName.toChars());
 			}
-			glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_Width, m_Height, 0, format, GL_UNSIGNED_BYTE, pixels);
+			glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_Width, m_Height, 0, format, GL_UNSIGNED_BYTE, pixels ? pixels : NULL);
 			glBindTexture(GL_TEXTURE_2D, 0);
-
-			delete[] pixels;
+			if(pixels != nullptr)
+				delete[] pixels;
 
 			return result;
 		}

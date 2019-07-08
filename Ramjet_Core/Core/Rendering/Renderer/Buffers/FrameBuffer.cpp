@@ -7,18 +7,21 @@ namespace Core {
 		FrameBuffer::FrameBuffer(const Maths::tvec2<uint>& size)
 			: m_Size(size), m_Width(m_Size.x), m_Height(m_Size.y)
 		{
-			create(m_Width, m_Height);
+			create(size.x, size.y);
 		}
 
 		FrameBuffer::FrameBuffer(uint width, uint height)
 			: m_Size(width, height), m_Width(m_Size.x), m_Height(m_Size.y)
 		{
-			create(m_Width, m_Height);
+			create(width, height);
 		}
 
 		FrameBuffer::~FrameBuffer()
 		{
 			glDeleteFramebuffers(1, &m_Data.framebufferID);
+			glDeleteRenderbuffers(1, &m_Data.depthbufferID);
+			delete m_Texture;
+			
 		}
 
 		void FrameBuffer::bind() const
@@ -36,11 +39,11 @@ namespace Core {
 		void FrameBuffer::create(uint width, uint height)
 		{
 			glGenFramebuffers(1, &m_Data.framebufferID);
-			glGenFramebuffers(1, &m_Data.depthbufferID);
+			glGenRenderbuffers(1, &m_Data.depthbufferID);
 
 			m_Texture = new Texture(width, height);
 
-			glBindFramebuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
+			glBindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
 			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
 
 			glBindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);

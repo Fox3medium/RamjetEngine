@@ -10,8 +10,10 @@ namespace Core {
 		
 		class Layer
 		{
-		protected:
+		public:
 			Renderer2D* m_Renderer;
+
+		protected:
 			std::vector<Renderable2D*> m_Renderables;
 			Shader* m_Shader;
 			Maths::mat4 m_ProjectionMatrix;			

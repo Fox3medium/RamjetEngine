@@ -17,8 +17,8 @@ namespace Core {
 		private:
 			struct FramebufferData 
 			{
-				GLuint framebufferID;
-				GLuint depthbufferID;
+				uint framebufferID;
+				uint depthbufferID;
 			};
 
 			Texture* m_Texture;
