@@ -6,7 +6,7 @@ namespace Core {
 	namespace Rendering {
 
 		Font::Font(std::string name, std::string filename, float size)
-			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(960/32.0f, 540/18.0f)
+			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(1280/32.0f, 720/18.0f)
 		{
 			if (size != FONT_STD_SIZE)
 				m_Name = name + std::to_string(size);
