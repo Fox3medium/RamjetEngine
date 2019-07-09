@@ -110,7 +110,6 @@ namespace Core {
 			using namespace ftgl;
 
 			float ts = 0.0f;
-			bool found = false;
 			
 			ts = submitTexture(font.getID());
 

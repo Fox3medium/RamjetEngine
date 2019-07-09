@@ -31,7 +31,7 @@ namespace Core {
 		FrameBuffer::~FrameBuffer()
 		{
 			// GPU -> MEMORY LEAK TODO RESOLVE
-			glDeleteFramebuffers(1, &m_Data.framebufferID);	
+			glDeleteFramebuffers(1, &m_Data.framebufferID);
 			// SHOULD NOT BE REQUIRED
 			glDeleteRenderbuffers(1, &m_Data.depthbufferID);
 			delete m_Texture;	

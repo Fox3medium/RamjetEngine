@@ -10,8 +10,8 @@
 namespace Core {
 
 	namespace Rendering {
-
-		#define DEBUG_COLOR_RED		0xFF0000FF
+										
+		#define DEBUG_COLOR_RED			0xFF0000FF
 		#define DEBUG_COLOR_GREEN		0x00FF00FF
 		#define DEBUG_COLOR_BLUE		0x0000FFFF
 		#define DEBUG_COLOR_WHITE		0xFFFFFFFF

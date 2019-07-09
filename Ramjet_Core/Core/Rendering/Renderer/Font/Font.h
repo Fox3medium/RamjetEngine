@@ -31,9 +31,9 @@ namespace Core {
 			void setScale(float x, float y);
 
 			inline const unsigned int getID() const { return m_FTAtlas->id; }
-			inline const Maths::vec2 getScale() const { return m_Scale; }
-			inline const std::string getName() const { return m_Name; }
-			inline const std::string getFilename() const { return m_Filename; }
+			inline const Maths::vec2& getScale() const { return m_Scale; }
+			inline const std::string& getName() const { return m_Name; }
+			inline const std::string& getFilename() const { return m_Filename; }
 			inline const float getSize() const { return m_Size; }
 		};
 
