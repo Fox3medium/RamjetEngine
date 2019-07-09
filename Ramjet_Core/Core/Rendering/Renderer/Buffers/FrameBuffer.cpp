@@ -17,13 +17,13 @@ namespace Core {
 	namespace Rendering {
 
 		FrameBuffer::FrameBuffer(const Maths::tvec2<uint>& size)
-			: m_Size(size), m_Width(m_Size.x), m_Height(m_Size.y)
+			: m_Size(size), m_Width(m_Size.x), m_Height(m_Size.y), m_ClearColor(Maths::vec4(0.0f, 0.0f, 0.0f, 1.0f))
 		{
 			create(m_Width, m_Height);
 		}
 
 		FrameBuffer::FrameBuffer(uint width, uint height)
-			: m_Size(width, height), m_Width(m_Size.x), m_Height(m_Size.y)
+			: m_Size(width, height), m_Width(m_Size.x), m_Height(m_Size.y), m_ClearColor(Maths::vec4(0.0f, 0.0f, 0.0f, 1.0f))
 		{
 			create(width, height);
 		}
@@ -46,8 +46,7 @@ namespace Core {
 		void FrameBuffer::clear()
 		{
 			//NOT FUNCTIONAL?!
-			//glClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
-			glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+			glClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
@@ -56,6 +55,7 @@ namespace Core {
 			glGenFramebuffers(1, &m_Data.framebufferID);
 			glGenRenderbuffers(1, &m_Data.depthbufferID);
 
+			Texture::setFilter(TextureFilter::LINEAR);
 			m_Texture = DBG_NEW Texture(width, height);
 
 			glBindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);

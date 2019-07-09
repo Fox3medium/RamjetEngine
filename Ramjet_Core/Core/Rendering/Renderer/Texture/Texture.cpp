@@ -4,10 +4,11 @@ namespace Core {
 
 	namespace Rendering {
 
-		TextureWrap Texture::m_WrapMode = REPEAT;
+		TextureWrap Texture::s_WrapMode = TextureWrap::REPEAT;
+		TextureFilter Texture::s_Filter = TextureFilter::LINEAR;
 
-		Texture::Texture(uint width, uint height)
-			: m_Width(width), m_Height(height), m_FileName("NULL"), m_Name("Name")
+		Texture::Texture(uint width, uint height, uint bits)
+			: m_Width(width), m_Height(height), m_FileName("NULL"), m_Name("Name"), m_Bits(bits)
 		{
 			m_TextureID = load();
 		}
@@ -51,10 +52,10 @@ namespace Core {
 			GLuint result;
 			glGenTextures(1, &result);
 			glBindTexture(GL_TEXTURE_2D, result);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLuint)m_WrapMode);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (GLuint)m_WrapMode);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, (GLint) s_Filter);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, (GLint) s_Filter);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLuint)s_WrapMode);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, (GLuint)s_WrapMode);
 
 			if (m_Bits != 24 && m_Bits != 32)
 				CORE_ERROR("[TEXTURE] unsupporred image bit depth! %d on file ", m_Bits, " '",m_FileName.c_str(),"'!");

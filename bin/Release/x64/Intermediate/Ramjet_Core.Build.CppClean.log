@@ -1,5 +1,4 @@
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ramjet_core.pdb
-d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\indexbuffer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\framebuffer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\buffer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\batch2drenderer.obj
@@ -19,9 +18,7 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\behaviour_m
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ai_director.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\window.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\sound.obj
-d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\timer.obj
-d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\string.obj
-d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\cinout.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\win64application.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vec4.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vec3.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vec2.obj
@@ -33,12 +30,18 @@ d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\fileutils.o
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\toplayer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\texture.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\shader.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\postfxpass.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\postfx.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\sprite.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\label.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\layer.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\group.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\font.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\vertexarray.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\indexbuffer.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\timer.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\string.obj
+d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\cinout.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ga_stream.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\gau.obj
 d:\gameengine\ramjet_engine\ramjet_core\bin\release\x64\intermediate\ga.obj

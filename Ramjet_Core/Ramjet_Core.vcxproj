@@ -130,7 +130,8 @@
     <PostBuildEvent>
       <Message>
       </Message>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(SolutionDir)Game_Tests_Example\Assets</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -199,7 +200,8 @@
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(SolutionDir)Game_Tests_Example\Assets</Command>
+      <Command>
+      </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -230,6 +232,8 @@
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFX.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFXPass.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
@@ -294,6 +298,8 @@
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Label.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
+    <ClInclude Include="Core\Rendering\Renderer\PostFX\PostFX.h" />
+    <ClInclude Include="Core\Rendering\Renderer\PostFX\PostFXPass.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
@@ -335,16 +341,7 @@
     <ClInclude Include="Ext\gorilla-audio\ga_internal.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Shaders\fragment_shader_test.glsl" />
-    <None Include="Assets\Shaders\textFragShader.glsl" />
-    <None Include="Assets\Shaders\textVertShader.glsl" />
-    <None Include="Assets\Shaders\vertex_shader_test.glsl" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="Assets\Test\747.png" />
-    <Image Include="Assets\Test\tb.png" />
-    <Image Include="Assets\Test\tc.png" />
-    <Image Include="Assets\Test\test.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

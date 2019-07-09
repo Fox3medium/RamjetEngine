@@ -13,6 +13,9 @@
 #define DBG_NEW new
 #endif
 
+#define WIDTH 1280
+#define HEIGHT 720
+
 
 using namespace Core::Rendering;
 using namespace Core::Manager;
@@ -27,7 +30,7 @@ private:
 	Layer* layer;
 	Layer* layerUI;
 	Label* fps;
-	Label* debugInfo;
+	Label** debugInfo;
 	Sprite* sprite;
 	Shader* shader;
 	Shader* shader1;
@@ -36,7 +39,7 @@ private:
 
 public:
 	GameTest() 
-		: Application ("Test", 1280, 720)
+		: Application ("Test", WIDTH, HEIGHT)
 	{
 	}
 
@@ -51,8 +54,6 @@ public:
 	void init() override
 	{
 		App::Application::init();
-		uint x = 1280;
-		uint y = 720;
 		C_Manager = new Control_Manager();
 
 		// WAIT FOR THE WINDOW TO BE INITIALIZED !!
@@ -62,9 +63,12 @@ public:
 		window->setControl(C_Manager);
 		shader = Shader_Manager::DefaultShader();
 		shader1 = Shader_Manager::DefaultShader();
-		B2R = new Batch2DRenderer(Maths::tvec2<uint>(x, y));
+		B2R = new Batch2DRenderer(Maths::tvec2<uint>(WIDTH, HEIGHT));
 		layer = new Layer(B2R, shader, Maths::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
-		layerUI = new Layer(new Batch2DRenderer(Maths::tvec2<uint>(x, y)), shader1, Maths::mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+		((Batch2DRenderer*)layer->m_Renderer)->setRenderTarget(RenderTarget::SCREEN);
+		((Batch2DRenderer*)layer->m_Renderer)->addPostFXPass(
+			new PostFXPass(Shader_Manager::FromFile("PostFX", "Assets/Shaders/postFXVert.glsl", "Assets/Shaders/postFXFrag.glsl")));
+		((Batch2DRenderer*)layer->m_Renderer)->setPostFX(false);
 		Texture_Manager::add(new Texture("tb", "Assets/Test/747.png"));
 		Texture_Manager::add(new Texture("747", "Assets/Test/wall.jpg"));
 		sprite = new Sprite(0.0f, 0.0f, 4, 4, Texture_Manager::get("tb"));
@@ -100,8 +104,11 @@ public:
 		fps = new Label("SourceSansPro12", -15.5f, 7.8f, DEBUG_COLOR_WHITE);
 		layer->add(fps);
 
-		debugInfo = new Label("SourceSansPro12", -15.5f, 6.8f, DEBUG_COLOR_WHITE);
-		layer->add(debugInfo);
+		debugInfo = new Label*[10];
+		debugInfo[0] = new Label("SourceSansPro12", -15.5f, 6.8f, DEBUG_COLOR_WHITE);
+		debugInfo[1] = new Label("SourceSansPro12", -15.5f, 5.8f, DEBUG_COLOR_WHITE);
+		layer->add(debugInfo[0]);
+		layer->add(debugInfo[1]);
 
 		//Sound_Manager::add(new Sound("test", "Assets/Test/untitled.wav"));
 	}
@@ -126,9 +133,9 @@ public:
 			pos.x += speed;
 
 		if (C_Manager->isKeyPressed(GLFW_KEY_2))
-			((Batch2DRenderer*)layer->m_Renderer)->setRenderTarget(RenderTarget::SCREEN);
+			((Batch2DRenderer*)layer->m_Renderer)->setRenderTarget(layer->m_Renderer->getRenderTarget() == RenderTarget::SCREEN ? RenderTarget::BUFFER : RenderTarget::SCREEN);
 		if (C_Manager->isKeyPressed(GLFW_KEY_1))
-			((Batch2DRenderer*)layer->m_Renderer)->setRenderTarget(RenderTarget::BUFFER);
+			((Batch2DRenderer*)layer->m_Renderer)->setPostFX(!layer->m_Renderer->getPostFX());
 
 		static Maths::vec3 scale(0, 0, 0);
 		static Maths::tvec2<uint> size = ((Batch2DRenderer*)layer->m_Renderer)->getViewportSize();;
@@ -151,20 +158,15 @@ public:
 		Sound_Manager::update();
 		double x, y;
 		C_Manager->getMousePosition(x, y);
-		//mask->SetModifier(pos, scale);
-		debugInfo->m_Text = std::to_string(size.x) + ", " + std::to_string(size.y);
-		((Batch2DRenderer*)layer->m_Renderer)->setViewportSize(size);
-		((Batch2DRenderer*)layer->m_Renderer)->setScreenSize(Maths::tvec2<uint>(window->getWidth(), window->getHeight()));
+
+		debugInfo[0]->m_Text = std::to_string(size.x) + ", " + std::to_string(size.y);
+		debugInfo[1]->m_Text = layer->m_Renderer->getRenderTarget() == RenderTarget::SCREEN ? "Screen" : "Buffer";
 	}
 
 	void render() override
 	{
-		//window->clear();
 		shader->enable();
 		layer->render();
-		shader1->enable();
-		layerUI->render();
-		//window->update();
 	}	
 
 };

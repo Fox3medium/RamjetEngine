@@ -8,7 +8,7 @@ namespace Core {
 	namespace Rendering {
 
 		Batch2DRenderer::Batch2DRenderer(const Maths::tvec2<uint>& screenSize)
-			: m_IndexCount(0), m_ScreenSize(screenSize), m_ViewportSize(screenSize), m_Target(RenderTarget::SCREEN)
+			: m_IndexCount(0), m_ScreenSize(screenSize), m_ViewportSize(screenSize)
 		{
 			init();
 			m_Mask = nullptr;
@@ -29,6 +29,16 @@ namespace Core {
 				{
 					delete m_Framebuffer;
 					m_Framebuffer = new FrameBuffer(m_ViewportSize);
+					if (m_PostFXEnabled) 
+					{
+						delete m_PostFXBuffer;
+						m_PostFXBuffer = new FrameBuffer(m_ViewportSize);
+					}
+				}
+				if (m_PostFXEnabled) 
+				{
+					m_PostFXBuffer->bind();
+					m_PostFXBuffer->clear();
 				}
 
 				m_Framebuffer->bind();
@@ -202,13 +212,18 @@ namespace Core {
 
 			if (m_Target == RenderTarget::BUFFER) 
 			{
-				// Display Framebuffer - potentially move to Framebuffer class
+				if (m_PostFXEnabled)
+					m_PostFX->RenderPostFX(m_Framebuffer, m_PostFXBuffer, m_ScreenQuad, m_IBO);
+				// Display Framebuffer
 				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
 				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
 				m_SimpleShader->enable();
 
 				glActiveTexture(GL_TEXTURE0);
-				m_Framebuffer->getTexture()->bind();
+				if (m_PostFXEnabled)
+					m_PostFXBuffer->getTexture()->bind();
+				else
+					m_Framebuffer->getTexture()->bind();
 
 				glBindVertexArray(m_ScreenQuad);
 				m_IBO->bind();
@@ -288,6 +303,9 @@ namespace Core {
 			m_SimpleShader->setUniform1i("tex", 0);
 			m_SimpleShader->disable();
 			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+
+			m_PostFX = new PostFX();
+			m_PostFXBuffer = new FrameBuffer(m_ViewportSize);
 		}
 
 		float Batch2DRenderer::submitTexture(uint textureID)

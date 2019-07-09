@@ -168,6 +168,12 @@
     <ClCompile Include="App\Win\Win64Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFXPass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFX.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -401,24 +407,15 @@
     <ClInclude Include="App\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Shaders\vertex_shader_test.glsl" />
-    <None Include="Assets\Shaders\fragment_shader_test.glsl" />
-    <None Include="Assets\Shaders\textFragShader.glsl" />
-    <None Include="Assets\Shaders\textVertShader.glsl" />
+    <ClInclude Include="Core\Rendering\Renderer\PostFX\PostFXPass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Rendering\Renderer\PostFX\PostFX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Test\747.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Assets\Test\tb.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Assets\Test\tc.png">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Assets\Test\test.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

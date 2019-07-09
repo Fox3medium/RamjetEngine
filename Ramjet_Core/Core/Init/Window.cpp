@@ -78,7 +78,12 @@ namespace Core {
 				CORE_FATAL("ERROR : GLEW initialize failed.");
 			}
 
-			CORE_INFO("OpenGL version: ", glGetString(GL_VERSION));
+			CORE_WARN("----------------------------------");
+			CORE_WARN(" OpenGL:");
+			CORE_WARN("    ", glGetString(GL_VERSION));
+			CORE_WARN("    ", glGetString(GL_VENDOR));
+			CORE_WARN("    ", glGetString(GL_RENDERER));
+			CORE_WARN("----------------------------------");
 
 			glfwSetFramebufferSizeCallback(m_Window, windowSizeCallback);
 			glfwSetWindowUserPointer(m_Window, this);

@@ -102,7 +102,7 @@
       <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Game_Tests_Example\Assets $(OutDir)Assets\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>copy /Y $(SolutionDir)Ramjet_Core\Dependencies\DLLs_Backup\* $(OutDir)</Command>
@@ -163,7 +163,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /E /I /Y $(SolutionDir)Ramjet_Core\Assets $(OutDir)Assets\</Command>
+      <Command>xcopy.exe /E /I /Y $(SolutionDir)Game_Tests_Example\Assets $(OutDir)Assets\</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>copy /Y $(SolutionDir)Ramjet_Core\Dependencies\DLLs_Backup\* $(OutDir)</Command>
@@ -171,6 +171,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\GameTest.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\fragment_shader_test.glsl" />
+    <None Include="Assets\Shaders\postFXFrag.glsl" />
+    <None Include="Assets\Shaders\postFXVert.glsl" />
+    <None Include="Assets\Shaders\textFragShader.glsl" />
+    <None Include="Assets\Shaders\textVertShader.glsl" />
+    <None Include="Assets\Shaders\vertex_shader_test.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

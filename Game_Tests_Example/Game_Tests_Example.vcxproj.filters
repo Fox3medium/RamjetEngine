@@ -19,4 +19,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Shaders\postFXVert.glsl" />
+    <None Include="Assets\Shaders\postFXFrag.glsl" />
+    <None Include="Assets\Shaders\fragment_shader_test.glsl" />
+    <None Include="Assets\Shaders\textFragShader.glsl" />
+    <None Include="Assets\Shaders\textVertShader.glsl" />
+    <None Include="Assets\Shaders\vertex_shader_test.glsl" />
+  </ItemGroup>
 </Project>

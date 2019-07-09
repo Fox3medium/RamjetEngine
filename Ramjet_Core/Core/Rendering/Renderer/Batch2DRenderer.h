@@ -18,12 +18,6 @@ namespace Core {
 		#define RENDERER_INDICES_SIZE	RENDERER_MAX_SPRITES * 6
 		#define RENDERER_MAX_TEXTURES	32
 
-		enum class RenderTarget
-		{
-			SCREEN = 0,
-			BUFFER = 1
-		};
-
 		class Batch2DRenderer : public Renderer2D {
 
 		private :
@@ -35,11 +29,11 @@ namespace Core {
 			std::vector<GLuint> m_TextureSlots;
 
 			FrameBuffer* m_Framebuffer;
+			FrameBuffer* m_PostFXBuffer;
 			int m_ScreenBuffer;
 			Maths::tvec2<uint> m_ViewportSize, m_ScreenSize;
 			Shader* m_SimpleShader;
 			uint m_ScreenQuad;
-			RenderTarget m_Target;
 
 		public:
 			Batch2DRenderer(const Maths::tvec2<uint>& screenSize);
@@ -55,9 +49,6 @@ namespace Core {
 			inline const Maths::tvec2<uint>& getScreenSize() const { return m_ScreenSize; }
 			inline void setViewportSize(const Maths::tvec2<uint>& size) { m_ViewportSize = size; }
 			inline const Maths::tvec2<uint>& getViewportSize() const { return m_ViewportSize; }
-
-			inline void setRenderTarget(RenderTarget target) { m_Target = target; }
-			inline const RenderTarget getRenderTarget() const { return m_Target; }
 
 		private:
 			void init();

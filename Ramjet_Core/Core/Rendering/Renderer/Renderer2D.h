@@ -6,6 +6,7 @@
 #include "Font/Font.h"
 #include "Texture/Texture.h"
 #include "Texture/Mask.h"
+#include "PostFX/PostFX.h"
 
 namespace Core {
 
@@ -20,6 +21,12 @@ namespace Core {
 
 		class Renderable2D;
 	
+		enum class RenderTarget
+		{
+			SCREEN = 0,
+			BUFFER = 1
+		};
+
 		class Renderer2D
 		{
 		protected:
@@ -27,13 +34,17 @@ namespace Core {
 			std::vector<Maths::mat4> m_TransformationStack;
 			const Maths::mat4* m_TransformationBack;
 			const Mask* m_Mask;
+			RenderTarget m_Target;
+			PostFX* m_PostFX;
+			bool m_PostFXEnabled;
 
 		protected:
 			Renderer2D() 
-				: m_Mask(nullptr)
+				: m_Mask(nullptr), m_PostFXEnabled(false)
 			{
 				m_TransformationStack.push_back(Maths::mat4::Identity());
 				m_TransformationBack = &m_TransformationStack.back();
+				m_Target = RenderTarget::SCREEN;
 			}		
 
 		public:
@@ -62,6 +73,13 @@ namespace Core {
 			}
 
 			virtual void setMask(const Mask* mask) { m_Mask = mask; }
+
+			inline void setRenderTarget(RenderTarget target) { m_Target = target; }
+			inline const RenderTarget getRenderTarget() const { return m_Target; }
+
+			inline void  setPostFX(bool enabled) { m_PostFXEnabled = enabled; }
+			inline bool getPostFX() const { return m_PostFXEnabled; }
+			inline void addPostFXPass(PostFXPass* pass) { m_PostFX->push(pass); }
 
 		};
 
