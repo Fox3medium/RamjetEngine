@@ -6,13 +6,21 @@
 namespace Core {
 
 	class Core {
-
-	private:
+	public:
 		Init::Window* m_Window;
+	private:
+		bool m_Running, m_Suspended;
 		Timer* m_Timer;
 		unsigned int m_Fps, m_UpdatePerSec;
 
+		const char* m_Name;
+		uint m_Width, m_Height;
+
 	public:
+
+		Core(const char* name, uint width, uint height, bool fullscreen);
+		virtual ~Core();
+
 		void start() {
 			init();
 			run();

@@ -52,13 +52,13 @@ namespace Core {
 				*/
 				void update();
 
+				void setVsync(bool enabled);
+
 				bool closed() const;
 
 				int getWidth() const;
 
 				int getHeight() const;
-
-
 
 			protected :
 
@@ -92,13 +92,12 @@ namespace Core {
 			private:
 
 				static IControl* m_control;
-
 				static IListener* m_listener;
 
 				static float m_deltaTime;
 				static float m_last;
 
-
+				static bool b_Vsync;
 
 				/*
 				* Windows Name

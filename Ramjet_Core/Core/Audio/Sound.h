@@ -4,6 +4,7 @@
 #include <string>
 
 #include <Utils/StringUtils.h>
+#include <Utils/types.h>
 
 #include <gorilla-audio/ga.h>
 #include <gorilla-audio/gau.h>
@@ -22,7 +23,7 @@ namespace Core {
 			ga_Handle* m_Handle;
 			gc_int32 m_Position;
 
-			unsigned int m_Count;
+			uint m_Count;
 
 			bool b_Playing;
 			float m_Gain;

@@ -6,21 +6,21 @@ namespace Core {
 	using namespace Manager;
 
 	namespace Rendering {
-		Label::Label(std::string text, float x, float y, unsigned int color)
+		Label::Label(const std::string& text, float x, float y, unsigned int color)
 			: Renderable2D(), m_Text(text), position(m_Position), m_Font(Font_Manager::get(text))
 		{
 			position = Maths::vec3(x, y, 0.0f);
 			m_Color = color;
 		}
 
-		Label::Label(std::string text, float x, float y, Font* font, unsigned int color)
+		Label::Label(const std::string& text, float x, float y, Font* font, unsigned int color)
 			: Renderable2D(), m_Text(text), position(m_Position), m_Font(font)
 		{
 			position = Maths::vec3(x, y, 0.0f);
 			m_Color = color;
 		}
 
-		Label::Label(std::string text, float x, float y, const std::string& font, unsigned int color)
+		Label::Label(const std::string& text, float x, float y, const std::string& font, unsigned int color)
 			: Renderable2D(), m_Text(text), position(m_Position), m_Font(Font_Manager::get(font))
 		{
 			position = Maths::vec3(x, y, 0.0f);
@@ -29,7 +29,7 @@ namespace Core {
 			validateFont(font);
 		}
 
-		Label::Label(std::string text, float x, float y, const std::string& font, unsigned int size, unsigned int color)
+		Label::Label(const std::string& text, float x, float y, const std::string& font, unsigned int size, unsigned int color)
 			: Renderable2D(), m_Text(text), position(m_Position), m_Font(Font_Manager::get(font,size))
 		{
 			position = Maths::vec3(x, y, 0.0f);

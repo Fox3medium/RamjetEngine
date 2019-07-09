@@ -12,6 +12,7 @@ namespace Core {
 		IControl* Window::m_control = NULL;
 		float Window::m_deltaTime = 0.0f;
 		float Window::m_last = 0;
+		bool Window::b_Vsync = false;
 
 		Window::Window(const char* in_name, int in_width, int in_height)
 		{
@@ -116,6 +117,12 @@ namespace Core {
 			glfwPollEvents();
 
 			Manager::Sound_Manager::update();
+		}
+
+		void Window::setVsync(bool enabled)
+		{
+			glfwSwapInterval((double)enabled);
+			b_Vsync = enabled;
 		}
 
 		bool Window::closed() const

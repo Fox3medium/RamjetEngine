@@ -1,4 +1,4 @@
-#include <Core.h>
+#include <App/Application.h>
 
 // MEMORY LEAK CHECKER
 #define _CRTDBG_MAP_ALLOC
@@ -20,10 +20,9 @@ using namespace Core::Init;
 using namespace Core::Audio;
 using namespace Utils;
 
-class GameTest : public Core::Core {
+class GameTest : public App::Application {
 
 private:
-	Window* window;
 	Control_Manager* C_Manager;
 	Layer* layer;
 	Layer* layerUI;
@@ -37,6 +36,7 @@ private:
 
 public:
 	GameTest() 
+		: Application ("Test", 1280, 720)
 	{
 	}
 
@@ -50,9 +50,9 @@ public:
 
 	void init() override
 	{
+		App::Application::init();
 		uint x = 1280;
 		uint y = 720;
-		window = createWindow("Test", x, y);
 		C_Manager = new Control_Manager();
 
 		// WAIT FOR THE WINDOW TO BE INITIALIZED !!
@@ -69,7 +69,7 @@ public:
 		Texture_Manager::add(new Texture("747", "Assets/Test/wall.jpg"));
 		sprite = new Sprite(0.0f, 0.0f, 4, 4, Texture_Manager::get("tb"));
 
-		/*for (float y = -9.0f; y < 9.0f; y+=1.0) {		
+		for (float y = -9.0f; y < 9.0f; y+=1.0) {		
 
 				for (float x = -16.0f; x < 16.0f; x+=1.0) {
 		
@@ -88,12 +88,12 @@ public:
 
 				}
 
-		}*/
+		}
 		layer->add(sprite);
 		
 
 		Texture::setWrap(TextureWrap::CLAMP_TO_BORDER);;
-		//mask = new Mask(new Texture("Mask", "Assets/Test/mask.tif"));
+		mask = new Mask(new Texture("Mask", "Assets/Test/mask.tif"));
 		layer->setMask(mask);
 
 		Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 24));
@@ -134,14 +134,19 @@ public:
 		static Maths::tvec2<uint> size = ((Batch2DRenderer*)layer->m_Renderer)->getViewportSize();;
 		if (C_Manager->isKeyPressed(GLFW_KEY_Q))
 		{
-			size.x++;
-			size.y++;
+			size.x+=16;
+			size.y+=9;
 		}
 		else if (C_Manager->isKeyPressed(GLFW_KEY_E))
 		{
-			size.x--;
-			size.y--;
+			size.x-=16;
+			size.y-=9;
 		}
+
+		if (size.x > 10000)
+			size.x = 0;
+		if (size.y > 10000)
+			size.y = 0;
 
 		Sound_Manager::update();
 		double x, y;
@@ -149,6 +154,7 @@ public:
 		//mask->SetModifier(pos, scale);
 		debugInfo->m_Text = std::to_string(size.x) + ", " + std::to_string(size.y);
 		((Batch2DRenderer*)layer->m_Renderer)->setViewportSize(size);
+		((Batch2DRenderer*)layer->m_Renderer)->setScreenSize(Maths::tvec2<uint>(window->getWidth(), window->getHeight()));
 	}
 
 	void render() override
@@ -167,11 +173,6 @@ public:
 
 int main()
 {
-	long lBreakAlloc = 0x000001CADC38A750;
-	if (lBreakAlloc > 0)
-	{
-		_CrtSetBreakAlloc(lBreakAlloc);
-	}
 	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	GameTest game;
 	game.start();

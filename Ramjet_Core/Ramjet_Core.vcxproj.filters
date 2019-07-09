@@ -165,6 +165,9 @@
     <ClCompile Include="Core\Utils\String.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="App\Win\Win64Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -393,6 +396,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Utils\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Application.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
