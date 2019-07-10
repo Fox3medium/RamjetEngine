@@ -14,6 +14,7 @@
 // Utilities
 //#include <Utils/String.h>
 #include <Utils/Static/CInOut.h>
+#include <Utils/Maths/vec2.h>
 
 // Other
 #include "ContextInfo.h"
@@ -54,17 +55,24 @@ namespace Core {
 
 				void setVsync(bool enabled);
 
+				void setGrabMouse();
+
+				bool isMouseGrabbed();
+
+				Maths::vec2 getMousePos();
+
 				bool closed() const;
 
 				int getWidth() const;
 
 				int getHeight() const;
 
+
 			protected :
 
 				bool init(const WindowInfo& windowInfo, const ContextInfo& contextInfo, const FramebufferInfo& framebufferInfo);
 
-				static void printOpenGLInfo(const WindowInfo& WInfo, const ContextInfo& CInfo);
+				static void printOpenGLInfo();
 
 				// CALLBACKS
 				static void windowSizeCallback(GLFWwindow* window, int width, int height);
@@ -111,6 +119,9 @@ namespace Core {
 
 				bool m_Closed;
 
+				bool b_MouseGrabbed;
+				static Maths::vec2 m_MousePos;
+				static Maths::vec2 m_OldMousePos;
 				/*
 				* Active Window
 				*/

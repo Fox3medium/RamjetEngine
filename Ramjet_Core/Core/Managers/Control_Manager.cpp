@@ -6,8 +6,7 @@ namespace Core {
 
 	namespace Manager {
 		
-		double Control_Manager::m_MouseX;
-		double Control_Manager::m_MouseY;
+		Maths::vec2 Control_Manager::m_MousePos;
 		double Control_Manager::m_ScrollX;
 		double Control_Manager::m_ScrollY;
 		bool Control_Manager::m_keys[MAX_KEYS];
@@ -132,8 +131,8 @@ namespace Core {
 
 		void Control_Manager::notifyMouseInput(double xpos, double ypos, float deltaTime)
 		{
-			m_MouseX = xpos;
-			m_MouseY = ypos;
+			m_MousePos.x = xpos;
+			m_MousePos.y = ypos;
 			//playerCamera->mouseInput(xpos, ypos, deltaTime);
 			//std::cout << "x : " << xpos << " y : " << ypos << std::endl;
 		}
@@ -160,10 +159,9 @@ namespace Core {
 			return m_keys[keycode];
 		}
 
-		void Control_Manager::getMousePosition(double& x, double& y) const
+		Maths::vec2 Control_Manager::getMousePosition() const
 		{
-			x = m_MouseX;
-			y = m_MouseY;
+			return m_MousePos;
 		}
 
 		/*void Control_Manager::update(glm::mat4& view_matrix, glm::mat4& projection_matrix, glm::vec3& cameraPosition, glm::vec3& cameraDirection)

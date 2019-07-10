@@ -1,0 +1,12 @@
+TODO 
+
+Improvement : 
+	- Control manager :
+		- KEY PRESS and RELEASE
+
+	- Texture : 
+		- GPU MEMORY LEAK at delete
+
+
+Features :
+	- 3D Rendering

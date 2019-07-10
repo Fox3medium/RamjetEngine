@@ -13,6 +13,8 @@ namespace Core {
 		float Window::m_deltaTime = 0.0f;
 		float Window::m_last = 0;
 		bool Window::b_Vsync = false;
+		Maths::vec2 Window::m_MousePos;
+		Maths::vec2 Window::m_OldMousePos;
 
 		Window::Window(const char* in_name, int in_width, int in_height)
 		{
@@ -20,6 +22,7 @@ namespace Core {
 			m_Width = in_width;
 			m_Height = in_height;
 			m_Closed = false;
+			b_MouseGrabbed = false;
 
 			WindowInfo WInfo = WindowInfo(in_width, in_height);
 			ContextInfo CInfo = ContextInfo();
@@ -78,12 +81,7 @@ namespace Core {
 				CORE_FATAL("ERROR : GLEW initialize failed.");
 			}
 
-			CORE_WARN("----------------------------------");
-			CORE_WARN(" OpenGL:");
-			CORE_WARN("    ", glGetString(GL_VERSION));
-			CORE_WARN("    ", glGetString(GL_VENDOR));
-			CORE_WARN("    ", glGetString(GL_RENDERER));
-			CORE_WARN("----------------------------------");
+			printOpenGLInfo();
 
 			glfwSetFramebufferSizeCallback(m_Window, windowSizeCallback);
 			glfwSetWindowUserPointer(m_Window, this);
@@ -95,6 +93,7 @@ namespace Core {
 			glfwSetMouseButtonCallback(m_Window, processMButtonInput);
 			glfwSwapInterval(0.0); //Disable VSync = 0.0, Enable VSync = 1.0
 
+			glEnable(GL_DEPTH_TEST);
 			glEnable(GL_BLEND);
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
@@ -102,8 +101,14 @@ namespace Core {
 
 		}
 
-		void Window::printOpenGLInfo(const WindowInfo& WInfo, const ContextInfo& CInfo)
+		void Window::printOpenGLInfo()
 		{
+			CORE_WARN("----------------------------------");
+			CORE_WARN(" OpenGL:");
+			CORE_WARN("    ", glGetString(GL_VERSION));
+			CORE_WARN("    ", glGetString(GL_VENDOR));
+			CORE_WARN("    ", glGetString(GL_RENDERER));
+			CORE_WARN("----------------------------------");
 		}
 		
 		void Window::clear() const
@@ -128,6 +133,28 @@ namespace Core {
 		{
 			glfwSwapInterval((double)enabled);
 			b_Vsync = enabled;
+		}
+
+		void Window::setGrabMouse()
+		{
+			if (b_MouseGrabbed) 
+				glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);			
+			else 
+				glfwSetInputMode(m_Window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+			b_MouseGrabbed = !b_MouseGrabbed;				
+		}
+
+		bool Window::isMouseGrabbed()
+		{
+			return b_MouseGrabbed;
+		}
+
+		Maths::vec2 Window::getMousePos()
+		{
+			Maths::vec2 result = m_MousePos - m_OldMousePos;
+			m_OldMousePos = m_MousePos;
+			return result;
 		}
 
 		bool Window::closed() const
@@ -179,7 +206,11 @@ namespace Core {
 
 		void Window::processMouseInput(GLFWwindow* window, double xpos, double ypos)
 		{
-			m_control->notifyMouseInput(xpos, ypos, m_deltaTime);
+			m_OldMousePos.x = m_MousePos.x;
+			m_OldMousePos.y = m_MousePos.y;
+			m_MousePos.x = xpos;
+			m_MousePos.y = ypos;
+			//m_control->notifyMouseInput(xpos, ypos, m_deltaTime);
 		}
 
 		void Window::processScrollInput(GLFWwindow* window, double xoffset, double yoffset)

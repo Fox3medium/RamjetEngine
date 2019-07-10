@@ -26,7 +26,6 @@ using namespace Utils;
 class GameTest : public App::Application {
 
 private:
-	Control_Manager* C_Manager;
 	Layer* layer;
 	Layer* layerUI;
 	Label* fps;
@@ -54,7 +53,6 @@ public:
 	void init() override
 	{
 		App::Application::init();
-		C_Manager = new Control_Manager();
 
 		// WAIT FOR THE WINDOW TO BE INITIALIZED !!
 		Shader_Manager::init();
@@ -156,8 +154,6 @@ public:
 			size.y = 0;
 
 		Sound_Manager::update();
-		double x, y;
-		C_Manager->getMousePosition(x, y);
 
 		debugInfo[0]->m_Text = std::to_string(size.x) + ", " + std::to_string(size.y);
 		debugInfo[1]->m_Text = layer->m_Renderer->getRenderTarget() == RenderTarget::SCREEN ? "Screen" : "Buffer";
@@ -173,7 +169,7 @@ public:
 
 #include <iostream>
 
-int main()
+int OLDmain()
 {
 	//_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	GameTest game;

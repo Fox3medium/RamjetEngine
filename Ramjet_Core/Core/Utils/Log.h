@@ -9,6 +9,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <Utils/Maths/vec2.h>
 
 #define CORE_LOG_LEVEL_FATAL	0
 #define CORE_LOG_LEVEL_ERROR	1
@@ -89,6 +90,16 @@ namespace Logs
 		static const char* to_string<unsigned char const*>(unsigned char const* const& t)
 		{
 			return (const char*)t;
+		}
+
+		template <>
+		static const char* to_string<Maths::vec2>(Maths::vec2 const& t)
+		{
+			// TODO: sprintf
+			std::string string = std::string("vec2: (") + std::to_string(t.x) + ", " + std::to_string(t.y) + ")";
+			char* result = new char[string.length()];
+			strcpy(result, &string[0]);
+			return result;
 		}
 
 		template <typename T>

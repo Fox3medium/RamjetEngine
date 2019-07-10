@@ -9,6 +9,8 @@ namespace App {
 
 	public:
 		Core::Init::Window* window;
+		Core::Manager::Control_Manager* C_Manager;
+
 	private:
 		bool m_Running, m_Suspended;
 		Timer* m_Timer;

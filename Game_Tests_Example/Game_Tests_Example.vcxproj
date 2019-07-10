@@ -170,15 +170,44 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entities\Entity.cpp" />
+    <ClCompile Include="src\Entities\Player.cpp" />
+    <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GameTest.cpp" />
+    <ClCompile Include="src\Graphics\RETexture.cpp" />
+    <ClCompile Include="src\Graphics\Shaders.cpp" />
+    <ClCompile Include="src\Graphics\VertArray.cpp" />
+    <ClCompile Include="src\Levels\Level.cpp" />
+    <ClCompile Include="src\Levels\Models\AirBlock.cpp" />
+    <ClCompile Include="src\Levels\Models\Block.cpp" />
+    <ClCompile Include="src\Levels\Models\DirtBlock.cpp" />
+    <ClCompile Include="src\Levels\Models\StoneBlock.cpp" />
+    <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Shaders\BlockFrag.glsl" />
+    <None Include="Assets\Shaders\BlockVert.glsl" />
     <None Include="Assets\Shaders\fragment_shader_test.glsl" />
     <None Include="Assets\Shaders\postFXFrag.glsl" />
     <None Include="Assets\Shaders\postFXVert.glsl" />
     <None Include="Assets\Shaders\textFragShader.glsl" />
     <None Include="Assets\Shaders\textVertShader.glsl" />
+    <None Include="Assets\Shaders\UIFrag.glsl" />
+    <None Include="Assets\Shaders\UIVert.glsl" />
     <None Include="Assets\Shaders\vertex_shader_test.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Entities\Entity.h" />
+    <ClInclude Include="src\Entities\Player.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Graphics\RETexture.h" />
+    <ClInclude Include="src\Graphics\Shaders.h" />
+    <ClInclude Include="src\Graphics\VertArray.h" />
+    <ClInclude Include="src\Levels\Level.h" />
+    <ClInclude Include="src\Levels\Models\AirBlock.h" />
+    <ClInclude Include="src\Levels\Models\Block.h" />
+    <ClInclude Include="src\Levels\Models\DirtBlock.h" />
+    <ClInclude Include="src\Levels\Models\StoneBlock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

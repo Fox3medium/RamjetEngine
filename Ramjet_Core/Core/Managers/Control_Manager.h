@@ -28,7 +28,7 @@ namespace Core {
 
 			static bool isKeyPressed(unsigned int keycode);
 
-			void getMousePosition(double& x, double& y) const;
+			Maths::vec2 getMousePosition() const;
 
 			//void update(glm::mat4& view_matrix, glm::mat4& projection_matrix, glm::vec3& cameraPosition, glm::vec3& cameraDirection);
 
@@ -52,7 +52,7 @@ namespace Core {
 			static bool m_keys[MAX_KEYS];
 			static bool m_MouseButtons[MAX_BUTTONS];
 
-			static double m_MouseX, m_MouseY;
+			static Maths::vec2 m_MousePos;
 			static double m_ScrollX, m_ScrollY;
 
 		};

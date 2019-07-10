@@ -48,7 +48,7 @@ namespace Maths {
 				float sum = 0.0f;
 				for (int e = 0; e < 4; e++)
 				{
-					sum += elements[e + row * 4] * other.elements[col + e * 4];
+					sum += elements[col + e * 4] * other.elements[e + row * 4];
 				}
 				data[col + row * 4] = sum;
 			}
@@ -255,8 +255,8 @@ namespace Maths {
 		result.elements[0 + 0 * 4] = a;
 		result.elements[1 + 1 * 4] = q;
 		result.elements[2 + 2 * 4] = b;
-		result.elements[2 + 3 * 4] = -1.0f;
-		result.elements[3 + 2 * 4] = c;
+		result.elements[3 + 2 * 4] = -1.0f;
+		result.elements[2 + 3 * 4] = c;
 
 		return result;
 	}
@@ -287,9 +287,9 @@ namespace Maths {
 	{
 		mat4 result(1.0f);
 
-		result.elements[3 + 0 * 4] = translation.x;
-		result.elements[3 + 1 * 4] = translation.y;
-		result.elements[3 + 2 * 4] = translation.z;
+		result.elements[0 + 3 * 4] = translation.x;
+		result.elements[1 + 3 * 4] = translation.y;
+		result.elements[2 + 3 * 4] = translation.z;
 
 		return result;
 	}
@@ -308,15 +308,15 @@ namespace Maths {
 		float z = axis.z;
 
 		result.elements[0 + 0 * 4] = x * x * omc + c;
-		result.elements[0 + 1 * 4] = y * x * omc + z * s;
-		result.elements[0 + 2 * 4] = x * z * omc - y * s;
+		result.elements[1 + 0 * 4] = y * x * omc + z * s;
+		result.elements[2 + 0 * 4] = x * z * omc - y * s;
 
-		result.elements[1 + 0 * 4] = x * y * omc - z * s;
+		result.elements[0 + 1 * 4] = x * y * omc - z * s;
 		result.elements[1 + 1 * 4] = y * y * omc + c;
-		result.elements[1 + 2 * 4] = y * z * omc + x * s;
+		result.elements[2 + 1 * 4] = y * z * omc + x * s;
 
-		result.elements[2 + 0 * 4] = x * z * omc + y * s;
-		result.elements[2 + 1 * 4] = y * z * omc - x * s;
+		result.elements[0 + 2 * 4] = x * z * omc + y * s;
+		result.elements[1 + 2 * 4] = y * z * omc - x * s;
 		result.elements[2 + 2 * 4] = z * z * omc + c;
 		
 		return result;

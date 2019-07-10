@@ -16,6 +16,7 @@ namespace App
 	void Application::init()
 	{
 		window = new Core::Init::Window(m_Name, m_Width, m_Height);
+		C_Manager = new Core::Manager::Control_Manager();
 	}
 
 	void Application::start()
