@@ -31,7 +31,7 @@ namespace Core {
 
 			public:
 				/*Load a shader stored in code if true*/
-				Shader(const String& name, const char* vertPath, const char* fragPath, bool isFromCode = false);
+				Shader(const String& name, const String& vertPath, const String& fragPath, bool isFromCode = false);
 				~Shader();				
 
 				void setUniform1i(const char* uniVarName, int value);
@@ -52,7 +52,7 @@ namespace Core {
 			private:
 				uint getUniformLocation(const char* name);
 
-				uint load(const char* vertSrc, const char* fragSrc, bool isFromCode);
+				uint load(const String& vertSrc, const String& fragSrc, bool isFromCode);
 		};
 
 	}

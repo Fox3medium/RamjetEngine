@@ -24,8 +24,8 @@ namespace Core {
 			static uint getSID(const String& name);
 			static void clean();
 
-			static Shader* FromFile(const String& name, const char* vertPath, const char* fragPath);
-			static Shader* FromSource(const String& name, const char* vertSrc, const char* fragSrc);
+			static Shader* FromFile(const String& name, const String& vertPath, const String& fragPath);
+			static Shader* FromSource(const String& name, const String& vertSrc, const String& fragSrc);
 
 			static Shader* DefaultShader();
 			static Shader* BasicLightShader();

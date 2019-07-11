@@ -73,11 +73,11 @@ namespace Core {
 			uint format = m_Bits == 32 ? GL_BGRA : GL_BGR;
 
 			// If the image format is not a multiple of 4 it require GL_UNPACK_ALIGNMENT to 1 for it to be loaded
-			/*if (m_Width % 4 != 0) 
+			if (m_Width % 4 != 0) 
 			{
 				glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 				CORE_WARN("[TEXTURE] Mmage format is not a multiple of 4 it require GL_UNPACK_ALIGNMENT to 1 for it to be loaded ", m_FileName.c_str());
-			}*/
+			}
 			/*glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_Width, m_Height, 0, format, GL_UNSIGNED_BYTE, pixels ? pixels : NULL);
 			glBindTexture(GL_TEXTURE_2D, 0);*/
 			API::setTextureData(GL_TEXTURE_2D, internalFormat, m_Width, m_Height, format, GL_UNSIGNED_BYTE, pixels ? pixels : NULL);

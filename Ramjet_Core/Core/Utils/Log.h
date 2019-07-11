@@ -4,11 +4,12 @@
 
 #include <stdio.h>
 #include <iostream>
-#include <algorithm>
 #include <string>
+#include <algorithm>
 #include <vector>
 #include <list>
 #include <map>
+#include <Utils/types.h>
 #include <Utils/Maths/vec2.h>
 
 #define CORE_LOG_LEVEL_FATAL	0
@@ -21,7 +22,7 @@ namespace std {
 	template <typename T>
 	string to_string(const T& t) 
 	{
-		return String("[Unsupported type] " + typeid(T).name() + String("!"));
+		return string("[Unsupported type] " + typeid(T).name() + String("!"));
 	}
 
 }

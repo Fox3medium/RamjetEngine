@@ -9,11 +9,14 @@ namespace Core {
 
 	namespace Rendering {
 
-		Shader::Shader(const String& name, const char* vertPath, const char* fragPath, bool isFromCode)
-			: m_Name(name), m_VertSrc(vertPath), m_FragSrc(fragPath)
+		Shader::Shader(const String& name, const String& vertPath, const String& fragPath, bool isFromCode)
+			: m_Name(name)
 		{
 			String vertSourceString;
 			String fragSourceString;
+
+			m_VertSrc = vertPath.c_str();
+			m_FragSrc = fragPath.c_str();
 
 			if (!isFromCode) {
 				vertSourceString = read_file(m_VertSrc);
@@ -96,12 +99,12 @@ namespace Core {
 			glUseProgram(0);
 		}
 
-		uint Shader::load(const char* vertSrc, const char* fragSrc, bool isFromCode)
+		uint Shader::load(const String& vertSrc, const String& fragSrc, bool isFromCode)
 		{
 			uint program = glCreateProgram();
 
 			uint vertex = glCreateShader(GL_VERTEX_SHADER); //How the GPU works on vertices
-			uint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)
+			uint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)			
 
 			// link the shader ID to the shader file
 			glShaderSource(vertex, 1, &m_VertSrc, NULL);

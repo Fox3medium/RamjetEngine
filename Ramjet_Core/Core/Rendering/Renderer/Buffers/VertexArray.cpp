@@ -25,7 +25,7 @@ namespace Core {
 
 		void VertexArray::addBuffer(API::Buffer* buffer)
 		{
-			//CORE_ASSERT(s_CurrentBinding == m_ArrayID);
+			CORE_ASSERT(s_CurrentBinding == m_ArrayID);
 
 			m_Buffers.push_back(buffer);
 
@@ -51,6 +51,7 @@ namespace Core {
 
 		void VertexArray::bind() const
 		{
+			s_CurrentBinding = m_ArrayID;
 			API::bindVertexArray(m_ArrayID);
 		}
 

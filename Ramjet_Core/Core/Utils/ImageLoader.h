@@ -17,11 +17,9 @@ namespace Utils {
 		if (FreeImage_FIFSupportsReading(fif))
 			dib = FreeImage_Load(fif, filename);
 
-		if (dib == nullptr)
-			CORE_WARN("Could not load the file : ", filename);
 		// TODO Uncomment
 		// Must be commented for debug mode? Why? CHECK COMPILER AND C++ SETTINGS
-		// CORE_ASSERT(dib, "Could not load image ", filename, " !");
+		//CORE_ASSERT(dib, "Could not load image ", filename, " !");
 
 		FIBITMAP* bitmap = FreeImage_ConvertTo32Bits(dib);
 		FreeImage_Unload(dib);

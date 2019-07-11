@@ -12,11 +12,18 @@ LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; us
   Finished generating code
 glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
   Game_Tests_Example.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.exe
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\BaslicLightFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BaslicLightFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BaslicLightVert.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BlockFrag.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BlockVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\DefaultFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\DefaultVert.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\fragment_shader_test.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\postFXFrag.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\postFXVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\SimpleFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\SimpleVert.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\textFragShader.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\textVertShader.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\UIFrag.glsl
@@ -37,4 +44,4 @@ glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\dirt.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\stone.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\wall.jpg
-  25 File(s) copied
+  32 File(s) copied

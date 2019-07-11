@@ -36,6 +36,12 @@
     <None Include="Assets\Shaders\BlockFrag.glsl" />
     <None Include="Assets\Shaders\UIVert.glsl" />
     <None Include="Assets\Shaders\UIFrag.glsl" />
+    <None Include="Assets\Shaders\BaslicLightFrag.glsl" />
+    <None Include="Assets\Shaders\BaslicLightVert.glsl" />
+    <None Include="Assets\Shaders\DefaultFrag.glsl" />
+    <None Include="Assets\Shaders\DefaultVert.glsl" />
+    <None Include="Assets\Shaders\SimpleFrag.glsl" />
+    <None Include="Assets\Shaders\SimpleVert.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Layer\TestLayer.h">
