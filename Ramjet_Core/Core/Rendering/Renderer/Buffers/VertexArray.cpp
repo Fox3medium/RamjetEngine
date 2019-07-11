@@ -57,7 +57,13 @@ namespace Core {
 
 		void VertexArray::unbind() const
 		{
+			s_CurrentBinding = 0;
 			API::unbindVertexArrays();
+		}
+
+		void VertexArray::draw(uint count) const
+		{
+			API::drawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, NULL);
 		}
 
 	}

@@ -1,14 +1,13 @@
 #pragma once
 
+#include <iostream>
+#include <vector>
+#include <map>
+#include "ShaderUniform.h"
 #include <Utils/types.h>
 #include <Utils/Fileutils.h>
 #include <Utils/StringUtils.h>
 #include <Utils/Maths/maths.h>
-#include <map>
-
-#include "ShaderUniform.h"
-
-using namespace Utils;
 
 namespace Core {
 
@@ -30,9 +29,9 @@ namespace Core {
 				const char* m_VertSrc;
 				const char* m_FragSrc;
 
-				std::map<String, uint> m_UniformMap;
+				/*std::map<String, uint> m_UniformMap;*/
 
-				std::vector<ShaderUniform*> m_Uniforms;
+				std::vector<ShaderUniformDeclaration*> m_Uniforms;
 
 			public:
 				/*Load a shader stored in code if true*/
@@ -56,17 +55,17 @@ namespace Core {
 				inline const uint getShaderID() { return m_ShaderID; }
 				inline const String getShaderName() { return m_Name; }
 
-				inline const std::vector<ShaderUniform*>& getUniformDeclarations() const { return m_Uniforms; }
+				inline const std::vector<ShaderUniformDeclaration*>& getUniformDeclarations() const { return m_Uniforms; }
 
 			private:
 				uint getUniformLocation(const char* name);
 				void parseUniforms(const std::vector<String>& lines);
-				ShaderUniform::Type getUniformTypeFromString(const String& token);
+				ShaderUniformDeclaration::Type getUniformTypeFromString(const String& token);
 				void resolveUniforms();
 
 				uint load(const String& vertSrc, const String& fragSrc, bool isFromCode);
 
-				void resolveAndSetUniform(ShaderUniform* uniform, byte* data);
+				void resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data);
 
 				void setUniform1i(	uint location, int value);
 				void setUniform1iv(	uint location, int* value, int count);

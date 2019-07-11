@@ -20,17 +20,17 @@
 namespace std {
 
 	template <typename T>
-	string to_string(const T& t) 
+	string to_string(const T& t)
 	{
 		return string("[Unsupported type] " + typeid(T).name() + String("!"));
 	}
 
 }
 
-namespace Logs 
+namespace Logs
 {
 
-	namespace Internal 
+	namespace Internal
 	{
 		static char to_string_buffer[1024 * 10];
 
@@ -189,7 +189,7 @@ namespace Logs
 }
 
 #ifndef CORE_LOG_LEVEL
-	#define CORE_LOG_LEVEL CORE_LOG_LEVEL_INFO
+#define CORE_LOG_LEVEL CORE_LOG_LEVEL_INFO
 #endif // CORE_LOG_LEVEL
 
 #if CORE_LOG_LEVEL >= CORE_LOG_LEVEL_FATAL

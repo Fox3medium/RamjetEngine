@@ -24,6 +24,9 @@
     <ClCompile Include="src\Layer\TestLayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Layer\Test3D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\postFXVert.glsl" />
@@ -42,9 +45,16 @@
     <None Include="Assets\Shaders\DefaultVert.glsl" />
     <None Include="Assets\Shaders\SimpleFrag.glsl" />
     <None Include="Assets\Shaders\SimpleVert.glsl" />
+    <None Include="Assets\Shaders\SceneFrag.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Layer\TestLayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Assets\Shaders\SceneVert.glsl">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layer\Test3D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

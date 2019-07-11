@@ -72,6 +72,6 @@ void TestLayer::onRender(Core::Rendering::Renderer2D& renderer)
 	if (C_Manager->isKeyTyped(GLFW_KEY_2))
 		renderer.setPostFX(!renderer.getPostFX());
 
-	m_DebugInfo[0]->m_Text = std::string("Target: ") + (renderer.getRenderTarget() == RenderTarget::SCREEN ? "Screen" : "Buffer");
-	m_DebugInfo[1]->m_Text = std::string("PostFX: ") + (renderer.getPostFX() ? "On" : "Off");
+	m_DebugInfo[0]->m_Text = String("Target: ") + (renderer.getRenderTarget() == RenderTarget::SCREEN ? "Screen" : "Buffer");
+	m_DebugInfo[1]->m_Text = String("PostFX: ") + (renderer.getPostFX() ? "On" : "Off");
 }

@@ -174,6 +174,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\GameTest.cpp" />
+    <ClCompile Include="src\Layer\Test3D.cpp" />
     <ClCompile Include="src\Layer\TestLayer.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
@@ -187,6 +188,7 @@
     <None Include="Assets\Shaders\fragment_shader_test.glsl" />
     <None Include="Assets\Shaders\postFXFrag.glsl" />
     <None Include="Assets\Shaders\postFXVert.glsl" />
+    <None Include="Assets\Shaders\SceneFrag.glsl" />
     <None Include="Assets\Shaders\textFragShader.glsl" />
     <None Include="Assets\Shaders\textVertShader.glsl" />
     <None Include="Assets\Shaders\UIFrag.glsl" />
@@ -196,6 +198,8 @@
     <None Include="Assets\Shaders\SimpleVert.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assets\Shaders\SceneVert.glsl" />
+    <ClInclude Include="src\Layer\Test3D.h" />
     <ClInclude Include="src\Layer\TestLayer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

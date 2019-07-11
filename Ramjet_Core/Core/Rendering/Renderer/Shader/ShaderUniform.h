@@ -4,9 +4,9 @@
 
 namespace Core 
 {
-	namespace Rendering 
+	namespace Rendering
 	{
-		class ShaderUniform 
+		class ShaderUniformDeclaration 
 		{
 		public:
 			enum class Type 
@@ -34,7 +34,7 @@ namespace Core
 			mutable int m_Location;
 
 		public:
-			ShaderUniform(Type type, const String& name, const Shader* shader, uint count = 1);
+			ShaderUniformDeclaration(Type type, const String& name, const Shader* shader, uint count = 1);
 			uint getSize() const;
 			int getLocation() const;
 			inline int getOffset() const { return m_Offset; }

@@ -1,6 +1,7 @@
 #include <App/Application.h>
 
 #include "Layer/TestLayer.h"
+#include "Layer/Test3D.h"
 
 // MEMORY LEAK CHECKER
 #define _CRTDBG_MAP_ALLOC
@@ -56,7 +57,8 @@ public:
 	{
 		App::Application::init();
 		
-		pushLayer(new TestLayer());
+		//pushLayer(new TestLayer());
+		pushLayer(new Test3D());
 	}
 
 };

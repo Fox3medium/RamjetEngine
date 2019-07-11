@@ -1,5 +1,7 @@
 #include "Shader.h"
 #include <GLEW/glew.h>
+
+#include <Utils/StringUtils.h>
 #include <iostream>
 #include <vector>
 
@@ -26,27 +28,21 @@ namespace Core {
 				m_FragSrc = fragSourceString.c_str();
 			}
 			m_ShaderID = load(m_VertSrc, m_FragSrc, isFromCode);
+			resolveUniforms();
 		}
 
 		Shader::~Shader()
 		{
 			glDeleteProgram(m_ShaderID);
-			m_UniformMap.clear();
+			//m_UniformMap.clear();
 		}
 
 		uint Shader::getUniformLocation(const char* name)
 		{
-			std::map<String, uint>::iterator i = m_UniformMap.find(name);
-			if (i == m_UniformMap.end()) {
-				uint result = glGetUniformLocation(m_ShaderID, name);
-				if (result == -1) {
-					CORE_ERROR(m_Name.c_str(), ": Could not find uniform ", name, " in shader!");
-					return NULL;
-				}					
-				else
-					m_UniformMap[name] = result;
-			}
-			return m_UniformMap.at(name);
+			GLint result = glGetUniformLocation(m_ShaderID, name);
+			if (result == -1)
+				CORE_ERROR(m_Name.c_str(), ": could not find uniform ", name, " in shader!");
+			return result;
 		}
 
 		void Shader::parseUniforms(const std::vector<String>& lines)
@@ -61,8 +57,8 @@ namespace Core {
 					{
 						// TODO: Precision
 						String& token = line[i];
-						ShaderUniform::Type type = getUniformTypeFromString(token);
-						if (type != ShaderUniform::Type::NONE)
+						ShaderUniformDeclaration::Type type = getUniformTypeFromString(token);
+						if (type != ShaderUniformDeclaration::Type::NONE)
 						{
 							String& nextToken = line[i + 1];
 							String name = nextToken;
@@ -81,7 +77,7 @@ namespace Core {
 								count = atoi(nextToken.substr(arrayToken + 1, arrayEnd - arrayToken - 1).c_str());
 							}
 
-							ShaderUniform* uniform = new ShaderUniform(type, name, this, count);
+							ShaderUniformDeclaration* uniform = new ShaderUniformDeclaration(type, name, this, count);
 							m_Uniforms.push_back(uniform);
 							break;
 						}
@@ -90,18 +86,18 @@ namespace Core {
 			}
 		}
 
-		ShaderUniform::Type Shader::getUniformTypeFromString(const String& token)
+		ShaderUniformDeclaration::Type Shader::getUniformTypeFromString(const String& token)
 		{
-			if (token == "float") return ShaderUniform::Type::FLOAT32;
-			if (token == "int") return ShaderUniform::Type::INT32;
-			if (token == "vec2") return ShaderUniform::Type::VEC2;
-			if (token == "vec3") return ShaderUniform::Type::VEC3;
-			if (token == "vec4") return ShaderUniform::Type::VEC4;
-			if (token == "mat3") return ShaderUniform::Type::MAT3;
-			if (token == "mat4") return ShaderUniform::Type::MAT4;
-			if (token == "sampler2D") return ShaderUniform::Type::SAMPLER2D;
+			if (token == "float") return ShaderUniformDeclaration::Type::FLOAT32;
+			if (token == "int") return ShaderUniformDeclaration::Type::INT32;
+			if (token == "vec2") return ShaderUniformDeclaration::Type::VEC2;
+			if (token == "vec3") return ShaderUniformDeclaration::Type::VEC3;
+			if (token == "vec4") return ShaderUniformDeclaration::Type::VEC4;
+			if (token == "mat3") return ShaderUniformDeclaration::Type::MAT3;
+			if (token == "mat4") return ShaderUniformDeclaration::Type::MAT4;
+			if (token == "sampler2D") return ShaderUniformDeclaration::Type::SAMPLER2D;
 
-			return ShaderUniform::Type::NONE;
+			return ShaderUniformDeclaration::Type::NONE;
 		}
 
 		void Shader::resolveUniforms()
@@ -109,7 +105,7 @@ namespace Core {
 			uint offset = 0;
 			for (uint i = 0; i < m_Uniforms.size(); i++)
 			{
-				ShaderUniform* uniform = m_Uniforms[i];
+				ShaderUniformDeclaration* uniform = m_Uniforms[i];
 				uniform->m_Offset = offset;
 				uniform->m_Location = getUniformLocation(uniform->m_Name.c_str());
 
@@ -159,7 +155,7 @@ namespace Core {
 
 		void Shader::resolveAndSetUniforms(byte* data, uint size)
 		{
-			const std::vector<ShaderUniform*>& uniforms = m_Uniforms;
+			const std::vector<ShaderUniformDeclaration*>& uniforms = m_Uniforms;
 
 			for (uint i = 0; i < uniforms.size(); i++)
 				resolveAndSetUniform(uniforms[i], data);
@@ -241,34 +237,34 @@ namespace Core {
 			return program;
 		}
 
-		void Shader::resolveAndSetUniform(ShaderUniform* uniform, byte* data)
+		void Shader::resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data)
 		{
 			switch (uniform->getType())
 			{
-			case ShaderUniform::Type::FLOAT32:
+			case ShaderUniformDeclaration::Type::FLOAT32:
 				setUniform1f(uniform->getLocation(), *(float*)& data[uniform->getOffset()]);
 				break;
-			case ShaderUniform::Type::SAMPLER2D:
-			case ShaderUniform::Type::INT32:
+			case ShaderUniformDeclaration::Type::SAMPLER2D:
+			case ShaderUniformDeclaration::Type::INT32:
 				setUniform1i(uniform->getLocation(), *(int*)& data[uniform->getOffset()]);
 				break;
-			case ShaderUniform::Type::VEC2:
+			case ShaderUniformDeclaration::Type::VEC2:
 				setUniform2f(uniform->getLocation(), *(Maths::vec2*) & data[uniform->getOffset()]);
 				break;
-			case ShaderUniform::Type::VEC3:
+			case ShaderUniformDeclaration::Type::VEC3:
 				setUniform3f(uniform->getLocation(), *(Maths::vec3*) & data[uniform->getOffset()]);
 				break;
-			case ShaderUniform::Type::VEC4:
+			case ShaderUniformDeclaration::Type::VEC4:
 				setUniform4f(uniform->getLocation(), *(Maths::vec4*) & data[uniform->getOffset()]);
 				break;
-			case ShaderUniform::Type::MAT3:
+			case ShaderUniformDeclaration::Type::MAT3:
 				// TODO: SetUniformMat3(uniform->GetLocation(), *(maths::mat3*)&data[uniform->GetOffset()]);
 				break;
-			case ShaderUniform::Type::MAT4:
+			case ShaderUniformDeclaration::Type::MAT4:
 				setUniformMat4(uniform->getLocation(), *(Maths::mat4*) & data[uniform->getOffset()]);
 				break;
 			default:
-				CORE_ASSERT(false, "Unknown type!");
+				CORE_INFO("Unknown type!");
 			}
 		}
 

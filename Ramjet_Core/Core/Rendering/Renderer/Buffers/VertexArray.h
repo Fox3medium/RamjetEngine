@@ -5,6 +5,9 @@
 #include <Utils/types.h>
 
 #include "Buffer.h"
+#include <Rendering/Platform/CoreRenderAPI.h>
+#include <Utils/types.h>
+#include <vector>
 
 namespace Core {
 
@@ -30,6 +33,8 @@ namespace Core {
 			void addBuffer(API::Buffer* buffer);
 			void bind() const;
 			void unbind() const;
+
+			void draw(uint count) const;
 		};
 
 	}
