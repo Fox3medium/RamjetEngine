@@ -1,5 +1,7 @@
 #include "PostFX.h"
 
+#include <Rendering/Platform/CoreRenderAPI.h>
+
 namespace Core {
 
 	namespace Rendering {
@@ -22,20 +24,20 @@ namespace Core {
 			m_Passes.pop_back();
 		}
 
-		void PostFX::RenderPostFX(FrameBuffer* source, FrameBuffer* target, uint quad, IndexBuffer* indices)
+		void PostFX::RenderPostFX(FrameBuffer* source, FrameBuffer* target, VertexArray* quad, IndexBuffer* indices)
 		{
 			target->bind();
-			glActiveTexture(GL_TEXTURE0);
+			API::setActiveTexture(GL_TEXTURE0);
 			source->getTexture()->bind();
 
-			glBindVertexArray(quad);
+			quad->bind();
 			indices->bind();
 
 			for (PostFXPass* pass : m_Passes)
 				pass->RenderPass(target);
 
 			indices->unbind();
-			glBindVertexArray(0);
+			quad->unbind();
 		}
 
 	}

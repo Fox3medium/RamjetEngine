@@ -1,9 +1,6 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-  Win64Application.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(64,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(65,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(66,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
+  Texture.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(148,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty,_Ty>(char *,int &,First &&,_Ty &&,_Ty &&)' being compiled
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :         with

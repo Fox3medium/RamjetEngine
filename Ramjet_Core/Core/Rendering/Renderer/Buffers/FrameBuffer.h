@@ -5,6 +5,8 @@
 
 #include "../Texture/Texture.h"
 
+#include <Rendering/Platform/CoreRenderAPI.h>
+
 #include <Utils/Maths/vec4.h>
 #include <Utils/Maths/tvec2.h>
 

@@ -5,6 +5,7 @@
           3 file(s) copied.
   cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
   GameTest.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(64,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(65,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(66,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
@@ -33,6 +34,7 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): messa
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :         ]
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\minwindef.h(130,1): warning C4005:  'APIENTRY': macro redefinition
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\Includes\GLFW\glfw3.h(104): message :  see previous definition of 'APIENTRY'
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(64,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(65,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(66,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
@@ -52,7 +54,6 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): messa
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :             _Ty=const char *,
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :             First=const char *
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :         ]
-  main.cpp
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :         with
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153): message :         [

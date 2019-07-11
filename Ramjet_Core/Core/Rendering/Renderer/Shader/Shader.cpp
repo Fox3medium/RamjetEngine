@@ -1,5 +1,5 @@
 #include "Shader.h"
-
+#include <GLEW/glew.h>
 #include <iostream>
 #include <vector>
 
@@ -31,11 +31,11 @@ namespace Core {
 			m_UniformMap.clear();
 		}
 
-		GLuint Shader::getUniformLocation(const GLchar* name)
+		uint Shader::getUniformLocation(const char* name)
 		{
-			std::map<String, GLuint>::iterator i = m_UniformMap.find(name);
+			std::map<String, uint>::iterator i = m_UniformMap.find(name);
 			if (i == m_UniformMap.end()) {
-				GLuint result = glGetUniformLocation(m_ShaderID, name);
+				uint result = glGetUniformLocation(m_ShaderID, name);
 				if (result == -1) {
 					CORE_ERROR(m_Name.c_str(), ": Could not find uniform ", name, " in shader!");
 					return NULL;
@@ -46,42 +46,42 @@ namespace Core {
 			return m_UniformMap.at(name);
 		}
 
-		void Shader::setUniform1i(const GLchar* uniVarName, int value)
+		void Shader::setUniform1i(const char* uniVarName, int value)
 		{
 			glUniform1i(getUniformLocation(uniVarName), value);
 		}
 
-		void Shader::setUniform1iv(const GLchar* uniVarName, int* value, int count)
+		void Shader::setUniform1iv(const char* uniVarName, int* value, int count)
 		{
 			glUniform1iv(getUniformLocation(uniVarName), count, value);
 		}
 
-		void Shader::setUniform1f(const GLchar* uniVarName, float value)
+		void Shader::setUniform1f(const char* uniVarName, float value)
 		{
 			glUniform1f(getUniformLocation(uniVarName), value);
 		}
 
-		void Shader::setUniform1fv(const GLchar* uniVarName, float* value, int count)
+		void Shader::setUniform1fv(const char* uniVarName, float* value, int count)
 		{
 			glUniform1fv(getUniformLocation(uniVarName), count, value);
 		}
 
-		void Shader::setUniform2f(const GLchar* uniVarName, const Maths::vec2& value)
+		void Shader::setUniform2f(const char* uniVarName, const Maths::vec2& value)
 		{
 			glUniform2f(getUniformLocation(uniVarName), value.x, value.y);
 		}
 
-		void Shader::setUniform3f(const GLchar* uniVarName, const Maths::vec3& value)
+		void Shader::setUniform3f(const char* uniVarName, const Maths::vec3& value)
 		{
 			glUniform3f(getUniformLocation(uniVarName), value.x, value.y, value.z);
 		}
 
-		void Shader::setUniform4f(const GLchar* uniVarName, const Maths::vec4& value)
+		void Shader::setUniform4f(const char* uniVarName, const Maths::vec4& value)
 		{
 			glUniform4f(getUniformLocation(uniVarName), value.x, value.y, value.z, value.w);
 		}
 
-		void Shader::setUniformMat4(const GLchar* uniVarName, const Maths::mat4& mat)
+		void Shader::setUniformMat4(const char* uniVarName, const Maths::mat4& mat)
 		{
 			glUniformMatrix4fv(getUniformLocation(uniVarName), 1, GL_FALSE, mat.elements);
 		}
@@ -96,12 +96,12 @@ namespace Core {
 			glUseProgram(0);
 		}
 
-		GLuint Shader::load(const char* vertSrc, const char* fragSrc, bool isFromCode)
+		uint Shader::load(const char* vertSrc, const char* fragSrc, bool isFromCode)
 		{
-			GLuint program = glCreateProgram();
+			uint program = glCreateProgram();
 
-			GLuint vertex = glCreateShader(GL_VERTEX_SHADER); //How the GPU works on vertices
-			GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)
+			uint vertex = glCreateShader(GL_VERTEX_SHADER); //How the GPU works on vertices
+			uint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)
 
 			// link the shader ID to the shader file
 			glShaderSource(vertex, 1, &m_VertSrc, NULL);

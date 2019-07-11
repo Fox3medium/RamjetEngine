@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GLEW\glew.h>
+#include <Rendering/Platform/CoreRenderAPI.h>
 
 namespace Core {
 
@@ -9,18 +9,19 @@ namespace Core {
 		class IndexBuffer
 		{
 		private:
-			GLuint m_BufferID;
-			GLuint m_Count;
+			uint m_Count;
+			API::Buffer* m_Buffer;
 
 		public:
-			IndexBuffer(GLuint* data, GLsizei count);
+			IndexBuffer(short* data, uint count);
+			IndexBuffer(uint* data, uint count);
 			~IndexBuffer();
 
 			void bind() const;
 			void unbind() const;
 
 			// Return the number of index 
-			inline GLuint getCount() const { return m_Count; }
+			inline uint getCount() const { return m_Count; }
 		};
 
 	}

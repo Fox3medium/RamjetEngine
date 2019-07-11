@@ -3,7 +3,6 @@
 #include <Utils/types.h>
 #include <Utils/Fileutils.h>
 #include <Utils/Maths/maths.h>
-#include <GLEW/glew.h>
 #include <map>
 
 using namespace Utils;
@@ -23,37 +22,37 @@ namespace Core {
 			private :
 				//Shader ID
 				String m_Name;
-				GLuint m_ShaderID;
+				uint m_ShaderID;
 
 				const char* m_VertSrc;
 				const char* m_FragSrc;
 
-				std::map<String, GLuint> m_UniformMap;
+				std::map<String, uint> m_UniformMap;
 
 			public:
 				/*Load a shader stored in code if true*/
 				Shader(const String& name, const char* vertPath, const char* fragPath, bool isFromCode = false);
 				~Shader();				
 
-				void setUniform1i(const GLchar* uniVarName, int value);
-				void setUniform1iv(const GLchar* uniVarName, int* value, int count);
-				void setUniform1f(const GLchar* uniVarName, float value);
-				void setUniform1fv(const GLchar* uniVarName, float* value, int count);
-				void setUniform2f(const GLchar* uniVarName, const Maths::vec2& value);
-				void setUniform3f(const GLchar* uniVarName, const Maths::vec3& value);
-				void setUniform4f(const GLchar* uniVarName, const Maths::vec4& value);
-				void setUniformMat4(const GLchar* uniVarName, const Maths::mat4& mat);
+				void setUniform1i(const char* uniVarName, int value);
+				void setUniform1iv(const char* uniVarName, int* value, int count);
+				void setUniform1f(const char* uniVarName, float value);
+				void setUniform1fv(const char* uniVarName, float* value, int count);
+				void setUniform2f(const char* uniVarName, const Maths::vec2& value);
+				void setUniform3f(const char* uniVarName, const Maths::vec3& value);
+				void setUniform4f(const char* uniVarName, const Maths::vec4& value);
+				void setUniformMat4(const char* uniVarName, const Maths::mat4& mat);
 
 				void enable() const;
 				void disable() const;
 
-				inline const GLuint getShaderID() { return m_ShaderID; }
+				inline const uint getShaderID() { return m_ShaderID; }
 				inline const String getShaderName() { return m_Name; }
 
 			private:
-				GLuint getUniformLocation(const GLchar* name);
+				uint getUniformLocation(const char* name);
 
-				GLuint load(const char* vertSrc, const char* fragSrc, bool isFromCode);
+				uint load(const char* vertSrc, const char* fragSrc, bool isFromCode);
 		};
 
 	}

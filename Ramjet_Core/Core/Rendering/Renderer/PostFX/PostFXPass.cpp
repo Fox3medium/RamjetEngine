@@ -1,5 +1,7 @@
 #include "PostFXPass.h"
 
+#include <Rendering/Platform/CoreRenderAPI.h>
+
 namespace Core {
 
 	namespace Rendering {
@@ -20,7 +22,7 @@ namespace Core {
 		{
 			m_Shader->enable();
 			m_Shader->setUniformMat4("pr_matrix", Maths::mat4::Orthographic(0, target->getWidth(), target->getHeight(), 0, -1.0f, 1.0f));
-			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
+			API::drawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 			m_Shader->disable();
 		}
 

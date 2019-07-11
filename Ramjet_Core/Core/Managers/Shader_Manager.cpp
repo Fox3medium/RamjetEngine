@@ -7,7 +7,7 @@ namespace Core {
 	namespace Manager {
 
 		std::map<String, Shader* > Shader_Manager::m_Shaders;
-		std::map<String, GLuint > Shader_Manager::m_SID;
+		std::map<String, uint > Shader_Manager::m_SID;
 
 		Shader* Shader_Manager::add(const String& name, Shader* shader)
 		{
@@ -24,9 +24,9 @@ namespace Core {
 			return DefaultShader();
 		}
 
-		GLuint Shader_Manager::getSID(const String& name)
+		uint Shader_Manager::getSID(const String& name)
 		{
-			std::map<String, GLuint>::iterator i = m_SID.find(name);
+			std::map<String, uint>::iterator i = m_SID.find(name);
 			if (i != m_SID.end())
 				return m_SID[name];
 			return DefaultShader()->getShaderID();
@@ -50,25 +50,16 @@ namespace Core {
 		Shader* Shader_Manager::DefaultShader()
 		{
 			return m_Shaders["DefaultShader"];
-			GLenum error = glGetError();
-			if (error != GL_NO_ERROR)
-				std::cout << "OpenGL Error: FAIL TO LOAD DEFAULT SHADER " << error << std::endl;
 		}
 
 		Shader* Shader_Manager::BasicLightShader()
 		{
 			return m_Shaders["BasicLightShader"];
-			GLenum error = glGetError();
-			if (error != GL_NO_ERROR)
-				std::cout << "OpenGL Error: FAILED TO LOAD BASIC LIGHT SHADER " << error << std::endl;
 		}
 
 		Shader* Shader_Manager::SimpleShader()
 		{
 			return m_Shaders["SimpleShader"];
-			GLenum error = glGetError();
-			if (error != GL_NO_ERROR)
-				std::cout << "OpenGL Error: FAILED TO LOAD SIMPLE SHADER" << error << std::endl;
 		}
 
 		const char* default_shader_vert =

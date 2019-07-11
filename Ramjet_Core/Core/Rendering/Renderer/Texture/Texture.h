@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Utils/Log.h>
-#include <GLEW/glew.h>
+#include <Rendering/Platform/CoreRenderAPI.h>
 
 #include <FreeImage/FreeImage.h>
 

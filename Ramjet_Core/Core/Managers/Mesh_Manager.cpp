@@ -1,5 +1,7 @@
 #include "Mesh_Manager.h"
 
+#include <Rendering/Renderer/Batch2DRenderer.h>
+
 #include <Core_OpenGL.h>
 #include <Rendering/Renderer/Renderable2D.h>
 #include <Rendering/Renderer/Shader/Shader.h>
@@ -39,10 +41,8 @@ namespace Core {
 			// TODO
 		}
 
-		uint Mesh_Manager::CreateQuad(float x, float y, float width, float height)
+		VertexArray* Mesh_Manager::CreateQuad(float x, float y, float width, float height)
 		{
-			uint result;
-
 			VertexData data[4];
 			data[0].vertex = Maths::vec3(x, y, 0);
 			data[0].uv = Maths::vec2(0, 1);
@@ -56,36 +56,51 @@ namespace Core {
 			data[3].vertex = Maths::vec3(x + width, y, 0);
 			data[3].uv = Maths::vec2(1, 1);
 
-			uint buffer;
-			glGenVertexArrays(1, &result);
-			glGenBuffers(1, &buffer);
+			//uint buffer;
+			//glGenVertexArrays(1, &result);
+			//glGenBuffers(1, &buffer);
 
-			glBindVertexArray(result);
-			glBindBuffer(GL_ARRAY_BUFFER, buffer);
+			//glBindVertexArray(result);
+			//glBindBuffer(GL_ARRAY_BUFFER, buffer);
 
-			glBufferData(GL_ARRAY_BUFFER, RENDERER_VERTEX_SIZE * 4, data, GL_STATIC_DRAW);
+			//glBufferData(GL_ARRAY_BUFFER, RENDERER_VERTEX_SIZE * 4, data, GL_STATIC_DRAW);
 
-			glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
-			glEnableVertexAttribArray(SHADER_UV_INDEX);
-			glEnableVertexAttribArray(SHADER_MASK_UV_INDEX);
-			glEnableVertexAttribArray(SHADER_TEXTURE_INDEX);
-			glEnableVertexAttribArray(SHADER_MASK_INDEX);
-			glEnableVertexAttribArray(SHADER_COLOR_INDEX);
+			//glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
+			//glEnableVertexAttribArray(SHADER_UV_INDEX);
+			//glEnableVertexAttribArray(SHADER_MASK_UV_INDEX);
+			//glEnableVertexAttribArray(SHADER_TEXTURE_INDEX);
+			//glEnableVertexAttribArray(SHADER_MASK_INDEX);
+			//glEnableVertexAttribArray(SHADER_COLOR_INDEX);
 
-			glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
-			glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, uv)));
-			glVertexAttribPointer(SHADER_MASK_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, mask_uv)));
-			glVertexAttribPointer(SHADER_TEXTURE_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid)));
-			glVertexAttribPointer(SHADER_MASK_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, mid)));
-			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color)));
+			//glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
+			//glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, uv)));
+			//glVertexAttribPointer(SHADER_MASK_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, mask_uv)));
+			//glVertexAttribPointer(SHADER_TEXTURE_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid)));
+			//glVertexAttribPointer(SHADER_MASK_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, mid)));
+			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color)));
 
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
-			glBindVertexArray(0);
+			//glBindBuffer(GL_ARRAY_BUFFER, 0);
+			//glBindVertexArray(0);
+			
+			API::Buffer* buffer = new API::Buffer(GL_ARRAY_BUFFER, GL_STATIC_DRAW);
+			buffer->bind();
+			buffer->setData(RENDERER_VERTEX_SIZE * 4, data);
+
+			buffer->layout.push<Maths::vec3>("position");
+			buffer->layout.push<Maths::vec2>("uv");
+			buffer->layout.push<Maths::vec2>("mask_uv");
+			buffer->layout.push<float>("tid");
+			buffer->layout.push<float>("mid");
+			buffer->layout.push<byte>("color", 4, true);
+
+			VertexArray* result = new VertexArray();
+			result->bind();
+			result->addBuffer(buffer);
 
 			return result;
 		}
 
-		uint Mesh_Manager::CreateQuad(const Maths::vec2& position, const Maths::vec2& size)
+		VertexArray* Mesh_Manager::CreateQuad(const Maths::vec2& position, const Maths::vec2& size)
 		{
 			return CreateQuad(position.x, position.y, size.x, size.y);
 		}

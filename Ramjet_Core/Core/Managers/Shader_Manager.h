@@ -13,7 +13,7 @@ namespace Core {
 		{
 		private:
 			static std::map <String, Shader*> m_Shaders;
-			static std::map <String, GLuint> m_SID;
+			static std::map <String, uint> m_SID;
 
 		public:
 			static void init();
@@ -21,7 +21,7 @@ namespace Core {
 			/*return Shader*/
 			static Shader* get(const String& name);
 			/*Return shader's ID*/
-			static GLuint getSID(const String& name);
+			static uint getSID(const String& name);
 			static void clean();
 
 			static Shader* FromFile(const String& name, const char* vertPath, const char* fragPath);

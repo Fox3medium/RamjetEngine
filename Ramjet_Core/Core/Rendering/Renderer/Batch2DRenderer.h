@@ -1,10 +1,11 @@
 #pragma once
 
-#include <Utils/Log.h>
 #include <Utils/types.h>
 #include <cstddef>
 #include "Renderer2D.h"
 #include "Renderable2D.h"
+#include <Rendering/Platform/CoreRenderAPI.h>
+#include "Buffers/VertexArray.h"
 #include "Buffers/IndexBuffer.h"
 #include "Buffers/FrameBuffer.h"
 
@@ -24,7 +25,9 @@ namespace Core {
 			GLuint m_VAO;
 			GLuint m_VBO;
 			IndexBuffer* m_IBO;
-			GLsizei m_IndexCount;
+			VertexArray* m_VertexArray;
+			GLsizei m_IndexCount, m_LineIndexCount;
+			IndexBuffer* m_LineIBO;
 			VertexData* m_Buffer;
 			std::vector<GLuint> m_TextureSlots;
 
@@ -33,7 +36,7 @@ namespace Core {
 			int m_ScreenBuffer;
 			Maths::tvec2<uint> m_ViewportSize, m_ScreenSize;
 			Shader* m_SimpleShader;
-			uint m_ScreenQuad;
+			VertexArray* m_ScreenQuad;
 
 		public:
 			Batch2DRenderer(uint width, uint height);
@@ -42,6 +45,7 @@ namespace Core {
 
 			void begin() override;
 			void submit(const Renderable2D* renderable) override;
+			void drawAABB(const Maths::AABB& aabb, uint color = 0xFFFFFFFF);
 			void drawString(const String& text, const Maths::vec3& position, const Font& font, unsigned int color) override;
 			void end() override;
 			void flush() override;

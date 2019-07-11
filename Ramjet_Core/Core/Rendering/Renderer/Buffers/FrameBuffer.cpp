@@ -18,43 +18,37 @@ namespace Core {
 
 		FrameBuffer::~FrameBuffer()
 		{
-			// GPU -> MEMORY LEAK TODO RESOLVE
-			glDeleteFramebuffers(1, &m_Data.framebufferID);
-			// SHOULD NOT BE REQUIRED
-			glDeleteRenderbuffers(1, &m_Data.depthbufferID);
+			API::freeFramebuffers(m_Data.framebufferID, m_Data.depthbufferID);
 			delete m_Texture;	
 		}
 
 		void FrameBuffer::bind()
 		{
-			glBindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
-			glViewport(0, 0, m_Width, m_Height);
+			API::bindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
+			API::setViewport(0, 0, m_Width, m_Height);
 		}
 
 		void FrameBuffer::clear()
 		{
 			//NOT FUNCTIONAL?!
-			glClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			API::setClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
+			API::clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
 		void FrameBuffer::create(uint width, uint height)
 		{
-			glGenFramebuffers(1, &m_Data.framebufferID);
-			glGenRenderbuffers(1, &m_Data.depthbufferID);
+			m_Data.framebufferID = API::createFramebuffer();
+			m_Data.depthbufferID = API::createRenderbuffer();
 
 			Texture::setFilter(TextureFilter::LINEAR);
 			m_Texture = new Texture(width, height);
 
-			glBindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
-			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
+			API::bindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
+			API::renderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
 
-			glBindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
-			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, m_Texture->getID(), 0);
-			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m_Data.depthbufferID);
-			GLenum error = glGetError();
-			if (error != GL_NO_ERROR)
-				std::cout << "OpenGL Error: " << error << std::endl;
+			API::bindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
+			API::framebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, m_Texture->getID(), 0);
+			API::framebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m_Data.depthbufferID);
 		}
 
 	}

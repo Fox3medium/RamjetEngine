@@ -1,5 +1,10 @@
 #include "Batch2DRenderer.h"
 
+#include "Buffers/Buffer.h"
+#include "Buffers/BufferLayout.h"
+
+#include <Utils/Log.h>
+
 #include <Managers/Mesh_Manager.h>
 #include <Managers/Shader_Manager.h>
 
@@ -24,8 +29,8 @@ namespace Core {
 		Batch2DRenderer::~Batch2DRenderer()
 		{
 			delete m_IBO;
-			glDeleteBuffers(1, &m_VBO);
-			glDeleteVertexArrays(1, &m_VAO);
+			API::freeBuffer(m_VBO);
+			API::freeVertexArray(m_VAO);
 		}
 
 		void Batch2DRenderer::begin()
@@ -53,18 +58,18 @@ namespace Core {
 			}
 			else 
 			{				
-				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
-				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+				API::bindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
+				API::setViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
 			}
-			glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-			m_Buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+			m_VertexArray->getBuffer()->bind();
+			m_Buffer = m_VertexArray->getBuffer()->getPointer<VertexData>();
 		}
 
 		void Batch2DRenderer::submit(const Renderable2D* renderable)
 		{
 			const Maths::vec3& position = renderable->getPosition();
 			const Maths::vec2& size = renderable->getSize();
-			const unsigned int color = renderable->getColor();
+			const uint color = renderable->getColor();
 			const std::vector<Maths::vec2>& uv = renderable->getUV();
 			const GLuint tid = renderable->getTextureID();
 
@@ -74,7 +79,7 @@ namespace Core {
 				textureSlot = submitTexture(renderable->getTexture());
 
 			Maths::mat4 maskTransform = Maths::mat4::Identity();
-			const GLuint mid = m_Mask ? m_Mask->texture->getID() : 0;
+			const uint mid = m_Mask ? m_Mask->texture->getID() : 0;
 			float ms = 0.0f;
 
 			if (m_Mask != nullptr)
@@ -120,6 +125,23 @@ namespace Core {
 			m_Buffer++;
 
 			m_IndexCount += 6;
+		}
+
+		void Batch2DRenderer::drawAABB(const Maths::AABB& aabb, uint color)
+		{
+			#if 0
+			m_DeferredLineVertexData.push_back({ aabb.min, vec2(), vec2(), 0, 0, color });
+			m_DeferredLineVertexData.push_back({ vec3(aabb.min.x, aabb.max.y, 0.0f), vec2(), vec2(), 0, 0, color });
+
+			m_DeferredLineVertexData.push_back({ vec3(aabb.min.x, aabb.max.y, 0.0f), vec2(), vec2(), 0, 0, color });
+			m_DeferredLineVertexData.push_back({ aabb.max, vec2(), vec2(), 0, 0, color });
+
+			m_DeferredLineVertexData.push_back({ aabb.max, vec2(), vec2(), 0, 0, color });
+			m_DeferredLineVertexData.push_back({ vec3(aabb.max.x, aabb.min.y, 0.0f), vec2(), vec2(), 0, 0, color });
+
+			m_DeferredLineVertexData.push_back({ vec3(aabb.max.x, aabb.min.y, 0.0f), vec2(), vec2(), 0, 0, color });
+			m_DeferredLineVertexData.push_back({ aabb.min, vec2(), vec2(), 0, 0, color });
+			#endif
 		}
 
 		void Batch2DRenderer::drawString(const String& text, const Maths::vec3& position, const Font& font, unsigned int color)
@@ -193,26 +215,26 @@ namespace Core {
 
 		void Batch2DRenderer::end()
 		{
-			glUnmapBuffer(GL_ARRAY_BUFFER);
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			m_VertexArray->getBuffer()->releasePointer();
+			m_VertexArray->getBuffer()->unbind();
+			// glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
 		void Batch2DRenderer::flush()
 		{
 			for (uint i = 0; i < m_TextureSlots.size(); i++)
 			{
-				glActiveTexture(GL_TEXTURE0 + i);
-				glBindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
+				API::setActiveTexture(GL_TEXTURE0 + i);
+				API::bindTexture(GL_TEXTURE_2D, m_TextureSlots[i]);
 			}
 
-			glBindVertexArray(m_VAO);
+			m_VertexArray->bind();
 			m_IBO->bind();
 
-			glDrawElements(GL_TRIANGLES, m_IndexCount, GL_UNSIGNED_INT, NULL);
+			API::drawElements(GL_TRIANGLES, m_IndexCount, GL_UNSIGNED_INT, NULL);
 
 			m_IBO->unbind();
-			glBindVertexArray(0);
+			m_VertexArray->unbind();
 
 			m_IndexCount = 0;
 			m_TextureSlots.clear();
@@ -222,21 +244,21 @@ namespace Core {
 				if (m_PostFXEnabled)
 					m_PostFX->RenderPostFX(m_Framebuffer, m_PostFXBuffer, m_ScreenQuad, m_IBO);
 				// Display Framebuffer
-				glBindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
-				glViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+				API::bindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
+				API::setViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
 				m_SimpleShader->enable();
 
-				glActiveTexture(GL_TEXTURE0);
+				API::setActiveTexture(GL_TEXTURE0);
 				if (m_PostFXEnabled)
 					m_PostFXBuffer->getTexture()->bind();
 				else
 					m_Framebuffer->getTexture()->bind();
 
-				glBindVertexArray(m_ScreenQuad);
+				m_ScreenQuad->bind();
 				m_IBO->bind();
-				glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
+				API::drawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 				m_IBO->unbind();
-				glBindVertexArray(0);
+				m_ScreenQuad->unbind();
 				m_SimpleShader->disable();
 
 			}
@@ -244,7 +266,11 @@ namespace Core {
 
 		void Batch2DRenderer::init()
 		{
-			glGenVertexArrays(1, &m_VAO);
+			API::Buffer* buffer = new API::Buffer(GL_ARRAY_BUFFER, GL_DYNAMIC_DRAW);
+			buffer->bind();
+			buffer->resize(RENDERER_BUFFER_SIZE);
+
+			/*glGenVertexArrays(1, &m_VAO);
 			glGenBuffers(1, &m_VBO);
 
 			glBindVertexArray(m_VAO);
@@ -256,30 +282,41 @@ namespace Core {
 			glEnableVertexAttribArray(SHADER_MASK_UV_INDEX);
 			glEnableVertexAttribArray(SHADER_TEXTURE_INDEX);
 			glEnableVertexAttribArray(SHADER_MASK_INDEX);
-			glEnableVertexAttribArray(SHADER_COLOR_INDEX);
+			glEnableVertexAttribArray(SHADER_COLOR_INDEX);*/
 
-			glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
-				(const GLvoid*)0);
-			glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
-				(const GLvoid*)(offsetof(VertexData,uv)));
-			glVertexAttribPointer(SHADER_MASK_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
-				(const GLvoid*)(offsetof(VertexData, mask_uv)));
-			glVertexAttribPointer(SHADER_TEXTURE_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
-				(const GLvoid*)(offsetof(VertexData, tid)));
-			glVertexAttribPointer(SHADER_MASK_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
-				(const GLvoid*)(offsetof(VertexData, mid)));
-			// Using multiplications to know get the offset needed for the buffer size is quite slow.
-			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
-			// Using offsetof will directly check in memory the space needed. REQUIRE <cstddef>
-			// USE VEC 4
-			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
-			// USE UNSIGNED INT
-			glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, 
-				(const GLvoid*)(offsetof(VertexData, VertexData::color)));		
+			buffer->layout.push<Maths::vec3>("position");
+			buffer->layout.push<Maths::vec2>("uv");
+			buffer->layout.push<Maths::vec2>("mask_uv");
+			buffer->layout.push<float>("tid");
+			buffer->layout.push<float>("mid");
+			buffer->layout.push<byte>("color", 4, true);
+			
+			m_VertexArray = new VertexArray();
+			m_VertexArray->bind();
+			m_VertexArray->addBuffer(buffer);
 
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			//glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+			//	(const GLvoid*)0);
+			//glVertexAttribPointer(SHADER_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+			//	(const GLvoid*)(offsetof(VertexData,uv)));
+			//glVertexAttribPointer(SHADER_MASK_UV_INDEX, 2, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+			//	(const GLvoid*)(offsetof(VertexData, mask_uv)));
+			//glVertexAttribPointer(SHADER_TEXTURE_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+			//	(const GLvoid*)(offsetof(VertexData, tid)));
+			//glVertexAttribPointer(SHADER_MASK_INDEX, 1, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, 
+			//	(const GLvoid*)(offsetof(VertexData, mid)));
+			//// Using multiplications to know get the offset needed for the buffer size is quite slow.
+			////glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
+			//// Using offsetof will directly check in memory the space needed. REQUIRE <cstddef>
+			//// USE VEC 4
+			////glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, VertexData::color)));
+			//// USE UNSIGNED INT
+			//glVertexAttribPointer(SHADER_COLOR_INDEX, 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, 
+			//	(const GLvoid*)(offsetof(VertexData, VertexData::color)));		
 
-			GLuint* indices = new GLuint[RENDERER_INDICES_SIZE];
+			/*glBindBuffer(GL_ARRAY_BUFFER, 0);*/
+
+			uint* indices = new uint[RENDERER_INDICES_SIZE];
 
 			int offset = 0;
 			for (int i = 0; i < RENDERER_INDICES_SIZE; i += 6) {
@@ -296,13 +333,12 @@ namespace Core {
 
 			m_IBO = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
-			glBindVertexArray(0);
+			m_VertexArray->unbind();
 
-			delete indices;
 
 			using namespace Manager;
 			//Set framebuffer
-			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_ScreenBuffer);
+			m_ScreenBuffer = API::getScreenBuffer();
 			m_Framebuffer = new FrameBuffer(m_ViewportSize);			
 			m_SimpleShader = Shader_Manager::SimpleShader();
 			m_SimpleShader->enable();
@@ -316,6 +352,8 @@ namespace Core {
 
 			m_PostFX = new PostFX();
 			m_PostFXBuffer = new FrameBuffer(m_ViewportSize);
+			
+			delete indices;
 		}
 
 		float Batch2DRenderer::submitTexture(uint textureID)

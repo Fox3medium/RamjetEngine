@@ -3,6 +3,7 @@
 #include <map>
 #include <Utils/types.h>
 #include <string>
+#include <Rendering/Renderer/Buffers/VertexArray.h>
 #include <Rendering/Renderer/Models/Sprite.h>
 
 namespace Core {
@@ -25,8 +26,8 @@ namespace Core {
 
 			static void fromFile(const String& name, const char* filePath);
 
-			static uint CreateQuad(float x, float y, float width, float height);
-			static uint CreateQuad(const Maths::vec2& position, const Maths::vec2& size);
+			static VertexArray* CreateQuad(float x, float y, float width, float height);
+			static VertexArray* CreateQuad(const Maths::vec2& position, const Maths::vec2& size);
 
 		private:
 			Mesh_Manager() {}

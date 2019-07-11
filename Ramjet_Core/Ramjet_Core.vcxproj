@@ -224,8 +224,11 @@
     <ClCompile Include="Core\Managers\Sound_Manager.cpp" />
     <ClCompile Include="Core\Managers\Texture_Manager.cpp" />
     <ClCompile Include="Core\Rendering\Material\Material.cpp" />
+    <ClCompile Include="Core\Rendering\Platform\OpenGL\CoreOpenGLBuffer.cpp" />
+    <ClCompile Include="Core\Rendering\Platform\CoreRenderAPI.h" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Buffers\BufferLayout.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\FrameBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\IndexBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\VertexArray.cpp" />
@@ -288,9 +291,12 @@
     <ClInclude Include="Core\Managers\Texture_Manager.h" />
     <ClInclude Include="Core\Core.h" />
     <ClInclude Include="Core\Rendering\Material\Material.h" />
+    <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLBuffer.h" />
+    <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl" />
     <ClInclude Include="Core\Rendering\Renderer\2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Buffers\BufferLayout.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffers.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\FrameBuffer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\IndexBuffer.h" />

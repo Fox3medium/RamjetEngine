@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../Buffers/FrameBuffer.h"
+#include "../Buffers/VertexArray.h"
 #include "../Buffers/IndexBuffer.h"
 #include "PostFXPass.h"
 
@@ -20,7 +21,7 @@ namespace Core {
 			void push(PostFXPass* pass);
 			void pop();
 
-			void RenderPostFX(FrameBuffer* source, FrameBuffer* target, uint quad, IndexBuffer* indices);
+			void RenderPostFX(FrameBuffer* source, FrameBuffer* target, VertexArray* quad, IndexBuffer* indices);
 
 		};
 
