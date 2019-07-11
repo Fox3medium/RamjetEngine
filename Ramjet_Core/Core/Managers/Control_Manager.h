@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Controls/IControl.h"
-#include <Utils/Static/CInOut.h>
+#include <Utils/Log.h>
 #include <Utils/Maths/maths.h>
 #include <Sound_Manager.h>
 

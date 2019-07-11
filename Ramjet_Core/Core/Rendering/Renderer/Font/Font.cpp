@@ -5,7 +5,7 @@ namespace Core {
 
 	namespace Rendering {
 
-		Font::Font(std::string name, std::string filename, float size)
+		Font::Font(String name, String filename, float size)
 			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(1280/32.0f, 720/18.0f)
 		{
 			if (size != FONT_STD_SIZE)
@@ -16,7 +16,7 @@ namespace Core {
 			CORE_ASSERT(m_FTFont, "Failed to load font '", filename.c_str(), "'!");			
 		}
 
-		Font::Font(std::string name, const byte* data, unsigned int datasize, float size)
+		Font::Font(String name, const byte* data, unsigned int datasize, float size)
 			: m_Name(name), m_Filename("NULL"), m_Size(size), m_Scale(1.0f, 1.0f)
 		{
 			m_FTAtlas = ftgl::texture_atlas_new(512, 512, 2);

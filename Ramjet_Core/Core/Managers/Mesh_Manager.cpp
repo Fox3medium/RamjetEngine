@@ -10,20 +10,20 @@ namespace Core {
 
 	namespace Manager {
 
-		std::map<std::string, Sprite*> Mesh_Manager::m_Meshes;
+		std::map<String, Sprite*> Mesh_Manager::m_Meshes;
 
 		void Mesh_Manager::init()
 		{
 		}
 
-		Sprite* Mesh_Manager::add(const std::string& name, Sprite* sprite)
+		Sprite* Mesh_Manager::add(const String& name, Sprite* sprite)
 		{
 			return nullptr;
 		}
 
-		Sprite* Mesh_Manager::getMesh(const std::string& name)
+		Sprite* Mesh_Manager::getMesh(const String& name)
 		{
-			std::map<std::string, Sprite*>::iterator i = m_Meshes.find(name);
+			std::map<String, Sprite*>::iterator i = m_Meshes.find(name);
 			if (i != m_Meshes.end())
 				return m_Meshes[name];
 			return nullptr;
@@ -34,7 +34,7 @@ namespace Core {
 			m_Meshes.clear();
 		}
 
-		void Mesh_Manager::fromFile(const std::string& name, const char* filePath)
+		void Mesh_Manager::fromFile(const String& name, const char* filePath)
 		{
 			// TODO
 		}

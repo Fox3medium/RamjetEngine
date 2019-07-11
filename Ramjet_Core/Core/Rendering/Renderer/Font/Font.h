@@ -19,12 +19,12 @@ namespace Core {
 			float m_Size;
 
 			Maths::vec2 m_Scale;
-			std::string m_Name;
-			std::string m_Filename; 
+			String m_Name;
+			String m_Filename; 
 
 		public:
-			Font(std::string name, std::string filename, float size);
-			Font(std::string name, const byte* data, unsigned int datasize, float size);
+			Font(String name, String filename, float size);
+			Font(String name, const byte* data, unsigned int datasize, float size);
 
 			inline ftgl::texture_font_t* getFTFont() const { return m_FTFont; }
 
@@ -32,8 +32,8 @@ namespace Core {
 
 			inline const unsigned int getID() const { return m_FTAtlas->id; }
 			inline const Maths::vec2& getScale() const { return m_Scale; }
-			inline const std::string& getName() const { return m_Name; }
-			inline const std::string& getFilename() const { return m_Filename; }
+			inline const String& getName() const { return m_Name; }
+			inline const String& getFilename() const { return m_Filename; }
 			inline const float getSize() const { return m_Size; }
 		};
 

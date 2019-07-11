@@ -223,6 +223,7 @@
     <ClCompile Include="Core\Managers\Shader_Manager.cpp" />
     <ClCompile Include="Core\Managers\Sound_Manager.cpp" />
     <ClCompile Include="Core\Managers\Texture_Manager.cpp" />
+    <ClCompile Include="Core\Rendering\Material\Material.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\FrameBuffer.cpp" />
@@ -237,6 +238,7 @@
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFX.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFXPass.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Shader\ShaderUniform.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
     <ClCompile Include="Core\Utils\Maths\AABB.cpp" />
@@ -246,8 +248,6 @@
     <ClCompile Include="Core\Utils\Maths\vec2.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec3.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec4.cpp" />
-    <ClCompile Include="Core\Utils\Static\CInOut.cpp" />
-    <ClCompile Include="Core\Utils\String.cpp" />
     <ClCompile Include="Core\Utils\Timer.cpp" />
     <ClCompile Include="Ext\Freetype-GL\src\platform.c" />
     <ClCompile Include="Ext\Freetype-GL\src\texture-atlas.c" />
@@ -287,6 +287,7 @@
     <ClInclude Include="Core\Managers\Sound_Manager.h" />
     <ClInclude Include="Core\Managers\Texture_Manager.h" />
     <ClInclude Include="Core\Core.h" />
+    <ClInclude Include="Core\Rendering\Material\Material.h" />
     <ClInclude Include="Core\Rendering\Renderer\2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Buffers\Buffer.h" />
@@ -305,6 +306,7 @@
     <ClInclude Include="Core\Rendering\Renderer\Renderable2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Shader\ShaderUniform.h" />
     <ClInclude Include="Core\Rendering\Renderer\Texture\Mask.h" />
     <ClInclude Include="Core\Rendering\Renderer\Texture\Texture.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />
@@ -320,8 +322,6 @@
     <ClInclude Include="Core\Utils\Maths\vec2.h" />
     <ClInclude Include="Core\Utils\Maths\vec3.h" />
     <ClInclude Include="Core\Utils\Maths\vec4.h" />
-    <ClInclude Include="Core\Utils\Static\CInOut.h" />
-    <ClInclude Include="Core\Utils\String.h" />
     <ClInclude Include="Core\Utils\StringUtils.h" />
     <ClInclude Include="Core\Utils\Timer.h" />
     <ClInclude Include="Core\Core_OpenGL.h" />

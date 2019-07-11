@@ -12,20 +12,20 @@ namespace Core {
 		class Shader_Manager
 		{
 		private:
-			static std::map <std::string, Shader*> m_Shaders;
-			static std::map <std::string, GLuint> m_SID;
+			static std::map <String, Shader*> m_Shaders;
+			static std::map <String, GLuint> m_SID;
 
 		public:
 			static void init();
-			static Shader* add(const std::string& name, Shader* shader);
+			static Shader* add(const String& name, Shader* shader);
 			/*return Shader*/
-			static Shader* get(const std::string& name);
+			static Shader* get(const String& name);
 			/*Return shader's ID*/
-			static GLuint getSID(const std::string& name);
+			static GLuint getSID(const String& name);
 			static void clean();
 
-			static Shader* FromFile(const std::string& name, const char* vertPath, const char* fragPath);
-			static Shader* FromSource(const std::string& name, const char* vertSrc, const char* fragSrc);
+			static Shader* FromFile(const String& name, const char* vertPath, const char* fragPath);
+			static Shader* FromSource(const String& name, const char* vertSrc, const char* fragSrc);
 
 			static Shader* DefaultShader();
 			static Shader* BasicLightShader();

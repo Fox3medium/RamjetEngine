@@ -1,8 +1,9 @@
 #pragma once
 
-#include <Utils\Fileutils.h>
-#include <Utils\Maths\maths.h>
-#include <GLEW\glew.h>
+#include <Utils/types.h>
+#include <Utils/Fileutils.h>
+#include <Utils/Maths/maths.h>
+#include <GLEW/glew.h>
 #include <map>
 
 using namespace Utils;
@@ -21,17 +22,17 @@ namespace Core {
 		class Shader {
 			private :
 				//Shader ID
-				std::string m_Name;
+				String m_Name;
 				GLuint m_ShaderID;
 
 				const char* m_VertSrc;
 				const char* m_FragSrc;
 
-				std::map<std::string, GLuint> m_UniformMap;
+				std::map<String, GLuint> m_UniformMap;
 
 			public:
 				/*Load a shader stored in code if true*/
-				Shader(const std::string& name, const char* vertPath, const char* fragPath, bool isFromCode = false);
+				Shader(const String& name, const char* vertPath, const char* fragPath, bool isFromCode = false);
 				~Shader();				
 
 				void setUniform1i(const GLchar* uniVarName, int value);
@@ -47,7 +48,7 @@ namespace Core {
 				void disable() const;
 
 				inline const GLuint getShaderID() { return m_ShaderID; }
-				inline const std::string getShaderName() { return m_Name; }
+				inline const String getShaderName() { return m_Name; }
 
 			private:
 				GLuint getUniformLocation(const GLchar* name);

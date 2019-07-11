@@ -222,7 +222,7 @@ namespace Maths {
 		return vec2(x / length, y / length);
 	}
 
-	std::string vec2::ToString() const
+	String vec2::ToString() const
 	{
 		std::stringstream result;
 		result << "vec2: (" << x << ", " << y << ")";

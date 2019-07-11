@@ -13,11 +13,11 @@ namespace Core {
 		class Texture_Manager
 		{
 		private:
-			static std::map < std::string, Texture* > m_Textures;
+			static std::map < String, Texture* > m_Textures;
 
 		public:
 			static void add(Texture* texture);
-			static Texture* get(const std::string& name);
+			static Texture* get(const String& name);
 			static void clean();
 
 		private:

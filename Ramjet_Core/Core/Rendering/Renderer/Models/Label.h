@@ -18,18 +18,18 @@ namespace Core {
 
 		public:
 
-			std::string m_Text;
+			String m_Text;
 
-			Label(const std::string& text, float x, float y, unsigned int color);
-			Label(const std::string& text, float x, float y, Font* font, unsigned int color);
-			Label(const std::string& text, float x, float y, const std::string& font, unsigned int color);
-			Label(const std::string& text, float x, float y, const std::string& font, unsigned int size, unsigned int color);
+			Label(const String& text, float x, float y, unsigned int color);
+			Label(const String& text, float x, float y, Font* font, unsigned int color);
+			Label(const String& text, float x, float y, const String& font, unsigned int color);
+			Label(const String& text, float x, float y, const String& font, unsigned int size, unsigned int color);
 			void submit(Renderer2D* renderer) const override;
 
-			void setText(unsigned int i , std::string s);
-			void setText(std::string s);
+			void setText(unsigned int i , String s);
+			void setText(String s);
 
-			void validateFont(const std::string& name, int size = -1);
+			void validateFont(const String& name, int size = -1);
 		};
 
 	}

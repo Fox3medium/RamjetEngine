@@ -9,10 +9,10 @@ namespace Core {
 
 	namespace Audio {
 
-		Sound::Sound(const std::string& name, const std::string& filename)
+		Sound::Sound(const String& name, const String& filename)
 			: m_Name(name), m_FileName(filename), b_Playing(false), m_Count(0)
 		{
-			std::vector<std::string> split = Utils::split_string(m_FileName, '.');
+			std::vector<String> split = Utils::SplitString(m_FileName, '.');
 			if (split.size() < 2) {
 				std::cout << "[SOUND] Invalid file name " << m_FileName << "!" << std::endl;
 				return;

@@ -13,7 +13,6 @@
 
 // Utilities
 //#include <Utils/String.h>
-#include <Utils/Static/CInOut.h>
 #include <Utils/Maths/vec2.h>
 
 // Other

@@ -1,9 +1,8 @@
 #include "fileutils.h"
-#include <Utils\Static\CInOut.h>
 
 namespace Utils {
 
-	std::string read_file(const char* filepath)
+	String read_file(const char* filepath)
 	{
 		FILE* file = fopen(filepath, "rt");
 		if (file == nullptr)
@@ -17,7 +16,7 @@ namespace Utils {
 		fread(data, 1, length, file);
 		fclose(file);
 
-		std::string result(data);
+		String result(data);
 		delete[] data;
 
 		return result;

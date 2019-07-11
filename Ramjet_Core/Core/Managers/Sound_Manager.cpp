@@ -8,7 +8,7 @@ namespace Core {
 
 		gau_Manager* Sound_Manager::m_Manager = nullptr;
 		ga_Mixer* Sound_Manager::m_Mixer = nullptr;
-		std::map<std::string, Sound*> Sound_Manager::m_Sounds;
+		std::map<String, Sound*> Sound_Manager::m_Sounds;
 
 		void Sound_Manager::init()
 		{
@@ -23,9 +23,9 @@ namespace Core {
 			//return sound;
 		}
 
-		Sound* Sound_Manager::get(const std::string& name)
+		Sound* Sound_Manager::get(const String& name)
 		{
-			std::map<std::string, Sound*>::iterator i = m_Sounds.find(name);
+			std::map<String, Sound*>::iterator i = m_Sounds.find(name);
 			if (i != m_Sounds.end()) {
 				return m_Sounds[name];
 			}

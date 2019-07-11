@@ -377,7 +377,7 @@ namespace Maths {
 			);
 	}
 
-	std::string mat4::ToString() const
+	String mat4::ToString() const
 	{
 		std::stringstream result;
 		result << "mat4: (" << rows[0].x << ", " << rows[1].x << ", " << rows[2].x << ", " << rows[3].x << "), ";

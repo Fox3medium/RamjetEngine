@@ -1,5 +1,4 @@
 #include "Shader.h"
-#include <Utils\Static\CInOut.h>
 
 #include <iostream>
 #include <vector>
@@ -10,11 +9,11 @@ namespace Core {
 
 	namespace Rendering {
 
-		Shader::Shader(const std::string& name, const char* vertPath, const char* fragPath, bool isFromCode)
+		Shader::Shader(const String& name, const char* vertPath, const char* fragPath, bool isFromCode)
 			: m_Name(name), m_VertSrc(vertPath), m_FragSrc(fragPath)
 		{
-			std::string vertSourceString;
-			std::string fragSourceString;
+			String vertSourceString;
+			String fragSourceString;
 
 			if (!isFromCode) {
 				vertSourceString = read_file(m_VertSrc);
@@ -34,7 +33,7 @@ namespace Core {
 
 		GLuint Shader::getUniformLocation(const GLchar* name)
 		{
-			std::map<std::string, GLuint>::iterator i = m_UniformMap.find(name);
+			std::map<String, GLuint>::iterator i = m_UniformMap.find(name);
 			if (i == m_UniformMap.end()) {
 				GLuint result = glGetUniformLocation(m_ShaderID, name);
 				if (result == -1) {

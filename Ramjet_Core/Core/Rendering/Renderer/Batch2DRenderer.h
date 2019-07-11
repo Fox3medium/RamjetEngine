@@ -42,7 +42,7 @@ namespace Core {
 
 			void begin() override;
 			void submit(const Renderable2D* renderable) override;
-			void drawString(const std::string& text, const Maths::vec3& position, const Font& font, unsigned int color) override;
+			void drawString(const String& text, const Maths::vec3& position, const Font& font, unsigned int color) override;
 			void end() override;
 			void flush() override;
 

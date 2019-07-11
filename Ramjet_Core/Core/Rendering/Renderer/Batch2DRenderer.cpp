@@ -122,7 +122,7 @@ namespace Core {
 			m_IndexCount += 6;
 		}
 
-		void Batch2DRenderer::drawString(const std::string& text, const Maths::vec3& position, const Font& font, unsigned int color)
+		void Batch2DRenderer::drawString(const String& text, const Maths::vec3& position, const Font& font, unsigned int color)
 		{
 			using namespace ftgl;
 

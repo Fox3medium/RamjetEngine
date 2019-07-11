@@ -13,13 +13,13 @@ namespace Core {
 			m_TextureID = load();
 		}
 
-		Texture::Texture(const std::string& fileName)
+		Texture::Texture(const String& fileName)
 			: m_FileName(fileName), m_Name(fileName)
 		{
 			m_TextureID = load();
 		}
 	
-		Texture::Texture(const std::string& name,const std::string& fileName)
+		Texture::Texture(const String& name,const String& fileName)
 			: m_FileName(fileName), m_Name(name)
 		{
 			m_TextureID = load();

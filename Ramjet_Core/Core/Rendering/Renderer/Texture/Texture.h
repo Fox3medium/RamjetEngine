@@ -37,8 +37,8 @@ namespace Core {
 		{
 
 		private:
-			std::string m_Name;
-			std::string m_FileName;
+			String m_Name;
+			String m_FileName;
 			GLuint m_TextureID;
 			GLsizei m_Width, m_Height;
 			unsigned int m_Bits;
@@ -48,8 +48,8 @@ namespace Core {
 
 		public:
 			Texture(uint width, uint height, uint bits = 24);
-			Texture(const std::string& fileName);
-			Texture(const std::string& name, const std::string& fileName);
+			Texture(const String& fileName);
+			Texture(const String& name, const String& fileName);
 			~Texture();
 			void bind() const;
 			void unbind() const;
@@ -57,7 +57,7 @@ namespace Core {
 			inline static void setWrap(TextureWrap mode) { s_WrapMode = mode; }
 			inline static void setFilter(TextureFilter filter) { s_Filter = filter; }
 
-			inline const std::string& getName() const { return m_Name; }
+			inline const String& getName() const { return m_Name; }
 			inline const unsigned int getID() const { return m_TextureID; }
 			inline const unsigned int getWidth() const { return m_Width; }
 			inline const unsigned int getHeight() const { return m_Height; }

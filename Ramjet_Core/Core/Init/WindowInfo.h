@@ -1,6 +1,6 @@
 #pragma once
 
-//#include <Utils\String.h>
+#include <Utils/types.h>
 
 namespace Core {
 
@@ -8,7 +8,7 @@ namespace Core {
 
 		struct WindowInfo {
 
-			std::string name;
+			String name;
 			int width, height;
 			int position_x, position_y;
 			bool bisReshapable;
@@ -34,7 +34,7 @@ namespace Core {
 				bisFullscreen = false;
 			}
 
-			WindowInfo(std::string inName, int start_position_x, int start_position_y, int inWidth, int inHeight, bool isReshapable, bool isFullscreen) {
+			WindowInfo(String inName, int start_position_x, int start_position_y, int inWidth, int inHeight, bool isReshapable, bool isFullscreen) {
 				name = inName;
 				width = inWidth;
 				height = inHeight;

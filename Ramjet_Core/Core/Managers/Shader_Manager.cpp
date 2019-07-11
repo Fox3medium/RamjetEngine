@@ -6,27 +6,27 @@ namespace Core {
 
 	namespace Manager {
 
-		std::map<std::string, Shader* > Shader_Manager::m_Shaders;
-		std::map<std::string, GLuint > Shader_Manager::m_SID;
+		std::map<String, Shader* > Shader_Manager::m_Shaders;
+		std::map<String, GLuint > Shader_Manager::m_SID;
 
-		Shader* Shader_Manager::add(const std::string& name, Shader* shader)
+		Shader* Shader_Manager::add(const String& name, Shader* shader)
 		{
 			m_Shaders[name] = shader;
 			m_SID[name] = shader->getShaderID();
 			return m_Shaders[name];
 		}
 
-		Shader* Shader_Manager::get(const std::string& name)
+		Shader* Shader_Manager::get(const String& name)
 		{
-			std::map<std::string, Shader*>::iterator i = m_Shaders.find(name);
+			std::map<String, Shader*>::iterator i = m_Shaders.find(name);
 			if (i != m_Shaders.end())
 				return m_Shaders[name];
 			return DefaultShader();
 		}
 
-		GLuint Shader_Manager::getSID(const std::string& name)
+		GLuint Shader_Manager::getSID(const String& name)
 		{
-			std::map<std::string, GLuint>::iterator i = m_SID.find(name);
+			std::map<String, GLuint>::iterator i = m_SID.find(name);
 			if (i != m_SID.end())
 				return m_SID[name];
 			return DefaultShader()->getShaderID();
@@ -37,12 +37,12 @@ namespace Core {
 			m_Shaders.clear();
 		}
 
-		Shader* Shader_Manager::FromFile(const std::string& name, const char* vertPath, const char* fragPath)
+		Shader* Shader_Manager::FromFile(const String& name, const char* vertPath, const char* fragPath)
 		{
 			return add(name, new Shader(name, vertPath, fragPath));
 		}
 
-		Shader* Shader_Manager::FromSource(const std::string& name, const char* vertSrc, const char* fragSrc)
+		Shader* Shader_Manager::FromSource(const String& name, const char* vertSrc, const char* fragSrc)
 		{
 			return add(name, new Shader(name, vertSrc, fragSrc, true));
 		}

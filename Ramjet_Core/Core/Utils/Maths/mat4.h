@@ -55,7 +55,7 @@ namespace Maths {
 
 		static mat4 Transpose(const mat4& matrix);
 
-		std::string ToString() const;
+		String ToString() const;
 	};
 
 }

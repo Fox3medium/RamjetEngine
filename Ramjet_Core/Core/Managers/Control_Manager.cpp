@@ -41,7 +41,7 @@ namespace Core {
 			if (glfwGetKey(activeWin, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 				glfwSetWindowShouldClose(activeWin, true);
 			if (glfwGetKey(activeWin, GLFW_KEY_SPACE) == GLFW_PRESS)
-				CInOut::Out("YOU PRESS SPACE BAR");
+				CORE_INFO("YOU PRESS SPACE BAR");
 			// RIGHT
 			if (glfwGetKey(activeWin, GLFW_KEY_D) == GLFW_PRESS)
 			{
@@ -103,9 +103,9 @@ namespace Core {
 
 
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
-				CInOut::Out("YOU PRESS CONTROL");
+				CORE_INFO("YOU PRESS CONTROL");
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)
-				CInOut::Out("YOU PRESS ALT");
+				CORE_INFO("YOU PRESS ALT");
 
 			// SOUND MANAGER TEST 
 			if (glfwGetKey(activeWin, GLFW_KEY_P) == GLFW_PRESS)
@@ -133,7 +133,7 @@ namespace Core {
 
 			// MOUSE INPUT
 			if (glfwGetMouseButton(activeWin, GLFW_MOUSE_BUTTON_1) == GLFW_PRESS)
-				CInOut::Out("YOU PRESS MB1");
+				CORE_INFO("YOU PRESS MB1");
 		}
 
 		void Control_Manager::notifyMouseInput(double xpos, double ypos, float deltaTime)
