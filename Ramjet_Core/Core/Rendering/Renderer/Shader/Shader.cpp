@@ -49,6 +49,74 @@ namespace Core {
 			return m_UniformMap.at(name);
 		}
 
+		void Shader::parseUniforms(const std::vector<String>& lines)
+		{
+			for (uint i = 0; i < lines.size(); i++)
+			{
+				const char* str = lines[i].c_str();
+				if (strstr(str, "uniform"))
+				{
+					std::vector<String> line = Utils::SplitString(str, ' ');
+					for (uint i = 0; i < line.size(); i++)
+					{
+						// TODO: Precision
+						String& token = line[i];
+						ShaderUniform::Type type = getUniformTypeFromString(token);
+						if (type != ShaderUniform::Type::NONE)
+						{
+							String& nextToken = line[i + 1];
+							String name = nextToken;
+							if (name[name.size() - 1] == ';')
+								name = nextToken.substr(0, nextToken.size() - 1);
+
+							uint count = 1;
+
+							// Uniform arrays
+							uint arrayToken = nextToken.find('[');
+							if (arrayToken != String::npos)
+							{
+								name = name.substr(0, arrayToken - 1);
+								uint arrayEnd = nextToken.find(']');
+								CORE_ASSERT(arrayEnd != String::npos);
+								count = atoi(nextToken.substr(arrayToken + 1, arrayEnd - arrayToken - 1).c_str());
+							}
+
+							ShaderUniform* uniform = new ShaderUniform(type, name, this, count);
+							m_Uniforms.push_back(uniform);
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		ShaderUniform::Type Shader::getUniformTypeFromString(const String& token)
+		{
+			if (token == "float") return ShaderUniform::Type::FLOAT32;
+			if (token == "int") return ShaderUniform::Type::INT32;
+			if (token == "vec2") return ShaderUniform::Type::VEC2;
+			if (token == "vec3") return ShaderUniform::Type::VEC3;
+			if (token == "vec4") return ShaderUniform::Type::VEC4;
+			if (token == "mat3") return ShaderUniform::Type::MAT3;
+			if (token == "mat4") return ShaderUniform::Type::MAT4;
+			if (token == "sampler2D") return ShaderUniform::Type::SAMPLER2D;
+
+			return ShaderUniform::Type::NONE;
+		}
+
+		void Shader::resolveUniforms()
+		{
+			uint offset = 0;
+			for (uint i = 0; i < m_Uniforms.size(); i++)
+			{
+				ShaderUniform* uniform = m_Uniforms[i];
+				uniform->m_Offset = offset;
+				uniform->m_Location = getUniformLocation(uniform->m_Name.c_str());
+
+				offset += uniform->getSize();
+			}
+		}
+
 		void Shader::setUniform1i(const char* uniVarName, int value)
 		{
 			glUniform1i(getUniformLocation(uniVarName), value);
@@ -89,6 +157,14 @@ namespace Core {
 			glUniformMatrix4fv(getUniformLocation(uniVarName), 1, GL_FALSE, mat.elements);
 		}
 
+		void Shader::resolveAndSetUniforms(byte* data, uint size)
+		{
+			const std::vector<ShaderUniform*>& uniforms = m_Uniforms;
+
+			for (uint i = 0; i < uniforms.size(); i++)
+				resolveAndSetUniform(uniforms[i], data);
+		}
+
 		void Shader::enable() const
 		{
 			glUseProgram(m_ShaderID);			
@@ -104,7 +180,12 @@ namespace Core {
 			uint program = glCreateProgram();
 
 			uint vertex = glCreateShader(GL_VERTEX_SHADER); //How the GPU works on vertices
-			uint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)			
+			uint fragment = glCreateShader(GL_FRAGMENT_SHADER); // how the GPU work on fragment (usualy pixels)		
+
+			std::vector<String> lines = Utils::SplitString(vertSrc, '\n');
+			parseUniforms(lines);
+			lines = Utils::SplitString(fragSrc, '\n');
+			parseUniforms(lines);
 
 			// link the shader ID to the shader file
 			glShaderSource(vertex, 1, &m_VertSrc, NULL);
@@ -158,6 +239,78 @@ namespace Core {
 			glDeleteShader(fragment);
 
 			return program;
+		}
+
+		void Shader::resolveAndSetUniform(ShaderUniform* uniform, byte* data)
+		{
+			switch (uniform->getType())
+			{
+			case ShaderUniform::Type::FLOAT32:
+				setUniform1f(uniform->getLocation(), *(float*)& data[uniform->getOffset()]);
+				break;
+			case ShaderUniform::Type::SAMPLER2D:
+			case ShaderUniform::Type::INT32:
+				setUniform1i(uniform->getLocation(), *(int*)& data[uniform->getOffset()]);
+				break;
+			case ShaderUniform::Type::VEC2:
+				setUniform2f(uniform->getLocation(), *(Maths::vec2*) & data[uniform->getOffset()]);
+				break;
+			case ShaderUniform::Type::VEC3:
+				setUniform3f(uniform->getLocation(), *(Maths::vec3*) & data[uniform->getOffset()]);
+				break;
+			case ShaderUniform::Type::VEC4:
+				setUniform4f(uniform->getLocation(), *(Maths::vec4*) & data[uniform->getOffset()]);
+				break;
+			case ShaderUniform::Type::MAT3:
+				// TODO: SetUniformMat3(uniform->GetLocation(), *(maths::mat3*)&data[uniform->GetOffset()]);
+				break;
+			case ShaderUniform::Type::MAT4:
+				setUniformMat4(uniform->getLocation(), *(Maths::mat4*) & data[uniform->getOffset()]);
+				break;
+			default:
+				CORE_ASSERT(false, "Unknown type!");
+			}
+		}
+
+		void Shader::setUniform1i(uint location, int value)
+		{
+			glUniform1i(location, value);
+		}
+
+		void Shader::setUniform1iv(uint location, int* value, int count)
+		{
+			glUniform1iv(location, count, value);
+		}
+
+		void Shader::setUniform1f(uint location, float value)
+		{
+			glUniform1f(location, value);
+		}
+
+		void Shader::setUniform1fv(uint location, float* value, int count)
+		{
+			glUniform1fv(location, count, value);
+		}
+
+		void Shader::setUniform2f(uint location, const Maths::vec2& value)
+		{
+			glUniform2f(location, value.x, value.y);
+		}
+
+		void Shader::setUniform3f(uint location, const Maths::vec3& value)
+		{
+			glUniform3f(location, value.x, value.y, value.z);
+
+		}
+
+		void Shader::setUniform4f(uint location, const Maths::vec4& value)
+		{
+			glUniform4f(location, value.x, value.y, value.z, value.w);
+		}
+
+		void Shader::setUniformMat4(uint location, const Maths::mat4& mat)
+		{
+			glUniformMatrix4fv(location, 1, GL_FALSE, mat.elements);
 		}
 
 	}

@@ -26,6 +26,23 @@ namespace Core
 			friend class Shader;
 
 			Type m_Type;
+			String m_Name;
+			uint m_Size;
+			uint m_Count;
+			uint m_Offset;
+			const Shader* m_Shader;
+			mutable int m_Location;
+
+		public:
+			ShaderUniform(Type type, const String& name, const Shader* shader, uint count = 1);
+			uint getSize() const;
+			int getLocation() const;
+			inline int getOffset() const { return m_Offset; }
+			inline const String& getName() const { return m_Name; }
+			inline Type getType() const { return m_Type; }
+
+		private:
+			uint sizeOfUniformType(Type type);
 			
 		};
 	}
