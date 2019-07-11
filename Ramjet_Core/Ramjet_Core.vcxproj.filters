@@ -36,9 +36,6 @@
     <ClCompile Include="Core\Utils\Maths\vec4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Test\Layers\TopLayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -46,9 +43,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp">
@@ -174,6 +168,15 @@
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Rendering\Renderer\Layers\Layer2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="App\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -203,9 +206,6 @@
     <ClInclude Include="Core\Utils\Maths\vec3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core\Test\Layers\TopLayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -219,9 +219,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Rendering\Renderer\Buffers\VertexArray.h">
@@ -411,6 +408,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Rendering\Renderer\PostFX\PostFX.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Rendering\Renderer\Layers\Layer2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

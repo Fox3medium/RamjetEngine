@@ -6,8 +6,8 @@ namespace Core {
 
 	namespace Init {
 
-		/*WindowInfo Window::m_WInfo;
-		GLFWwindow* Window::m_Window;*/
+		/*WindowInfo Window::m_WInfo;*/
+		Window* Window::s_Win = NULL;
 		IListener* Window::m_listener = NULL;
 		IControl* Window::m_control = NULL;
 		float Window::m_deltaTime = 0.0f;
@@ -32,6 +32,7 @@ namespace Core {
 				glfwTerminate();
 
 			Font_Manager::add(new Font("SourceSansPro", "Assets/Test/SourceSansPro-Light.ttf", 12));
+			s_Win = this;
 		}
 
 		Window::~Window()
@@ -93,6 +94,7 @@ namespace Core {
 			glfwSetMouseButtonCallback(m_Window, processMButtonInput);
 			glfwSwapInterval(0.0); //Disable VSync = 0.0, Enable VSync = 1.0
 
+			glEnable(GL_DEBUG_OUTPUT);
 			glEnable(GL_DEPTH_TEST);
 			glEnable(GL_BLEND);
 			glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -170,6 +172,11 @@ namespace Core {
 		int Window::getHeight() const
 		{
 			return m_Height;
+		}
+
+		Window* Window::getWindowClass()
+		{
+			return s_Win;
 		}
 
 		void Window::windowSizeCallback(GLFWwindow *window, int width, int height)

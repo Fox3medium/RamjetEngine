@@ -89,7 +89,7 @@ namespace Core {
 
 		void Shader::enable() const
 		{
-			glUseProgram(m_ShaderID);
+			glUseProgram(m_ShaderID);			
 		}
 
 		void Shader::disable() const

@@ -27,6 +27,7 @@ namespace Core {
 			virtual void notifyGameStart();
 
 			static bool isKeyPressed(unsigned int keycode);
+			static bool isKeyTyped(unsigned int keycode);
 
 			Maths::vec2 getMousePosition() const;
 
@@ -36,7 +37,11 @@ namespace Core {
 
 			//void getPlayerPosition(glm::vec3& position, glm::vec3& rotation);
 
+			void updateInput();
+
 			void setPlayerSpeed(float speed);
+
+		private:
 
 		private:
 			//FPSCamera* playerCamera;
@@ -49,7 +54,9 @@ namespace Core {
 
 			bool gameStarted;
 
-			static bool m_keys[MAX_KEYS];
+			static bool m_Keys[MAX_KEYS];
+			static bool m_KeysState[MAX_KEYS];
+			static bool m_KeysTyped[MAX_KEYS];
 			static bool m_MouseButtons[MAX_BUTTONS];
 
 			static Maths::vec2 m_MousePos;

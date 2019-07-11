@@ -1,9 +1,16 @@
 #pragma once
 
+#include <map>
+
 #include "../Core/Utils/Log.h"
 #include "2DEngine.h"
 
+#include <Rendering/Renderer/Layers/Layer.h>
+#include <Utils/Timer.h>
+
 namespace App {
+
+	using namespace Core::Rendering;
 
 	class Application {
 
@@ -12,6 +19,8 @@ namespace App {
 		Core::Manager::Control_Manager* C_Manager;
 
 	private:
+		static Application* s_Instance;
+
 		bool m_Running, m_Suspended;
 		Timer* m_Timer;
 		unsigned int m_Fps, m_UpdatePerSec;
@@ -19,19 +28,24 @@ namespace App {
 		const char* m_Name;
 		uint m_Width, m_Height;
 
+		std::vector<Layer*> m_Layers;
+
 	public:
 
 		Application(const char* name, uint width, uint height, bool fullscreen = false);
 		virtual ~Application();
 
+		void pushLayer(Layer* layer);
+		Layer* popLayer();
+
 		// Run to initialize the engine
 		virtual void init();
 		// Run every second
-		virtual void tick();
+		void tick();
 		// Run 60 times per second
-		virtual void update();
+		void update();
 		// Run as fast as possible
-		virtual void render();
+		void render();
 
 		void start();
 		void suspend();
@@ -40,6 +54,8 @@ namespace App {
 
 		const unsigned int getFPS() const { return m_Fps; }
 		const unsigned int getUPS() const { return  m_UpdatePerSec; }
+
+		inline static Application& getApplication() { return *s_Instance; }
 
 	private:
 		void run();

@@ -1,36 +1,29 @@
 #pragma once
 
-#include "../Renderable2D.h"
-#include "../Renderer2D.h"
 #include <Utils/types.h>
 
-namespace Core {
+#include <Init/Window.h>
 
-	namespace Rendering {
-		
+namespace Core 
+{
+	namespace Rendering 
+	{
 		class Layer
 		{
-		public:
-			Renderer2D* m_Renderer;
-
 		protected:
-			std::vector<Renderable2D*> m_Renderables;
-			Shader* m_Shader;
-			Maths::mat4 m_ProjectionMatrix;			
+			Core::Init::Window* m_Window;
 
 		public:
-			Layer(Renderer2D* renderer, Shader* shader, Maths::mat4 projectionMatrix);
+			Layer();
 			virtual ~Layer();
-			virtual void add(Renderable2D* renderable);
-			virtual void render();
 
-			inline void setMask(const Mask* mask) const { m_Renderer->setMask(mask); }
-
-			inline const std::vector<Renderable2D*>& getRenderable() const { return m_Renderables; }
+			virtual void init();
+			// TODO
+			virtual bool onEvent();
+			virtual void onTick();
+			virtual void onUpdate();
+			virtual void onRender();
 
 		};
-
 	}
-
 }
-

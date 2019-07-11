@@ -1,17 +1,5 @@
 #include "FrameBuffer.h"
 
-#define _CRTDBG_MAP_ALLOC
-#include <stdlib.h>
-#include <crtdbg.h>
-
-#ifdef _DEBUG
-#define DBG_NEW new ( _NORMAL_BLOCK , __FILE__ , __LINE__ )
-// Replace _NORMAL_BLOCK with _CLIENT_BLOCK if you want the
-// allocations to be of _CLIENT_BLOCK type
-#else
-#define DBG_NEW new
-#endif
-
 namespace Core {
 
 	namespace Rendering {
@@ -56,7 +44,7 @@ namespace Core {
 			glGenRenderbuffers(1, &m_Data.depthbufferID);
 
 			Texture::setFilter(TextureFilter::LINEAR);
-			m_Texture = DBG_NEW Texture(width, height);
+			m_Texture = new Texture(width, height);
 
 			glBindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
 			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);
@@ -64,6 +52,9 @@ namespace Core {
 			glBindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
 			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, m_Texture->getID(), 0);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m_Data.depthbufferID);
+			GLenum error = glGetError();
+			if (error != GL_NO_ERROR)
+				std::cout << "OpenGL Error: " << error << std::endl;
 		}
 
 	}

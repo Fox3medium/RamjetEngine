@@ -9,15 +9,22 @@ namespace Core {
 		Maths::vec2 Control_Manager::m_MousePos;
 		double Control_Manager::m_ScrollX;
 		double Control_Manager::m_ScrollY;
-		bool Control_Manager::m_keys[MAX_KEYS];
+		bool Control_Manager::m_Keys[MAX_KEYS];
+		bool Control_Manager::m_KeysState[MAX_KEYS];
+		bool Control_Manager::m_KeysTyped[MAX_KEYS];
 
 		Control_Manager::Control_Manager()
 		{
 			playerSpeed = 2.5f;
 			gameStarted = false;
 
-			for (int i = 0; i < MAX_KEYS; i++)
-				m_keys[i] = false;
+			for (int i = 0; i < MAX_KEYS; i++) 
+			{
+				m_Keys[i] = false;
+				m_KeysState[i] = false;
+				m_KeysTyped[i] = false;
+			}
+				
 
 			//playerCamera = new FPSCamera();
 		}
@@ -38,61 +45,61 @@ namespace Core {
 			// RIGHT
 			if (glfwGetKey(activeWin, GLFW_KEY_D) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_D] = true;
+				m_Keys[GLFW_KEY_D] = true;
 			}
 			else
-				m_keys[GLFW_KEY_D] = false;
+				m_Keys[GLFW_KEY_D] = false;
 			// LEFT
 			if (glfwGetKey(activeWin, GLFW_KEY_A) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_A] = true;
+				m_Keys[GLFW_KEY_A] = true;
 			}
 			else
-				m_keys[GLFW_KEY_A] = false;
+				m_Keys[GLFW_KEY_A] = false;
 			//FORWARD
 			if (glfwGetKey(activeWin, GLFW_KEY_W) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_W] = true;
+				m_Keys[GLFW_KEY_W] = true;
 			}
 			else
-				m_keys[GLFW_KEY_W] = false;
+				m_Keys[GLFW_KEY_W] = false;
 			// BACK
 			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS) 
 			{
-				m_keys[GLFW_KEY_S] = true;
+				m_Keys[GLFW_KEY_S] = true;
 			}
 			else
-				m_keys[GLFW_KEY_S] = false;
+				m_Keys[GLFW_KEY_S] = false;
 
 
 			if (glfwGetKey(activeWin, GLFW_KEY_E) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_E] = true;
+				m_Keys[GLFW_KEY_E] = true;
 			}
 			else
-				m_keys[GLFW_KEY_E] = false;
+				m_Keys[GLFW_KEY_E] = false;
 
 			if (glfwGetKey(activeWin, GLFW_KEY_Q) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_Q] = true;
+				m_Keys[GLFW_KEY_Q] = true;
 			}
 			else
-				m_keys[GLFW_KEY_Q] = false;
+				m_Keys[GLFW_KEY_Q] = false;
 
 
 			if (glfwGetKey(activeWin, GLFW_KEY_1) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_1] = true;
+				m_Keys[GLFW_KEY_1] = true;
 			}
 			else
-				m_keys[GLFW_KEY_1] = false;
+				m_Keys[GLFW_KEY_1] = false;
 
 			if (glfwGetKey(activeWin, GLFW_KEY_2) == GLFW_PRESS)
 			{
-				m_keys[GLFW_KEY_2] = true;
+				m_Keys[GLFW_KEY_2] = true;
 			}
 			else
-				m_keys[GLFW_KEY_2] = false;
+				m_Keys[GLFW_KEY_2] = false;
 
 
 			if (glfwGetKey(activeWin, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS)
@@ -156,7 +163,12 @@ namespace Core {
 
 		bool Control_Manager::isKeyPressed(unsigned int keycode)
 		{
-			return m_keys[keycode];
+			return m_Keys[keycode];
+		}
+
+		bool Control_Manager::isKeyTyped(unsigned int keycode)
+		{
+			return m_KeysTyped[keycode];
 		}
 
 		Maths::vec2 Control_Manager::getMousePosition() const
@@ -187,6 +199,14 @@ namespace Core {
 		void Control_Manager::setPlayerSpeed(float speed)
 		{
 			playerSpeed = speed;
+		}
+
+		void Control_Manager::updateInput()
+		{
+			for (int i = 0; i < MAX_KEYS; i++)
+				m_KeysTyped[i] = m_Keys[i] && !m_KeysState[i];
+
+			memcpy(m_KeysState, m_Keys, MAX_KEYS);
 		}
 
 	}

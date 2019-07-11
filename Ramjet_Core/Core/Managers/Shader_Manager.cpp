@@ -50,16 +50,25 @@ namespace Core {
 		Shader* Shader_Manager::DefaultShader()
 		{
 			return m_Shaders["DefaultShader"];
+			GLenum error = glGetError();
+			if (error != GL_NO_ERROR)
+				std::cout << "OpenGL Error: FAIL TO LOAD DEFAULT SHADER " << error << std::endl;
 		}
 
 		Shader* Shader_Manager::BasicLightShader()
 		{
 			return m_Shaders["BasicLightShader"];
+			GLenum error = glGetError();
+			if (error != GL_NO_ERROR)
+				std::cout << "OpenGL Error: FAILED TO LOAD BASIC LIGHT SHADER " << error << std::endl;
 		}
 
 		Shader* Shader_Manager::SimpleShader()
 		{
 			return m_Shaders["SimpleShader"];
+			GLenum error = glGetError();
+			if (error != GL_NO_ERROR)
+				std::cout << "OpenGL Error: FAILED TO LOAD SIMPLE SHADER" << error << std::endl;
 		}
 
 		const char* default_shader_vert =
@@ -133,6 +142,46 @@ namespace Core {
 			"	color = texColor * maskColor; // vec4(1.0 - maskColor.x, 1.0 - maskColor.y, 1.0 - maskColor.z, 1.0);\n"
 			"}\n";
 
+		const char* simple_shader_vert =
+			"#version 330 core\n"
+			"\n"
+			"layout (location = 0) in vec4 position;\n"
+			"layout (location = 1) in vec2 uv;\n"
+			"layout (location = 2) in vec2 mask_uv;\n"
+			"layout (location = 3) in float tid;\n"
+			"layout (location = 4) in float mid;\n"
+			"layout (location = 5) in vec4 color;\n"
+			"\n"
+			"uniform mat4 pr_matrix;\n"
+			"\n"
+			"out DATA\n"
+			"{\n"
+			"	vec2 uv;\n"
+			"} vs_out;\n"
+			"\n"
+			"void main()\n"
+			"{\n"
+			"	gl_Position = pr_matrix * position;\n"
+			"	vs_out.uv = uv;\n"
+			"}\n";
+
+		const char* simple_shader_frag =
+			"#version 330 core\n"
+			"\n"
+			"layout (location = 0) out vec4 color;\n"
+			"\n"
+			"uniform sampler2D tex;\n"
+			"\n"
+			"in DATA\n"
+			"{\n"
+			"	vec2 uv;\n"
+			"} fs_in;\n"
+			"\n"
+			"void main()\n"
+			"{\n"
+			"	color = texture(tex, fs_in.uv);\n"
+			"}\n";
+
 		const char* basic_light_shader_vert =
 			"#version 330 core\n"
 			"\n"
@@ -192,51 +241,11 @@ namespace Core {
 			"	color = texColor * intensity;\n"
 			"}\n";
 
-		const char* simple_shader_vert =
-			"#version 330 core\n"
-			"\n"
-			"layout (location = 0) in vec4 position;\n"
-			"layout (location = 1) in vec2 uv;\n"
-			"layout (location = 2) in vec2 mask_uv;\n"
-			"layout (location = 3) in float tid;\n"
-			"layout (location = 4) in float mid;\n"
-			"layout (location = 5) in vec4 color;\n"
-			"\n"
-			"uniform mat4 pr_matrix;\n"
-			"\n"
-			"out DATA\n"
-			"{\n"
-			"	vec2 uv;\n"
-			"} vs_out;\n"
-			"\n"
-			"void main()\n"
-			"{\n"
-			"	gl_Position = pr_matrix * position;\n"
-			"	vs_out.uv = uv;\n"
-			"}\n";
-
-		const char* simple_shader_frag =
-			"#version 330 core\n"
-			"\n"
-			"layout (location = 0) out vec4 color;\n"
-			"\n"
-			"uniform sampler2D tex;\n"
-			"\n"
-			"in DATA\n"
-			"{\n"
-			"	vec2 uv;\n"
-			"} fs_in;\n"
-			"\n"
-			"void main()\n"
-			"{\n"
-			"	color = texture(tex, fs_in.uv);\n"
-			"}\n";
-
 		void Shader_Manager::init()
 		{
 			add("DefaultShader", new Shader("DefaultVertShader", default_shader_vert, default_shader_frag, true));
 			add("BasicLightShader", new Shader("BasicLightShader", basic_light_shader_vert, basic_light_shader_frag, true));
-			add("SimpleShader", new Shader("SimpleShader", simple_shader_vert, simple_shader_frag, true));
+			add("SimpleShader", new Shader("SimpleShader", simple_shader_vert, simple_shader_frag, true));			
 		}
 
 	}

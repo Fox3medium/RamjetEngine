@@ -17,6 +17,11 @@ namespace Core {
 			m_Fonts[font->getName()] = font;
 		}
 
+		Font* Font_Manager::get()
+		{
+			return  m_Fonts["SourceSansPro"];
+		}
+
 		Font* Font_Manager::get(const std::string& name)
 		{
 			std::map<std::string, Font*>::iterator i = m_Fonts.find(name);

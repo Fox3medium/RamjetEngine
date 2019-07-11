@@ -6,7 +6,14 @@
 namespace Core {
 
 	namespace Rendering {
-
+		Batch2DRenderer::Batch2DRenderer(uint width, uint height)
+			: m_IndexCount(0), // 3rd to be set 
+			m_ScreenSize(Maths::tvec2<uint>(width, height)),  // 2nd to be set
+			m_ViewportSize(Maths::tvec2<uint>(width, height)) // 1st to be set
+		{
+			init();
+			m_Mask = nullptr;
+		}
 		Batch2DRenderer::Batch2DRenderer(const Maths::tvec2<uint>& screenSize)
 			: m_IndexCount(0), m_ScreenSize(screenSize), m_ViewportSize(screenSize)
 		{
@@ -296,13 +303,16 @@ namespace Core {
 			using namespace Manager;
 			//Set framebuffer
 			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_ScreenBuffer);
-			m_Framebuffer = new FrameBuffer(m_ViewportSize);
+			m_Framebuffer = new FrameBuffer(m_ViewportSize);			
 			m_SimpleShader = Shader_Manager::SimpleShader();
 			m_SimpleShader->enable();
 			m_SimpleShader->setUniformMat4("pr_matrix", Maths::mat4::Orthographic(0, m_ScreenSize.x, m_ScreenSize.y, 0, -1.0f, 1.0f));
 			m_SimpleShader->setUniform1i("tex", 0);
 			m_SimpleShader->disable();
 			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+			GLenum error = glGetError();
+			if (error != GL_NO_ERROR)
+				std::cout << "OpenGL Error: " << error << std::endl;
 
 			m_PostFX = new PostFX();
 			m_PostFXBuffer = new FrameBuffer(m_ViewportSize);

@@ -205,6 +205,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="App\Application.cpp" />
     <ClCompile Include="App\Win\Win64Application.cpp" />
     <ClCompile Include="Core\Audio\Sound.cpp" />
     <ClCompile Include="Core\Init\Window.cpp" />
@@ -230,13 +231,13 @@
     <ClCompile Include="Core\Rendering\Renderer\Font\Font.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Groups\Group.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Layers\Layer2D.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFX.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFXPass.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Shader\Shader.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
-    <ClCompile Include="Core\Test\Layers\TopLayer.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
     <ClCompile Include="Core\Utils\Maths\AABB.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
@@ -296,6 +297,7 @@
     <ClInclude Include="Core\Rendering\Renderer\Font\Font.h" />
     <ClInclude Include="Core\Rendering\Renderer\Groups\Group.h" />
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Layers\Layer2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Label.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\Sprite.h" />
     <ClInclude Include="Core\Rendering\Renderer\PostFX\PostFX.h" />
@@ -305,7 +307,6 @@
     <ClInclude Include="Core\Rendering\Renderer\Shader\Shader.h" />
     <ClInclude Include="Core\Rendering\Renderer\Texture\Mask.h" />
     <ClInclude Include="Core\Rendering\Renderer\Texture\Texture.h" />
-    <ClInclude Include="Core\Test\Layers\TopLayer.h" />
     <ClInclude Include="Core\Utils\Fileutils.h" />
     <ClInclude Include="Core\Utils\ImageLoader.h" />
     <ClInclude Include="Core\Utils\Log.h" />

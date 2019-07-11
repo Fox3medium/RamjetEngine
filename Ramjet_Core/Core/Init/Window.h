@@ -67,6 +67,8 @@ namespace Core {
 
 				int getHeight() const;
 
+				static Window* getWindowClass();
+
 
 			protected :
 
@@ -126,6 +128,8 @@ namespace Core {
 				* Active Window
 				*/
 				GLFWwindow* m_Window;
+				static Window* s_Win;
+
 				WindowInfo m_WInfo;
 
 		};

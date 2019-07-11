@@ -7,7 +7,7 @@
 #include "Buffers/Buffers.h"
 #include "Font/Font.h"
 #include "Groups/Group.h"
-#include "Layers/Layer.h"
+#include "Layers/Layer2D.h"
 #include "Models/Label.h"
 #include "Models/Sprite.h"
 

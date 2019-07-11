@@ -6,6 +6,7 @@ namespace App
 	Application::Application(const char* name, uint width, uint height, bool fullscreen)
 		: m_Name(name), m_Width(width), m_Height(height)
 	{
+		s_Instance = this;
 	}
 
 	Application::~Application()
@@ -17,6 +18,10 @@ namespace App
 	{
 		window = new Core::Init::Window(m_Name, m_Width, m_Height);
 		C_Manager = new Core::Manager::Control_Manager();
+		window->setControl(C_Manager);
+		Core::Manager::Shader_Manager::init();
+		Core::Manager::Sound_Manager::init();
+		Core::Manager::Font_Manager::init();		
 	}
 
 	void Application::start()
@@ -42,21 +47,6 @@ namespace App
 		m_Running = false;
 	}
 
-	void Application::tick()
-	{
-
-	}
-
-	void Application::update()
-	{
-
-	}
-
-	void Application::render()
-	{
-
-	}
-
 	void Application::run()
 	{
 		m_Timer = new Timer();
@@ -70,10 +60,12 @@ namespace App
 			window->clear();
 			if (m_Timer->elapsed() - updateTimer > updateTick)
 			{
+				
 				update();
 				updates++;
 				updateTimer += updateTick;
 			}
+			C_Manager->updateInput();
 			render();
 			frames++;
 			window->update();

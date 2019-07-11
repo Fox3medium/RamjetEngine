@@ -36,6 +36,7 @@ namespace Core {
 			uint m_ScreenQuad;
 
 		public:
+			Batch2DRenderer(uint width, uint height);
 			Batch2DRenderer(const Maths::tvec2<uint>& screenSize);
 			~Batch2DRenderer();
 

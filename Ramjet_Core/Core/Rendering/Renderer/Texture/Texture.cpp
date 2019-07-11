@@ -1,4 +1,3 @@
-#include "..\..\..\..\..\Game_Tests_Example\src\Graphics\Texture.h"
 #include "Texture.h"
 
 namespace Core {

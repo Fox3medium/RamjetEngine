@@ -18,8 +18,6 @@ Game::~Game()
 void Game::init()
 {	
 	Application::init();
-	Core::Manager::Shader_Manager::init();
-	Core::Manager::Sound_Manager::init();
 
 	Core::Sound_Manager::add(new Core::Audio::Sound("test", "Assets/Test/untitled.wav"));
 
@@ -29,14 +27,4 @@ void Game::init()
 	Shaders::Init();
 	RETexture::load();
 	m_Level = new Level();
-}
-
-void Game::update()
-{
-	m_Level->update();
-}
-
-void Game::render()
-{
-	m_Level->render();
 }
