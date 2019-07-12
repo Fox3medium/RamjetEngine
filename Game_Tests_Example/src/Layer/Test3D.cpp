@@ -22,11 +22,14 @@ void Test3D::onInit(Core::Rendering::Renderer3D& renderer, Core::Rendering::Scen
 
 	Shader_Manager::FromFile("SceneShader", "Assets/Shaders/SceneVert.glsl", "Assets/Shaders/SceneFrag.glsl");
 	m_Material = new Material(Shader_Manager::get("SceneShader"));
-	m_Cube = Mesh_Manager::CreateCube(5.0f, new MaterialInstance(m_Material));
-	scene.add(m_Cube);
+	//m_Cube = Mesh_Manager::CreateCube(5.0f, new MaterialInstance(m_Material));
+
+	Model* sphere = new Model("Assets/Objects/Models/nanosuit.obj", new MaterialInstance(m_Material));
+
+	scene.add(sphere);
 
 	m_Material->setUniform("pr_matrix", mat4::Perspective(65.0f, 16.0f / 9.0f, 0.1f, 1000.0f));
-	m_Material->setUniform("vw_matrix", mat4::Translate(vec3(0, 0, -10.0f)));
+	m_Material->setUniform("vw_matrix", mat4::Translate(vec3(0, -8.0f, -15.0f)));
 	m_Material->setUniform("ml_matrix", mat4::Rotate(45.0f, vec3(0, 1, 0)));
 }
 
@@ -40,7 +43,7 @@ float g_Rotation = 0.0f;
 
 void Test3D::onUpdate()
 {
-	mat4 transform = mat4::Rotate(g_Rotation, vec3(1, 0, 0)) * mat4::Rotate(g_Rotation, vec3(0, 1, 0)) * mat4::Rotate(g_Rotation, vec3(0, 0, 1));
+	mat4 transform = mat4::Rotate(g_Rotation, vec3(0, 1, 0));
 	m_Material->setUniform("ml_matrix", transform);
 	g_Rotation += 0.5f;
 }

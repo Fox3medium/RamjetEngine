@@ -3,6 +3,7 @@
 #include "../Buffers/VertexArray.h"
 #include "../Buffers/IndexBuffer.h"
 #include <Rendering/Material/Material.h>
+#include "IRenderable.h"
 
 namespace Core 
 {
@@ -17,7 +18,7 @@ namespace Core
 			Maths::vec2 uv;
 		};
 
-		class Mesh
+		class Mesh : public IRenderable
 		{
 		private:
 			VertexArray* m_VertexArray;
@@ -29,8 +30,9 @@ namespace Core
 			~Mesh();
 
 			inline MaterialInstance* getMaterialInstance() const { return m_MaterialInstance; }
+			inline void setMaterial(MaterialInstance* material) { m_MaterialInstance = material; }
 
-			void render(Renderer3D& renderer);
+			void render(Renderer3D& renderer) override;
 		};
 	}
 }

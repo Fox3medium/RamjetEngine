@@ -3,6 +3,8 @@
 #include <App/Application.h>
 #include <Utils/Maths/maths.h>
 
+#include <Rendering/Renderer/Models/Model.h>
+
 #include <Rendering/Renderer/Layers/Layer3D.h>
 #include <Rendering/Renderer/Renderer3D.h>
 #include <Managers/Managers.h>

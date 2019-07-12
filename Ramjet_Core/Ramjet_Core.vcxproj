@@ -78,13 +78,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(WindowsSDK_IncludePath);$(VC_IncludePath);$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\assimp;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <CodeAnalysisRuleSet>NativeRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Ramjet_Core\Dependencies\Libs\assimp;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\bin;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\libs\Win64;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\bin;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GorillaAudio;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLEW;$(SolutionDir)Ramjet_Core\Dependencies\Libs\Freetype;$(SolutionDir)Ramjet_Core\Dependencies\Libs\FreeImage;$(SolutionDir)Ramjet_Core\Dependencies\Libs\GLFW;$(LibraryPath)</LibraryPath>
     <IncludePath>$(SolutionDir)Ramjet_Core\Dependencies\Includes\libogg\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\libvorbis\include;$(SolutionDir)Ramjet_Core\Dependencies\Includes\OpenAL\include;$(SolutionDir)Ramjet_Core\;$(SolutionDir)Ramjet_Core\Ext\;$(SolutionDir)Ramjet_Core\Ext\Freetype-GL\src;$(SolutionDir)Ramjet_Core\Core\Managers;$(SolutionDir)Ramjet_Core\Core\;$(SolutionDir)Ramjet_Core\Dependencies\Includes\freetype;$(WindowsSDK_IncludePath);$(VC_IncludePath);$(SolutionDir)Ramjet_Core\Dependencies\Includes;$(IncludePath)</IncludePath>
     <OutDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\$(Platform)\Intermediate</IntDir>
@@ -117,7 +117,7 @@
       </RuntimeTypeInfo>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
@@ -182,8 +182,7 @@
       </RuntimeTypeInfo>
       <DisableSpecificWarnings>
       </DisableSpecificWarnings>
-      <MultiProcessorCompilation>
-      </MultiProcessorCompilation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -242,6 +241,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Layers\Layer3D.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Label.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Mesh.cpp" />
+    <ClCompile Include="Core\Rendering\Renderer\Models\Model.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Models\Sprite.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFX.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\PostFX\PostFXPass.cpp" />
@@ -302,6 +302,8 @@
     <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl" />
     <ClInclude Include="Core\Rendering\Renderer\ForwardRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer3D.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Models\IRenderable.h" />
+    <ClInclude Include="Core\Rendering\Renderer\Models\Model.h" />
     <ClInclude Include="Core\Rendering\Renderer\Renderer3D.h" />
     <ClInclude Include="Core\Rendering\Renderer\2D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Batch2DRenderer.h" />

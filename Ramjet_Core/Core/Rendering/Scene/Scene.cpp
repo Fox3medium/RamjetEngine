@@ -24,6 +24,14 @@ namespace Core
 			m_Meshes.push_back(mesh);
 		}
 
+		void Scene::add(Model* model)
+		{
+			for(Mesh* mesh : model->getMesh())
+			{
+				m_Meshes.push_back(mesh);
+			}
+		}
+
 		void Scene::render(Renderer3D& renderer)
 		{
 			for (Mesh* mesh : m_Meshes)
