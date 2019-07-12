@@ -7,7 +7,6 @@
 #include "Buffer.h"
 #include <Rendering/Platform/CoreRenderAPI.h>
 #include <Utils/types.h>
-#include <vector>
 
 namespace Core {
 

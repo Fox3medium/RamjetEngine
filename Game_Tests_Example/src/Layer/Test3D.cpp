@@ -20,8 +20,8 @@ void Test3D::onInit(Core::Rendering::Renderer3D& renderer, Core::Rendering::Scen
 	VertexArray* va = Mesh_Manager::CreateQuad(0, 0, 5, 5);
 	IndexBuffer* ib = new IndexBuffer(new uint[6]{ 0, 1, 2, 2, 3, 0 }, 6);
 
-	Shader_Manager::FromFile("PostFX", "Assets/Shaders/SceneVert.glsl", "Assets/Shaders/SceneFrag.glsl");
-	m_Material = new Material(Shader_Manager::get("PostFX"));
+	Shader_Manager::FromFile("SceneShader", "Assets/Shaders/SceneVert.glsl", "Assets/Shaders/SceneFrag.glsl");
+	m_Material = new Material(Shader_Manager::get("SceneShader"));
 	m_Cube = Mesh_Manager::CreateCube(5.0f, new MaterialInstance(m_Material));
 	scene.add(m_Cube);
 

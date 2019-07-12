@@ -1,9 +1,7 @@
 #include "Shader.h"
-#include <GLEW/glew.h>
 
 #include <Utils/StringUtils.h>
-#include <iostream>
-#include <vector>
+#include <GLEW/glew.h>
 
 using namespace Utils;
 
@@ -12,11 +10,13 @@ namespace Core {
 	namespace Rendering {
 
 		Shader::Shader(const String& name, const String& vertPath, const String& fragPath, bool isFromCode)
-			: m_Name(name)
+			: m_Name(name), m_Paths(vertPath+" "+fragPath)
 		{
 			String vertSourceString;
 			String fragSourceString;
 
+			m_Uniforms.empty();
+			
 			m_VertSrc = vertPath.c_str();
 			m_FragSrc = fragPath.c_str();
 
@@ -69,7 +69,7 @@ namespace Core {
 
 							// Uniform arrays
 							uint arrayToken = nextToken.find('[');
-							if (arrayToken != String::npos)
+							if (arrayToken != -1)
 							{
 								name = name.substr(0, arrayToken - 1);
 								uint arrayEnd = nextToken.find(']');
@@ -151,15 +151,7 @@ namespace Core {
 		void Shader::setUniformMat4(const char* uniVarName, const Maths::mat4& mat)
 		{
 			glUniformMatrix4fv(getUniformLocation(uniVarName), 1, GL_FALSE, mat.elements);
-		}
-
-		void Shader::resolveAndSetUniforms(byte* data, uint size)
-		{
-			const std::vector<ShaderUniformDeclaration*>& uniforms = m_Uniforms;
-
-			for (uint i = 0; i < uniforms.size(); i++)
-				resolveAndSetUniform(uniforms[i], data);
-		}
+		}		
 
 		void Shader::enable() const
 		{
@@ -237,8 +229,19 @@ namespace Core {
 			return program;
 		}
 
+		void Shader::resolveAndSetUniforms(byte* data, uint size)
+		{
+			const std::vector<ShaderUniformDeclaration*>& uniforms = m_Uniforms;
+
+			for (uint i = 0; i < uniforms.size(); i++)
+				resolveAndSetUniform(uniforms[i], data);
+		}
+
 		void Shader::resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data)
 		{
+			Maths::mat4 test;
+			if (uniform->getName() == "pr_matrix")
+				test = *(Maths::mat4*) & data[uniform->getOffset()];
 			switch (uniform->getType())
 			{
 			case ShaderUniformDeclaration::Type::FLOAT32:
@@ -264,7 +267,7 @@ namespace Core {
 				setUniformMat4(uniform->getLocation(), *(Maths::mat4*) & data[uniform->getOffset()]);
 				break;
 			default:
-				CORE_INFO("Unknown type!");
+				CORE_ASSERT(false, "Unknown type!");
 			}
 		}
 

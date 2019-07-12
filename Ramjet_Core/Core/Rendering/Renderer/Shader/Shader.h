@@ -2,12 +2,13 @@
 
 #include <iostream>
 #include <vector>
-#include <map>
-#include "ShaderUniform.h"
+
 #include <Utils/types.h>
+
 #include <Utils/Fileutils.h>
-#include <Utils/StringUtils.h>
 #include <Utils/Maths/maths.h>
+
+#include "ShaderUniform.h"
 
 namespace Core {
 
@@ -23,7 +24,7 @@ namespace Core {
 		class Shader {
 			private :
 				//Shader ID
-				String m_Name;
+				String m_Name, m_Paths;
 				uint m_ShaderID;
 
 				const char* m_VertSrc;
