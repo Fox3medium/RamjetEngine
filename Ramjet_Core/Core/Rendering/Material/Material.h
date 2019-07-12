@@ -12,6 +12,7 @@ namespace Core
 		class Material 
 		{
 		private:
+			friend class MaterialInstance;
 			Shader* m_Shader;
 			byte* m_UniformData;
 			uint m_UniformDataSize;
@@ -61,6 +62,8 @@ namespace Core
 		private:
 			Material* m_Material;
 			byte* m_UniformData;
+			uint m_UniformDataSize;
+			uint m_SetUniforms;
 
 		public:
 			MaterialInstance(Material* material);
@@ -69,16 +72,27 @@ namespace Core
 
 			void bind() const;
 			void unbind() const;
+			void unsetUniform(const String& name);
 
 			template<typename T>
 			void setUniform(const String& name, const T& value)
 			{
-				CORE_ASSERT(false, "Unknown type");
+				int index = getUniformDeclarationIndex(name);
+				if (index == -1)
+				{
+					//CORE_ERROR("Could not find uniform '", name, "'!");
+					return;
+				}
+				ShaderUniformDeclaration* uniform = m_Material->m_Shader->getUniformDeclarations()[index];
+				memcpy(m_UniformData + uniform->getOffset(), &value, uniform->getSize());
+				m_SetUniforms |= 1 << index;
 			}
 
-			template<> void setUniform<float>(const String& name, const float& value) { }
+			//template<> void setUniform<float>(const String& name, const float& value) { }
+
 		private:
 			void initUniformStorage();
+			int getUniformDeclarationIndex(const String& name) const;
 		};
 	}
 }

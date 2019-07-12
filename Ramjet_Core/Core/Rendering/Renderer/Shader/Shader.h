@@ -49,6 +49,8 @@ namespace Core {
 				void setUniformMat4(const char* uniVarName, const Maths::mat4& mat);
 
 				void resolveAndSetUniforms(byte* data, uint size);
+				void resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data);
+				void resolveAndSetUniform(uint index, byte* data);
 
 				void enable() const;
 				void disable() const;
@@ -66,7 +68,6 @@ namespace Core {
 
 				uint load(const String& vertSrc, const String& fragSrc, bool isFromCode);
 
-				void resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data);
 
 				void setUniform1i(	uint location, int value);
 				void setUniform1iv(	uint location, int* value, int count);

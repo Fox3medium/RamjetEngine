@@ -14,7 +14,12 @@ class Test3D : public Core::Rendering::Layer3D
 {
 private:
 	Core::Rendering::Mesh* m_Cube;
-	Core::Rendering::Material* m_Material;
+	Core::Rendering::MaterialInstance* m_CubeMat;
+	Core::Rendering::MaterialInstance* m_SphereMat;
+
+	Core::Manager::Control_Manager* C_Manager;
+
+	bool m_SetUniforms[2];
 	float m_Rotation;
 public:
 	Test3D();

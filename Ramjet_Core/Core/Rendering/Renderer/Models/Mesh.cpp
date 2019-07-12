@@ -22,7 +22,7 @@ namespace Core
 
 		void Mesh::render(Renderer3D& renderer)
 		{
-			m_MaterialInstance->getMaterial()->bind();
+			m_MaterialInstance->bind();
 
 			m_VertexArray->bind();
 			m_IndexBuffer->bind();
@@ -30,7 +30,7 @@ namespace Core
 			m_IndexBuffer->unbind();
 			m_VertexArray->unbind();
 
-			m_MaterialInstance->getMaterial()->unbind();
+			m_MaterialInstance->unbind();
 		}
 
 	}

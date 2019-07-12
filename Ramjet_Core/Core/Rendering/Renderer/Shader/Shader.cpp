@@ -271,6 +271,12 @@ namespace Core {
 			}
 		}
 
+		void Shader::resolveAndSetUniform(uint index, byte* data)
+		{
+			ShaderUniformDeclaration* uniform = m_Uniforms[index];
+			resolveAndSetUniform(uniform, data);
+		}
+
 		void Shader::setUniform1i(uint location, int value)
 		{
 			glUniform1i(location, value);
