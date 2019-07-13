@@ -1,4 +1,5 @@
 #include "Quaternion.h"
+#include <CoreBasicInclude.h>
 
 namespace Maths {
 

@@ -1,5 +1,8 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
+
 namespace Maths {
 
 	template <class T>

@@ -1,5 +1,5 @@
 #include "vec2.h"
-
+#include <CoreBasicInclude.h>
 #include <sstream>
 
 namespace Maths {

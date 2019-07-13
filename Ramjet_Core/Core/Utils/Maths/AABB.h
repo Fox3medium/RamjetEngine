@@ -1,5 +1,8 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
+
 #include "vec2.h"
 #include "vec3.h"
 
@@ -7,7 +10,7 @@ namespace Maths {
 
 	struct Rectangle;
 
-	struct AABB
+	struct CORE_API AABB
 	{
 		vec3 min;
 		vec3 max;

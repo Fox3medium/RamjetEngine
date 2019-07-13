@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Core/Common.h>
+
 #include "vec2.h"
 #include "vec3.h"
 
@@ -12,7 +14,7 @@ namespace Maths {
 	///
 	/// Note that position is stored as a center point, and size is
 	/// half-width and half-height extents.
-	struct Rectangle
+	struct CORE_API Rectangle
 	{
 		union
 		{

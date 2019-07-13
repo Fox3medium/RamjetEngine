@@ -1,12 +1,13 @@
 #pragma once
 
-#include <string>
-
+#include "../String.h"
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include "vec3.h"
 
 namespace Maths {
 
-	struct vec2
+	struct CORE_API vec2
 	{
 		float x, y;
 

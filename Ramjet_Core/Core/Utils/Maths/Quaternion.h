@@ -1,10 +1,11 @@
 #pragma once
 
 #include "mat4.h"
+#include <Core/Common.h>
 
 namespace Maths {
 
-	struct Quaternion
+	struct CORE_API Quaternion
 	{
 		float x, y, z, w;
 

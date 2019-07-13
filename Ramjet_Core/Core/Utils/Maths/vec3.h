@@ -1,6 +1,8 @@
 #pragma once
 
 #include "../types.h"
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 
 namespace Maths {
 
@@ -8,7 +10,7 @@ namespace Maths {
 	struct vec4;
 	struct mat4;
 
-	struct vec3
+	struct CORE_API vec3
 	{
 		float x, y, z;
 
