@@ -1,23 +1,18 @@
 #pragma once
 
-#include <chrono>
+#include <Core/Common.h>
 
 namespace Utils {
 
-	class Timer {
+	class CORE_API Timer {
 	
-	private:
-		typedef std::chrono::high_resolution_clock HighResolutionClock;
-		typedef std::chrono::duration<float, std::milli> milliseconds_type;
-		std::chrono::time_point<HighResolutionClock> m_Start;
-
 	public:
+		// Creates and starts timer
 		Timer();
-
+		// Resets and restarts timer
 		void reset();
-
+		// Returns time in milliseconds
 		float elapsed();
-
 	};
 
 }

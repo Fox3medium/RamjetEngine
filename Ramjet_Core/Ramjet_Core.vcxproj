@@ -208,7 +208,6 @@
   <ItemGroup>
     <ClCompile Include="App\Application.cpp" />
     <ClCompile Include="App\PosixTimer.cpp" />
-    <ClCompile Include="App\Win\Win64Timer.cpp" />
     <ClCompile Include="App\Win\Win64Application.cpp" />
     <ClCompile Include="App\Win\Win64Log.cpp" />
     <ClCompile Include="Core\Audio\Sound.cpp" />
@@ -266,6 +265,7 @@
     <ClCompile Include="Core\Rendering\Renderer\Texture\Texture.cpp" />
     <ClCompile Include="Core\Rendering\Scene\Scene.cpp" />
     <ClCompile Include="Core\Utils\Fileutils.cpp" />
+    <ClCompile Include="Core\Utils\ImageLoader.cpp" />
     <ClCompile Include="Core\Utils\Maths\AABB.cpp" />
     <ClCompile Include="Core\Utils\Maths\mat4.cpp" />
     <ClCompile Include="Core\Utils\Maths\Quaternion.cpp" />
@@ -287,7 +287,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App\Application.h" />
-    <ClInclude Include="App\Win\Win64Window.h" />
+    <ClInclude Include="App\Win\Win64Window.cpp" />
     <ClInclude Include="Core\2DEngine.h" />
     <ClInclude Include="Core\Audio\Sound.h" />
     <ClInclude Include="Core\CoreBasicInclude.h" />

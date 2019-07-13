@@ -128,8 +128,6 @@ namespace Core {
 			glfwSwapBuffers(m_Window);
 			glfwPollEvents();
 
-			Sleep(1);
-
 			Manager::Sound_Manager::update();
 		}
 

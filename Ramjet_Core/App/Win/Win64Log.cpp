@@ -2,7 +2,7 @@
 #include <Windows.h>
 #include <Utils/Log.h>
 
-namespace Core 
+namespace Logs 
 {
 	namespace Internal 
 	{

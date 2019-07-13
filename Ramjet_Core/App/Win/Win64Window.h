@@ -1,7 +1,9 @@
-#pragma once
+#include <CoreBasicInclude.h>
+#include <Utils/Log.h>
 
-#include <Init/InitWindow.h>
 #include <Windowsx.h>
+#include <Init/InitWindow.h>
+
 #include <GLEW/glew.h>
 
 EXTERN_C IMAGE_DOS_HEADER __ImageBase;
