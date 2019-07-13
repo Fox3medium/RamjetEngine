@@ -9,7 +9,7 @@ namespace Core {
 		/*WindowInfo Window::m_WInfo;*/
 		Window* Window::s_Win = NULL;
 		IListener* Window::m_listener = NULL;
-		IControl* Window::m_control = NULL;
+		//IControl* Window::m_control = NULL;
 		float Window::m_deltaTime = 0.0f;
 		float Window::m_last = 0;
 		bool Window::b_Vsync = false;
@@ -204,13 +204,12 @@ namespace Core {
 
 		void Window::processKeyInput(GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
-			//Window* win = (Window*) glfwGetWindowUserPointer(window);
-			m_control->notifyKeyPress(window, m_deltaTime);
+			Control_Manager::notifyKeyPress(key, action, m_deltaTime, InputType::KEYBOARD);
 		}
 
 		void Window::processMButtonInput(GLFWwindow* window, int button, int action, int mods)
 		{
-			m_control->notifyKeyPress(window, m_deltaTime);
+			Control_Manager::notifyKeyPress(button, action, m_deltaTime, InputType::MOUSE);
 		}
 
 		void Window::processMouseInput(GLFWwindow* window, double xpos, double ypos)
@@ -224,7 +223,7 @@ namespace Core {
 
 		void Window::processScrollInput(GLFWwindow* window, double xoffset, double yoffset)
 		{
-			m_control->notifyScrollInput(xoffset, yoffset, m_deltaTime);
+			Control_Manager::notifyScrollInput(xoffset, yoffset, m_deltaTime);
 		}
 
 		void Window::tick()
@@ -240,7 +239,7 @@ namespace Core {
 
 		void Window::setControl(Control_Manager*& control)
 		{
-			m_control = control;
+			//m_control = control;
 		}
 
 		float Window::getDeltaTime()

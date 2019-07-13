@@ -14,20 +14,22 @@ namespace Core {
 		#define MAX_KEYS 1024
 		#define MAX_BUTTONS 32
 
-		class Control_Manager : public IControl {
+		class Control_Manager {
 
 		public:
 			Control_Manager();
 			~Control_Manager();
 
-			virtual void notifyKeyPress(GLFWwindow* activeWin, float deltaTime);
-			virtual void notifyMouseInput(double xpos, double ypos, float deltaTime);
-			virtual void notifyScrollInput(double xoffset, double yoffset, float deltaTime);
-			virtual void notifyReshape(int width, int height);
-			virtual void notifyGameStart();
+			static void notifyKeyPress(int keycode, int action, float deltaTime, InputType inputType);
+			static void notifyMouseInput(double xpos, double ypos, float deltaTime);
+			static void notifyScrollInput(double xoffset, double yoffset, float deltaTime);
+			static void notifyReshape(int width, int height);
+			static void notifyGameStart();
 
 			static bool isKeyPressed(unsigned int keycode);
 			static bool isKeyTyped(unsigned int keycode);
+
+			static bool isMouseButtonPressed(unsigned int keycode);
 
 			Maths::vec2 getMousePosition() const;
 
@@ -49,15 +51,18 @@ namespace Core {
 			//int oldWidth;
 			//int oldHeight;
 
-			float playerSpeed;
+			static float playerSpeed;
 			//float runSpeed;
 
-			bool gameStarted;
+			static bool gameStarted;
 
 			static bool m_Keys[MAX_KEYS];
 			static bool m_KeysState[MAX_KEYS];
 			static bool m_KeysTyped[MAX_KEYS];
+
 			static bool m_MouseButtons[MAX_BUTTONS];
+			static bool m_MouseButtonsState[MAX_BUTTONS];
+			static bool m_MouseButtonsTyped[MAX_BUTTONS];
 
 			static Maths::vec2 m_MousePos;
 			static double m_ScrollX, m_ScrollY;

@@ -100,7 +100,7 @@ namespace Core {
 
 			private:
 
-				static IControl* m_control;
+				//static IControl* m_control;
 				static IListener* m_listener;
 
 				static float m_deltaTime;

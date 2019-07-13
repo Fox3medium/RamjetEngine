@@ -7,11 +7,16 @@ namespace Core {
 	namespace Manager {
 		
 		Maths::vec2 Control_Manager::m_MousePos;
+		float Control_Manager::playerSpeed = 0.0f;
+		bool Control_Manager::gameStarted = false;
 		double Control_Manager::m_ScrollX;
 		double Control_Manager::m_ScrollY;
 		bool Control_Manager::m_Keys[MAX_KEYS];
 		bool Control_Manager::m_KeysState[MAX_KEYS];
 		bool Control_Manager::m_KeysTyped[MAX_KEYS];
+		bool Control_Manager::m_MouseButtons[MAX_BUTTONS];
+		bool Control_Manager::m_MouseButtonsTyped[MAX_BUTTONS];
+		bool Control_Manager::m_MouseButtonsState[MAX_BUTTONS];
 
 		Control_Manager::Control_Manager()
 		{
@@ -23,8 +28,14 @@ namespace Core {
 				m_Keys[i] = false;
 				m_KeysState[i] = false;
 				m_KeysTyped[i] = false;
+			}			
+
+			for (int i = 0; i < MAX_BUTTONS; i++)
+			{
+				m_MouseButtons[i] = false;
+				m_MouseButtonsState[i] = false;
+				m_MouseButtonsTyped[i] = false;
 			}
-				
 
 			//playerCamera = new FPSCamera();
 		}
@@ -33,94 +44,22 @@ namespace Core {
 		{
 		}
 
-		void Control_Manager::notifyKeyPress(GLFWwindow* activeWin, float deltaTime)
+		void Control_Manager::notifyKeyPress(int keycode, int action, float deltaTime, InputType inputType)
 		{
 			playerSpeed = 2.5f * deltaTime;
 
-			// KEYBOARD INPUT
-			if (glfwGetKey(activeWin, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-				glfwSetWindowShouldClose(activeWin, true);
-
-			// RIGHT
-			if (glfwGetKey(activeWin, GLFW_KEY_D) == GLFW_PRESS)
+			CORE_INFO("MOUSE BUTTON:", keycode, " PRESSED");
+			if (inputType == InputType::KEYBOARD)
 			{
-				m_Keys[GLFW_KEY_D] = true;
+				m_Keys[keycode] = action != GLFW_RELEASE;
+			} 
+			else if (inputType == InputType::MOUSE)
+			{
+				m_MouseButtons[keycode] = action != GLFW_RELEASE;
 			}
-			else
-				m_Keys[GLFW_KEY_D] = false;
-			// LEFT
-			if (glfwGetKey(activeWin, GLFW_KEY_A) == GLFW_PRESS)
+			else if (inputType == InputType::JOYSTICK)
 			{
-				m_Keys[GLFW_KEY_A] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_A] = false;
-			//FORWARD
-			if (glfwGetKey(activeWin, GLFW_KEY_W) == GLFW_PRESS)
-			{
-				m_Keys[GLFW_KEY_W] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_W] = false;
-			// BACK
-			if (glfwGetKey(activeWin, GLFW_KEY_S) == GLFW_PRESS) 
-			{
-				m_Keys[GLFW_KEY_S] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_S] = false;
-
-
-			if (glfwGetKey(activeWin, GLFW_KEY_E) == GLFW_PRESS)
-			{
-				m_Keys[GLFW_KEY_E] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_E] = false;
-
-			if (glfwGetKey(activeWin, GLFW_KEY_Q) == GLFW_PRESS)
-			{
-				m_Keys[GLFW_KEY_Q] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_Q] = false;
-
-
-			if (glfwGetKey(activeWin, GLFW_KEY_1) == GLFW_PRESS)
-			{
-				m_Keys[GLFW_KEY_1] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_1] = false;
-
-			if (glfwGetKey(activeWin, GLFW_KEY_2) == GLFW_PRESS)
-			{
-				m_Keys[GLFW_KEY_2] = true;
-			}
-			else
-				m_Keys[GLFW_KEY_2] = false;
-
-			// SOUND MANAGER TEST 
-			if (glfwGetKey(activeWin, GLFW_KEY_P) == GLFW_PRESS)
-				Sound_Manager::get("test")->play();
-			if (glfwGetKey(activeWin, GLFW_KEY_L) == GLFW_PRESS)
-				Sound_Manager::get("test")->loop();
-			if (glfwGetKey(activeWin, GLFW_KEY_O) == GLFW_PRESS)
-				Sound_Manager::get("test")->pause();
-			if (glfwGetKey(activeWin, GLFW_KEY_I) == GLFW_PRESS)
-				Sound_Manager::get("test")->resume();
-			if (glfwGetKey(activeWin, GLFW_KEY_U) == GLFW_PRESS)
-				Sound_Manager::get("test")->stop();
-
-			if (glfwGetKey(activeWin, GLFW_KEY_UP) == GLFW_PRESS) 
-			{
-				Sound_Manager::get("test")->setGain(0.05f);				
-			}
-				
-
-			if (glfwGetKey(activeWin, GLFW_KEY_DOWN) == GLFW_PRESS)
-			{
-				Sound_Manager::get("test")->setGain(-0.05f);
+				// TODO
 			}
 
 		}
@@ -160,6 +99,11 @@ namespace Core {
 			return m_KeysTyped[keycode];
 		}
 
+		bool Control_Manager::isMouseButtonPressed(unsigned int keycode)
+		{
+			return false;
+		}
+
 		Maths::vec2 Control_Manager::getMousePosition() const
 		{
 			return m_MousePos;
@@ -196,6 +140,11 @@ namespace Core {
 				m_KeysTyped[i] = m_Keys[i] && !m_KeysState[i];
 
 			memcpy(m_KeysState, m_Keys, MAX_KEYS);
+
+			for (int i = 0; i < MAX_KEYS; i++)
+				m_MouseButtonsTyped[i] = m_MouseButtons[i] && !m_MouseButtonsState[i];
+
+			memcpy(m_MouseButtonsState, m_MouseButtons, MAX_BUTTONS);
 		}
 
 	}

@@ -25,6 +25,8 @@ namespace Core
 			void unbind() const;
 			void dumpUniformData() const;
 
+			inline Shader* getShader() const { return m_Shader; }
+
 			template<typename T>
 			void setUniform(const String& name, const T& value)
 			{

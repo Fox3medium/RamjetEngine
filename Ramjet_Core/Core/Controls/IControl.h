@@ -3,17 +3,25 @@
 #include <GLEW/glew.h>
 #include <GLFW/glfw3.h>
 
+
 namespace Core {
 
 	namespace Controls {
 
-		class IControl {
+		enum InputType
+		{	
+			KEYBOARD,
+			MOUSE,
+			JOYSTICK
+		};
+
+		/*class IControl {
 
 		public:
 
 			virtual ~IControl();
 
-			virtual void notifyKeyPress(GLFWwindow* activeWin, float deltaTime) = 0;
+			virtual void notifyKeyPress(int keycode, int action, float deltaTime, InputType inputType) = 0;
 			virtual void notifyMouseInput(double xpos, double ypos, float deltaTime) = 0;
 			virtual void notifyScrollInput(double xoffset, double yoffset, float deltaTime) = 0;
 			virtual void notifyReshape(int width, int height) = 0;
@@ -22,7 +30,7 @@ namespace Core {
 
 		inline IControl::~IControl() {
 
-		}
+		}*/
 
 	}
 
