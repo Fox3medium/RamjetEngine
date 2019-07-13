@@ -1,20 +1,18 @@
 #pragma once
 
-#include <Utils/types.h>$
+#include <Utils/types.h>
 
-namespace Core 
-{
-	namespace Entity 
-	{
+namespace Core {
+	namespace Entities {
 		class Entity;
 	}
 }
 
 namespace Core
 {
-	namespace Entity
+	namespace Entities
 	{
-		namespace Component 
+		namespace Components
 		{
 			struct ComponentType
 			{

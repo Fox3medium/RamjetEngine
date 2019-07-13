@@ -1,9 +1,11 @@
 #include "Camera.h"
+
+
 namespace Core
 {
 	namespace Rendering
 	{
-		namespace Camera
+		namespace Cameras
 		{
 			Camera::Camera(const Maths::mat4& projectionMatrix)
 				: m_ProjectionMatrix(projectionMatrix)
@@ -28,6 +30,31 @@ namespace Core
 
 			Camera::~Camera()
 			{
+			}
+
+			Maths::vec3 Camera::getUpDirection()
+			{
+				return Maths::Quaternion::Rotate(getOrientation(), Maths::vec3::YAxis());
+			}
+
+			Maths::vec3 Camera::getRightDirection()
+			{
+				return Maths::Quaternion::Rotate(getOrientation(), Maths::vec3::XAxis());
+			}
+
+			Maths::vec3 Camera::getForwardDirection()
+			{
+				return Maths::Quaternion::Rotate(getOrientation(), -Maths::vec3::ZAxis());
+			}
+
+			Maths::vec3 Camera::getPosition()
+			{
+				return m_FocalPoint - getForwardDirection() * m_Distance;
+			}
+
+			Maths::Quaternion Camera::getOrientation()
+			{
+				return Maths::Quaternion::RotationY(-m_Yaw) * Maths::Quaternion::RotationX(-m_Pitch);
 			}
 
 		}

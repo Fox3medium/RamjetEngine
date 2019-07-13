@@ -2,9 +2,9 @@
 
 namespace Core 
 {
-	namespace Entity
+	namespace Entities
 	{
-		namespace Component
+		namespace Components
 		{
 
 		}

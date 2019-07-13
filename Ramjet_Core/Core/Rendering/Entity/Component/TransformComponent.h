@@ -6,11 +6,11 @@
 
 namespace Core
 {
-	namespace Entity
+	namespace Entities
 	{
-		namespace Component
+		namespace Components
 		{
-			class TransformComponent : public Component 
+			class TransformComponent : public Component
 			{
 			public:
 				Maths::mat4 transform;

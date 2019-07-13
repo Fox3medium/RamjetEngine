@@ -6,11 +6,11 @@
 
 namespace Core 
 {
-	namespace Entity 
+	namespace Entities
 	{
-		namespace Component 
+		namespace Components
 		{
-			class MeshComponent : public Component 
+			class MeshComponent : public Component
 			{
 			public:
 				Rendering::Mesh* mesh;

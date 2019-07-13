@@ -12,6 +12,7 @@
 #include <map>
 #include <vector>
 #include "Mesh.h"
+#include <Rendering/Entity/Entity.h>
 
 namespace Core 
 {

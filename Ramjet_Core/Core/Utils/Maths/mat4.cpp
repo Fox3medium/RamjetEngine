@@ -344,9 +344,10 @@ namespace Maths {
 		qzqz2 = (qz * qz2);
 		qzqw2 = (qw * qz2);
 
-		result.rows[0] = vec4(((1.0f - qyqy2) - qzqz2), (qxqy2 - qzqw2), (qxqz2 + qyqw2), 0.0f);
-		result.rows[1] = vec4((qxqy2 + qzqw2), ((1.0f - qxqx2) - qzqz2), (qyqz2 - qxqw2), 0.0f);
-		result.rows[2] = vec4((qxqz2 - qyqw2), (qyqz2 + qxqw2), ((1.0f - qxqx2) - qyqy2), 0.0f);
+		result.rows[0] = vec4(((1.0f - qyqy2) - qzqz2), (qxqy2 + qzqw2), (qxqz2 - qyqw2), 0.0f);
+		result.rows[1] = vec4((qxqy2 - qzqw2), ((1.0f - qxqx2) - qzqz2), (qyqz2 + qxqw2), 0.0f);
+		result.rows[2] = vec4((qxqz2 + qyqw2), (qyqz2 - qxqw2), ((1.0f - qxqx2) - qyqy2), 0.0f);
+
 		return result;
 	}
 

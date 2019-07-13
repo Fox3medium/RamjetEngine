@@ -2,9 +2,9 @@
 
 namespace Core
 {
-	namespace Entity
+	namespace Entities
 	{
-		namespace Component
+		namespace Components
 		{
 			TransformComponent::TransformComponent(const Maths::mat4& in_transform)
 				: transform(in_transform)

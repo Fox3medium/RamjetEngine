@@ -4,6 +4,8 @@
 #include <Utils/Maths/maths.h>
 
 #include <Rendering/Renderer/Models/Model.h>
+#include <Rendering/Entity/Entity.h>
+#include <Rendering/Entity/Component/Components.h>
 
 #include <Rendering/Renderer/Layers/Layer3D.h>
 #include <Rendering/Renderer/Renderer3D.h>
@@ -13,9 +15,8 @@
 class Test3D : public Core::Rendering::Layer3D 
 {
 private:
-	Core::Rendering::Mesh* m_Cube;
-	Core::Rendering::MaterialInstance* m_CubeMat;
-	Core::Rendering::MaterialInstance* m_SphereMat;
+	Core::Entities::Entity* m_Cube;
+	Core::Entities::Entity* m_Sphere;
 
 	Core::Manager::Control_Manager* C_Manager;
 

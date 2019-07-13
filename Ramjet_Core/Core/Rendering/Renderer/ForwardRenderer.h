@@ -14,9 +14,13 @@ namespace Core
 			ForwardRenderer();
 			void init() override;
 			void begin() override;
-			void submit(Mesh* mesh) override;
+			void submit(const RenderCommand& command) override;
+			void submitMesh(Cameras::Camera* camera, Mesh* mesh, const Maths::mat4& transform) override;
 			void end() override;
 			void flush() override;
+
+		private:
+			void setRequiredUniforms(Shader* shader, const std::vector<RendererUniform>& uniforms);
 		};
 	}
 }

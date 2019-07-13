@@ -31,7 +31,7 @@ namespace Core {
 
 			static bool isMouseButtonPressed(unsigned int keycode);
 
-			Maths::vec2 getMousePosition() const;
+			//static Maths::vec2 getMousePosition();
 
 			//void update(glm::mat4& view_matrix, glm::mat4& projection_matrix, glm::vec3& cameraPosition, glm::vec3& cameraDirection);
 
@@ -39,9 +39,9 @@ namespace Core {
 
 			//void getPlayerPosition(glm::vec3& position, glm::vec3& rotation);
 
-			void updateInput();
+			static void updateInput();
 
-			void setPlayerSpeed(float speed);
+			static void setPlayerSpeed(float speed);
 
 		private:
 

@@ -17,7 +17,7 @@ namespace Core
 		struct RenderCommand 
 		{
 			Mesh* mesh;
-			std::vector<RendererUniform> uniform;
+			std::vector<RendererUniform> uniforms;
 		};
 	}
 }

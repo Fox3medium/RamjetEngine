@@ -20,6 +20,10 @@ namespace Core {
 		#define SHADER_TEXTURE_INDEX	3
 		#define SHADER_MASK_INDEX		4
 		#define SHADER_COLOR_INDEX		5
+
+		#define SHADER_UNIFORM_PROJECTION_MATRIX_NAME	"pr_matrix"
+		#define SHADER_UNIFORM_VIEW_MATRIX_NAME			"vw_matrix"
+		#define SHADER_UNIFORM_MODEL_MATRIX_NAME		"ml_matrix"
 	
 		class Shader {
 			private :
@@ -48,26 +52,32 @@ namespace Core {
 				void setUniform4f(const char* uniVarName, const Maths::vec4& value);
 				void setUniformMat4(const char* uniVarName, const Maths::mat4& mat);
 
-				void resolveAndSetUniforms(byte* data, uint size);
-				void resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data);
+				void setUniform(const String& name, byte* data);
+				void resolveAndSetUniform(ShaderUniformDeclaration* uniform, byte* data, int offset);
 				void resolveAndSetUniform(uint index, byte* data);
+				void resolveAndSetUniforms(byte* data, uint size);
 
 				void enable() const;
 				void disable() const;
 
+				bool hasUniform(const String& name) const;
+
 				inline const uint getShaderID() { return m_ShaderID; }
 				inline const String getShaderName() { return m_Name; }
 
+				ShaderUniformDeclaration* getUniformDeclaration(uint location);
 				inline const std::vector<ShaderUniformDeclaration*>& getUniformDeclarations() const { return m_Uniforms; }
 
 			private:
-				uint getUniformLocation(const char* name);
 				void parseUniforms(const std::vector<String>& lines);
 				ShaderUniformDeclaration::Type getUniformTypeFromString(const String& token);
 				void resolveUniforms();
+				void validateUniforms();
+				bool isSystemUniform(ShaderUniformDeclaration* uniform) const;
+				uint getUniformLocation(const char* name);
+				ShaderUniformDeclaration* findUniformDeclaration(const String& name);
 
 				uint load(const String& vertSrc, const String& fragSrc, bool isFromCode);
-
 
 				void setUniform1i(	uint location, int value);
 				void setUniform1iv(	uint location, int* value, int count);

@@ -228,6 +228,7 @@
     <ClCompile Include="Core\Rendering\Camera\FPS_Camera.cpp" />
     <ClCompile Include="Core\Rendering\Entity\Component\Component.cpp" />
     <ClCompile Include="Core\Rendering\Entity\Component\MeshComponent.cpp" />
+    <ClCompile Include="Core\Rendering\Entity\Component\ModelComponent.cpp" />
     <ClCompile Include="Core\Rendering\Entity\Component\TransformComponent.cpp" />
     <ClCompile Include="Core\Rendering\Entity\Entity.cpp" />
     <ClCompile Include="Core\Rendering\Material\Material.cpp" />
@@ -306,7 +307,9 @@
     <ClInclude Include="Core\Rendering\Camera\Camera.h" />
     <ClInclude Include="Core\Rendering\Camera\FPS_Camera.h" />
     <ClInclude Include="Core\Rendering\Entity\Component\Component.h" />
+    <ClInclude Include="Core\Rendering\Entity\Component\Components.h" />
     <ClInclude Include="Core\Rendering\Entity\Component\MeshComponent.h" />
+    <ClInclude Include="Core\Rendering\Entity\Component\ModelComponent.h" />
     <ClInclude Include="Core\Rendering\Entity\Component\TransformComponent.h" />
     <ClInclude Include="Core\Rendering\Entity\Entity.h" />
     <ClInclude Include="Core\Rendering\Material\Material.h" />

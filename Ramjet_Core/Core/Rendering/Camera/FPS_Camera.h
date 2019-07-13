@@ -6,7 +6,7 @@ namespace Core
 {
 	namespace Rendering
 	{
-		namespace Camera
+		namespace Cameras
 		{
 			class FPS_Camera : public Camera 
 			{

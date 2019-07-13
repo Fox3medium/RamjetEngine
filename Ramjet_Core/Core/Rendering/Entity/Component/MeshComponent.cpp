@@ -2,9 +2,9 @@
 
 namespace Core
 {
-	namespace Entity
+	namespace Entities
 	{
-		namespace Component
+		namespace Components
 		{
 			MeshComponent::MeshComponent(Rendering::Mesh* mesh)
 				: mesh(mesh)

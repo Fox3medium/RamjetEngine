@@ -48,7 +48,6 @@ namespace Core {
 		{
 			playerSpeed = 2.5f * deltaTime;
 
-			CORE_INFO("MOUSE BUTTON:", keycode, " PRESSED");
 			if (inputType == InputType::KEYBOARD)
 			{
 				m_Keys[keycode] = action != GLFW_RELEASE;
@@ -101,13 +100,13 @@ namespace Core {
 
 		bool Control_Manager::isMouseButtonPressed(unsigned int keycode)
 		{
-			return false;
+			return m_MouseButtons[keycode];
 		}
 
-		Maths::vec2 Control_Manager::getMousePosition() const
+		/*Maths::vec2 Control_Manager::getMousePosition()
 		{
 			return m_MousePos;
-		}
+		}*/
 
 		/*void Control_Manager::update(glm::mat4& view_matrix, glm::mat4& projection_matrix, glm::vec3& cameraPosition, glm::vec3& cameraDirection)
 		{

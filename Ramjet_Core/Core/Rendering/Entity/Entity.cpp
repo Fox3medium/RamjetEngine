@@ -2,8 +2,10 @@
 
 namespace Core
 {
-	namespace Entity
+	namespace Entities
 	{
+		using namespace Components;
+
 		Entity::Entity()
 		{
 		}
@@ -15,9 +17,19 @@ namespace Core
 			m_Components.clear();*/
 		}
 
-		void Entity::addComponent(Component::Component* component)
+		void Entity::addComponent(Component* component)
 		{
 			m_Components.push_back(component);
 		}
+
+		void Entity::addModel(Core::Rendering::Model* model)
+		{
+			m_Components.push_back(new ModelComponent(model));
+			/*for (Core::Rendering::Mesh* mesh : model->getMesh())
+			{
+				addComponent(new MeshComponent(mesh));
+			}*/
+		}
+
 	}
 }

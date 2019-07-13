@@ -1,23 +1,26 @@
 #pragma once
 
 #include <vector>
-
-#include "Component/Component.h"
+#include "Component/Components.h"
 
 namespace Core
 {
-	namespace Entity
+	namespace Rendering {
+		class Model;
+	}
+	namespace Entities
 	{
 		class Entity 
 		{
 		protected:
-			std::vector<Component::Component*> m_Components;
+			std::vector<Components::Component*> m_Components;
 
 		public:
 			Entity();
 			~Entity();
 
-			void addComponent(Component::Component* component);
+			void addComponent(Components::Component* component);
+			void addModel(Core::Rendering::Model* model);
 
 			template <typename T>
 			const T* getComponent() const
@@ -35,7 +38,7 @@ namespace Core
 			template <typename T>
 			const T* getComponentInternal() const
 			{
-				component::ComponentType* type = T::getStaticType();
+				Components::ComponentType* type = T::getStaticType();
 				for (auto x : m_Components)
 				{
 					if (x->getType() == type)

@@ -6,7 +6,7 @@ namespace Core
 {
 	namespace Rendering
 	{
-		namespace Camera
+		namespace Cameras
 		{
 			using namespace Maths;
 
@@ -23,33 +23,39 @@ namespace Core
 			void FPS_Camera::update()
 			{
 				Core::Init::Window* m_Window = Core::Init::Window::getWindowClass();
-				Core::Manager::Control_Manager* C_Manager;
 
-				if(C_Manager->isKeyPressed(GLFW_KEY_LEFT_ALT))
+				if (Control_Manager::isKeyPressed(GLFW_KEY_LEFT_ALT))
 				{
-					const vec2& mouse = m_Window->getMousePos();
-					vec2 delta = mouse - m_InitialMousePosition;
-					m_InitialMousePosition = mouse;
+					vec2 delta = m_Window->getMousePos();
 
-					/*if (window->ismousebuttonpressed(sp_mouse_middle))
-						mousepan(delta);
-					else if (window->ismousebuttonpressed(sp_mouse_left))
-						mouserotate(delta);
-					else if (window->ismousebuttonpressed(sp_mouse_right))
-						mousezoom(delta.y);*/
+					if (Control_Manager::isMouseButtonPressed(GLFW_MOUSE_BUTTON_3))
+						mousePan(delta);
+					else if (Control_Manager::isMouseButtonPressed(GLFW_MOUSE_BUTTON_1))
+						mouseRotate(delta);
+					else if (Control_Manager::isMouseButtonPressed(GLFW_MOUSE_BUTTON_2))
+						mouseZoom(delta.y);
 				}
+
+				m_ViewMatrix = mat4::Rotate(getOrientation().Conjugate());
+				m_ViewMatrix *= mat4::Translate(-getPosition());
 			}
 
 			void FPS_Camera::mousePan(const Maths::vec2& delta)
 			{
+				m_FocalPoint += -getRightDirection() * delta.x * m_PanSpeed * m_Distance;
+				m_FocalPoint += getUpDirection() * delta.y * m_PanSpeed * m_Distance;
 			}
 
 			void FPS_Camera::mouseRotate(const Maths::vec2& delta)
 			{
+				float yawSign = getUpDirection().y < 0 ? -1.0f : 1.0f;
+				m_Yaw += yawSign * delta.x * m_RotationSpeed;
+				m_Pitch += delta.y * m_RotationSpeed;
 			}
 
 			void FPS_Camera::mouseZoom(float delta)
 			{
+				m_Distance -= delta * m_ZoomSpeed;
 			}
 
 		}
