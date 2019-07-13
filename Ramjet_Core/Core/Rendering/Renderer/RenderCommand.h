@@ -1,20 +1,20 @@
 #pragma once
 
+#include <Core/Common.h>
+
 #include "Models/Mesh.h"
-#include <Utils/types.h>
-#include <vector>
 
 namespace Core 
 {
 	namespace Rendering 
 	{
-		struct RendererUniform
+		struct CORE_API RendererUniform
 		{
 			String uniform;
 			byte* value;
 		};
 
-		struct RenderCommand 
+		struct CORE_API RenderCommand 
 		{
 			Mesh* mesh;
 			std::vector<RendererUniform> uniforms;

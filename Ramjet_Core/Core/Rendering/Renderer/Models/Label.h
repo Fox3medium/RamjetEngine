@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Core/Common.h>
 #include "../Renderable2D.h"
 //#include <Utils/String.h>
 #include <Font_Manager.h>
@@ -8,7 +9,7 @@ namespace Core {
 
 	namespace Rendering {
 	
-		class Label : public Renderable2D
+		class CORE_API Label : public Renderable2D
 		{
 		private:
 

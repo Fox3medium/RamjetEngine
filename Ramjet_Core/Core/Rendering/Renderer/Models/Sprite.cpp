@@ -1,3 +1,5 @@
+
+#include <CoreBasicInclude.h>
 #include "Sprite.h"
 
 using namespace Utils;

@@ -1,5 +1,5 @@
 #include "Shader.h"
-
+#include <CoreBasicInclude.h>
 #include <Utils/StringUtils.h>
 #include <GLEW/glew.h>
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Core/Common.h>
+
 #include <Utils/types.h>
 
 #include <Init/Window.h>
@@ -8,7 +10,7 @@ namespace Core
 {
 	namespace Rendering 
 	{
-		class Layer
+		class CORE_API Layer
 		{
 		protected:
 			Core::Init::Window* m_Window;

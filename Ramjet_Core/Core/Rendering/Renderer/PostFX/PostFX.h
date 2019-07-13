@@ -1,5 +1,8 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
+
 #include "../Buffers/FrameBuffer.h"
 #include "../Buffers/VertexArray.h"
 #include "../Buffers/IndexBuffer.h"
@@ -9,7 +12,7 @@ namespace Core {
 	
 	namespace Rendering {
 		
-		class PostFX 
+		class CORE_API PostFX 
 		{
 		private:
 			std::vector<PostFXPass*> m_Passes;

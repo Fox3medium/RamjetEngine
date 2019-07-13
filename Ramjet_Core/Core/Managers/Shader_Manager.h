@@ -1,6 +1,7 @@
 #pragma once
 
-#include <map>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include <Rendering/Renderer/Shader/Shader.h>
 
 namespace Core {

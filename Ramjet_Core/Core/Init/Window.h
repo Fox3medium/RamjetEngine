@@ -1,15 +1,17 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+
 // OpenGL
 #include <GLEW/glew.h>
 #include <GLFW/glfw3.h>
 
-// Listener
-#include "../Controls/IControl.h" // Listener
+// Managers
+#include "../Managers/Font_Manager.h"
 #include "../Managers/Control_Manager.h" // Linked Manager
 #include "../Managers/Sound_Manager.h"
-#include "../Managers/Font_Manager.h"
 #include "../Managers/Texture_Manager.h"
+
 
 // Utilities
 //#include <Utils/String.h>
@@ -31,7 +33,7 @@ namespace Core {
 
 	namespace Init{
 
-		class Window
+		class CORE_API Window
 		{
 			public:
 

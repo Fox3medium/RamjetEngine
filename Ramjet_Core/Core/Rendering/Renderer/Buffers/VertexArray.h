@@ -1,18 +1,15 @@
 #pragma once
 
-#include <vector>
-#include <Rendering/Platform/CoreRenderAPI.h>
-#include <Utils/types.h>
-
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include "Buffer.h"
-#include <Rendering/Platform/CoreRenderAPI.h>
 #include <Utils/types.h>
 
 namespace Core {
 
 	namespace Rendering {		
 
-		class VertexArray
+		class CORE_API VertexArray
 		{
 		private:
 			uint m_ArrayID;

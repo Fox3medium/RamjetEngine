@@ -1,7 +1,11 @@
 #include "Texture.h"
+#include <CoreBasicInclude.h>
 
 #include <GLEW/glew.h>
 #include <Utils/Log.h>
+#include <FreeImage/FreeImage.h>
+#include <Utils/ImageLoader.h>
+#include <Rendering/Platform/CoreRenderAPI.h>
 
 namespace Core {
 

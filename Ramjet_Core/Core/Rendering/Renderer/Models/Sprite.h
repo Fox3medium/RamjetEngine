@@ -8,7 +8,7 @@ namespace Core {
 
 	namespace Rendering {
 
-		class Sprite : public Renderable2D
+		class CORE_API Sprite : public Renderable2D
 		{			
 		public:
 

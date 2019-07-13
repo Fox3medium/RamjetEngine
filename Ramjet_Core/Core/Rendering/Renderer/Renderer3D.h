@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Rendering/Platform/CoreRenderAPI.h>
 #include "RenderCommand.h"
 #include "../Camera/Camera.h"
 
@@ -12,7 +11,7 @@ namespace Core
 	{
 		//typedef std::vector<RenderCommand> CommandQueue;
 
-		class Renderer3D
+		class CORE_API Renderer3D
 		{
 		protected:
 			std::vector<RenderCommand> m_CommandQueue;

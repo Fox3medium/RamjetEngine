@@ -1,12 +1,13 @@
 #pragma once
 
+#include <Core/Common.h>
 #include "../Renderable2D.h"
 
 namespace Core {
 
 	namespace Rendering {
 	
-		class Group : public Renderable2D
+		class CORE_API Group : public Renderable2D
 		{
 		private:
 			std::vector<Renderable2D*> m_Children;

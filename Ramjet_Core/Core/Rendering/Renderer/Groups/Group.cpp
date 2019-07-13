@@ -1,4 +1,5 @@
 #include "Group.h"
+#include <CoreBasicInclude.h>
 
 namespace Core {
 

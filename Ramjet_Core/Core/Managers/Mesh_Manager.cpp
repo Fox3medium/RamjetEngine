@@ -1,10 +1,12 @@
+#include <CoreBasicInclude.h>
 #include "Mesh_Manager.h"
 
 #include <Rendering/Renderer/Batch2DRenderer.h>
 
-#include <Core_OpenGL.h>
 #include <Rendering/Renderer/Renderable2D.h>
 #include <Rendering/Renderer/Shader/Shader.h>
+
+#include <GLEW/glew.h>
 
 namespace Core {
 

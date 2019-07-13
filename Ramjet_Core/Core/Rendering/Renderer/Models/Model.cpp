@@ -1,8 +1,11 @@
+#include <CoreBasicInclude.h>
 #include "Model.h"
 
 #include <Utils/String.h>
 #include <Utils/StringUtils.h>
 #include <Utils/Fileutils.h>
+
+#include <GLEW/glew.h>
 
 namespace Core 
 {

@@ -1,4 +1,5 @@
 #include "Layer.h"
+#include <CoreBasicInclude.h>
 
 namespace Core
 {

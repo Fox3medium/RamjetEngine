@@ -1,5 +1,5 @@
 #pragma once
-
+#include <Core/Common.h>
 #include "Layer.h"
 #include <Rendering/Scene/Scene.h>
 
@@ -7,7 +7,7 @@ namespace Core
 {
 	namespace Rendering 
 	{
-		class Layer3D : public Layer 
+		class CORE_API Layer3D : public Layer 
 		{
 		protected:
 			Scene* m_Scene;

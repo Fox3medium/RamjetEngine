@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Camera.h"
+#include <Core/Common.h>
 
 namespace Core
 {
@@ -8,7 +9,7 @@ namespace Core
 	{
 		namespace Cameras
 		{
-			class FPS_Camera : public Camera 
+			class CORE_API FPS_Camera : public Camera 
 			{
 			private:
 				bool m_Panning, m_Rotating;

@@ -1,24 +1,23 @@
 #pragma once
 
+#include <Core/Common.h>
+#include <CoreBasicInclude.h>
+
 #include <Utils/types.h>
 #include <Utils/Maths/maths.h>
-#include "IRenderable.h"
 #include <Rendering/Renderer/Renderer3D.h>
 
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-#include <map>
-#include <vector>
 #include "Mesh.h"
-#include <Rendering/Entity/Entity.h>
 
 namespace Core 
 {
 	namespace Rendering 
 	{
-		class Model : public IRenderable
+		class CORE_API Model : public IRenderable
 		{
 		private:
 			std::vector<Mesh*> m_Meshs;

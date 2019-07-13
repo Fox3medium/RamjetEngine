@@ -1,5 +1,5 @@
 #include "Label.h"
-#include <string>
+#include <CoreBasicInclude.h>
 
 namespace Core {
 

@@ -2,15 +2,17 @@
 
 #include "Layer.h"
 
+#include <Core/Common.h>
+
 #include "../Renderable2D.h"
-#include "../Renderer2D.h"
+#include "../Texture/Mask.h"
 #include <Utils/types.h>
 
 namespace Core {
 
 	namespace Rendering {
 		
-		class Layer2D : public Layer
+		class CORE_API Layer2D : public Layer
 		{
 		public:
 			Renderer2D* m_Renderer;

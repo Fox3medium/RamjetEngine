@@ -1,5 +1,5 @@
 #include "Camera.h"
-
+#include <CoreBasicInclude.h>
 
 namespace Core
 {

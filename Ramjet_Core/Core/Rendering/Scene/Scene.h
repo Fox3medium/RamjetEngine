@@ -16,7 +16,7 @@ namespace Core
 
 		class Renderer3D;
 
-		class Scene
+		class CORE_API Scene
 		{
 		private:
 			std::vector<Entity*> m_Entities;

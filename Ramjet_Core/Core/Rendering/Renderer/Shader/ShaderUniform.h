@@ -1,12 +1,14 @@
 #pragma once
 
+#include <Core/Common.h>
 #include <Utils/types.h>
+#include <Utils/String.h>
 
 namespace Core 
 {
 	namespace Rendering
 	{
-		class ShaderUniformDeclaration 
+		class CORE_API ShaderUniformDeclaration 
 		{
 		public:
 			enum class Type 

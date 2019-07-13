@@ -2,12 +2,13 @@
 
 #include "../Buffers/FrameBuffer.h"
 #include "../Shader/Shader.h"
+#include <Core/Common.h>
 
 namespace Core {
 
 	namespace Rendering {
 	
-		class PostFXPass 
+		class CORE_API PostFXPass 
 		{
 		private:
 			Shader* m_Shader;

@@ -1,4 +1,5 @@
 #include "Shader_Manager.h"
+#include <CoreBasicInclude.h>
 
 namespace Core {
 

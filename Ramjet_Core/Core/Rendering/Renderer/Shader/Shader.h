@@ -1,7 +1,7 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 
 #include <Utils/types.h>
 
@@ -25,7 +25,7 @@ namespace Core {
 		#define SHADER_UNIFORM_VIEW_MATRIX_NAME			"vw_matrix"
 		#define SHADER_UNIFORM_MODEL_MATRIX_NAME		"ml_matrix"
 	
-		class Shader {
+		class CORE_API Shader {
 			private :
 				//Shader ID
 				String m_Name, m_Paths;

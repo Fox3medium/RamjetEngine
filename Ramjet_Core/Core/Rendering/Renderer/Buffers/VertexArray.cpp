@@ -1,4 +1,6 @@
 #include "VertexArray.h"
+#include <CoreBasicInclude.h>
+#include <Rendering/Platform/CoreRenderAPI.h>
 
 namespace Core {
 

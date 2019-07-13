@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Core/Common.h>
 #include "../Buffers/VertexArray.h"
 #include "../Buffers/IndexBuffer.h"
 #include <Rendering/Material/Material.h>
@@ -11,14 +12,14 @@ namespace Core
 	{
 		class Renderer3D;
 
-		struct Vertex 
+		struct CORE_API Vertex 
 		{
 			Maths::vec3 position;
 			Maths::vec3 normal;
 			Maths::vec2 uv;
 		};
 
-		class Mesh : public IRenderable
+		class CORE_API Mesh : public IRenderable
 		{
 		private:
 			VertexArray* m_VertexArray;

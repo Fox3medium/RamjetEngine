@@ -1,17 +1,18 @@
 #pragma once
 
-#include <vector>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include <Utils/types.h>
 #include <Utils/Maths/maths.h>
 #include <Utils/Log.h>
 
-#include <GLEW/glew.h>
+#include <Rendering/Platform/OpenGL/CoreOpenGLTypes.h>
 
 namespace Core 
 {
 	namespace Rendering 
 	{
-		struct BufferLayoutType 
+		struct CORE_API BufferLayoutType 
 		{
 			String name;
 			uint type;
@@ -21,7 +22,7 @@ namespace Core
 			bool normalized;
 		};
 
-		class BufferLayout
+		class CORE_API BufferLayout
 		{
 		private:
 			uint m_Size;

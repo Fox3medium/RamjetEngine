@@ -1,7 +1,7 @@
 #pragma once
 
-#include <map>
-
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include <Utils/types.h>
 #include <Rendering/Renderer/Shader/Shader.h>
 
@@ -9,7 +9,7 @@ namespace Core
 {
 	namespace Rendering
 	{
-		class Material 
+		class CORE_API Material 
 		{
 		private:
 			friend class MaterialInstance;
@@ -59,7 +59,7 @@ namespace Core
 			const ShaderUniformDeclaration* getUniformDeclaration(const String& name) const;
 		};
 
-		class MaterialInstance 
+		class CORE_API MaterialInstance 
 		{
 		private:
 			Material* m_Material;

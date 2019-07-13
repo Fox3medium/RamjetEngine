@@ -1,3 +1,5 @@
+
+#include <CoreBasicInclude.h>
 #include "Material.h"
 
 #include <sstream>

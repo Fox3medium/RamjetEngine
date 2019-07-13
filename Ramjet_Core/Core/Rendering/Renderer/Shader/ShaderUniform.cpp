@@ -1,5 +1,5 @@
 #include "ShaderUniform.h"
-
+#include <CoreBasicInclude.h>
 #include "Shader.h"
 
 namespace Core

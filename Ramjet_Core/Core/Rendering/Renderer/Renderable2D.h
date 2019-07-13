@@ -1,6 +1,8 @@
 #pragma once
 
-#include "Buffers/Buffers.h"
+#include <Core/Common.h>
+#include "Buffers/Buffer.h"
+#include "Buffers/IndexBuffer.h"
 #include "Shader/Shader.h"
 #include "Renderer2D.h"
 #include "Texture/Texture.h"
@@ -13,7 +15,7 @@ namespace Core {
 
 	namespace Rendering {
 
-		struct VertexData {
+		struct CORE_API VertexData {
 			// Vertex point 
 			Maths::vec3 vertex;
 			// UV of that vertex
@@ -30,7 +32,7 @@ namespace Core {
 
 #define RENDERER_VERTEX_SIZE	sizeof(VertexData)
 	
-		class Renderable2D {
+		class CORE_API Renderable2D {
 
 		protected:
 			Maths::vec3 m_Position;
@@ -74,7 +76,7 @@ namespace Core {
 			inline const unsigned int getColor() const { return m_Color; }
 			inline const std::vector<Maths::vec2>& getUV() const { return m_UV; }
 			// Return texture ID if texture is not nullptr
-			inline const GLuint getTextureID() const { return m_Texture ? m_Texture->getID() : 0; }
+			inline const uint getTextureID() const { return m_Texture ? m_Texture->getID() : 0; }
 			inline const Texture* getTexture() const { return m_Texture; }
 
 		private:

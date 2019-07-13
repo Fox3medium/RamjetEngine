@@ -1,6 +1,5 @@
 #pragma once
 
-#include <GLEW/glew.h>
 #include <Utils/Maths/maths.h>
 #include <vector>
 #include "Font/Font.h"
@@ -21,13 +20,13 @@ namespace Core {
 
 		class Renderable2D;
 	
-		enum class RenderTarget
+		enum class CORE_API RenderTarget
 		{
 			SCREEN = 0,
 			BUFFER = 1
 		};
 
-		class Renderer2D
+		class CORE_API Renderer2D
 		{
 		protected:
 

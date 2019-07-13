@@ -1,6 +1,6 @@
 #pragma once
 
-#include <map>
+#include <CoreBasicInclude.h>
 #include <Utils/types.h>
 #include "../Rendering/Renderer/Texture/Texture.h"
 
@@ -10,7 +10,7 @@ namespace Core {
 
 	namespace Manager {
 	
-		class Texture_Manager
+		class CORE_API Texture_Manager
 		{
 		private:
 			static std::map < String, Texture* > m_Textures;

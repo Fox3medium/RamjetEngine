@@ -1,12 +1,14 @@
 #pragma once
 
-#include <Rendering/Platform/CoreRenderAPI.h>
+#include <Core/Common.h>
+#include <Utils/types.h>
+#include <Rendering/Platform/OpenGL/CoreOpenGLBuffer.h>
 
 namespace Core {
 
 	namespace Rendering {
 	
-		class IndexBuffer
+		class CORE_API IndexBuffer
 		{
 		private:
 			uint m_Count;

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Core/Common.h>
+
 #include "Texture.h"
 #include <Utils/Maths/maths.h>
 
@@ -7,7 +9,7 @@ namespace Core {
 
 	namespace Rendering {
 	
-		struct Mask 
+		struct CORE_API Mask 
 		{
 			Texture* texture;
 			Maths::mat4 transform;

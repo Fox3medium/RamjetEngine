@@ -1,4 +1,5 @@
 #include "FPS_Camera.h"
+#include <CoreBasicInclude.h>
 #include <Managers/Control_Manager.h>
 #include <Init/Window.h>
 

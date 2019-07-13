@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Core/Common.h>
 #include <Utils/Maths/maths.h>
 
 namespace Core
@@ -8,7 +9,7 @@ namespace Core
 	{
 		namespace Cameras
 		{
-			class Camera 
+			class CORE_API Camera 
 			{
 			protected:
 				Maths::mat4 m_ProjectionMatrix, m_ViewMatrix;

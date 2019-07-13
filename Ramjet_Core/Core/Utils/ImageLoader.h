@@ -5,7 +5,7 @@
 
 namespace Utils {
 
-	static BYTE* load_image(const char* filename, GLsizei* width, GLsizei* height, unsigned int* bits) {
+	static BYTE* load_image(const char* filename, uint* width, uint* height, uint* bits) {
 		FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 		FIBITMAP* dib = nullptr;
 		fif = FreeImage_GetFileType(filename, 0);

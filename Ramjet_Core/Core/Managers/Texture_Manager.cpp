@@ -1,5 +1,8 @@
 #include "Texture_Manager.h"
 
+#include <Core/Common.h>
+#include <CoreBasicInclude.h>
+
 namespace Core {
 
 	namespace Manager {

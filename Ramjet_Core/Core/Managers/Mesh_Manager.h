@@ -1,9 +1,10 @@
 #pragma once
 
-#include <map>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include <Utils/types.h>
 #include <Utils/Maths/maths.h>
-#include <string>
+
 #include <Rendering/Renderer/Buffers/VertexArray.h>
 #include <Rendering/Renderer/Models/Sprite.h>
 #include <Rendering/Renderer/Models/Mesh.h>
@@ -15,7 +16,7 @@ namespace Core {
 
 	namespace Manager {
 	
-		class Mesh_Manager 
+		class CORE_API Mesh_Manager 
 		{
 		private:
 			// TODO add meshes instead of sprites
