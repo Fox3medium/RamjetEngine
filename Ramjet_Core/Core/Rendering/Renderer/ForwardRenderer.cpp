@@ -1,3 +1,4 @@
+#include <CoreBasicInclude.h>
 #include "ForwardRenderer.h"
 
 namespace Core

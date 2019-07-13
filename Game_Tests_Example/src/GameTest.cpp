@@ -57,7 +57,7 @@ public:
 	{
 		App::Application::init();
 		
-		pushLayer(new TestLayer());
+		//pushLayer(new TestLayer());
 		pushLayer(new Test3D());
 	}
 

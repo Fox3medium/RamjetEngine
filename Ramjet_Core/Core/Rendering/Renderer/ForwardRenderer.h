@@ -1,12 +1,13 @@
 #pragma once
 
+#include <Core/Common.h>
 #include "Renderer3D.h"
 
 namespace Core 
 {
 	namespace Rendering 
 	{
-		class ForwardRenderer : public Renderer3D 
+		class CORE_API ForwardRenderer : public Renderer3D 
 		{
 		private:
 

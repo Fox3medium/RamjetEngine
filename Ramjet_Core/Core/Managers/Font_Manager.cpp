@@ -1,3 +1,4 @@
+#include <Core/CoreBasicInclude.h>
 #include "Font_Manager.h"
 #include "embed/Embedded.h"
 

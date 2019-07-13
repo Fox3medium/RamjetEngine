@@ -1,17 +1,22 @@
 #pragma once
 
-#include <Utils/Log.h>
-#include <freetype-gl.h>
-#include <string>
+#include <Core/Common.h>
+#include <Utils/types.h>
 
 #include <Utils/Maths/vec2.h>
+
+namespace ftgl {
+	struct texture_atlas_t;
+	struct texture_font_t;
+}
 
 namespace Core {
 
 	namespace Rendering {
 	
 		#define FONT_STD_SIZE	24
-		class Font 
+
+		class CORE_API Font 
 		{
 		private:
 			ftgl::texture_atlas_t* m_FTAtlas;
@@ -30,7 +35,7 @@ namespace Core {
 
 			void setScale(float x, float y);
 
-			inline const unsigned int getID() const { return m_FTAtlas->id; }
+			const uint getID() const;
 			inline const Maths::vec2& getScale() const { return m_Scale; }
 			inline const String& getName() const { return m_Name; }
 			inline const String& getFilename() const { return m_Filename; }

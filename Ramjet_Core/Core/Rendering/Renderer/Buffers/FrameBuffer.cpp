@@ -1,4 +1,7 @@
+#include <CoreBasicInclude.h>
 #include "FrameBuffer.h"
+
+#include <Rendering/Platform/CoreRenderAPI.h>
 
 namespace Core {
 

@@ -1,11 +1,9 @@
 #pragma once
 
-#include <GLEW/glew.h>
+#include <Core/Common.h>
 #include <Utils/types.h>
 
 #include "../Texture/Texture.h"
-
-#include <Rendering/Platform/CoreRenderAPI.h>
 
 #include <Utils/Maths/vec4.h>
 #include <Utils/Maths/tvec2.h>
@@ -13,14 +11,15 @@
 namespace Core {
 
 	namespace Rendering {
+		
+		class CORE_API FrameBuffer {
 
-		struct FramebufferData
-		{
-			uint framebufferID;
-			uint depthbufferID;
-		};
-	
-		class FrameBuffer {
+		private:
+			struct FramebufferData
+			{
+				uint framebufferID;
+				uint depthbufferID;
+			};
 
 		private:			
 

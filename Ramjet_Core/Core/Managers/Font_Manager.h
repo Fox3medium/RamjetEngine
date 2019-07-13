@@ -1,6 +1,7 @@
 #pragma once
 
-#include <map>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include <Utils/types.h>
 #include "../Rendering/Renderer/Font/Font.h"
 
@@ -10,7 +11,7 @@ namespace Core {
 
 	namespace Manager {
 	
-		class Font_Manager
+		class CORE_API Font_Manager
 		{
 		private:
 			static std::map<String, Font*> m_Fonts;

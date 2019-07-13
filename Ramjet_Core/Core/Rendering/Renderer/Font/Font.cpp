@@ -1,5 +1,7 @@
 #include "Font.h"
-#include <fstream>
+#include <Core/CoreBasicInclude.h>
+#include <Utils/Log.h>
+#include <Freetype-GL/src/freetype-gl.h>
 
 namespace Core {
 
@@ -28,6 +30,11 @@ namespace Core {
 		void Font::setScale(float x, float y)
 		{
 			m_Scale = Maths::vec2(x, y);
+		}
+
+		const uint Font::getID() const
+		{
+			return m_FTAtlas->id;
 		}
 
 	}

@@ -4,6 +4,12 @@
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\libogg.dll
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\OpenAL32.dll
           4 file(s) copied.
+  GameTest.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(64,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(65,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(66,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data
   libvorbis_static.lib(info.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.exp
