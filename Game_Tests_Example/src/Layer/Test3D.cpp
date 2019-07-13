@@ -38,8 +38,15 @@ void Test3D::onInit(Core::Rendering::Renderer3D& renderer, Core::Rendering::Scen
 	m_Sphere->addModel(sphere);
 	m_Sphere->addComponent(new TransformComponent(mat4::Identity()));
 
+	m_Plane = new Entity();
+	Mesh* pl = Mesh_Manager::CreatePlan(32, 32, vec3(0, 1, 0), new MaterialInstance(material));
+	Model* plane = new Model(pl, new MaterialInstance(material));
+	m_Plane->addModel(plane);
+	m_Plane->addComponent(new TransformComponent(mat4::Identity()));
+
 	scene.add(m_Sphere);
 	scene.add(m_Cube);
+	scene.add(m_Plane);
 
 }
 
@@ -59,7 +66,7 @@ void Test3D::onUpdate()
 	mat4 transform = mat4::Rotate(m_Rotation, vec3(1, 0, 0)) * mat4::Rotate(m_Rotation, vec3(0, 1, 0)) * mat4::Rotate(m_Rotation, vec3(0, 0, 1));
 	mat4 c_transform = mat4::Rotate(m_Rotation, vec3(0, 1, 0));
 	cubeTransform->transform = mat4::Translate(vec3(-4, 0, 0)) * c_transform * mat4::Scale(vec3(1.4f, 1.4f, 1.4f));
-	sphereTransform->transform = mat4::Translate(vec3(4, 0, 0)) * transform;
+	sphereTransform->transform = mat4::Translate(vec3(4, 2, 0)) * transform;
 	m_Rotation++;
 }
 

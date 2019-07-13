@@ -27,10 +27,10 @@ void TestLayer::onInit(Core::Rendering::Renderer2D& renderer, Core::Rendering::S
 	Font_Manager::get()->setScale(m_Window->getWidth() / 32.0f, m_Window->getHeight() / 18.0f);
 	renderer.setRenderTarget(RenderTarget::BUFFER);
 	renderer.addPostFXPass(	new PostFXPass(Shader_Manager::FromFile("PostFX", "Assets/Shaders/postFXVert.glsl", "Assets/Shaders/postFXFrag.glsl")));
-	renderer.setPostFX(true);
+	renderer.setPostFX(false);
 
 	Texture::setFilter(TextureFilter::NEAREST);
-	add(new Sprite(0.0f, 0.0f, 8, 8, new Texture("Tex", "Assets/Test/tb.png")));
+	add(new Sprite(0.0f, 0.0f, 8, 8, new Texture("Tex", "Assets/Test/747.png")));
 	add(new Sprite(-8.0f, -8.0f, 6, 6, 0xffff00ff));
 
 	m_FPS = new Label("", -15.5f, 7.8f, DEBUG_COLOR_WHITE);

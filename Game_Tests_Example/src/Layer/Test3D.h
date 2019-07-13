@@ -17,6 +17,7 @@ class Test3D : public Core::Rendering::Layer3D
 private:
 	Core::Entities::Entity* m_Cube;
 	Core::Entities::Entity* m_Sphere;
+	Core::Entities::Entity* m_Plane;
 
 	Core::Manager::Control_Manager* C_Manager;
 

@@ -60,6 +60,8 @@ namespace Core {
 
 				m_Framebuffer->bind();
 				m_Framebuffer->clear();
+				// TODO put this into the OpenGL Renderer file
+				glBlendFunc(GL_ONE, GL_ZERO);
 			}
 			else 
 			{				
@@ -222,7 +224,6 @@ namespace Core {
 		{
 			m_VertexArray->getBuffer()->releasePointer();
 			m_VertexArray->getBuffer()->unbind();
-			// glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
 		void Batch2DRenderer::flush()
@@ -251,6 +252,7 @@ namespace Core {
 				// Display Framebuffer
 				API::bindFramebuffer(GL_FRAMEBUFFER, m_ScreenBuffer);
 				API::setViewport(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+				glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 				m_SimpleShader->enable();
 
 				API::setActiveTexture(GL_TEXTURE0);

@@ -8,13 +8,13 @@ namespace Core {
 	namespace Rendering {
 
 		FrameBuffer::FrameBuffer(const Maths::tvec2<uint>& size)
-			: m_Size(size), m_Width(m_Size.x), m_Height(m_Size.y), m_ClearColor(Maths::vec4(0.0f, 0.0f, 0.0f, 1.0f))
+			: m_Size(size), m_Width(m_Size.x), m_Height(m_Size.y), m_ClearColor(Maths::vec4(0.0f, 0.0f, 0.0f, 0.0f))
 		{
 			create(m_Width, m_Height);
 		}
 
 		FrameBuffer::FrameBuffer(uint width, uint height)
-			: m_Size(width, height), m_Width(m_Size.x), m_Height(m_Size.y), m_ClearColor(Maths::vec4(0.0f, 0.0f, 0.0f, 1.0f))
+			: m_Size(width, height), m_Width(m_Size.x), m_Height(m_Size.y), m_ClearColor(Maths::vec4(0.0f, 0.0f, 0.0f, 0.0f))
 		{
 			create(width, height);
 		}
@@ -33,7 +33,6 @@ namespace Core {
 
 		void FrameBuffer::clear()
 		{
-			//NOT FUNCTIONAL?!
 			API::setClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
 			API::clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
@@ -44,7 +43,7 @@ namespace Core {
 			m_Data.depthbufferID = API::createRenderbuffer();
 
 			Texture::setFilter(TextureFilter::LINEAR);
-			m_Texture = new Texture(width, height);
+			m_Texture = new Texture(width, height, 32);
 
 			API::bindRenderbuffer(GL_RENDERBUFFER, m_Data.depthbufferID);
 			API::renderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT16, width, height);

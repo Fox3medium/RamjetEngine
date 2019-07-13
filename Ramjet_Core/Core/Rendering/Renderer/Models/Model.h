@@ -24,6 +24,7 @@ namespace Core
 
 		public:
 			Model(const String& path, MaterialInstance* materialInstance);
+			Model(Mesh* mesh, MaterialInstance* materialInstance);
 			~Model();
 
 			void render(Renderer3D& renderer) override;

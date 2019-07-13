@@ -37,7 +37,9 @@ namespace Core
 						mouseZoom(delta.y);
 				}
 
-				m_ViewMatrix = mat4::Rotate(getOrientation().Conjugate());
+				Quaternion orientation = getOrientation();
+				m_Rotation = orientation.ToEulerAngles() * (180.0f / M_PI);
+				m_ViewMatrix = mat4::Rotate(orientation.Conjugate());
 				m_ViewMatrix *= mat4::Translate(-getPosition());
 			}
 

@@ -159,6 +159,50 @@ namespace Core {
 			return new Mesh(va, ib, material);
 		}
 
+		Mesh* Mesh_Manager::CreatePlan(float width, float height, const Maths::vec3& normal, MaterialInstance* material)
+		{
+			using namespace Maths;
+
+			vec3 vec = normal * 90.0f;
+			mat4 rotation = mat4::Rotate(vec.z, vec3(1, 0, 0)) * mat4::Rotate(vec.y, vec3(0, 1, 0)) * mat4::Rotate(vec.x, vec3(0, 0, 1));
+
+			Vertex data[4];
+			memset(data, 0, 4 * sizeof(Vertex));
+
+			data[0].position = rotation * vec3(-width / 2.0f, 0.0f, -height / 2.0f);
+			data[0].normal = normal;
+
+			data[1].position = rotation * vec3(-width / 2.0f, 0.0f, height / 2.0f);
+			data[1].normal = normal;
+
+			data[2].position = rotation * vec3(width / 2.0f, 0.0f, height / 2.0f);
+			data[2].normal = normal;
+
+			data[3].position = rotation * vec3(width / 2.0f, 0.0f, -height / 2.0f);
+			data[3].normal = normal;
+
+			API::Buffer* buffer = new API::Buffer(GL_ARRAY_BUFFER, GL_STATIC_DRAW);
+			buffer->bind();
+			buffer->setData(8 * sizeof(Vertex), data);
+
+			buffer->layout.push<vec3>("position");
+			buffer->layout.push<vec3>("normal");
+			buffer->layout.push<vec2>("uv");
+
+			VertexArray* va = new VertexArray();
+			va->bind();
+			va->addBuffer(buffer);
+
+			uint* indices = new uint[6]
+			{
+				0, 1, 2,
+				2, 3, 0
+			};
+
+			IndexBuffer* ib = new IndexBuffer(indices, 6);
+			return new Mesh(va, ib, material);
+		}
+
 	}
 
 }

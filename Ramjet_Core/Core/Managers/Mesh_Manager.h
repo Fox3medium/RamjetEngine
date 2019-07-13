@@ -34,6 +34,7 @@ namespace Core {
 			static VertexArray* CreateQuad(const Maths::vec2& position, const Maths::vec2& size);
 
 			static Mesh* CreateCube(float size, MaterialInstance* material);
+			static Mesh* CreatePlan(float width, float height, const Maths::vec3& normal, MaterialInstance* material);
 
 		private:
 			Mesh_Manager() {}

@@ -32,7 +32,9 @@ namespace Core
 			void add(Model* model);
 			void update();
 			void render(Renderer3D& renderer);
-			const std::vector<Entity*>& getMeshes() const { return m_Entities; }
+			//const std::vector<Entity*>& getMeshes() const { return m_Entities; }
+			inline Camera* getCamera() const { return m_Camera; }
+			inline const std::vector<Entity*>& getEntities() const { return m_Entities; }
 		};
 	}
 }

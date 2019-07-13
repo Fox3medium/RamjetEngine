@@ -53,8 +53,6 @@ namespace Core {
 
 			if (m_FileName != "NULL")
 				pixels = load_image(m_FileName.c_str(), &m_Width, &m_Height, &m_Bits);
-			else
-				m_Bits = 32;
 
 			/*GLuint result;
 			glGenTextures(1, &result);

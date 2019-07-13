@@ -210,6 +210,7 @@
     <ClCompile Include="App\PosixTimer.cpp" />
     <ClCompile Include="App\Win\Win64Application.cpp" />
     <ClCompile Include="App\Win\Win64Log.cpp" />
+    <ClCompile Include="App\Win\Win64Timer.cpp" />
     <ClCompile Include="Core\Audio\Sound.cpp" />
     <ClCompile Include="Core\Events\Event.cpp" />
     <ClCompile Include="Core\Events\KeyEvent.cpp" />

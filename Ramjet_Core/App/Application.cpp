@@ -20,14 +20,33 @@ namespace App
 		return layer;
 	}
 
+	void Application::pushOverlay(Layer* layer)
+	{
+		m_OverlayStack.push_back(layer);
+		layer->init();
+	}
+
+	Layer* Application::popOverlay()
+	{
+		Layer* layer = m_OverlayStack.back();
+		m_OverlayStack.pop_back();
+		return layer;
+	}
+
 	void Application::tick()
 	{
+		for (uint i = 0; i < m_OverlayStack.size(); i++)
+			m_OverlayStack[i]->onTick();
+
 		for (uint i = 0; i < m_Layers.size(); i++)
 			m_Layers[i]->onTick();
 	}
 
 	void Application::update()
 	{
+		for (uint i = 0; i < m_OverlayStack.size(); i++)
+			m_OverlayStack[i]->onUpdate();
+
 		for (uint i = 0; i < m_Layers.size(); i++)
 			m_Layers[i]->onUpdate();
 	}
@@ -36,6 +55,9 @@ namespace App
 	{
 		for (uint i = 0; i < m_Layers.size(); i++)
 			m_Layers[i]->onRender();
+		
+		for (uint i = 0; i < m_OverlayStack.size(); i++)
+			m_OverlayStack[i]->onRender();
 	}
 
 }

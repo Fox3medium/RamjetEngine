@@ -19,6 +19,12 @@ namespace Core
 				mesh->setMaterial(materialInstance);
 		}
 
+		Model::Model(Mesh* mesh, MaterialInstance* materialInstance)
+		{
+			mesh->setMaterial(materialInstance);
+			m_Meshs.push_back(mesh);
+		}
+
 		Model::~Model()
 		{
 			for (Mesh* mesh : m_Meshs)

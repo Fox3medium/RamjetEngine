@@ -32,6 +32,7 @@ namespace App {
 		uint m_Width, m_Height;
 
 		std::vector<Layer*> m_Layers;
+		std::vector<Layer*> m_OverlayStack;
 
 	public:
 
@@ -40,6 +41,9 @@ namespace App {
 
 		void pushLayer(Layer* layer);
 		Layer* popLayer();
+
+		void pushOverlay(Layer* layer);
+		Layer* popOverlay();
 
 		// Run to initialize the engine
 		virtual void init();
