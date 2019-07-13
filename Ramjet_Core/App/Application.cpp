@@ -1,3 +1,4 @@
+#include <Core/CoreBasicInclude.h>
 #include "Application.h"
 
 namespace App 

@@ -1,7 +1,14 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+
 #include "Sound.h"
 #include <Managers/Sound_Manager.h>
+
+#include <Utils/StringUtils.h>
+
+#include <gorilla-audio/ga.h>
+#include <gorilla-audio/gau.h>
 
 using namespace Core::Manager;
 

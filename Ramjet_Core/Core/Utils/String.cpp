@@ -1,3 +1,4 @@
+#include <CoreBasicInclude.h>
 #include "String.h"
 
 namespace Utils {

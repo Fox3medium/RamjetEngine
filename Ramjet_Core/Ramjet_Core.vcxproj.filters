@@ -237,6 +237,9 @@
     <ClCompile Include="App\Win\Win64Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Init\InitWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -546,6 +549,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLTypes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Init\InitWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="App\Win\Win64Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,8 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
+
 #include <map>
 
 #include "../Core/Utils/Log.h"
@@ -12,7 +15,7 @@ namespace App {
 
 	using namespace Core::Rendering;
 
-	class Application {
+	class CORE_API Application {
 
 	public:
 		Core::Init::Window* window;

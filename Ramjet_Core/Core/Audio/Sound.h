@@ -1,19 +1,19 @@
 #pragma once
 
-#include <iostream>
-#include <string>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 
-#include <Utils/StringUtils.h>
+#include <Utils/String.h>
 #include <Utils/types.h>
 
-#include <gorilla-audio/ga.h>
-#include <gorilla-audio/gau.h>
+struct ga_Sound;
+struct ga_Handle;
 
 namespace Core {
 
 	namespace Audio {
 	
-		class Sound {
+		class CORE_API Sound {
 
 		private:
 			String m_Name;
@@ -21,7 +21,7 @@ namespace Core {
 
 			ga_Sound* m_Sound;
 			ga_Handle* m_Handle;
-			gc_int32 m_Position;
+			int m_Position;
 
 			uint m_Count;
 
