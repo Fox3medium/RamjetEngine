@@ -212,6 +212,9 @@
     <ClCompile Include="App\Win\Win64Application.cpp" />
     <ClCompile Include="App\Win\Win64Log.cpp" />
     <ClCompile Include="Core\Audio\Sound.cpp" />
+    <ClCompile Include="Core\Events\Event.cpp" />
+    <ClCompile Include="Core\Events\KeyEvent.cpp" />
+    <ClCompile Include="Core\Events\MouseEvent.cpp" />
     <ClCompile Include="Core\Init\InitWindow.cpp" />
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\AI\AI_Director.cpp" />
@@ -290,6 +293,10 @@
     <ClInclude Include="Core\CoreBasicInclude.h" />
     <ClInclude Include="Core\Common.h" />
     <ClInclude Include="Core\Controls\IControl.h" />
+    <ClInclude Include="Core\Events\Event.h" />
+    <ClInclude Include="Core\Events\IEventListener.h" />
+    <ClInclude Include="Core\Events\KeyEvent.h" />
+    <ClInclude Include="Core\Events\MouseEvent.h" />
     <ClInclude Include="Core\Init\ContextInfo.h" />
     <ClInclude Include="Core\Init\DebugOutput.h" />
     <ClInclude Include="Core\Init\FramebufferInfo.h" />

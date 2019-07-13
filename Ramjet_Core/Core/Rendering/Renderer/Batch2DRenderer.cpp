@@ -1,12 +1,17 @@
 #include "Batch2DRenderer.h"
 
+#include <CoreBasicInclude.h>
+
 #include "Buffers/Buffer.h"
 #include "Buffers/BufferLayout.h"
 
 #include <Utils/Log.h>
+#include <Rendering/Platform/CoreRenderAPI.h>
 
 #include <Managers/Mesh_Manager.h>
 #include <Managers/Shader_Manager.h>
+
+#include <Freetype-GL/src/freetype-gl.h>
 
 namespace Core {
 
@@ -342,10 +347,10 @@ namespace Core {
 			m_Framebuffer = new FrameBuffer(m_ViewportSize);			
 			m_SimpleShader = Shader_Manager::SimpleShader();
 			m_SimpleShader->enable();
-			m_SimpleShader->setUniformMat4("pr_matrix", Maths::mat4::Orthographic(0, m_ScreenSize.x, m_ScreenSize.y, 0, -1.0f, 1.0f));
+			m_SimpleShader->setUniformMat4("pr_matrix", Maths::mat4::Orthographic(0, (float)m_ScreenSize.x, (float)m_ScreenSize.y, 0, -1.0f, 1.0f));
 			m_SimpleShader->setUniform1i("tex", 0);
 			m_SimpleShader->disable();
-			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, m_ScreenSize.x, m_ScreenSize.y);
+			m_ScreenQuad = Mesh_Manager::CreateQuad(0, 0, (float)m_ScreenSize.x, (float)m_ScreenSize.y);
 			GLenum error = glGetError();
 			if (error != GL_NO_ERROR)
 				std::cout << "OpenGL Error: " << error << std::endl;

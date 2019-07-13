@@ -1,10 +1,12 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
 #include <Utils/types.h>
-#include <cstddef>
+
 #include "Renderer2D.h"
 #include "Renderable2D.h"
-#include <Rendering/Platform/CoreRenderAPI.h>
+
 #include "Buffers/VertexArray.h"
 #include "Buffers/IndexBuffer.h"
 #include "Buffers/FrameBuffer.h"
@@ -19,17 +21,17 @@ namespace Core {
 		#define RENDERER_INDICES_SIZE	RENDERER_MAX_SPRITES * 6
 		#define RENDERER_MAX_TEXTURES	32
 
-		class Batch2DRenderer : public Renderer2D {
+		class CORE_API Batch2DRenderer : public Renderer2D {
 
 		private :
-			GLuint m_VAO;
-			GLuint m_VBO;
+			uint m_VAO;
+			uint m_VBO;
 			IndexBuffer* m_IBO;
 			VertexArray* m_VertexArray;
-			GLsizei m_IndexCount, m_LineIndexCount;
+			uint m_IndexCount, m_LineIndexCount;
 			IndexBuffer* m_LineIBO;
 			VertexData* m_Buffer;
-			std::vector<GLuint> m_TextureSlots;
+			std::vector<uint> m_TextureSlots;
 
 			FrameBuffer* m_Framebuffer;
 			FrameBuffer* m_PostFXBuffer;
