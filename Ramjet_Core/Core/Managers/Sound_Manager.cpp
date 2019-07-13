@@ -1,5 +1,11 @@
 #pragma once
 
+#include <CoreBasicInclude.h>
+
+#define GAU_THREAD_POLICY_MULTI		2
+#include <gorilla-audio/ga.h>
+#include <gorilla-audio/gau.h>
+
 #include "Sound_Manager.h"
 
 namespace Core {

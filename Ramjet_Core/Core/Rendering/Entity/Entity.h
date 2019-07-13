@@ -1,6 +1,8 @@
 #pragma once
 
-#include <vector>
+#include <CoreBasicInclude.h>
+#include <Core/Common.h>
+
 #include "Component/Components.h"
 
 namespace Core
@@ -10,7 +12,7 @@ namespace Core
 	}
 	namespace Entities
 	{
-		class Entity 
+		class CORE_API Entity 
 		{
 		protected:
 			std::vector<Components::Component*> m_Components;

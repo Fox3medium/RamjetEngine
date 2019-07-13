@@ -1,12 +1,14 @@
 #pragma once
 
-#include <map>
+#include <CoreBasicInclude.h>
+
+#include <Core/Common.h>
 
 #include "../Audio/Sound.h"
 
-#define GAU_THREAD_POLICY_MULTI		2
-#include <gorilla-audio/ga.h>
-#include <gorilla-audio/gau.h>
+
+struct gau_Manager;
+struct ga_Mixer;
 
 namespace Core {
 	
@@ -14,7 +16,7 @@ namespace Core {
 
 	namespace Manager {
 		
-		class Sound_Manager 
+		class CORE_API Sound_Manager 
 		{
 		private:
 			friend class Sound;

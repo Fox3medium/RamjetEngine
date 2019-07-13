@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Component.h"
-
+#include <Core/Common.h>
 #include <Utils/Maths/maths.h>
 
 namespace Core
@@ -10,7 +10,7 @@ namespace Core
 	{
 		namespace Components
 		{
-			class TransformComponent : public Component
+			class CORE_API TransformComponent : public Component
 			{
 			public:
 				Maths::mat4 transform;

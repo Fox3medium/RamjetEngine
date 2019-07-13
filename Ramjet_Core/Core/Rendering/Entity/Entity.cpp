@@ -1,3 +1,5 @@
+#include <CoreBasicInclude.h>
+
 #include "Entity.h"
 
 namespace Core

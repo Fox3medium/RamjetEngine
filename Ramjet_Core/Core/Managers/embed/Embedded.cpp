@@ -1,3 +1,5 @@
+#include <CoreBasicInclude.h>
+
 #include "Embedded.h"
 
 namespace Core {

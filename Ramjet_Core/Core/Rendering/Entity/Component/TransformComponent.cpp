@@ -1,3 +1,5 @@
+
+#include <CoreBasicInclude.h>
 #include "TransformComponent.h"
 
 namespace Core

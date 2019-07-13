@@ -1,6 +1,9 @@
 #pragma once
 
+#include <Core/Common.h>
+
 #include <Utils/types.h>
+#include <Utils/String.h>
 
 namespace Core {
 	namespace Entities {
@@ -14,12 +17,12 @@ namespace Core
 	{
 		namespace Components
 		{
-			struct ComponentType
+			struct CORE_API ComponentType
 			{
 				String name;
 			};
 
-			class Component 
+			class CORE_API Component 
 			{
 			protected:
 				Entity* m_Entity;

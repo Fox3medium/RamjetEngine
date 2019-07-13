@@ -1,5 +1,5 @@
 #pragma once
-
+#include <Core/Common.h>
 #include "Component.h"
 
 #include <Rendering/Renderer/Models/Mesh.h>
@@ -10,7 +10,7 @@ namespace Core
 	{
 		namespace Components
 		{
-			class MeshComponent : public Component
+			class CORE_API MeshComponent : public Component
 			{
 			public:
 				Rendering::Mesh* mesh;

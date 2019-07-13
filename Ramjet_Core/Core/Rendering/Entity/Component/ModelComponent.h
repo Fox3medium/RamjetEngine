@@ -2,7 +2,7 @@
 
 #include "Component.h"
 
-
+#include <Core/Common.h>
 
 namespace Core
 {
@@ -16,7 +16,7 @@ namespace Core
 	{
 		namespace Components
 		{
-			class ModelComponent : public Component
+			class CORE_API ModelComponent : public Component
 			{
 			public:
 				Rendering::Model* model;
