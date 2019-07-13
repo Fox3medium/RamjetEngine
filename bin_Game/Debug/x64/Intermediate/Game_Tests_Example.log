@@ -4,31 +4,52 @@
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\libogg.dll
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\OpenAL32.dll
           4 file(s) copied.
-  GameTest.cpp
-  Test3D.cpp
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(64,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(65,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(66,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(64,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(65,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(66,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,16): error C2039:  'Model': is not a member of 'Core::Rendering' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderer3D.h(11): message :  see declaration of 'Core::Rendering' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,21): error C2143:  syntax error: missing ';' before '*' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,21): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,28): error C2238:  unexpected token(s) preceding ';' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(19,31): error C2039:  'Model': is not a member of 'Core::Rendering' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderer3D.h(11): message :  see declaration of 'Core::Rendering' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(19,44): error C2061:  syntax error: identifier 'Model' (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,16): error C2039:  'Model': is not a member of 'Core::Rendering' (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderer3D.h(11): message :  see declaration of 'Core::Rendering' (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,21): error C2143:  syntax error: missing ';' before '*' (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,21): error C4430:  missing type specifier - int assumed. Note: C++ does not support default-int (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(16,28): error C2238:  unexpected token(s) preceding ';' (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(19,31): error C2039:  'Model': is not a member of 'Core::Rendering' (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderer3D.h(11): message :  see declaration of 'Core::Rendering' (compiling source file src\Layer\Test3D.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Entity\Component\ModelComponent.h(19,44): error C2061:  syntax error: identifier 'Model' (compiling source file src\Layer\Test3D.cpp)
+  libvorbis_static.lib(info.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+     Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.exp
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  Finished generating code
+glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(glew.obj)' or at ''; linking object as if no debug info
+  Game_Tests_Example.vcxproj -> D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.exe
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\Cube.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\nanosuit.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\Plane.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\RoundedCube.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\Sphere.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\SphereHighPoly.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BaslicLightFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BaslicLightVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BlockFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BlockVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\DefaultFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\DefaultVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\fragment_shader_test.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\postFXFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\postFXVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\SceneFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\SceneVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\SimpleFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\SimpleVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\textFragShader.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\textVertShader.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\UIFrag.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\UIVert.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\vertex_shader_test.glsl
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\747.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\awesomeface.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\awesomeface2.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\mask.tif
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\SourceCodePro-Light.ttf
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\SourceSansPro-Light.ttf
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\tb.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\tc.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\test.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\untitled.wav
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Test\wall.jpg
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\747.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\dirt.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\stone.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\wall.jpg
+  39 File(s) copied

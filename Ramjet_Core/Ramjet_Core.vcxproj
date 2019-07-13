@@ -207,7 +207,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="App\Application.cpp" />
+    <ClCompile Include="App\PosixTimer.cpp" />
+    <ClCompile Include="App\Win\Win64Timer.cpp" />
     <ClCompile Include="App\Win\Win64Application.cpp" />
+    <ClCompile Include="App\Win\Win64Log.cpp" />
     <ClCompile Include="Core\Audio\Sound.cpp" />
     <ClCompile Include="Core\Init\Window.cpp" />
     <ClCompile Include="Core\Managers\AI\AI_Director.cpp" />
@@ -234,6 +237,8 @@
     <ClCompile Include="Core\Rendering\Material\Material.cpp" />
     <ClCompile Include="Core\Rendering\Platform\OpenGL\CoreOpenGLBuffer.cpp" />
     <ClCompile Include="Core\Rendering\Platform\CoreRenderAPI.h" />
+    <ClCompile Include="Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp" />
+    <ClCompile Include="Core\Rendering\Platform\OpenGL\CoreOpenGLRenderAPI.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Batch2DRenderer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\Buffer.cpp" />
     <ClCompile Include="Core\Rendering\Renderer\Buffers\BufferLayout.cpp" />
@@ -265,7 +270,6 @@
     <ClCompile Include="Core\Utils\Maths\vec3.cpp" />
     <ClCompile Include="Core\Utils\Maths\vec4.cpp" />
     <ClCompile Include="Core\Utils\String.cpp" />
-    <ClCompile Include="Core\Utils\Timer.cpp" />
     <ClCompile Include="Ext\Freetype-GL\src\platform.c" />
     <ClCompile Include="Ext\Freetype-GL\src\texture-atlas.c" />
     <ClCompile Include="Ext\Freetype-GL\src\texture-font.c" />
@@ -281,6 +285,8 @@
     <ClInclude Include="App\Application.h" />
     <ClInclude Include="Core\2DEngine.h" />
     <ClInclude Include="Core\Audio\Sound.h" />
+    <ClInclude Include="Core\CoreBasicInclude.h" />
+    <ClInclude Include="Core\Common.h" />
     <ClInclude Include="Core\Controls\IControl.h" />
     <ClInclude Include="Core\Init\ContextInfo.h" />
     <ClInclude Include="Core\Init\DebugOutput.h" />
@@ -304,6 +310,7 @@
     <ClInclude Include="Core\Managers\Sound_Manager.h" />
     <ClInclude Include="Core\Managers\Texture_Manager.h" />
     <ClInclude Include="Core\Core.h" />
+    <ClInclude Include="Core\RamjetCore.h" />
     <ClInclude Include="Core\Rendering\Camera\Camera.h" />
     <ClInclude Include="Core\Rendering\Camera\FPS_Camera.h" />
     <ClInclude Include="Core\Rendering\Entity\Component\Component.h" />
@@ -315,6 +322,7 @@
     <ClInclude Include="Core\Rendering\Material\Material.h" />
     <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLBuffer.h" />
     <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl" />
+    <ClInclude Include="Core\Rendering\Platform\OpenGL\CoreOpenGLTypes.h" />
     <ClInclude Include="Core\Rendering\Renderer\ForwardRenderer.h" />
     <ClInclude Include="Core\Rendering\Renderer\Layers\Layer3D.h" />
     <ClInclude Include="Core\Rendering\Renderer\Models\IRenderable.h" />

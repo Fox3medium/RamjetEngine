@@ -1,3 +1,4 @@
+#include <CoreBasicInclude.h>
 #include "CoreOpenGLBuffer.h"
 
 #include <Rendering/Platform/CoreRenderAPI.h>

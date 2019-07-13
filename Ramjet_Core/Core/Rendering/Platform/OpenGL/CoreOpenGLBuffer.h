@@ -23,7 +23,7 @@ namespace Core
 				void setData(uint size, const void* data);
 
 				template<typename T>
-				T* getPointer(uint flags = GL_WRITE_ONLY)
+				T* getPointer(uint flags = 0x88B9 /*GL_WRITE_ONLY*/)// GL_WRITE_ONLY = 0x8889
 				{
 					return (T*)API::getBufferPointer(target, flags);
 				}
