@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -11,3 +12,5 @@
 #include <cstddef>
 #include <stdio.h>
 #include <math.h>
+
+#include "Common.h"

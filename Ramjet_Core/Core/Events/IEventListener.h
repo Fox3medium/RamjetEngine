@@ -9,7 +9,7 @@ namespace Core
 		class CORE_API IEventListener
 		{
 		public:
-			virtual bool OnEvent(const Event& event) = 0;
+			virtual void onEvent(Event& event) = 0;
 		};
 	} 
 }

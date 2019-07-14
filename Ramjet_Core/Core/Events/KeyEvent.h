@@ -6,12 +6,15 @@ namespace Core { namespace Events {
 
 	class CORE_API KeyEvent : public Event
 	{
-	private:
+	protected:
 		int m_KeyCode;
+		int m_Count;
 	public:
 		KeyEvent(int keyCode, Event::Type type);
 
-		inline const int GetKeyCode() const { return m_KeyCode; }
+		inline int getKeyCode() const { return m_KeyCode; }
+
+		inline static int getStaticType() { return (int)Event::Type::KEY_PRESSED | (int)Event::Type::KEY_RELEASED; }
 	};
 
 	class CORE_API KeyPressedEvent : public KeyEvent
@@ -21,13 +24,16 @@ namespace Core { namespace Events {
 	public:
 		KeyPressedEvent(int button, int repeat);
 
-		inline const int GetRepeat() const { return m_Repeat; }
+		inline int getRepeat() const { return m_Repeat; }
+		inline static Type getStaticType() { return Event::Type::KEY_PRESSED; }
 	};
 
 	class CORE_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
 		KeyReleasedEvent(int button);
+
+		inline static Type getStaticType() { return Event::Type::KEY_RELEASED; }
 	};
 
 } }

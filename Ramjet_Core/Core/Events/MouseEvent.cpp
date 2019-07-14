@@ -10,17 +10,24 @@ namespace Core {
 		}
 
 		MousePressedEvent::MousePressedEvent(int button, float x, float y)
-			: MouseButtonEvent(button, x, y, Event::Type::MOUSE_PRESSED)
+			: MouseButtonEvent(button, x, y, MouseMovedEvent::getStaticType())
 		{
 		}
 
+		String MousePressedEvent::toString() const
+		{
+			char buffer[256];
+			sprintf(buffer, "MouseReleasedEvent: (%d, %f, %f)", getButton(), getX(), getY());
+			return String(buffer);
+		}
+
 		MouseReleasedEvent::MouseReleasedEvent(int button, float x, float y)
-			: MouseButtonEvent(button, x, y, Event::Type::MOUSE_RELEASED)
+			: MouseButtonEvent(button, x, y, MouseReleasedEvent::getStaticType())
 		{
 		}
 
 		MouseMovedEvent::MouseMovedEvent(float x, float y, bool dragged)
-			: Event(Event::Type::MOUSE_MOVED), m_Position(Maths::vec2(x, y)), m_Dragged(dragged)
+			: Event(MouseMovedEvent::getStaticType()), m_Position(Maths::vec2(x, y)), m_Dragged(dragged)
 		{
 		}
 	}

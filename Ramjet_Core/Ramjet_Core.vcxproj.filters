@@ -581,6 +581,9 @@
     <ClInclude Include="App\Win\Win64Window.cpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Events\Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Test\747.png">
