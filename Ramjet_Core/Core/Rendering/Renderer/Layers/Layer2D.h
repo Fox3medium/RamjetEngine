@@ -19,6 +19,7 @@ namespace Core {
 
 		protected:
 			std::vector<Renderable2D*> m_Renderables;
+			std::vector<Renderable2D*> m_SubmittedRenderables;
 			Shader* m_Shader;
 			Maths::mat4 m_ProjectionMatrix;			
 
@@ -33,6 +34,7 @@ namespace Core {
 			void onRender();
 			virtual void onRender(Renderer2D& renderer);
 
+			virtual Renderable2D* submit(Renderable2D* renderable);
 
 			inline void setMask(const Mask* mask) const { m_Renderer->setMask(mask); }
 

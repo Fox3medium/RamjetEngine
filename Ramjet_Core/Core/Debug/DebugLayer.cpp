@@ -6,6 +6,8 @@
 #include <Rendering/Renderer/Models/Label.h>
 #include <Rendering/Renderer/Models/Sprite.h>
 #include <CoreBasicInclude.h>
+#include <Managers/embed/Embedded.h>
+#include <App/Application.h>
 
 namespace Core
 {
@@ -15,7 +17,8 @@ namespace Core
 		using namespace Manager;
 
 		DebugLayer::DebugLayer()
-			: Layer2D(Shader_Manager::DefaultShader(), mat4::Orthographic(0.0f, 32.0f, 0.0f, 18.0f, -1.0f, 1.0f))
+			: Layer2D(Shader_Manager::DefaultShader(), mat4::Orthographic(0.0f, 32.0f, 0.0f, 18.0f, -1.0f, 1.0f)), 
+			m_Application(App::Application::getApplication())
 		{
 		}
 		DebugLayer::~DebugLayer()
@@ -23,18 +26,18 @@ namespace Core
 		}
 		void DebugLayer::onInit(Rendering::Renderer2D& renderer, Rendering::Shader& shader)
 		{
-			Font_Manager::get()->setScale(m_Window->getWidth() / 32.0f, m_Window->getHeight() / 18.0f);
-
+			DebugMenu::init();
 			renderer.setRenderTarget(RenderTarget::SCREEN);
-			for (int i = 0; i < 5; i++)
-			{
-				float y = -9.0f + i * 1.7f;
-				add(new Sprite(-16, y, 6, 1.5f, 0x7f7f7f7f));
-				add(new Label(String("Item ") + std::to_string(i + 1), -16.0f + 0.2f, y + 0.4f, 0xffffffff));
-			}
+			m_FPSLabel = new Rendering::Label("", 14.0f, 8.5f, Font_Manager::get(), DEBUG_COLOR_WHITE);
+			add(m_FPSLabel);
+
+			DebugMenu::add("Example");
+			DebugMenu::add("Example");
+			
 		}
 		void DebugLayer::onTick()
 		{
+			m_FPSLabel->m_Text = std::to_string(m_Application.getFPS());
 		}
 		void DebugLayer::onUpdate()
 		{
@@ -44,7 +47,7 @@ namespace Core
 			if (Control_Manager::isKeyPressed(GLFW_KEY_LEFT_CONTROL) 
 				&& Control_Manager::isKeyTyped(GLFW_KEY_TAB))
 			{
-				setVisible(!b_IsVisible);
+				DebugMenu::setVisible(!DebugMenu::isVisible());
 			}
 		}
 		bool DebugLayer::onMouseMovedEvent()
@@ -57,6 +60,8 @@ namespace Core
 		}
 		void DebugLayer::onRender(Rendering::Renderer2D& renderer)
 		{
+			if (DebugMenu::isVisible())
+				DebugMenu::onRender(renderer);
 		}
 	}
 }

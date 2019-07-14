@@ -75,6 +75,9 @@ namespace Core {
 
 		void Batch2DRenderer::submit(const Renderable2D* renderable)
 		{
+			if (!renderable->isVisible())
+				return;
+
 			const Maths::vec3& position = renderable->getPosition();
 			const Maths::vec2& size = renderable->getSize();
 			const uint color = renderable->getColor();
@@ -152,7 +155,7 @@ namespace Core {
 			#endif
 		}
 
-		void Batch2DRenderer::drawString(const String& text, const Maths::vec3& position, const Font& font, unsigned int color)
+		void Batch2DRenderer::drawString(const String& text, const Maths::vec3& position, const Font& font, uint color)
 		{
 			using namespace ftgl;
 
@@ -219,6 +222,62 @@ namespace Core {
 				}
 
 			}
+		}
+
+		void Batch2DRenderer::fillRect(float x, float y, float width, float height, uint color)
+		{
+			using namespace Maths;
+			vec3 position(x, y, 0.0f);
+			vec2 size(width, height);
+			const std::vector<vec2>& uv = Renderable2D::getUVDefault();
+			float ts = 0.0f;
+			mat4 maskTransform = mat4::Identity();
+			uint mid = m_Mask ? m_Mask->texture->getID() : 0;
+
+			float ms = 0.0f;
+			if (m_Mask != nullptr)
+			{
+				maskTransform = mat4::Invert(m_Mask->transform);
+				ms = submitTexture(m_Mask->texture);
+			}
+
+			vec3 vertex = *m_TransformationBack * position;
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[0];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			vertex = *m_TransformationBack * vec3(position.x, position.y + size.y, position.z);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[1];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			vertex = *m_TransformationBack * vec3(position.x + size.x, position.y + size.y, position.z);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[2];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			vertex = *m_TransformationBack * vec3(position.x + size.x, position.y, position.z);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[3];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			m_IndexCount += 6;
 		}
 
 		void Batch2DRenderer::end()
@@ -370,6 +429,9 @@ namespace Core {
 
 		float Batch2DRenderer::submitTexture(uint textureID)
 		{
+			if (!textureID)
+				CORE_WARN("Invalid texture ID submitted to 2D Renderer!");
+
 			float result = 0.0f;
 			bool found = false;
 			for (uint i = 0; i < m_TextureSlots.size(); i++)

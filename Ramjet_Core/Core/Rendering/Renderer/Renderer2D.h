@@ -3,6 +3,7 @@
 #include <Utils/Maths/maths.h>
 #include <vector>
 #include "Font/Font.h"
+#include <Managers/Font_Manager.h>
 #include "Texture/Texture.h"
 #include "Texture/Mask.h"
 #include "PostFX/PostFX.h"
@@ -51,7 +52,8 @@ namespace Core {
 
 			virtual void begin() {}
 			virtual void submit(const Renderable2D* renderable) = 0;
-			virtual void drawString(const String& text, const Maths::vec3& position, const Font& font, unsigned int Color) {};
+			virtual void drawString(const String& text, const Maths::vec3& position, const Font& font = *Manager::Font_Manager::get(), uint Color = 0xffffffff) {};
+			virtual void fillRect(float x, float y, float width, float height, uint color = 0xffffffff) {};
 			virtual void flush() = 0;
 			virtual void end() {}
 

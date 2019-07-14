@@ -65,6 +65,28 @@ namespace Core {
 
 		void Layer2D::onRender(Renderer2D& renderer)
 		{
+
+			m_Shader->enable();
+			m_Renderer->begin();
+
+			for (const Renderable2D* renderable : m_Renderables)
+				renderable->submit(m_Renderer);
+
+			for (const Renderable2D* renderable : m_SubmittedRenderables)
+				renderable->submit(m_Renderer);
+
+			m_Renderer->end();
+			m_Renderer->flush();
+
+			onRender(*m_Renderer);
+
+			m_SubmittedRenderables.clear();
+		}
+
+		Renderable2D* Layer2D::submit(Renderable2D* renderable)
+		{
+			m_SubmittedRenderables.push_back(renderable);
+			return renderable;
 		}
 
 	}

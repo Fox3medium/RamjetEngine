@@ -51,7 +51,7 @@ namespace Core {
 
 		void Sprite::setUV(const std::vector<Maths::vec2>& uv)
 		{
-			m_UV = uv;
+			m_UVs = uv;
 		}
 
 	}

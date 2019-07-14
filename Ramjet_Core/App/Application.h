@@ -9,8 +9,16 @@
 #include <Managers/Control_Manager.h>
 
 #include <Rendering/Renderer/Layers/Layer.h>
-#include <Debug/DebugLayer.h>
 #include <Utils/Timer.h>
+
+namespace Core 
+{
+	namespace Debug
+	{ 
+		class DebugLayer;
+	}
+}
+
 
 namespace App {
 

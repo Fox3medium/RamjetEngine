@@ -1,5 +1,6 @@
 #include <Core/CoreBasicInclude.h>
 #include "Application.h"
+#include <Debug/DebugLayer.h>
 
 namespace App 
 {
@@ -85,8 +86,10 @@ namespace App
 		
 		for (uint i = 0; i < m_OverlayStack.size(); i++)
 			m_OverlayStack[i]->onRender();
-		if(m_DebugLayer->isVisible())
-			((Layer2D*)m_DebugLayer)->onRender();
+
+		Layer2D* debugLayer = (Layer2D*)m_DebugLayer;
+		if (debugLayer->isVisible())
+			debugLayer->onRender();
 	}
 
 }
