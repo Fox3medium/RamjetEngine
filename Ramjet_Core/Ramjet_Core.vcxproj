@@ -212,6 +212,8 @@
     <ClCompile Include="App\Win\Win64Log.cpp" />
     <ClCompile Include="App\Win\Win64Timer.cpp" />
     <ClCompile Include="Core\Audio\Sound.cpp" />
+    <ClCompile Include="Core\Debug\DebugLayer.cpp" />
+    <ClCompile Include="Core\Debug\DebugMenu.cpp" />
     <ClCompile Include="Core\Events\Event.cpp" />
     <ClCompile Include="Core\Events\KeyEvent.cpp" />
     <ClCompile Include="Core\Events\MouseEvent.cpp" />
@@ -294,6 +296,8 @@
     <ClInclude Include="Core\CoreBasicInclude.h" />
     <ClInclude Include="Core\Common.h" />
     <ClInclude Include="Core\Controls\IControl.h" />
+    <ClInclude Include="Core\Debug\DebugLayer.h" />
+    <ClInclude Include="Core\Debug\DebugMenu.h" />
     <ClInclude Include="Core\Events\Event.h" />
     <ClInclude Include="Core\Events\EventDispatcher.h" />
     <ClInclude Include="Core\Events\Events.h" />

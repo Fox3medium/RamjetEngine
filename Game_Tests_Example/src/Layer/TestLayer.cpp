@@ -56,9 +56,9 @@ void TestLayer::onTick()
 	CORE_INFO(app.getUPS(), " ups, ", app.getFPS(), " fps");
 }
 
-bool TestLayer::onEvent()
+void TestLayer::onEvent()
 {
-	return false;
+	
 }
 
 void TestLayer::onUpdate()

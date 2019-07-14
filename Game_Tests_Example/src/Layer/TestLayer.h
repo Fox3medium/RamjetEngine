@@ -21,7 +21,7 @@ public:
 	void onInit(Core::Rendering::Renderer2D& renderer, Core::Rendering::Shader& shader) override;
 
 	void onTick() override;
-	bool onEvent() override;
+	void onEvent() override;
 	void onUpdate() override;
 	void onRender(Core::Rendering::Renderer2D& renderer) override;
 };

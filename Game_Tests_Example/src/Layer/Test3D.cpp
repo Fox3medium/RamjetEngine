@@ -70,7 +70,7 @@ void Test3D::onUpdate()
 	m_Rotation++;
 }
 
-bool Test3D::onEvent()
+void Test3D::onEvent()
 {
-	return false;
+	
 }

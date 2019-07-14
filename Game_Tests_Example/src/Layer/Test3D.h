@@ -31,5 +31,5 @@ public:
 
 	void onTick() override;
 	void onUpdate() override;
-	bool onEvent() override;
+	void onEvent() override;
 };
