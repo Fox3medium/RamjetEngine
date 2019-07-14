@@ -14,7 +14,7 @@ namespace Core {
 		#define MAX_KEYS 1024
 		#define MAX_BUTTONS 32
 
-		class Control_Manager {
+		class CORE_API Control_Manager {
 
 		public:
 			Control_Manager();
@@ -30,6 +30,8 @@ namespace Core {
 			static bool isKeyTyped(unsigned int keycode);
 
 			static bool isMouseButtonPressed(unsigned int keycode);
+
+			static bool isKeyEvent();
 
 			//static Maths::vec2 getMousePosition();
 
@@ -64,9 +66,9 @@ namespace Core {
 			static bool m_MouseButtonsState[MAX_BUTTONS];
 			static bool m_MouseButtonsTyped[MAX_BUTTONS];
 
-			static Maths::vec2 m_MousePos;
-			static double m_ScrollX, m_ScrollY;
+			static uint m_NumberOfKeysPressed;
 
+			static Maths::vec2 m_MousePos;
 		};
 
 	} 

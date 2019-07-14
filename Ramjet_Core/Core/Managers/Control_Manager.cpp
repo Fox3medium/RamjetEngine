@@ -9,8 +9,7 @@ namespace Core {
 		Maths::vec2 Control_Manager::m_MousePos;
 		float Control_Manager::playerSpeed = 0.0f;
 		bool Control_Manager::gameStarted = false;
-		double Control_Manager::m_ScrollX;
-		double Control_Manager::m_ScrollY;
+		uint Control_Manager::m_NumberOfKeysPressed = 0;
 		bool Control_Manager::m_Keys[MAX_KEYS];
 		bool Control_Manager::m_KeysState[MAX_KEYS];
 		bool Control_Manager::m_KeysTyped[MAX_KEYS];
@@ -36,7 +35,6 @@ namespace Core {
 				m_MouseButtonsState[i] = false;
 				m_MouseButtonsTyped[i] = false;
 			}
-
 			//playerCamera = new FPSCamera();
 		}
 
@@ -60,7 +58,6 @@ namespace Core {
 			{
 				// TODO
 			}
-
 		}
 
 		void Control_Manager::notifyMouseInput(double xpos, double ypos, float deltaTime)
@@ -101,6 +98,12 @@ namespace Core {
 		bool Control_Manager::isMouseButtonPressed(unsigned int keycode)
 		{
 			return m_MouseButtons[keycode];
+		}
+
+		bool Control_Manager::isKeyEvent()
+		{
+			// TODO STATIC SOLUTION
+			return true;
 		}
 
 		/*Maths::vec2 Control_Manager::getMousePosition()

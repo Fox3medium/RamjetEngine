@@ -12,8 +12,6 @@ private:
 	Core::Rendering::Label* m_FPS;
 	Core::Rendering::Label** m_DebugInfo;
 
-	Core::Manager::Control_Manager* C_Manager;
-
 public:
 	TestLayer();
 	~TestLayer();

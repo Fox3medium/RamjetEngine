@@ -15,7 +15,7 @@ namespace Core
 			inline uint createRenderbuffer();
 
 			inline void createVertexArrays(uint size, uint* arrays);
-			inline void createVertexBuffers(uint size, uint* buffers);
+			inline void createBuffers(uint size, uint* buffers);
 			inline void createFramebuffers(uint size, uint* buffers);
 			inline void createRenderbuffers(uint size, uint* buffers);
 

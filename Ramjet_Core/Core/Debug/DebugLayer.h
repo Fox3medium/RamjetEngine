@@ -10,10 +10,8 @@ namespace Core
 {
 	namespace Debug 
 	{
-		class DebugLayer : public Rendering::Layer2D
+		class CORE_API DebugLayer : public Rendering::Layer2D
 		{
-		private:
-
 		public:
 			DebugLayer();
 			~DebugLayer();

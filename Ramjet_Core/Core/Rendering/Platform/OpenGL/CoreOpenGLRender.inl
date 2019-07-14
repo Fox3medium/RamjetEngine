@@ -42,7 +42,7 @@ namespace Core
 				glGenVertexArrays(size, arrays);
 			}
 
-			inline void createVertexBuffers(uint size, uint* buffers)
+			inline void createBuffers(uint size, uint* buffers)
 			{
 				glGenVertexArrays(size, buffers);
 			}

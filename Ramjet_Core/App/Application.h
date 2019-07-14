@@ -57,6 +57,8 @@ namespace App {
 		// Run as fast as possible
 		void render();
 
+		void onEvent();
+
 		void start();
 		void suspend();
 		void resume();

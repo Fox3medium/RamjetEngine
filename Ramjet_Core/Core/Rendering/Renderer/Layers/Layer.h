@@ -15,6 +15,8 @@ namespace Core
 		protected:
 			Core::Init::Window* m_Window;
 
+			bool b_IsVisible;
+
 		public:
 			Layer();
 			virtual ~Layer();
@@ -25,6 +27,9 @@ namespace Core
 			virtual void onTick();
 			virtual void onUpdate();
 			virtual void onRender();
+
+			inline bool isVisible() const { return b_IsVisible; }
+			inline void setVisible(bool visible) { b_IsVisible = visible; }
 
 		};
 	}

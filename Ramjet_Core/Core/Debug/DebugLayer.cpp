@@ -2,6 +2,7 @@
 
 #include <Utils/Maths/maths.h>
 #include <Managers/Shader_Manager.h>
+#include <Managers/Control_Manager.h>
 #include <Rendering/Renderer/Models/Label.h>
 #include <Rendering/Renderer/Models/Sprite.h>
 #include <CoreBasicInclude.h>
@@ -40,6 +41,11 @@ namespace Core
 		}
 		void DebugLayer::onEvent()
 		{
+			if (Control_Manager::isKeyPressed(GLFW_KEY_LEFT_CONTROL) 
+				&& Control_Manager::isKeyTyped(GLFW_KEY_TAB))
+			{
+				setVisible(!b_IsVisible);
+			}
 		}
 		bool DebugLayer::onMouseMovedEvent()
 		{

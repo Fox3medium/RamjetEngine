@@ -51,6 +51,20 @@ namespace App
 			m_Layers[i]->onTick();
 	}
 
+	void Application::onEvent()
+	{
+		for (int i = m_OverlayStack.size() - 1; i >= 0; i--)
+		{
+			m_OverlayStack[i]->onEvent();
+		}
+
+		for (int i = m_Layers.size() - 1; i >= 0; i--)
+		{
+			m_Layers[i]->onEvent();
+		}
+		m_DebugLayer->onEvent();
+	}
+
 	void Application::update()
 	{
 		m_DebugLayer->onUpdate();
@@ -64,13 +78,15 @@ namespace App
 
 	void Application::render()
 	{
+		if (C_Manager->isKeyEvent())
+			onEvent();
 		for (uint i = 0; i < m_Layers.size(); i++)
 			m_Layers[i]->onRender();
 		
 		for (uint i = 0; i < m_OverlayStack.size(); i++)
 			m_OverlayStack[i]->onRender();
-
-		((Layer2D*)m_DebugLayer)->onRender();
+		if(m_DebugLayer->isVisible())
+			((Layer2D*)m_DebugLayer)->onRender();
 	}
 
 }

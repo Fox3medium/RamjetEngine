@@ -8,7 +8,7 @@ namespace Core
 	{
 
 		Layer::Layer()
-			: m_Window(Core::Init::Window::getWindowClass())
+			: m_Window(Core::Init::Window::getWindowClass()), b_IsVisible(true)
 		{
 		}
 
