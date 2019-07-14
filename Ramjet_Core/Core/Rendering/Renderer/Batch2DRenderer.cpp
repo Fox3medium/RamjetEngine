@@ -169,7 +169,7 @@ namespace Core {
 			{
 				char c = text[i];
 				texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
-				if (glyph != NULL)
+				if (glyph)
 				{
 
 					if (i > 0)
@@ -228,6 +228,9 @@ namespace Core {
 
 		void Batch2DRenderer::flush()
 		{
+			glDepthFunc(GL_NEVER);
+			glDisable(GL_DEPTH_TEST);
+
 			for (uint i = 0; i < m_TextureSlots.size(); i++)
 			{
 				API::setActiveTexture(GL_TEXTURE0 + i);
@@ -346,6 +349,7 @@ namespace Core {
 			using namespace Manager;
 			//Set framebuffer
 			m_ScreenBuffer = API::getScreenBuffer();
+			CORE_ASSERT(m_ScreenBuffer == 0);
 			m_Framebuffer = new FrameBuffer(m_ViewportSize);			
 			m_SimpleShader = Shader_Manager::SimpleShader();
 			m_SimpleShader->enable();

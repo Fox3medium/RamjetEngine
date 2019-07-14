@@ -1,6 +1,8 @@
 #include <CoreBasicInclude.h>
 #include "ForwardRenderer.h"
 
+#include <GLEW/glew.h>
+
 namespace Core
 {
 	namespace Rendering
@@ -52,6 +54,9 @@ namespace Core
 
 		void ForwardRenderer::flush()
 		{
+			glEnable(GL_DEPTH_TEST);
+			glDepthFunc(GL_LEQUAL);
+
 			for (uint i = 0; i < m_CommandQueue.size(); i++)
 			{
 				const RenderCommand& command = m_CommandQueue[i];

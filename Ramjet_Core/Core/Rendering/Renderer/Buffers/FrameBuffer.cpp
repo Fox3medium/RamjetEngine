@@ -31,6 +31,11 @@ namespace Core {
 			API::setViewport(0, 0, m_Width, m_Height);
 		}
 
+		void FrameBuffer::unbind()
+		{
+			API::bindFramebuffer(GL_FRAMEBUFFER, 0);
+		}
+
 		void FrameBuffer::clear()
 		{
 			API::setClearColor(m_ClearColor.x, m_ClearColor.y, m_ClearColor.z, m_ClearColor.w);
@@ -51,6 +56,7 @@ namespace Core {
 			API::bindFramebuffer(GL_FRAMEBUFFER, m_Data.framebufferID);
 			API::framebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, m_Texture->getID(), 0);
 			API::framebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, m_Data.depthbufferID);
+			API::bindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 
 	}

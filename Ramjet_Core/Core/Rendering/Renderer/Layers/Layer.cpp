@@ -20,9 +20,9 @@ namespace Core
 		{
 		}
 
-		bool Layer::onEvent()
+		void Layer::onEvent()
 		{
-			return false;
+
 		}
 
 		void Layer::onTick()

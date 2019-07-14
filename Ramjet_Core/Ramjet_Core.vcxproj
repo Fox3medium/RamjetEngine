@@ -295,6 +295,7 @@
     <ClInclude Include="Core\Common.h" />
     <ClInclude Include="Core\Controls\IControl.h" />
     <ClInclude Include="Core\Events\Event.h" />
+    <ClInclude Include="Core\Events\EventDispatcher.h" />
     <ClInclude Include="Core\Events\Events.h" />
     <ClInclude Include="Core\Events\IEventListener.h" />
     <ClInclude Include="Core\Events\KeyEvent.h" />

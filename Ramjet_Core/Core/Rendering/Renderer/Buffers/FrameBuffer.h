@@ -38,6 +38,7 @@ namespace Core {
 			~FrameBuffer();
 
 			void bind();
+			void unbind();
 			void clear();
 
 			inline const Maths::tvec2<uint>& getSize() const { return m_Size; }

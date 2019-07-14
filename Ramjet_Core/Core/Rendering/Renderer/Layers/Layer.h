@@ -21,7 +21,7 @@ namespace Core
 
 			virtual void init();
 			// TODO
-			virtual bool onEvent();
+			virtual void onEvent();
 			virtual void onTick();
 			virtual void onUpdate();
 			virtual void onRender();
