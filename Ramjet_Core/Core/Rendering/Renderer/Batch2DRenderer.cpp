@@ -34,6 +34,7 @@ namespace Core {
 		Batch2DRenderer::~Batch2DRenderer()
 		{
 			delete m_IBO;
+			delete m_ScreenQuad;
 			API::freeBuffer(m_VBO);
 			API::freeVertexArray(m_VAO);
 		}

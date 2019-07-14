@@ -1,9 +1,10 @@
 #include <CoreBasicInclude.h>
 #include <App/Application.h>
+#include <Managers/Shader_Manager.h>
+#include <Managers/Font_Manager.h>
 
 namespace App 
 {
-
 	Application::Application(const char* name, uint width, uint height, bool fullscreen)
 		: m_Name(name), m_Width(width), m_Height(height)
 	{
@@ -15,7 +16,7 @@ namespace App
 		delete window;
 	}
 
-	void Application::init()
+	void Application::platformInit()
 	{
 		window = new Core::Init::Window(m_Name, m_Width, m_Height);
 		C_Manager = new Core::Manager::Control_Manager();

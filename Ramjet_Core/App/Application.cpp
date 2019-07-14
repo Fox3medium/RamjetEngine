@@ -7,8 +7,16 @@ namespace App
 
 	Application* Application::s_Instance = nullptr;
 
-	void Application::pushLayer(Layer* layer)
+	void Application::init()
 	{
+		platformInit();
+
+		m_DebugLayer = new Core::Debug::DebugLayer();
+		m_DebugLayer->init();
+	}
+
+	void Application::pushLayer(Layer* layer)
+	{		
 		m_Layers.push_back(layer);
 		layer->init();
 	}
@@ -35,6 +43,7 @@ namespace App
 
 	void Application::tick()
 	{
+		m_DebugLayer->onTick();
 		for (uint i = 0; i < m_OverlayStack.size(); i++)
 			m_OverlayStack[i]->onTick();
 
@@ -44,6 +53,8 @@ namespace App
 
 	void Application::update()
 	{
+		m_DebugLayer->onUpdate();
+
 		for (uint i = 0; i < m_OverlayStack.size(); i++)
 			m_OverlayStack[i]->onUpdate();
 
@@ -58,6 +69,8 @@ namespace App
 		
 		for (uint i = 0; i < m_OverlayStack.size(); i++)
 			m_OverlayStack[i]->onRender();
+
+		((Layer2D*)m_DebugLayer)->onRender();
 	}
 
 }

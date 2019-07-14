@@ -3,12 +3,13 @@
 #include <CoreBasicInclude.h>
 #include <Core/Common.h>
 
-#include <map>
+#include <Utils/types.h>
 
-#include "../Core/Utils/Log.h"
-#include "2DEngine.h"
+#include <Init/Window.h>
+#include <Managers/Control_Manager.h>
 
 #include <Rendering/Renderer/Layers/Layer.h>
+#include <Debug/DebugLayer.h>
 #include <Utils/Timer.h>
 
 namespace App {
@@ -20,6 +21,8 @@ namespace App {
 	public:
 		Core::Init::Window* window;
 		Core::Manager::Control_Manager* C_Manager;
+
+		Core::Debug::DebugLayer* m_DebugLayer;
 
 	private:
 		static Application* s_Instance;
@@ -59,12 +62,13 @@ namespace App {
 		void resume();
 		void stop();
 
-		const unsigned int getFPS() const { return m_Fps; }
-		const unsigned int getUPS() const { return  m_UpdatePerSec; }
+		const uint getFPS() const { return m_Fps; }
+		const uint getUPS() const { return  m_UpdatePerSec; }
 
 		inline static Application& getApplication() { return *s_Instance; }
 
 	private:
+		void platformInit();
 		void run();
 
 	};

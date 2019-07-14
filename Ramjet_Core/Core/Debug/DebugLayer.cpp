@@ -27,9 +27,9 @@ namespace Core
 			renderer.setRenderTarget(RenderTarget::SCREEN);
 			for (int i = 0; i < 5; i++)
 			{
-				float y = 18.0f - i * 1.7f;
-				add(new Sprite(0, y, 6, 1.5f, 0x7f7f7f7f));
-				add(new Label(String("Item ") + std::to_string(i + 1), 0.2f, y + 0.4f, 0xffffffff));
+				float y = -9.0f + i * 1.7f;
+				add(new Sprite(-16, y, 6, 1.5f, 0x7f7f7f7f));
+				add(new Label(String("Item ") + std::to_string(i + 1), -16.0f + 0.2f, y + 0.4f, 0xffffffff));
 			}
 		}
 		void DebugLayer::onTick()

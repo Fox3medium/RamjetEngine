@@ -29,9 +29,9 @@ void TestLayer::onInit(Core::Rendering::Renderer2D& renderer, Core::Rendering::S
 	renderer.addPostFXPass(	new PostFXPass(Shader_Manager::FromFile("PostFX", "Assets/Shaders/postFXVert.glsl", "Assets/Shaders/postFXFrag.glsl")));
 	renderer.setPostFX(false);
 
-	Texture::setFilter(TextureFilter::NEAREST);
+	/*Texture::setFilter(TextureFilter::NEAREST);
 	add(new Sprite(0.0f, 0.0f, 8, 8, new Texture("Tex", "Assets/Test/747.png")));
-	add(new Sprite(-8.0f, -8.0f, 6, 6, 0xffff00ff));
+	add(new Sprite(-8.0f, -8.0f, 6, 6, new Texture("Test", "Assets/Test/wall.jpg")));*/
 
 	m_FPS = new Label("", -15.5f, 7.8f, DEBUG_COLOR_WHITE);
 	add(m_FPS);
