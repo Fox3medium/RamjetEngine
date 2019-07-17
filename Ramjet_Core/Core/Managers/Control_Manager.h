@@ -47,6 +47,8 @@ namespace Core {
 
 		private:
 
+			static int getKey(int keyCode);
+
 		private:
 			//FPSCamera* playerCamera;
 

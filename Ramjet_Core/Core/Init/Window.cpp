@@ -202,11 +202,11 @@ namespace Core {
 
 		void Window::processKeyInput(GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
-			if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+			if(scancode == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
 			{
 				glfwSetWindowShouldClose(window, true);
 			}
-			Control_Manager::notifyKeyPress(key, action, m_deltaTime, InputType::KEYBOARD);
+			Control_Manager::notifyKeyPress(scancode, action, m_deltaTime, InputType::KEYBOARD);
 		}
 
 		void Window::processMButtonInput(GLFWwindow* window, int button, int action, int mods)

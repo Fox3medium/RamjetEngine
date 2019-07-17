@@ -20,6 +20,8 @@ namespace Core
 			: Layer2D(Shader_Manager::DefaultShader(), mat4::Orthographic(0.0f, 32.0f, 0.0f, 18.0f, -1.0f, 1.0f)), 
 			m_Application(App::Application::getApplication())
 		{
+			m_FPSAverage = 0;
+			m_UpdateNumber = 0;
 		}
 		DebugLayer::~DebugLayer()
 		{
@@ -36,7 +38,7 @@ namespace Core
 			
 		}
 		void DebugLayer::onTick()
-		{
+		{			
 			m_FPSLabel->m_Text = std::to_string(m_Application.getFPS());
 		}
 		void DebugLayer::onUpdate()
@@ -47,7 +49,8 @@ namespace Core
 			if (Control_Manager::isKeyPressed(GLFW_KEY_LEFT_CONTROL) 
 				&& Control_Manager::isKeyTyped(GLFW_KEY_TAB))
 			{
-				DebugMenu::setVisible(!DebugMenu::isVisible());
+				/*DebugMenu::setVisible(!DebugMenu::isVisible());*/
+				CORE_INFO("Q is : ", GLFW_KEY_TAB);
 			}
 		}
 		bool DebugLayer::onMouseMovedEvent()
@@ -60,8 +63,8 @@ namespace Core
 		}
 		void DebugLayer::onRender(Rendering::Renderer2D& renderer)
 		{
-			if (DebugMenu::isVisible())
-				DebugMenu::onRender(renderer);
+			/*if (DebugMenu::isVisible())
+				DebugMenu::onRender(renderer);*/
 		}
 	}
 }

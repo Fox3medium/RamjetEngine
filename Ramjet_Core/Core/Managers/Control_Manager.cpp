@@ -87,12 +87,12 @@ namespace Core {
 
 		bool Control_Manager::isKeyPressed(unsigned int keycode)
 		{
-			return m_Keys[keycode];
+			return m_Keys[getKey(keycode)];
 		}
 
 		bool Control_Manager::isKeyTyped(unsigned int keycode)
 		{
-			return m_KeysTyped[keycode];
+			return m_KeysTyped[getKey(keycode)];
 		}
 
 		bool Control_Manager::isMouseButtonPressed(unsigned int keycode)
@@ -134,6 +134,12 @@ namespace Core {
 		void Control_Manager::setPlayerSpeed(float speed)
 		{
 			playerSpeed = speed;
+		}
+
+		int Control_Manager::getKey(int keyCode)
+		{
+			int key = glfwGetKeyScancode(keyCode);
+			return key;
 		}
 
 		void Control_Manager::updateInput()

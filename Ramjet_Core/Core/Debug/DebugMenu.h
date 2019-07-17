@@ -16,7 +16,7 @@ namespace Core
 		{
 		private:
 			static DebugMenu* s_Instance;
-		private:
+
 			bool m_Visible;
 			std::vector<DebugMenuItem> m_DebugMenuItems;
 		public:

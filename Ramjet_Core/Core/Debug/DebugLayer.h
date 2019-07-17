@@ -24,6 +24,10 @@ namespace Core
 		private:
 			App::Application& m_Application;
 			Rendering::Label* m_FPSLabel;
+
+			uint m_UpdateNumber;
+			float m_FPSAverage;
+			
 		public:
 			DebugLayer();
 			~DebugLayer();
