@@ -19,13 +19,15 @@ namespace Core {
 			Sprite(Texture* texture);
 			Sprite(float x, float y, Texture* texture);
 			Sprite(float x, float y, float width, float height, Texture* texture);
-			Sprite(float x, float y, float width, float height, const unsigned int color);
-			Sprite(float x, float y, float width, float height, Maths::vec4 color);
+			Sprite(float x, float y, float width, float height, const uint color);
+			Sprite(float x, float y, float width, float height, const Maths::vec4& color);
 
 			void setPosition(float x, float y, float z);
 			void setPosition(const Maths::vec3& vect);
 
 			void setUV(const std::vector<Maths::vec2>& uv);
+
+			void setTexture(Texture* texture) { m_Texture = texture; }
 		};
 
 	}

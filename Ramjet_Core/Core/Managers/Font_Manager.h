@@ -15,6 +15,7 @@ namespace Core {
 		{
 		private:
 			static std::map<String, Font*> m_Fonts;
+			static Maths::vec2 s_Scale;
 
 		public:
 			static void init();
@@ -22,7 +23,10 @@ namespace Core {
 			static Font* get();
 			static Font* get(const String& name);
 			static Font* get(const String& name, unsigned int size);
+			static Font* get(uint size);
 			static void clean();
+
+			static void setScale(const Maths::vec2& scale) { s_Scale = scale; }
 
 		private:
 			Font_Manager() {}

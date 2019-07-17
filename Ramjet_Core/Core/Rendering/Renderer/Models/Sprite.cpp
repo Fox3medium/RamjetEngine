@@ -28,12 +28,12 @@ namespace Core {
 			m_Texture = texture;
 		}
 
-		Sprite::Sprite(float x, float y, float width, float height, const unsigned int color)
+		Sprite::Sprite(float x, float y, float width, float height, const uint color)
 			: Renderable2D(Maths::vec3(x, y, 0.0f), Maths::vec2(width, height), color), position(m_Position), size(m_Size)
 		{
 		}
 
-		Sprite::Sprite(float x, float y, float width, float height, Maths::vec4 color)
+		Sprite::Sprite(float x, float y, float width, float height, const Maths::vec4& color)
 			: Renderable2D(Maths::vec3(x, y, 0.0f), Maths::vec2(width, height), 0), position(m_Position), size(m_Size)
 		{
 			setColor(color);

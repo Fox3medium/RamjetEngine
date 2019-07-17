@@ -7,6 +7,7 @@ namespace Core {
 	namespace Manager {
 
 		std::map<String, Font*> Font_Manager::m_Fonts;
+		Maths::vec2 Font_Manager::s_Scale;
 
 		void Font_Manager::init()
 		{
@@ -41,6 +42,21 @@ namespace Core {
 			}
 			
 			return m_Fonts["SourceSansPro"];
+		}
+
+		Font* Font_Manager::get(uint size)
+		{
+			// TODO
+			/*for (Font* font : s_Fonts)
+			{
+				if (font->GetSize() == size)
+					return font;
+			}
+			Font* result = new Font("SourceSansPro", internal::DEFAULT_FONT, internal::DEFAULT_FONT_SIZE, size);
+			result->SetScale(s_Scale);
+			Add(result);
+			return result;*/
+			return nullptr;
 		}
 
 		void Font_Manager::clean()

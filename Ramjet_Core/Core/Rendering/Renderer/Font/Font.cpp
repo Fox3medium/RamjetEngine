@@ -8,7 +8,7 @@ namespace Core {
 	namespace Rendering {
 
 		Font::Font(String name, String filename, float size)
-			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(1280/32.0f, 720/18.0f)
+			: m_Name(name), m_Filename(filename), m_Size(size), m_Scale(1280/32.0f, 720/18.0f), m_Textures(nullptr)
 		{
 			if (size != FONT_STD_SIZE)
 				m_Name = name + std::to_string(size);
@@ -19,7 +19,7 @@ namespace Core {
 		}
 
 		Font::Font(String name, const byte* data, unsigned int datasize, float size)
-			: m_Name(name), m_Filename("NULL"), m_Size(size), m_Scale(1.0f, 1.0f)
+			: m_Name(name), m_Filename("NULL"), m_Size(size), m_Scale(1.0f, 1.0f), m_Textures(nullptr)
 		{
 			m_FTAtlas = ftgl::texture_atlas_new(512, 512, 2);
 			m_FTFont = ftgl::texture_font_new_from_memory(m_FTAtlas, size, data, datasize);
@@ -35,6 +35,14 @@ namespace Core {
 		const uint Font::getID() const
 		{
 			return m_FTAtlas->id;
+		}
+
+		Texture* Font::getTexture() const
+		{
+			if (m_Textures != nullptr || !m_FTAtlas->id)
+				return m_Textures;
+			m_Textures = new Texture(m_FTAtlas->id);
+			return m_Textures;
 		}
 
 	}

@@ -2,7 +2,7 @@
 
 #include <Core/Common.h>
 #include <Utils/types.h>
-
+#include "../Texture/Texture.h"
 #include <Utils/Maths/vec2.h>
 
 namespace ftgl {
@@ -26,20 +26,24 @@ namespace Core {
 			Maths::vec2 m_Scale;
 			String m_Name;
 			String m_Filename; 
+			mutable Texture* m_Textures;
 
 		public:
 			Font(String name, String filename, float size);
 			Font(String name, const byte* data, unsigned int datasize, float size);
 
-			inline ftgl::texture_font_t* getFTFont() const { return m_FTFont; }
 
 			void setScale(float x, float y);
+			void setScale(const Maths::vec2& scale) { m_Scale = scale; }
 
 			const uint getID() const;
+			inline ftgl::texture_font_t* getFTFont() const { return m_FTFont; }
 			inline const Maths::vec2& getScale() const { return m_Scale; }
 			inline const String& getName() const { return m_Name; }
 			inline const String& getFilename() const { return m_Filename; }
-			inline const float getSize() const { return m_Size; }
+			inline float getSize() const { return m_Size; }
+
+			Texture* getTexture() const;
 		};
 
 	}

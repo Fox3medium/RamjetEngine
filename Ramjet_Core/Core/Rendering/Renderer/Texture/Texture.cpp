@@ -32,6 +32,12 @@ namespace Core {
 			m_TextureID = load();
 		}
 
+		Texture::Texture(uint glID)
+			: m_Name(std::to_string(glID)), m_FileName("NULL")
+		{
+			m_TextureID = glID;
+		}
+
 		Texture::~Texture()
 		{
 			API::freeTexture(m_TextureID);

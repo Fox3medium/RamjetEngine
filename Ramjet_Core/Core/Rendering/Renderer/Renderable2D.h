@@ -27,7 +27,7 @@ namespace Core {
 			// Mask ID
 			float mid;
 			// Color
-			unsigned int color;
+			uint color;
 		};
 
 #define RENDERER_VERTEX_SIZE	sizeof(VertexData)

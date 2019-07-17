@@ -41,6 +41,7 @@ namespace Core {
 			Texture(uint width, uint height, uint bits = 24);
 			Texture(const String& fileName);
 			Texture(const String& name, const String& fileName);
+			Texture(uint glID);
 			~Texture();
 			void bind() const;
 			void unbind() const;

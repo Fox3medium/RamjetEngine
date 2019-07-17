@@ -5,9 +5,11 @@
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Dependencies\DLLs_Backup\OpenAL32.dll
           4 file(s) copied.
   GameTest.cpp
+  Test3D.cpp
   TestLayer.cpp
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file src\Layer\TestLayer.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file src\GameTest.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file src\Layer\Test3D.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\TestLayer.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\TestLayer.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\TestLayer.cpp)
@@ -16,27 +18,31 @@ D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Rend
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\GameTest.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(153,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\Layer\TestLayer.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(165): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,unsigned int,_Ty,unsigned int,_Ty>(char *,int &,First &&,unsigned int &&,_Ty &&,unsigned int &&,_Ty &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(165): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(165): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(165): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(165): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(165): message :         ] (compiling source file src\Layer\TestLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file src\Layer\Test3D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151,3): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\Layer\TestLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,unsigned int,_Ty,unsigned int,_Ty>(char *,int &,First &&,unsigned int &&,_Ty &&,unsigned int &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(162): message :         ] (compiling source file src\Layer\TestLayer.cpp)
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\src\Layer\TestLayer.cpp(56): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,uint,const char*,uint,const char*>(int,bool,const char *,uint,const char *,uint,const char *)' being compiled
 D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(144,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file src\Layer\TestLayer.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :             _Ty=const char *,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :             First=const char *
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :         ] (compiling source file src\Layer\TestLayer.cpp)
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,const char*>(char *,int &,First &&,const char *&&)' being compiled
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :         with
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :         [
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :             _Ty=uint,
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :             First=uint
-D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(157): message :         ] (compiling source file src\Layer\TestLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :         ] (compiling source file src\Layer\TestLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,const char*>(char *,int &,First &&,const char *&&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :             _Ty=uint,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :             First=uint
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(151): message :         ] (compiling source file src\Layer\TestLayer.cpp)
   libvorbis_static.lib(info.obj) : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
 LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
      Creating library D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.lib and object D:\GameEngine\Ramjet_Engine\Ramjet_Core\bin_Game\Debug\x64\Game_Tests_Example.exp
@@ -52,6 +58,12 @@ glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\RoundedCube.obj
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\Sphere.obj
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Models\SphereHighPoly.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Violin\p-3357-Hair_White-300x300.jpg
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Violin\taolun-guo-violin-maps-sheet.jpg
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Violin\vieja-textura-de-papel-con-las-notas-musicales-5977907.jpg
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Violin\violino.obj
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Violin\violino0001.png
+  D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Objects\Violin\xpreto-sao-gabriel.jpg.pagespeed.ic.QRpmJdp2m_.jpg
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BaslicLightFrag.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BaslicLightVert.glsl
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Shaders\BlockFrag.glsl
@@ -85,4 +97,4 @@ glew32s.lib(glew.obj) : warning LNK4099: PDB '' was not found with 'glew32s.lib(
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\dirt.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\stone.png
   D:\GameEngine\Ramjet_Engine\Ramjet_Core\Game_Tests_Example\Assets\Tex\wall.jpg
-  39 File(s) copied
+  45 File(s) copied
