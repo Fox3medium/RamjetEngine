@@ -14,23 +14,7 @@ namespace Core {
 
 		Control_Manager::Control_Manager()
 		{
-			playerSpeed = 2.5f;
-			gameStarted = false;
-
-			for (int i = 0; i < MAX_KEYS; i++) 
-			{
-				s_Input->m_Keys[i] = false;
-				s_Input->m_KeysState[i] = false;
-				s_Input->m_KeysTyped[i] = false;
-			}			
-
-			for (int i = 0; i < MAX_BUTTONS; i++)
-			{
-				s_Input->m_MouseButtons[i] = false;
-				s_Input->m_MouseButtonsState[i] = false;
-				s_Input->m_MouseButtonsTyped[i] = false;
-			}
-			//playerCamera = new FPSCamera();
+			init();
 		}
 
 		Control_Manager::~Control_Manager()
@@ -71,8 +55,6 @@ namespace Core {
 			{
 				m_NumberOfKeysPressed--;
 			}
-
-			CORE_INFO(m_NumberOfKeysPressed);
 
 			if (inputType == InputType::KEYBOARD)
 			{

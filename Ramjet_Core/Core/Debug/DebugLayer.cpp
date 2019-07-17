@@ -33,11 +33,7 @@ namespace Core
 			DebugMenu::init();
 			renderer.setRenderTarget(RenderTarget::SCREEN);
 			m_FPSLabel = new Rendering::Label("", 14.0f, 8.5f, Font_Manager::get(), DEBUG_COLOR_WHITE);
-			add(m_FPSLabel);
-
-			DebugMenu::add("Example");
-			DebugMenu::add("Example");
-			
+			add(m_FPSLabel);			
 		}
 
 		void DebugLayer::onTick()
@@ -47,6 +43,7 @@ namespace Core
 
 		void DebugLayer::onUpdate()
 		{
+			DebugMenu::get()->onUpdate();
 		}
 
 		void DebugLayer::onEvent()
@@ -55,6 +52,7 @@ namespace Core
 				&& Control_Manager::isKeyTyped(GLFW_KEY_TAB))
 			{
 				DebugMenu::setVisible(!DebugMenu::isVisible());
+				CORE_INFO("SET VISIBLE");
 			}
 		}
 
@@ -71,7 +69,7 @@ namespace Core
 		void DebugLayer::onRender(Rendering::Renderer2D& renderer)
 		{
 			if (DebugMenu::isVisible())
-				DebugMenu::onRender(renderer);
+				DebugMenu::get()->onRender(renderer);
 		}
 
 	}

@@ -40,6 +40,8 @@ namespace Core
 
 			void onEvent() override;
 			bool onMouseMovedEvent();
+			bool onMouseReleasedEvent();
+			bool onMousePressedEvent();
 			bool onKeyPressedEvent();
 
 			void onRender(Rendering::Renderer2D& renderer) override;

@@ -270,6 +270,12 @@
     <ClCompile Include="Core\UI\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Debug\Items\DebugMenuSlider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Debug\Items\DebugMenuItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Utils\Fileutils.h">
@@ -621,6 +627,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Core\UI\Button.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Debug\Items\DebugMenuSlider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Debug\Items\DebugMenuItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Debug\Items\DebugMenuAction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

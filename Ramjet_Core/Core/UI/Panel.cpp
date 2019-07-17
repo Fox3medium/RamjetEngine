@@ -22,7 +22,7 @@ namespace Core
 			for (uint i = 0; i < m_Widgets.size(); i++)
 				delete m_Widgets[i];
 
-			App::Application::getApplication().popOverlay(/*this*/);
+			App::Application::getApplication().popOverlay(this);
 		}
 
 		Widget* Panel::add(Widget* widget)

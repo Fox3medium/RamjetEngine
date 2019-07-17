@@ -12,6 +12,12 @@
 #include <Audio/Sound.h>
 #include <Managers/Sound_Manager.h>
 
+// DEBUG UI
+#include <Debug/DebugLayer.h>
+#include <Debug/DebugMenu.h>
+#include <Debug/Items/DebugMenuAction.h>
+#include <Debug/Items/DebugMenuItem.h>
+
 // ENTITY
 #include <Rendering/Entity/Entity.h>
 #include <Rendering/Entity/Component/Component.h>

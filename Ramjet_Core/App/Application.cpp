@@ -22,10 +22,16 @@ namespace App
 		layer->init();
 	}
 
-	Layer* Application::popLayer()
+	Layer* Application::popLayer(Layer* layer)
 	{
-		Layer* layer = m_Layers.back();
-		m_Layers.pop_back();
+		for (uint i = 0; i < m_Layers.size(); i++)
+		{
+			if (m_Layers[i] == layer)
+			{
+				m_Layers.erase(m_Layers.begin() + i);
+				break;
+			}
+		}
 		return layer;
 	}
 
@@ -35,10 +41,16 @@ namespace App
 		layer->init();
 	}
 
-	Layer* Application::popOverlay()
+	Layer* Application::popOverlay(Layer* layer)
 	{
-		Layer* layer = m_OverlayStack.back();
-		m_OverlayStack.pop_back();
+		for (uint i = 0; i < m_OverlayStack.size(); i++)
+		{
+			if (m_OverlayStack[i] == layer)
+			{
+				m_OverlayStack.erase(m_OverlayStack.begin() + i);
+				break;
+			}
+		}
 		return layer;
 	}
 

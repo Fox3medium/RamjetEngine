@@ -1,16 +1,6 @@
 #pragma once
 
-#include <App/Application.h>
-#include <Utils/Maths/maths.h>
-
-#include <Rendering/Renderer/Models/Model.h>
-#include <Rendering/Entity/Entity.h>
-#include <Rendering/Entity/Component/Components.h>
-
-#include <Rendering/Renderer/Layers/Layer3D.h>
-#include <Rendering/Renderer/Renderer3D.h>
-#include <Managers/Managers.h>
-#include <Utils/Log.h>
+#include <RamjetCore.h>
 
 class Test3D : public Core::Rendering::Layer3D 
 {

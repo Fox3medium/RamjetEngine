@@ -51,10 +51,10 @@ namespace App {
 		virtual ~Application();
 
 		void pushLayer(Layer* layer);
-		Layer* popLayer();
+		Layer* popLayer(Layer* layer);
 
 		void pushOverlay(Layer* layer);
-		Layer* popOverlay();
+		Layer* popOverlay(Layer* layer);
 
 		// Run to initialize the engine
 		virtual void init();

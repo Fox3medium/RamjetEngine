@@ -7,6 +7,7 @@ using namespace Maths;
 using namespace Manager;
 using namespace Entities;
 using namespace Components;
+using namespace Debug;
 
 Test3D::Test3D()
 	: Layer3D(new Scene())
@@ -19,6 +20,8 @@ Test3D::Test3D()
 Test3D::~Test3D()
 {
 }
+
+float xTransform = -4.0f;
 
 void Test3D::onInit(Core::Rendering::Renderer3D& renderer, Core::Rendering::Scene& scene)
 {
@@ -48,6 +51,7 @@ void Test3D::onInit(Core::Rendering::Renderer3D& renderer, Core::Rendering::Scen
 	scene.add(m_Cube);
 	scene.add(m_Plane);
 
+	DebugMenu::add("Cube X", &xTransform, -20.0f, 20.0f);
 }
 
 void Test3D::onTick()
@@ -64,7 +68,7 @@ void Test3D::onUpdate()
 
 	mat4 transform = mat4::Rotate(m_Rotation, vec3(1, 0, 0)) * mat4::Rotate(m_Rotation, vec3(0, 1, 0)) * mat4::Rotate(m_Rotation, vec3(0, 0, 1));
 	mat4 c_transform = mat4::Rotate(m_Rotation, vec3(0, 1, 0));
-	cubeTransform->transform = mat4::Translate(vec3(-4, 0, 0)) * c_transform * mat4::Scale(vec3(1.4f, 1.4f, 1.4f));
+	cubeTransform->transform = mat4::Translate(vec3(xTransform, 0, 0)) * c_transform * mat4::Scale(vec3(1.4f, 1.4f, 1.4f));
 	sphereTransform->transform = mat4::Translate(vec3(4, 2, 0)) * transform;
 	m_Rotation++;
 }

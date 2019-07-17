@@ -2,62 +2,57 @@
 
 #include <CoreBasicInclude.h>
 #include <Rendering/Renderer/Renderer2D.h>
+#include <UI/Panel.h>
+#include "Items/DebugMenuAction.h"
+#include "Items/DebugMenuItem.h"
+#include "Items/DebugMenuSlider.h"
+#include <UI/Slider.h>
 
 namespace Core 
 {
 	namespace Debug 
 	{
-		struct IAction
+		typedef std::vector<IAction*> ActionList;
+
+		struct DebugMenuSettings
 		{
-			String name;
-			IAction(const String& name)
-				: name(name) {}
-			virtual String toString() const { return name; }
+			float padding;
+			float fontSize;
 		};
 
-		template<typename T>
-		struct ValueAction : IAction
+		class CORE_API DebugMenu
 		{
 		private:
-			using Getter = std::function<T()>;
-			using Setter = std::function<void(T)>;
-
-			Getter m_Getter;
-			Setter m_Setter;
-		public:
-			ValueAction(const String& name, const Getter& getter, const Setter& setter)
-				: IAction(name), m_Getter(getter), m_Setter(setter)
-			{
-			}
-			String toString() const override
-			{
-				return name + " " + std::to_string(m_Getter());
-			}
-		};
-
-		typedef ValueAction<int>	IntAction;
-		typedef ValueAction<float>	FloatAction;
-
-		class DebugMenu
-		{
-		public:
 			static DebugMenu* s_Instance;
-
+		private:
 			bool m_Visible;
-			std::vector<IAction*> m_DebugMenuItems;
+			DebugMenuSettings m_Settings;
+			ActionList m_ActionList;
 
-			float m_Padding, m_FontSize;
-
+			// DebugMenuSlider* m_Slider;
+			UI::Panel* m_Panel;
+			UI::Slider* m_Slider;
 		public:
+			static DebugMenu* get();
+
 			static void init();
 			static void add(const String& name);
 			static void add(const String& name, float* value);
+			static void add(const String& name, float* value, float mininmum, float maximum);
 
 			static bool isVisible();
 			static void setVisible(bool visible);
 
-			static void onRender(Rendering::Renderer2D& renderer);
+			static DebugMenuSettings& getSettings();
 
+			void onActivate();
+			void onDeactivate();
+			void editValue(float value, const UI::Slider::ValueChangedCallback& callback);
+
+			bool onMousePressed();
+			bool onMouseReleased();
+			void onUpdate();
+			void onRender(Rendering::Renderer2D& renderer);
 		private:
 			DebugMenu();
 		};
