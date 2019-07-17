@@ -19,6 +19,7 @@ namespace Core
 
 			bool m_Visible;
 			std::vector<DebugMenuItem> m_DebugMenuItems;
+
 		public:
 			static void init();
 			static void add(const String& name);

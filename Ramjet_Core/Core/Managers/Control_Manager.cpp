@@ -46,6 +46,19 @@ namespace Core {
 		{
 			playerSpeed = 2.5f * deltaTime;
 
+			if(action != GLFW_RELEASE) 
+			{
+				if(!m_Keys[keycode])
+				{
+					m_NumberOfKeysPressed++;
+				}
+			} else 
+			{
+				m_NumberOfKeysPressed--;
+			}
+
+			CORE_INFO(m_NumberOfKeysPressed);
+
 			if (inputType == InputType::KEYBOARD)
 			{
 				m_Keys[keycode] = action != GLFW_RELEASE;
@@ -103,7 +116,7 @@ namespace Core {
 		bool Control_Manager::isKeyEvent()
 		{
 			// TODO STATIC SOLUTION
-			return true;
+			return m_NumberOfKeysPressed != 0;
 		}
 
 		/*Maths::vec2 Control_Manager::getMousePosition()

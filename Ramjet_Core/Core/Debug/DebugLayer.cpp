@@ -23,9 +23,11 @@ namespace Core
 			m_FPSAverage = 0;
 			m_UpdateNumber = 0;
 		}
+
 		DebugLayer::~DebugLayer()
 		{
 		}
+
 		void DebugLayer::onInit(Rendering::Renderer2D& renderer, Rendering::Shader& shader)
 		{
 			DebugMenu::init();
@@ -37,34 +39,41 @@ namespace Core
 			DebugMenu::add("Example");
 			
 		}
+
 		void DebugLayer::onTick()
 		{			
 			m_FPSLabel->m_Text = std::to_string(m_Application.getFPS());
 		}
+
 		void DebugLayer::onUpdate()
 		{
 		}
+
 		void DebugLayer::onEvent()
 		{
 			if (Control_Manager::isKeyPressed(GLFW_KEY_LEFT_CONTROL) 
 				&& Control_Manager::isKeyTyped(GLFW_KEY_TAB))
 			{
+				CORE_INFO("KEY CTRL TAB PRESSED!");
 				/*DebugMenu::setVisible(!DebugMenu::isVisible());*/
-				CORE_INFO("Q is : ", GLFW_KEY_TAB);
 			}
 		}
+
 		bool DebugLayer::onMouseMovedEvent()
 		{
 			return false;
 		}
+
 		bool DebugLayer::onKeyPressedEvent()
 		{
 			return false;
 		}
+
 		void DebugLayer::onRender(Rendering::Renderer2D& renderer)
 		{
 			/*if (DebugMenu::isVisible())
 				DebugMenu::onRender(renderer);*/
 		}
+
 	}
 }
