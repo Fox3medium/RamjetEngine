@@ -1,6 +1,489 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(437,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
   cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  Application.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  PosixTimer.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  Win64Application.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  Win64Log.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  Win64Timer.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  Sound.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  DebugLayer.cpp
+  DebugMenu.cpp
+  DebugMenuItem.cpp
+  DebugMenuSlider.cpp
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  Event.cpp
+  KeyEvent.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(28,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(33,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(38,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(43,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(48,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(53,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(58,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(63,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(68,17): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Debug\Items\DebugMenuItem.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Debug\DebugMenu.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file App\Application.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\Items\DebugMenuItem.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\Items\DebugMenuItem.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\Items\DebugMenuItem.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\Items\DebugMenuItem.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file App\Application.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file App\Application.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file App\Application.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file App\Application.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\App\Application.cpp(69,41): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\App\Application.cpp(74,35): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugMenu.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugMenu.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugMenu.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Debug\DebugMenu.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Debug\DebugLayer.cpp)
+  MouseEvent.cpp
+  InitWindow.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Debug\DebugLayer.cpp(55): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*>(int,bool,const char *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Debug\DebugLayer.cpp)
+  Window.cpp
+  AI_Director.cpp
+  Behaviour_Manager.cpp
+  Strategy_Manager.cpp
+  Wave_Manager.cpp
+  Control_Manager.cpp
+  Embedded.cpp
   Font_Manager.cpp
+  AI_Manager.cpp
+  Layer_Manager.cpp
+  Mesh_Manager.cpp
+  Scene_Manager.cpp
+  Shader_Manager.cpp
+  Sound_Manager.cpp
+  Texture_Manager.cpp
+  Camera.cpp
+  FPS_Camera.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Debug\DebugLayer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(28,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(33,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(38,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(43,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(48,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(53,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(58,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(63,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(68,17): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(28,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(33,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(38,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(43,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(48,15): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(53,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(58,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(63,16): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Maths\maths_func.h(68,17): warning C4244:  'return': conversion from 'double' to 'float', possible loss of data (compiling source file Core\Rendering\Camera\FPS_Camera.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(95,21): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(136,29): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(221,19): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(222,19): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+  Component.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(233,18): warning C4244:  'initializing': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Managers\Mesh_Manager.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Managers\Control_Manager.cpp(75,19): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Managers\Control_Manager.cpp(76,19): warning C4244:  '=': conversion from 'double' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Managers\Mesh_Manager.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Managers\Mesh_Manager.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Managers\Mesh_Manager.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Managers\Mesh_Manager.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Init\Window.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Init\Window.cpp)
+  MeshComponent.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\Window.cpp(51): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*>(int,bool,const char *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Init\Window.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Init\Window.cpp)
+  ModelComponent.cpp
+  TransformComponent.cpp
+  Entity.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Init\Window.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Init\InitWindow.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Init\InitWindow.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Init\InitWindow.cpp(22): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*>(int,bool,const char *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Init\InitWindow.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Init\InitWindow.cpp)
+  Material.cpp
+  CoreOpenGLBuffer.cpp
+  CoreRenderAPI.h
+  CoreOpenGLError.cpp
+  CoreOpenGLRenderAPI.cpp
+  Batch2DRenderer.cpp
+  Buffer.cpp
+  BufferLayout.cpp
+  FrameBuffer.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Init\InitWindow.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Entity\Component\MeshComponent.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Material\Material.cpp(36,4): warning C4311:  'type cast': pointer truncation from 'const Core::Rendering::Material *' to 'long'
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Material\Material.cpp(36,4): warning C4302:  'type cast': truncation from 'const Core::Rendering::Material *' to 'long'
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Entity\Component\ModelComponent.cpp)
+  IndexBuffer.cpp
+  VertexArray.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Entity\Entity.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Platform\CoreRenderAPI.h)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLRenderAPI.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLBuffer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Material\Material.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty,long>(char *,int &,First &&,_Ty &&,long &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Material\Material.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Material\Material.cpp(36): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*,long>(int,bool,const char *,const char *,long)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Material\Material.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=long,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=long
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Material\Material.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,long>(char *,int &,First &&,long &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Material\Material.cpp)
+  Font.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty,unsigned int,_Ty,_Ty,_Ty,_Ty,_Ty,int>(char *,int &,First &&,_Ty &&,unsigned int &&,_Ty &&,_Ty &&,_Ty &&,_Ty &&,_Ty &&,int &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp(15): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*,GLenum,const char*,const char*,const char*,const char*,const char*,int>(int,bool,const char *,const char *,GLenum,const char *,const char *,const char *,const char *,const char *,int)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=int,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=int
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp)
+  ForwardRenderer.cpp
+  Group.cpp
+  Layer.cpp
+  Layer2D.cpp
+  Layer3D.cpp
+  Label.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,int>(char *,int &,First &&,int &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Platform\OpenGL\CoreOpenGLError.cpp)
+  Mesh.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Buffers\FrameBuffer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Batch2DRenderer.cpp(496): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*>(int,bool,const char *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+  Model.cpp
+  Sprite.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Renderer\Batch2DRenderer.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Buffers\VertexArray.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Buffers\IndexBuffer.cpp)
+  PostFX.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\ForwardRenderer.cpp)
+  PostFXPass.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Groups\Group.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Layers\Layer2D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Groups\Group.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Groups\Group.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Groups\Group.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Groups\Group.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Models\Label.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer2D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer2D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer2D.cpp)
+  Shader.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Layers\Layer2D.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Label.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Label.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Label.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Label.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Layers\Layer3D.cpp)
+  ShaderUniform.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Models\Mesh.cpp)
+  Texture.cpp
+  Scene.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Models\Model.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(113,66): warning C4267:  'argument': conversion from 'size_t' to 'uint', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(123,66): warning C4267:  'argument': conversion from 'size_t' to 'uint', possible loss of data
+  Button.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
+  Panel.cpp
+  Slider.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Sprite.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Model.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty,_Ty,_Ty>(char *,int &,First &&,_Ty &&,_Ty &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Renderer\Models\Model.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(48): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*,const _Elem*,const char*>(int,bool,const char *,const char *,const _Elem *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(48): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(48): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(48): message :             _Elem=char
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Models\Model.cpp(48): message :         ]
+  Widget.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\PostFX\PostFX.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\PostFX\PostFXPass.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\PostFX\PostFXPass.cpp(24,108): warning C4244:  'argument': conversion from 'uint' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\PostFX\PostFXPass.cpp(24,87): warning C4244:  'argument': conversion from 'uint' to 'float', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Models\Model.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Renderer\Models\Model.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Renderer\Models\Model.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Shader\Shader.cpp(63,45): warning C4267:  'initializing': conversion from 'size_t' to 'uint', possible loss of data
+  Fileutils.cpp
+  ImageLoader.cpp
+  AABB.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Shader\Shader.cpp(67,44): warning C4267:  'initializing': conversion from 'size_t' to 'uint', possible loss of data
+  mat4.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Renderer\Texture\Texture.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Shader\Shader.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Renderer\Shader\Shader.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Shader\Shader.cpp(120): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*>(int,bool,const char *,const char *)' being compiled
+  Quaternion.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\Rendering\Scene\Scene.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Shader\Shader.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Renderer\Shader\Shader.cpp)
+  Rectangle.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Renderer\Shader\Shader.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Texture\Texture.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty,unsigned int,_Ty,_Ty,_Ty>(char *,int &,First &&,_Ty &&,unsigned int &&,_Ty &&,_Ty &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Renderer\Texture\Texture.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Texture\Texture.cpp(78): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*,unsigned int,const char*,const _Elem*,const char*>(int,bool,const char *,const char *,unsigned int,const char *,const _Elem *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Texture\Texture.cpp(78): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Texture\Texture.cpp(78): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Texture\Texture.cpp(78): message :             _Elem=char
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Texture\Texture.cpp(78): message :         ]
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Renderer\Texture\Texture.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Renderer\Texture\Texture.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Renderer\Texture\Texture.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\UI\Button.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\UI\Panel.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\UI\Slider.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Button.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Button.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Panel.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Button.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Panel.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Button.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Panel.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Panel.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Slider.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Slider.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Slider.cpp)
+  vec2.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Slider.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Fileutils.cpp(9,63): warning C4390:  ';': empty controlled statement found; is this the intent?
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Platform\OpenGL\CoreOpenGLRender.inl(197,93): warning C4312:  'type cast': conversion from 'uint' to 'const GLvoid *' of greater size (compiling source file Core\UI\Widget.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(164,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Scene\Scene.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Scene\Scene.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Scene\Scene.cpp(39): message :  see reference to function template instantiation 'void Logs::Internal::log_message<const char*,const char*>(int,bool,const char *,const char *)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(67,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Widget.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(68,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Widget.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(69,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Widget.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Rendering\Renderer\Renderable2D.h(70,12): warning C4244:  'initializing': conversion from 'float' to 'uint', possible loss of data (compiling source file Core\UI\Widget.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(155,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data (compiling source file Core\Rendering\Scene\Scene.cpp)
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty>(char *,int &,First &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(168): message :         ] (compiling source file Core\Rendering\Scene\Scene.cpp)
+  vec3.cpp
+  vec4.cpp
+  String.cpp
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :  see reference to function template instantiation 'void Logs::Internal::print_log_internal<_Ty,_Ty>(char *,int &,First &&,_Ty &&)' being compiled
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         with
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         [
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             _Ty=const char *,
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :             First=const char *
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Core\Utils\Log.h(176): message :         ] (compiling source file Core\Rendering\Scene\Scene.cpp)
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  platform.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  texture-atlas.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  texture-font.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  vector.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  gc_common.c
+  gc_thread.c
+  ga_openal.c
+  ga.c
+  cl : Command line warning D9002 : ignoring unknown option '/arch:SSE2'
+  gau.c
+  ga_stream.c
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\gorilla-audio\devices\ga_openal.c(5,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\gorilla-audio\devices\ga_openal.c(80,52): warning C4047:  '!=': 'gc_uint32 *' differs in levels of indirection from 'unsigned int'
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\gorilla-audio\gau.c(607,57): warning C4267:  'function': conversion from 'size_t' to 'gc_int32', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\gorilla-audio\gau.c(607,64): warning C4267:  'function': conversion from 'size_t' to 'gc_int32', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\gorilla-audio\gau.c(685,29): warning C4267:  'function': conversion from 'size_t' to 'long', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\gorilla-audio\gau.c(754,56): warning C4244:  '=': conversion from 'ogg_int64_t' to 'gc_int32', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-font.c(93,49): warning C4267:  'function': conversion from 'size_t' to 'FT_Long', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(53,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(132,40): warning C4090:  '=': different 'const' qualifiers
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(164,23): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(239,29): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(240,19): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(265,32): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(266,20): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(222,1): warning C4267:  'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(314,27): warning C4267:  '=': conversion from 'size_t' to 'int', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(341,61): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(341,75): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(350,60): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(350,74): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(355,65): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(355,79): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(360,60): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
+D:\GameEngine\Ramjet_Engine\Ramjet_Core\Ramjet_Core\Ext\Freetype-GL\src\texture-atlas.c(360,74): warning C4267:  'function': conversion from 'size_t' to 'GLsizei', possible loss of data
 Win64Timer.obj : warning LNK4006: "public: float __cdecl Utils::Timer::elapsed(void)" (?elapsed@Timer@Utils@@QEAAMXZ) already defined in Win64Timer.obj; second definition ignored
 Win64Timer.obj : warning LNK4006: "public: void __cdecl Utils::Timer::reset(void)" (?reset@Timer@Utils@@QEAAXXZ) already defined in Win64Timer.obj; second definition ignored
 Win64Timer.obj : warning LNK4006: "public: __cdecl Utils::Timer::Timer(void)" (??0Timer@Utils@@QEAA@XZ) already defined in Win64Timer.obj; second definition ignored
