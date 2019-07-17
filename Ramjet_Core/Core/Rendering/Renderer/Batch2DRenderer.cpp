@@ -138,24 +138,7 @@ namespace Core {
 			m_IndexCount += 6;
 		}
 
-		void Batch2DRenderer::drawAABB(const Maths::AABB& aabb, uint color)
-		{
-			#if 0
-			m_DeferredLineVertexData.push_back({ aabb.min, vec2(), vec2(), 0, 0, color });
-			m_DeferredLineVertexData.push_back({ vec3(aabb.min.x, aabb.max.y, 0.0f), vec2(), vec2(), 0, 0, color });
-
-			m_DeferredLineVertexData.push_back({ vec3(aabb.min.x, aabb.max.y, 0.0f), vec2(), vec2(), 0, 0, color });
-			m_DeferredLineVertexData.push_back({ aabb.max, vec2(), vec2(), 0, 0, color });
-
-			m_DeferredLineVertexData.push_back({ aabb.max, vec2(), vec2(), 0, 0, color });
-			m_DeferredLineVertexData.push_back({ vec3(aabb.max.x, aabb.min.y, 0.0f), vec2(), vec2(), 0, 0, color });
-
-			m_DeferredLineVertexData.push_back({ vec3(aabb.max.x, aabb.min.y, 0.0f), vec2(), vec2(), 0, 0, color });
-			m_DeferredLineVertexData.push_back({ aabb.min, vec2(), vec2(), 0, 0, color });
-			#endif
-		}
-
-		void Batch2DRenderer::drawString(const String& text, const Maths::vec3& position, const Font& font, uint color)
+		void Batch2DRenderer::drawString(const String& text, const Maths::vec2& position, const Font& font, uint color)
 		{
 			using namespace ftgl;
 
@@ -222,6 +205,86 @@ namespace Core {
 				}
 
 			}
+		}
+
+		void Batch2DRenderer::drawLine(float x0, float y0, float x1, float y1, float thickness, uint color)
+		{
+			using namespace Maths;
+
+			const std::vector<vec2>& uv = Renderable2D::getUVDefault();
+			float ts = 0.0f;
+			mat4 maskTransform = mat4::Identity();
+			uint mid = m_Mask ? m_Mask->texture->getID() : 0;
+
+			float ms = 0.0f;
+			if (m_Mask != nullptr)
+			{
+				maskTransform = mat4::Invert(m_Mask->transform);
+				ms = submitTexture(m_Mask->texture);
+			}
+
+			vec2 normal = vec2(y1 - y0, -(x1 - x0)).Normalise() * thickness;
+
+			vec3 vertex = *m_TransformationBack * vec3(x0 + normal.x, y0 + normal.y, 0.0f);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[0];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			vertex = *m_TransformationBack * vec3(x1 + normal.x, y1 + normal.y, 0.0f);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[1];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			vertex = *m_TransformationBack * vec3(x1 - normal.x, y1 - normal.y, 0.0f);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[2];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			vertex = *m_TransformationBack * vec3(x0 - normal.x, y0 - normal.y, 0.0f);
+			m_Buffer->vertex = vertex;
+			m_Buffer->uv = uv[3];
+			m_Buffer->mask_uv = maskTransform * vertex;
+			m_Buffer->tid = ts;
+			m_Buffer->mid = ms;
+			m_Buffer->color = color;
+			m_Buffer++;
+
+			m_IndexCount += 6;
+		}
+
+		void Batch2DRenderer::drawLine(const Maths::vec2& start, const Maths::vec2& end, float thickness, uint color)
+		{
+			drawLine(start.x, start.y, end.x, end.y, thickness, color);
+		}
+
+		void Batch2DRenderer::drawRect(float x, float y, float width, float height, uint color)
+		{
+			drawLine(x, y, x + width, y);
+			drawLine(x + width, y, x + width, y + height);
+			drawLine(x + width, y + height, x, y + height);
+			drawLine(x, y + height, x, y);
+		}
+
+		void Batch2DRenderer::drawRect(const Maths::Rectangle& rectangle, uint color)
+		{
+			drawRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, color);
+		}
+
+		void Batch2DRenderer::fillRect(const Maths::Rectangle& rectangle, uint color)
+		{
+			fillRect(rectangle.x, rectangle.y, rectangle.width, rectangle.height, color);
 		}
 
 		void Batch2DRenderer::fillRect(float x, float y, float width, float height, uint color)

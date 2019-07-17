@@ -47,8 +47,14 @@ namespace Core {
 
 			void begin() override;
 			void submit(const Renderable2D* renderable) override;
-			void drawAABB(const Maths::AABB& aabb, uint color = 0xFFFFFFFF);
-			void drawString(const String& text, const Maths::vec3& position, const Font& font = *Manager::Font_Manager::get(), uint color = 0xffffffff) override;
+			//void drawAABB(const Maths::AABB& aabb, uint color = 0xFFFFFFFF);
+			void drawString(const String& text, const Maths::vec2& position, const Font& font = *Manager::Font_Manager::get(), uint color = 0xffffffff) override;
+			void drawLine(float x0, float y0, float x1, float y1, float thickness = 0.02f, uint color = 0xffffffff) override;
+			void drawLine(const Maths::vec2& start, const Maths::vec2& end, float thickness = 0.02f, uint color = 0xffffffff) override;
+			void drawRect(float x, float y, float width, float height, uint color = 0xffffffff) override;
+			void drawRect(const Maths::Rectangle& rectangle, uint color = 0xffffffff) override;
+			
+			void fillRect(const Maths::Rectangle& rectangle, uint color = 0xffffffff) override;
 			void fillRect(float x, float y, float width, float height, uint color = 0xffffffff) override;
 			void end() override;
 			void flush() override;

@@ -24,6 +24,11 @@ namespace Maths {
 	{
 	}
 
+	vec2 Rectangle::Center() const
+	{
+		return position + size * 0.5f;
+	}
+
 	bool Rectangle::Intersects(const Rectangle& other) const
 	{
 		return (size > other.position && position < other.size) || (position > other.size && size < other.position);

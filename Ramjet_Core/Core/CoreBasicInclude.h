@@ -13,4 +13,6 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "Utils/types.h"
+
 #include "Common.h"

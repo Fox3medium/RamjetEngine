@@ -40,6 +40,8 @@ namespace Maths {
 		Rectangle(const vec2& position, const vec2& size);
 		Rectangle(float x, float y, float width, float height);
 
+		vec2 Center() const;
+
 		bool Intersects(const Rectangle& other) const;
 		bool Contains(const vec2& point) const;
 		bool Contains(const vec3& point) const;

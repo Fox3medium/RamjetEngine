@@ -52,8 +52,14 @@ namespace Core {
 
 			virtual void begin() {}
 			virtual void submit(const Renderable2D* renderable) = 0;
-			virtual void drawString(const String& text, const Maths::vec3& position, const Font& font = *Manager::Font_Manager::get(), uint Color = 0xffffffff) {};
+			virtual void drawString(const String& text, const Maths::vec2& position, const Font& font = *Manager::Font_Manager::get(), uint Color = 0xffffffff) {};
+			virtual void drawLine(float x0, float y0, float x1, float y1, float thickness = 0.02f, uint color = 0xffffffff) { }
+			virtual void drawLine(const Maths::vec2& start, const Maths::vec2& end, float thickness = 0.02f, uint color = 0xffffffff) { }
+			virtual void drawRect(float x, float y, float width, float height, uint color = 0xffffffff) { }
+			virtual void drawRect(const Maths::Rectangle& rectangle, uint color = 0xffffffff) { }
+
 			virtual void fillRect(float x, float y, float width, float height, uint color = 0xffffffff) {};
+			virtual void fillRect(const Maths::Rectangle& rectangle, uint color = 0xffffffff) { }
 			virtual void flush() = 0;
 			virtual void end() {}
 

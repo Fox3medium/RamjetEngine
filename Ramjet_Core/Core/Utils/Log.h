@@ -4,6 +4,7 @@
 #include <Core/Common.h>
 #include <Utils/types.h>
 #include <Utils/Maths/vec2.h>
+#include <Utils/Maths/Rectangle.h>
 
 #define CORE_LOG_LEVEL_FATAL	0
 #define CORE_LOG_LEVEL_ERROR	1
@@ -26,6 +27,7 @@ namespace Logs
 	namespace Internal
 	{
 		static char to_string_buffer[1024 * 10];
+		static char sprintf_buffer[1024 * 10];
 
 		CORE_API void PlatformLogMessage(uint level, const char* message);
 
@@ -81,6 +83,15 @@ namespace Logs
 			String string = String("vec2: (") + std::to_string(t.x) + ", " + std::to_string(t.y) + ")";
 			char* result = new char[string.length()];
 			strcpy(result, &string[0]);
+			return result;
+		}
+
+		template <>
+		static const char* to_string<Maths::Rectangle>(const Maths::Rectangle& r)
+		{
+			sprintf(sprintf_buffer, "Rectangle: (%f, %f, %f, %f)", r.x, r.y, r.width, r.height);
+			char* result = new char[strlen(sprintf_buffer)];
+			strcpy(result, &sprintf_buffer[0]);
 			return result;
 		}
 
