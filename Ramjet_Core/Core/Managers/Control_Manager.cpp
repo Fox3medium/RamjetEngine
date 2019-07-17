@@ -10,12 +10,7 @@ namespace Core {
 		float Control_Manager::playerSpeed = 0.0f;
 		bool Control_Manager::gameStarted = false;
 		uint Control_Manager::m_NumberOfKeysPressed = 0;
-		bool Control_Manager::m_Keys[MAX_KEYS];
-		bool Control_Manager::m_KeysState[MAX_KEYS];
-		bool Control_Manager::m_KeysTyped[MAX_KEYS];
-		bool Control_Manager::m_MouseButtons[MAX_BUTTONS];
-		bool Control_Manager::m_MouseButtonsTyped[MAX_BUTTONS];
-		bool Control_Manager::m_MouseButtonsState[MAX_BUTTONS];
+		Inputs* Control_Manager::s_Input = new Inputs();
 
 		Control_Manager::Control_Manager()
 		{
@@ -24,16 +19,16 @@ namespace Core {
 
 			for (int i = 0; i < MAX_KEYS; i++) 
 			{
-				m_Keys[i] = false;
-				m_KeysState[i] = false;
-				m_KeysTyped[i] = false;
+				s_Input->m_Keys[i] = false;
+				s_Input->m_KeysState[i] = false;
+				s_Input->m_KeysTyped[i] = false;
 			}			
 
 			for (int i = 0; i < MAX_BUTTONS; i++)
 			{
-				m_MouseButtons[i] = false;
-				m_MouseButtonsState[i] = false;
-				m_MouseButtonsTyped[i] = false;
+				s_Input->m_MouseButtons[i] = false;
+				s_Input->m_MouseButtonsState[i] = false;
+				s_Input->m_MouseButtonsTyped[i] = false;
 			}
 			//playerCamera = new FPSCamera();
 		}
@@ -42,13 +37,33 @@ namespace Core {
 		{
 		}
 
+		void Control_Manager::init()
+		{
+			playerSpeed = 2.5f;
+			gameStarted = false;
+
+			/*for (int i = 0; i < MAX_KEYS; i++)
+			{
+				s_Input->m_Keys[i] = false;
+				s_Input->m_KeysState[i] = false;
+				s_Input->m_KeysTyped[i] = false;
+			}
+
+			for (int i = 0; i < MAX_BUTTONS; i++)
+			{
+				s_Input->m_MouseButtons[i] = false;
+				s_Input->m_MouseButtonsState[i] = false;
+				s_Input->m_MouseButtonsTyped[i] = false;
+			}*/
+		}
+
 		void Control_Manager::notifyKeyPress(int keycode, int action, float deltaTime, InputType inputType)
 		{
 			playerSpeed = 2.5f * deltaTime;
 
 			if(action != GLFW_RELEASE) 
 			{
-				if(!m_Keys[keycode])
+				if(!s_Input->m_Keys[keycode])
 				{
 					m_NumberOfKeysPressed++;
 				}
@@ -61,11 +76,11 @@ namespace Core {
 
 			if (inputType == InputType::KEYBOARD)
 			{
-				m_Keys[keycode] = action != GLFW_RELEASE;
+				s_Input->m_Keys[keycode] = action != GLFW_RELEASE;
 			} 
 			else if (inputType == InputType::MOUSE)
 			{
-				m_MouseButtons[keycode] = action != GLFW_RELEASE;
+				s_Input->m_MouseButtons[keycode] = action != GLFW_RELEASE;
 			}
 			else if (inputType == InputType::JOYSTICK)
 			{
@@ -100,23 +115,26 @@ namespace Core {
 
 		bool Control_Manager::isKeyPressed(unsigned int keycode)
 		{
-			return m_Keys[getKey(keycode)];
+			int scanCode = getKey(keycode);
+			return s_Input->m_Keys[scanCode];
 		}
 
 		bool Control_Manager::isKeyTyped(unsigned int keycode)
 		{
-			return m_KeysTyped[getKey(keycode)];
+			int scanCode = getKey(keycode);
+			return s_Input->m_KeysTyped[scanCode];
 		}
 
 		bool Control_Manager::isMouseButtonPressed(unsigned int keycode)
 		{
-			return m_MouseButtons[keycode];
+			return s_Input->m_MouseButtons[keycode];
 		}
 
 		bool Control_Manager::isKeyEvent()
 		{
 			// TODO STATIC SOLUTION
 			return m_NumberOfKeysPressed != 0;
+			// return true;
 		}
 
 		/*Maths::vec2 Control_Manager::getMousePosition()
@@ -158,14 +176,14 @@ namespace Core {
 		void Control_Manager::updateInput()
 		{
 			for (int i = 0; i < MAX_KEYS; i++)
-				m_KeysTyped[i] = m_Keys[i] && !m_KeysState[i];
+				s_Input->m_KeysTyped[i] = s_Input->m_Keys[i] && !s_Input->m_KeysState[i];				
 
-			memcpy(m_KeysState, m_Keys, MAX_KEYS);
+			memcpy(s_Input->m_KeysState, s_Input->m_Keys, MAX_KEYS);
 
 			for (int i = 0; i < MAX_KEYS; i++)
-				m_MouseButtonsTyped[i] = m_MouseButtons[i] && !m_MouseButtonsState[i];
+				s_Input->m_MouseButtonsTyped[i] = s_Input->m_MouseButtons[i] && !s_Input->m_MouseButtonsState[i];
 
-			memcpy(m_MouseButtonsState, m_MouseButtons, MAX_BUTTONS);
+			memcpy(s_Input->m_MouseButtonsState, s_Input->m_MouseButtons, MAX_BUTTONS);
 		}
 
 	}

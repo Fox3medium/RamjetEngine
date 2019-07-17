@@ -79,7 +79,7 @@ namespace App
 
 	void Application::render()
 	{
-		if (C_Manager->isKeyEvent())
+		if (Core::Manager::Control_Manager::isKeyEvent())
 			onEvent();
 		for (uint i = 0; i < m_Layers.size(); i++)
 			m_Layers[i]->onRender();

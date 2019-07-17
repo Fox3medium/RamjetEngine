@@ -1,4 +1,4 @@
-#pragma once
+//#pragma once
 
 #include <Rendering/Renderer/Renderer2D.h>
 #include <Rendering/Renderer/Layers/Layer2D.h>

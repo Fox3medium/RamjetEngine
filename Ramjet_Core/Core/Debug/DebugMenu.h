@@ -14,7 +14,7 @@ namespace Core
 
 		class DebugMenu
 		{
-		private:
+		public:
 			static DebugMenu* s_Instance;
 
 			bool m_Visible;

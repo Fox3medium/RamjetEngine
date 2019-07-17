@@ -19,8 +19,9 @@ namespace App
 	void Application::platformInit()
 	{
 		window = new Core::Init::Window(m_Name, m_Width, m_Height);
-		C_Manager = new Core::Manager::Control_Manager();
-		window->setControl(C_Manager);
+		//C_Manager = new Core::Manager::Control_Manager();
+		//window->setControl(C_Manager);
+		Core::Manager::Control_Manager::init();
 		Core::Manager::Shader_Manager::init();
 		Core::Manager::Sound_Manager::init();
 		Core::Manager::Font_Manager::init();		
@@ -67,7 +68,7 @@ namespace App
 				updates++;
 				updateTimer += updateTick;
 			}
-			C_Manager->updateInput();
+			Core::Manager::Control_Manager::updateInput();
 			render();
 			frames++;
 			window->update();

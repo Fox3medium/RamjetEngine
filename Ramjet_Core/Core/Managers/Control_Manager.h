@@ -14,11 +14,41 @@ namespace Core {
 		#define MAX_KEYS 1024
 		#define MAX_BUTTONS 32
 
+		struct Inputs 
+		{
+			bool m_Keys[MAX_KEYS];
+			bool m_KeysState[MAX_KEYS];
+			bool m_KeysTyped[MAX_KEYS];
+
+			bool m_MouseButtons[MAX_BUTTONS];
+			bool m_MouseButtonsState[MAX_BUTTONS];
+			bool m_MouseButtonsTyped[MAX_BUTTONS];
+
+			Inputs() 
+			{
+				for (int i = 0; i < MAX_KEYS; i++)
+				{
+					m_Keys[i] = false;
+					m_KeysState[i] = false;
+					m_KeysTyped[i] = false;
+				}
+
+				for (int i = 0; i < MAX_BUTTONS; i++)
+				{
+					m_MouseButtons[i] = false;
+					m_MouseButtonsState[i] = false;
+					m_MouseButtonsTyped[i] = false;
+				}
+			}
+		};
+
 		class CORE_API Control_Manager {
 
 		public:
 			Control_Manager();
 			~Control_Manager();
+
+			static void init();
 
 			static void notifyKeyPress(int keycode, int action, float deltaTime, InputType inputType);
 			static void notifyMouseInput(double xpos, double ypos, float deltaTime);
@@ -60,13 +90,7 @@ namespace Core {
 
 			static bool gameStarted;
 
-			static bool m_Keys[MAX_KEYS];
-			static bool m_KeysState[MAX_KEYS];
-			static bool m_KeysTyped[MAX_KEYS];
-
-			static bool m_MouseButtons[MAX_BUTTONS];
-			static bool m_MouseButtonsState[MAX_BUTTONS];
-			static bool m_MouseButtonsTyped[MAX_BUTTONS];
+			static Inputs* s_Input;
 
 			static uint m_NumberOfKeysPressed;
 

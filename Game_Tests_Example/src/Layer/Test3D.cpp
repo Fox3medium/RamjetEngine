@@ -52,8 +52,7 @@ void Test3D::onInit(Core::Rendering::Renderer3D& renderer, Core::Rendering::Scen
 
 void Test3D::onTick()
 {
-	App::Application& app = App::Application::getApplication();
-	CORE_INFO(app.getUPS(), " ups, ", app.getFPS(), " fps");
+
 }
 
 float g_Rotation = 0.0f;

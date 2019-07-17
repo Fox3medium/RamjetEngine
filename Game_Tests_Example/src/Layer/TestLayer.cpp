@@ -67,13 +67,13 @@ void TestLayer::onUpdate()
 
 void TestLayer::onRender(Core::Rendering::Renderer2D& renderer)
 {
-	if (Control_Manager::isKeyEvent()) 
+	/*if (Control_Manager::isKeyEvent()) 
 	{
 		if (Control_Manager::isKeyTyped(GLFW_KEY_1))
 			renderer.setRenderTarget(renderer.getRenderTarget() == RenderTarget::SCREEN ? RenderTarget::BUFFER : RenderTarget::SCREEN);
 		if (Control_Manager::isKeyTyped(GLFW_KEY_2))
 			renderer.setPostFX(!renderer.getPostFX());
-	}	
+	}	*/
 
 	m_DebugInfo[0]->m_Text = String("Target: ") + (renderer.getRenderTarget() == RenderTarget::SCREEN ? "Screen" : "Buffer");
 	m_DebugInfo[1]->m_Text = String("PostFX: ") + (renderer.getPostFX() ? "On" : "Off");

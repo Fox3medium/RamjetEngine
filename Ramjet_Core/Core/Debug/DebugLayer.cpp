@@ -54,8 +54,7 @@ namespace Core
 			if (Control_Manager::isKeyPressed(GLFW_KEY_LEFT_CONTROL) 
 				&& Control_Manager::isKeyTyped(GLFW_KEY_TAB))
 			{
-				CORE_INFO("KEY CTRL TAB PRESSED!");
-				/*DebugMenu::setVisible(!DebugMenu::isVisible());*/
+				DebugMenu::setVisible(!DebugMenu::isVisible());
 			}
 		}
 
@@ -71,8 +70,8 @@ namespace Core
 
 		void DebugLayer::onRender(Rendering::Renderer2D& renderer)
 		{
-			/*if (DebugMenu::isVisible())
-				DebugMenu::onRender(renderer);*/
+			if (DebugMenu::isVisible())
+				DebugMenu::onRender(renderer);
 		}
 
 	}
